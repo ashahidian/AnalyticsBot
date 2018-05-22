@@ -1,2 +1,0 @@
-# AnalyticsBot
-Thesis Project
