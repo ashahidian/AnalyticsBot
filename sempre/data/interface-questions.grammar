@@ -107,8 +107,8 @@
 
 (rule $Objective ($Wh $Metrics) (JoinFn backward))
 
-(rule $Subjective (higher) (ConstantFn (string ORDER BY ASC)))
-(rule $Subjective (lower) (ConstantFn (string ORDER BY DESC)))
+(rule $Subjective (higher) (ConstantFn (string ORDER BY DESC)))
+(rule $Subjective (lower) (ConstantFn (string ORDER BY ASC)))
 
 (rule $Relation ($Subjective $Metrics) (JoinFn forward))
 

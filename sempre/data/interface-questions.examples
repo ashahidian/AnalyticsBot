@@ -4,7 +4,7 @@
     WHERE LatestRolloverDays = 155 )))
 
 (example (utterance "What client Joe cc?")
-    (targetValue (string SELECT CC_Total
+    (targetValue (string SELECT CC Total
     FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]
     WHERE Client = Joe )))
 
@@ -14,12 +14,12 @@
     WHERE Client = Mary )))
 
 (example (utterance "What deals EUR/MXN?")
-    (targetValue (string SELECT * DealID
+    (targetValue (string SELECT * Deal ID
     FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]
     WHERE Currency Pair = EUR/MXN )))
 
 (example (utterance "Which deals signed 2016?")
-    (targetValue (string SELECT * DealID
+    (targetValue (string SELECT * Deal ID
     FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]
     WHERE Deal Date = 2016 )))
 
@@ -39,12 +39,12 @@
     WHERE Client = x )))
 
 (example (utterance "What client x non-risk cc?")
-    (targetValue (string SELECT CC_NonRisk
+    (targetValue (string SELECT CC NonRisk
     FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]
     WHERE Client = x )))
 
 (example (utterance "what client x at risk cc?")
-    (targetValue (string SELECT CC_AtRisk
+    (targetValue (string SELECT CC AtRisk
     FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]
     WHERE Client = x )))
 
@@ -63,67 +63,67 @@
     FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]
     WHERE Client = w )))
 
-(example (utterance "what clients highest average rollover?")
-    (targetValue (string SELECT LatestRolloverDays
+(example (utterance "what client highest average rollover?")
+    (targetValue (string SELECT * Client, LatestRolloverDays
     FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]
-    WHERE Client = x )))
+    LastestRolloverDays ORDER BY LatestRolloverDays DESC )))
 
-(example (utterance "what clients lowest average rollover?")
-    (targetValue (string SELECT LatestRolloverDays
+(example (utterance "what client lowest average rollover?")
+    (targetValue (string SELECT * Client, LatestRolloverDays
     FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]
-    WHERE Client = x )))
+    LastestRolloverDays ORDER BY LatestRolloverDays ASC )))
 
 (example (utterance "which client highest cc?")
-    (targetValue (string SELECT LatestRolloverDays
+    (targetValue (string SELECT * Client, CC Total
     FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]
-    WHERE Client = x )))
+    LastestRolloverDays ORDER BY LatestRolloverDays DESC )))
 
 (example (utterance "what cc y?")
-    (targetValue (string SELECT LatestRolloverDays
+    (targetValue (string SELECT Client
     FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]
-    WHERE Client = x )))
+    WHERE CC Total = y )))
 
 (example (utterance "which non-risk cc y?")
-    (targetValue (string SELECT LatestRolloverDays
+    (targetValue (string SELECT Client
     FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]
-    WHERE Client = x )))
+    WHERE CC NonRisk = y )))
 
-(example (utterance "which at risk cc y?")
-    (targetValue (string SELECT LatestRolloverDays
+(example (utterance "which at risk cc w?")
+    (targetValue (string SELECT Client
     FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]
-    WHERE Client = x )))
+    WHERE CC AtRisk = w )))
 
 (example (utterance "what deals EUR/MXN?")
-    (targetValue (string SELECT LatestRolloverDays
+    (targetValue (string SELECT Deal ID
     FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]
-    WHERE Client = x )))
+    WHERE Currency Pair = EUR/MXN )))
 
 (example (utterance "what deals USD/BRL?")
-    (targetValue (string SELECT LatestRolloverDays
+    (targetValue (string SELECT Deal ID
     FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]
-    WHERE Client = x )))
+    WHERE Currency Pair = USD/BRL )))
 
 (example (utterance "when deal x expire?")
-    (targetValue (string SELECT LatestRolloverDays
+    (targetValue (string SELECT Expiry Date
     FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]
-    WHERE Client = x )))
+    WHERE Deal ID = x )))
 
 (example (utterance "when x expiration date?")
-    (targetValue (string SELECT LatestRolloverDays
+    (targetValue (string SELECT Expiry Date
     FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]
-    WHERE Client = x )))
+    WHERE Deal ID = x )))
 
-(example (utterance "when expiration (date) deal x?")
-    (targetValue (string SELECT LatestRolloverDays
+(example (utterance "when expiration date deal x?")
+    (targetValue (string SELECT ExpiryDate
     FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]
-    WHERE Client = x )))
+    WHERE Deal ID = x )))
 
 (example (utterance "when client x rollover?")
     (targetValue (string SELECT LatestRolloverDays
     FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]
     WHERE Client = x )))
 
-(example (utterance "when x rollover?")
+(example (utterance "when t rollover?")
     (targetValue (string SELECT LatestRolloverDays
     FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]
-    WHERE Client = x )))
+    WHERE Client = t )))

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c794ccc6-50a2-42fa-a476-00e8544db14f" name="Default" comment="" />
+    <list default="true" id="c794ccc6-50a2-42fa-a476-00e8544db14f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/sempre/data/interface-questions.examples" afterPath="$PROJECT_DIR$/sempre/data/interface-questions.examples" />
+      <change beforePath="$PROJECT_DIR$/sempre/data/interface-questions.grammar" afterPath="$PROJECT_DIR$/sempre/data/interface-questions.grammar" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,42 +17,18 @@
       <file leaf-file-name="bd_camps" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bd_camps">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+            <state relative-caret-position="-90">
+              <caret line="31" column="6" lean-forward="false" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rules.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pyCharm/app/q_a/rules.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-648">
-              <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#12#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nlp_processing.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pyCharm/app/q_a/nlp_processing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="40" column="12" lean-forward="false" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="interface-questions.examples" pinned="false" current-in-tab="false">
+      <file leaf-file-name="interface-questions.examples" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sempre/data/interface-questions.examples">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="22" column="39" lean-forward="false" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+            <state relative-caret-position="270">
+              <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -58,8 +37,8 @@
       <file leaf-file-name="interface-questions.grammar" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sempre/data/interface-questions.grammar">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="47" lean-forward="false" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+            <state relative-caret-position="127">
+              <caret line="110" column="58" lean-forward="false" selection-start-line="110" selection-start-column="58" selection-end-line="110" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -90,8 +69,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sempre/data/interface-questions.examples" />
         <option value="$PROJECT_DIR$/bd_camps" />
+        <option value="$PROJECT_DIR$/sempre/data/interface-questions.grammar" />
+        <option value="$PROJECT_DIR$/sempre/data/interface-questions.examples" />
       </list>
     </option>
   </component>
@@ -251,16 +231,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pyCharm/app/q_a/nlp_processing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="40" column="12" lean-forward="false" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sempre/data/tutorial-arithmetic.examples">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -269,37 +239,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sempre/data/interface-questions.grammar">
+    <entry file="file://$PROJECT_DIR$/pyCharm/app/q_a/nlp_processing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="47" lean-forward="false" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
-          <folding />
+        <state relative-caret-position="720">
+          <caret line="40" column="12" lean-forward="false" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sempre/data/interface-questions.examples">
+    <entry file="file://$PROJECT_DIR$/pyCharm/app/q_a/rules.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="22" column="39" lean-forward="false" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+        <state relative-caret-position="1080">
+          <caret line="60" column="18" lean-forward="true" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sempre/data/interface-questions.grammar">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="110" column="58" lean-forward="false" selection-start-line="110" selection-start-column="58" selection-end-line="110" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bd_camps">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+        <state relative-caret-position="-90">
+          <caret line="31" column="6" lean-forward="false" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pyCharm/app/q_a/rules.py">
+    <entry file="file://$PROJECT_DIR$/sempre/data/interface-questions.examples">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-648">
-          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
