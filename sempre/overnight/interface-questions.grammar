@@ -1,3 +1,5 @@
+(include general.grammar)
+
 ################################################################################
 # Currency rules
 ################################################################################
@@ -14,35 +16,35 @@
 # Wh-Words
 ################################################################################
 
-(rule $Wh (what $Client) (ConstantFn (lambda y (string * FROM
-  [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = (var y)))))
-(rule $Wh (what $Client) (ConstantFn (string * Client FROM
-  [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] )))
-(rule $Wh (what $Client) (ConstantFn (lambda y (string FROM
-  [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = (var y)))))
+(rule $Wh (what $Client) (ConstantFn (lambda y (string "* FROM
+  [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client =" (var y)))))
+(rule $Wh (what $Client) (ConstantFn (string "* Client FROM
+  [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]" )))
+(rule $Wh (what $Client) (ConstantFn (lambda y (string "FROM
+  [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client =" (var y)))))
 
-(rule $Wh (what deals) (ConstantFn (string * Deal ID FROM
-  [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] )))
+(rule $Wh (what deals) (ConstantFn (string "* Deal ID FROM
+  [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]" )))
 
 
 #-------------------------------------------------------------------------------
 
-(rule $When (when) (ConstantFn (lambda y (string WHERE Client = (var y)))))
+(rule $When (when) (ConstantFn (lambda y (string "WHERE Client =" (var y)))))
 
 (rule $Wh ($When $Rollover) (JoinFn backward))
 (rule $Wh ($When $Expire) (JoinFn backward))
 
 #-------------------------------------------------------------------------------
 
-(rule $Wh (who) (ConstantFn (string * CLIENT FROM
-  [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities])))
+(rule $Wh (who) (ConstantFn (string "* CLIENT FROM
+  [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]")))
 
 #-------------------------------------------------------------------------------
 
-(rule $Wh (which $Client) (ConstantFn (string * CLIENT FROM
-  [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] )))
-(rule $Wh (which deal) (ConstantFn (string * Deal ID FROM
-  [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] )))
+(rule $Wh (which $Client) (ConstantFn (string "* CLIENT FROM
+  [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]" )))
+(rule $Wh (which deal) (ConstantFn (string "* Deal ID FROM
+  [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]" )))
 
 #-------------------------------------------------------------------------------
 
@@ -71,12 +73,12 @@
 ################################################################################
 # these need to be confirmed when learning examples have been set
 
-(rule $Client (client) (ConstantFn (lambda y (string WHERE Client = (var y)))))
+(rule $Client (client) (ConstantFn (lambda y (string "WHERE Client =" (var y)))))
 
-(rule $Expire (expire) (ConstantFn (string * Expiry Date FROM
-  [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] )))
-(rule $Rollover (rollover) (ConstantFn (string LatestRolloverDays FROM
-  [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] )))
+(rule $Expire (expire) (ConstantFn (string "* Expiry Date FROM
+  [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]" )))
+(rule $Rollover (rollover) (ConstantFn (string "LatestRolloverDays FROM
+  [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]" )))
 
 (rule $Rollover (rollover year) (ConstantFn (lambda y (string (* (var y) 365)))))
 (rule $Rollover (rollover month) (ConstantFn (lambda y (string (* (var y) 31)))))
@@ -89,13 +91,13 @@
 (rule $On ($PHRASE) (ConstantFn (string WHERE LatestRolloverDays <=)))
 (rule $Signed ($Sign $On) (JoinFn backward))
 
-(rule $Metrics (volume) (ConstantFn (lambda y (string WHERE Volume = (var y)))))
-(rule $Metrics (cc) (ConstantFn (lambda y (string WHERE CC Total = (var y)))))
-(rule $Metrics (non risk cc) (ConstantFn (lambda y (string WHERE CC NonRisk = (var y)))))
-(rule $Metrics (at risk cc) (ConstantFn (lambda y (string WHERE CC AtRisk = (var y)))))
-(rule $Metrics (average rollover) (ConstantFn (lambda y (string WHERE AverageRolloverDays = (var y)))))
-(rule $Metrics (rollover ratio) (ConstantFn (lambda y (string WHERE RolloverRatio = (var y)))))
-(rule $Metrics (net client) (ConstantFn (lambda y (string WHERE NetClientPosition = (var y)))))
+(rule $Metrics (volume) (ConstantFn (lambda y (string "WHERE Volume =" (var y)))))
+(rule $Metrics (cc) (ConstantFn (lambda y (string "WHERE CC Total =" (var y)))))
+(rule $Metrics (non risk cc) (ConstantFn (lambda y (string "WHERE CC NonRisk =" (var y)))))
+(rule $Metrics (at risk cc) (ConstantFn (lambda y (string "WHERE CC AtRisk =" (var y)))))
+(rule $Metrics (average rollover) (ConstantFn (lambda y (string "WHERE AverageRolloverDays =" (var y)))))
+(rule $Metrics (rollover ratio) (ConstantFn (lambda y (string "WHERE RolloverRatio =" (var y)))))
+(rule $Metrics (net client) (ConstantFn (lambda y (string "WHERE NetClientPosition =" (var y)))))
 
 (rule $Metrics (volume) (ConstantFn (string Volume)))
 (rule $Metrics (cc) (ConstantFn (string CC Total)))
@@ -126,7 +128,7 @@
 # what -is- client x average rollover (?)
 # what -is- client x rollover ratio (?)
 # what -is- client x net client (?)
-#(rule $ROOT ($Wh $Client $Metrics (? optional)) (IdentityFn))
+(rule $ROOT ($Wh $Client $Metrics (? optional)) (IdentityFn))
 
 # what clients -have- highest average rollover (?)
 # what clients -have- lowest average rollover (?)
