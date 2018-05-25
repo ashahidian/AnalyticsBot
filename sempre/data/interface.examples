@@ -1,0 +1,35 @@
+(example (utterance "What client Joe cc?")
+    (targetValue (string "SELECT CC Total FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = Joe" )))
+
+(example (utterance "What client Mary net client?")
+    (targetValue (string "SELECT NetClientPosition FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = Mary" )))
+
+(example (utterance "What client x cc ?")
+    (targetValue (string "SELECT CC Total FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x" )))
+
+(example (utterance "What client x volume?")
+    (targetValue (string "SELECT Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x" )))
+
+(example (utterance "What client x non-risk cc?")
+    (targetValue (string "SELECT CC NonRisk FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x" )))
+
+(example (utterance "what client x at risk cc?")
+    (targetValue (string "SELECT CC AtRisk FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x" )))
+
+(example (utterance "what client x average rollover?")
+    (targetValue (string "SELECT AverageRolloverDays FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x" )))
+
+(example (utterance "what client y rollover ratio?")
+    (targetValue (string "SELECT RolloverRatio FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = y" )))
+
+(example (utterance "what client w net client?")
+    (targetValue (string "SELECT NetClientPosition FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = w" )))
+
+(example (utterance "what client cc y?")
+    (targetValue (string "SELECT * Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE CC Total = y" )))
+
+(example (utterance "what non-risk cc y client?")
+    (targetValue (string "SELECT * Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE CC NonRisk = y" )))
+
+(example (utterance "which client at risk cc w?")
+    (targetValue (string "SELECT * Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE CC AtRisk = w" )))

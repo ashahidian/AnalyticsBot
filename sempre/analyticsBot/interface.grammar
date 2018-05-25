@@ -1,0 +1,5 @@
+(rule $NAME (client) (ConstantFn (lambda y (string "* FROM
+  [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client =" (var y)))))
+(rule $Wh (what) (ConstantFn (string SELECT)))
+(rule $Metric (volume) (ConstantFn (string "Volume")))
+(rule $ROOT ($Wh $NAME $Metric) (JoinFn forward))

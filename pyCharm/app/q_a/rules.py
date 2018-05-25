@@ -46,7 +46,7 @@ def on_match_location(matcher, doc, i, matches):
 def rules(question):
     matcher = Matcher(nlp.vocab)
 
-    # alternative method is writing patter
+    # alternative method is writing pattern
     # pattern = [{'case': "word"}, {'case': "word"}]
     # matcher.add("name", action(), pattern)
     matcher.add('which', on_match_which, [{ORTH: 'which'}])

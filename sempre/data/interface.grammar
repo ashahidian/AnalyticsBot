@@ -1,0 +1,58 @@
+# this rule will allow $Name to obtain the expression needed
+(rule $Expr ($PHRASE) (IdentityFn))
+(rule $Person ($Phrase) (FilterNerSpan PERSON))
+(rule $Test ($Person) (SimpleLexiconFn (type fb:people.person)))
+
+#_______________________________________________________________________________________________________________________
+# RULES THAT FOLLOW THE FORMULA $Name $Expr $Metric
+# what client x volume
+
+# rule to obtain the name of client
+(rule $Name (client $TOKEN) (ConstantFn (lambda x (call + (string "WHERE Client = ") (var x)))))
+
+# rules for getting the metric variable
+# these metrics are entering as $Expr and therefore not being analysed
+(rule $Metric (volume) (ConstantFn (string "SELECT Volume")))
+(rule $Metric (cc) (ConstantFn (string "SELECT CC Total")))
+(rule $Metric (non risk cc) (ConstantFn (string "SELECT CC NonRisk")))
+(rule $Metric (at risk cc) (ConstantFn (string "SELECT CC AtRisk")))
+(rule $Metric (average rollover) (ConstantFn (string "SELECT AverageRolloverDays")))
+(rule $Metric (rollover ratio) (ConstantFn (string "SELECT RolloverRatio")))
+(rule $Metric (net client) (ConstantFn (string "SELECT NetClientPosition")))
+
+# partial rules to allow the structure desired
+(rule $Partial ($Name $Test) (JoinFn forward))
+(rule $Partial ($Partial $Metric) (JoinFn forward))
+
+# overall final rule
+(rule $ROOT (what $Partial (? optional)) (IdentityFn))
+
+#_______________________________________________________________________________________________________________________
+# RULES THAT FOLLOW THE FORMULA $Name $Metric $Expr OR $Metric $Expr $Name
+# what client volume x OR what volume x client
+
+# rule to obtain the metric in need
+# this client is not being called, the one before is.
+(rule $Name (client) (ConstantFn (string "SELECT * Client")))
+
+# rules for getting the metric variable
+# these metrics are entering as $Expr and therefore not being analysed
+(rule $Metric (volume) (ConstantFn (lambda x (call + (string "WHERE Volume = ") (var x)))))
+(rule $Metric (cc) (ConstantFn (lambda x (call + (string "WHERE CC Total = ") (var x)))))
+(rule $Metric (non risk cc) (ConstantFn (lambda x (call + (string "WHERE CC NonRisk = ") (var x)))))
+(rule $Metric (at risk cc) (ConstantFn (lambda x (call + (string "WHERE CC AtRisk = ") (var x)))))
+(rule $Metric (average rollover) (ConstantFn (lambda x (call + (string "WHERE AverageRolloverDays = ") (var x)))))
+(rule $Metric (rollover ratio) (ConstantFn (lambda x (call + (string "WHERE RolloverRatio = ") (var x)))))
+(rule $Metric (net client) (ConstantFn (lambda x (call + (string "WHERE NetClientPosition = ") (var x)))))
+
+# partial rules to allow the structure desired
+(rule $Partial ($Metric $Expr) (JoinFn forward))
+(rule $Partial ($Partial $Name) (JoinFn forward))
+
+(rule $Partial ($Name $Partial) (JoinFn forward))
+(rule $Partial ($Metric $Expr) (JoinFn forward))
+
+
+# overall final rule
+(rule $ROOT (what $Partial (? optional)) (IdentityFn))
+

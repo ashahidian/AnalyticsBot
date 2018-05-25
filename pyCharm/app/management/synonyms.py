@@ -20,6 +20,7 @@ def time_synonyms(word):
         last_year = now - timedelta(days=365)
         return last_year.year
 
+# there may be a better way to do this
     if word == 'first quarter':
         return ['january', 'february', 'march']
 
@@ -37,22 +38,13 @@ def time_synonyms(word):
         now_month = now.month
         last_quarter_month = now_month - 4
 
-        if last_quarter_month < 4:
+        if 4 > last_quarter_month:
             last_quarter = 'first_quarter'
-        elif last_quarter_month >= 4 and last_quarter_month < 6:
+        elif 4 <= last_quarter_month < 6:
             last_quarter = 'second quarter'
-        elif last_quarter_month >= 6 and last_quarter_month < 9:
+        elif 6 <= last_quarter_month < 9:
             last_quarter = 'third quarter'
         else:
             last_quarter = 'fourth quarter'
 
         return last_quarter
-#        computer date, month
-#        if month in first quarter:
-#            last quarter = fourth quarter
-#        else if second quarter:
-#            last quarter = first quarter
-#        else if third quarter:
-#            last quarter = second quarter
-#        else if fourth quarter:
-#            last quarter = third quarter
