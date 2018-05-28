@@ -7,9 +7,6 @@ def create_tag(word, type):
             or 'average rollover' or 'rollover ratio' or 'net client':
         new_compound = [word, type, 'metrics']
 
-    elif type == 'country' or 'region':
-        new_compound = [word, type, 'location']
-
     else:
         new_compound = [word, type, 'NOT FOUND']
 
