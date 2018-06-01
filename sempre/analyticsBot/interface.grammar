@@ -1,5 +1,31 @@
-(rule $NAME (client) (ConstantFn (lambda y (string "* FROM
-  [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client =" (var y)))))
-(rule $Wh (what) (ConstantFn (string SELECT)))
+# METRIC RULES
 (rule $Metric (volume) (ConstantFn (string "Volume")))
-(rule $ROOT ($Wh $NAME $Metric) (JoinFn forward))
+(rule $Metric (cc) (ConstantFn (string "CC Total")))
+(rule $Metric (non risk cc) (ConstantFn (string "CC NonRisk")))
+(rule $Metric (at risk cc) (ConstantFn (string "CC AtRisk")))
+(rule $Metric (average rollover) (ConstantFn (string "AverageRolloverDays")))
+(rule $Metric (rollover ratio) (ConstantFn (string "RolloverRatio")))
+(rule $Metric (net client) (ConstantFn (string "NetClientPosition")))
+
+# INDIVIDUAL RULES
+(rule $Client (client) (ConstantFn (string "Client")))
+(rule $Deal (deals) (ConstantFn (string "Deal ID")))
+
+# CURRENCY RULES
+(rule $Currency (eur/usd) (ConstantFn (string "EUR/USD")))
+
+# GENERAL RULES
+## Client unknown
+(rule $General ((what optional) (is optional) $Client $TOKEN $Metric (? optional))
+ (lambda c (lambda t (lambda m (call + (string "SELECT") (var m) (string "WHERE") (var c) (string =)  (var t))))))
+
+## Metric unknown
+(rule $General ((what optional) (is optional) $Client $Metric $TOKEN (? optional))
+ (lambda c (lambda m (lambda t (call + (string "SELECT") (var c) (string "WHERE") (var m) (string =)  (var t))))))
+
+## Deals with currency pair given
+(rule $General ((which optional) (are optional) (the optional) $Deal (with optional)
+(currency optional) (pair optional) $Currency (? optional))
+ (lambda c (lambda m (call + (string "asdf") (var m) (string =) (var c)))))
+
+(rule $ROOT ($General) (IdentityFn))

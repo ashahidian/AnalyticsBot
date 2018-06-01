@@ -2,6 +2,7 @@ import spacy
 from spacy.matcher import Matcher
 from spacy.symbols import ORTH, LEMMA, POS, TAG
 
+# FILE WITH RULES TO MATCH
 nlp = spacy.load('en')
 
 # tokens
@@ -27,11 +28,11 @@ nlp = spacy.load('en')
 # SHAPE shape
 # ENT_TYPE the token's entity label
 
-
+# on match for word "which"
 def on_match_which(matcher, doc, i, matches):
     print("SELECT DEAL")
 
-
+# on match for word "when"
 def on_match_when(matcher, doc, i, matches):
     print("SELECT DATE")
 
@@ -50,11 +51,12 @@ def rules(question):
     # alternative method is writing pattern
     # pattern = [{'case': "word"}, {'case': "word"}]
     # matcher.add("name", action(), pattern)
-    matcher.add('which', on_match_which, [{ORTH: 'which'}])
+    matcher.add('which', on_match_which, [{ORTH: 'which'}, ])
     matcher.add('when', on_match_when, [{ORTH: 'when'}])
-    # matcher.add('what', on_match_which, [{ORTH: 'which'}])
+    # rule to match "what client x"
+    matcher.add('what', on_match_which, [{ORTH: 'what'}, {ORTH: 'client'}, {POS: 'Noun'}])
     matcher.add('who', on_match_who, [{ORTH: 'who'}])
-    matcher.add('location', on_match_location, [{LEMMA: 'be'}, {TAG: 'GPE'}])
+#    matcher.add('location', on_match_location, [{LEMMA: 'be'}, {TAG: 'GPE'}])
 
     doc = nlp(question)
     matches = matcher(doc)
