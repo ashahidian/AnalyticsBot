@@ -11,21 +11,54 @@
 (rule $Client (client) (ConstantFn (string "Client")))
 (rule $Deal (deals) (ConstantFn (string "Deal ID")))
 
+# EXPIRATION DATE VARIATIONS
+(rule $Expiration (expire) (ConstantFn (string "expiration")))
+(rule $Expiration (expiration date) (ConstantFn (string "expiration")))
+(rule $Expiration (expiry date) (ConstantFn (string "expiration")))
+(rule $Expiration (expiration) (ConstantFn (string "expiration")))
+
 # CURRENCY RULES
 (rule $Currency (eur/usd) (ConstantFn (string "EUR/USD")))
 
+# MEASURE RULES
+(rule $Measure (highest) (ConstantFn (string "highest")))
+
+# WH-WORD RULES
+(rule $Wh (what) (ConstantFn (string "what")))
+(rule $Wh (when) (ConstantFn (string "when")))
+(rule $Wh (who) (ConstantFn (string "who")))
+(rule $Wh (which) (ConstantFn (string "which")))
+
 # GENERAL RULES
 ## Client unknown
-(rule $General ((what optional) (is optional) $Client $TOKEN $Metric (? optional))
- (lambda c (lambda t (lambda m (call + (string "SELECT") (var m) (string "WHERE") (var c) (string =)  (var t))))))
+(rule $General (($Wh optional) (is optional) $Client $PHRASE $Metric (? optional))
+ (lambda c (lambda t (lambda m (call + (string "SELECT ") (var m)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var c) (string " = ")  (var t))))))
 
 ## Metric unknown
-(rule $General ((what optional) (is optional) $Client $Metric $TOKEN (? optional))
- (lambda c (lambda m (lambda t (call + (string "SELECT") (var c) (string "WHERE") (var m) (string =)  (var t))))))
+(rule $General (($Wh optional) (is optional) $Client $Metric $TOKEN (? optional))
+ (lambda c (lambda m (lambda t (call + (string "SELECT ") (var c)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+ (string "WHERE ") (var m) (string " = ")  (var t))))))
 
 ## Deals with currency pair given
-(rule $General ((which optional) (are optional) (the optional) $Deal (with optional)
+(rule $General (($Wh optional) (are optional) (the optional) $Deal (with optional)
 (currency optional) (pair optional) $Currency (? optional))
- (lambda c (lambda m (call + (string "asdf") (var m) (string =) (var c)))))
+ (lambda c (lambda m (call + (string "SELECT * Deal ID")
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+ (string "WHERE ") (var m) (string " = ") (var c)))))
+
+## Highest Values for given Metric
+(rule $General (($Wh optional) (are optional) (the optional) $Client (with optional) $Measure $Metric (? optional))
+ (lambda c (lambda t (lambda m (call + (string "SELECT TOP 10 ") (var m)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] "))))))
+
+## Deal Expiration Date request
+(rule $General (($Wh optional) (is optional) (does optional) $TOKEN $Expiration (? optional))
+ (lambda t (lambda e (call + (string "SELECT Expiry Date")
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+ (string "WHERE ") (string "Deal ID") (string " = ") (var t)))))
+
 
 (rule $ROOT ($General) (IdentityFn))

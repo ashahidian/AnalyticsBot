@@ -5,6 +5,7 @@ from spacy.symbols import ORTH, LEMMA, POS, TAG
 # FILE WITH RULES TO MATCH
 nlp = spacy.load('en')
 
+
 # tokens
 # ORTH exact verbatim text of token
 # LOWER lower case form of token
@@ -32,6 +33,7 @@ nlp = spacy.load('en')
 def on_match_which(matcher, doc, i, matches):
     print("SELECT DEAL")
 
+
 # on match for word "when"
 def on_match_when(matcher, doc, i, matches):
     print("SELECT DATE")
@@ -56,10 +58,9 @@ def rules(question):
     # rule to match "what client x"
     matcher.add('what', on_match_which, [{ORTH: 'what'}, {ORTH: 'client'}, {POS: 'Noun'}])
     matcher.add('who', on_match_who, [{ORTH: 'who'}])
-#    matcher.add('location', on_match_location, [{LEMMA: 'be'}, {TAG: 'GPE'}])
+    # matcher.add('location', on_match_location, [{LEMMA: 'be'}, {TAG: 'GPE'}])
 
     doc = nlp(question)
     matches = matcher(doc)
 
     return matches
-
