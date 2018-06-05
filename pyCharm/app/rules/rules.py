@@ -29,22 +29,17 @@ nlp = spacy.load('en')
 # SHAPE shape
 # ENT_TYPE the token's entity label
 
-# on match for word "which"
-def on_match_which(matcher, doc, i, matches):
-    print("SELECT DEAL")
+# rule to fire to get volume value for given client
+def on_match_volume_client(matcher, doc, i, matches):
+
+    print("SELECT Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]"
+          " WHERE Client = " + doc[2:3])
 
 
-# on match for word "when"
-def on_match_when(matcher, doc, i, matches):
-    print("SELECT DATE")
-
-
-def on_match_who(matcher, doc, i, matches):
-    print("SELECT NAME")
-
-
-def on_match_location(matcher, doc, i, matches):
-    print (matcher, doc, i, matches)
+# rule to fire to get client name for given volume
+def on_match_client_volume(matcher, doc, i, matches):
+    print("SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]"
+          " WHERE Volume = " + doc[2:3])
 
 
 def rules(question):
@@ -53,12 +48,9 @@ def rules(question):
     # alternative method is writing pattern
     # pattern = [{'case': "word"}, {'case': "word"}]
     # matcher.add("name", action(), pattern)
-    matcher.add('which', on_match_which, [{ORTH: 'which'}, ])
-    matcher.add('when', on_match_when, [{ORTH: 'when'}])
-    # rule to match "what client x"
-    matcher.add('what', on_match_which, [{ORTH: 'what'}, {ORTH: 'client'}, {POS: 'Noun'}])
-    matcher.add('who', on_match_who, [{ORTH: 'who'}])
-    # matcher.add('location', on_match_location, [{LEMMA: 'be'}, {TAG: 'GPE'}])
+
+    matcher.add('volume_client', on_match_volume_client, [{'LOWER': 'volume'}, {'LOWER': 'client'}, {'POS': 'Noun'}])
+    matcher.add('client_volume', on_match_client_volume, [{'LOWER': 'client'}, {'LOWER': 'volume'}, {'POS': 'Noun'}])
 
     doc = nlp(question)
     matches = matcher(doc)
