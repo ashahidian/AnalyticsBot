@@ -1,7 +1,6 @@
 from nltk import *
 import spacy
 from spacy import displacy
-from app.q_a.rules import rules
 
 
 def tokenizing(question):
@@ -14,7 +13,8 @@ def stop_words(question):
             'is', 'are',
             'has', 'have',
             'does', 'do',
-            'currency', 'deal', 'client', 'last']
+            'currency', 'deal', 'client', 'last',
+            'who', 'when', 'what', 'which']
     pure_question = []
 
     for w in word_tokens:
@@ -22,20 +22,6 @@ def stop_words(question):
             pure_question.append(w)
 
     return pure_question
-
-
-def wh_extraction(question):
-    word_tokens = tokenizing(question)
-    wh_words = ['which', 'what', 'who', 'when', 'where']
-    wh = []
-
-    for w in word_tokens:
-        if w in wh_words:
-            wh.append(w)
-            # note: this procedure will not discriminate if more than one wh-word is present
-            # if meant to only accept one wh-word, then the return should be here
-
-    return wh
 
 
 def spacy_tokenization(question):
@@ -84,5 +70,5 @@ def spacy_ner(question):
     for ent in doc.ents:
         name_labels.extend((ent.text, ent.label_))
 
-    rules(question)
+#    rules(question)
     return name_labels, graph
