@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'example.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'my_db',
+        'NAME': 'simple_test',
         #information_schema
         #mysql
         #performance_schema
