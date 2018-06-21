@@ -9,6 +9,7 @@ def metric_words(question_tokens):
             return True
 
 
+
 #def rules(question):
 
  #   if metric_words() == True:

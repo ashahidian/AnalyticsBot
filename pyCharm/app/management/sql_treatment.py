@@ -1,4 +1,4 @@
-# cheatsheet
+# cheat sheet
 # https://gist.github.com/hofmannsven/9164408
 
 # to connect microsoft sql
@@ -15,20 +15,22 @@
 
 import mysql.connector
 
-
-connection = mysql.connector.connect(user='root', password='p4ssw0rd', database='simple_test')
-cursor = connection.cursor()
-
-query_names = ("SELECT client_name FROM example_table")
-
-cursor.execute(query_names)
-
-for(client_name) in cursor:
-    print("client names {}".format(client_name))
-
-cursor.close()
-connection.close()
+# needs to receive user, password and database too, as variables
 
 
+def sql_call(sql_request):
+    connection = mysql.connector.connect(user='root', password='p4ssw0rd', database='simple_test')
+    cursor = connection.cursor()
 
+    # query_names = ("SELECT client_name FROM example_table")
 
+    # cursor.execute(query_names)
+    cursor.execute(sql_request)
+
+    for (client_name) in cursor:
+        value = "client names {}".format(client_name)
+
+    cursor.close()
+    connection.close()
+
+    return value
