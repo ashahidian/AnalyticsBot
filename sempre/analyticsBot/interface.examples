@@ -1,29 +1,29 @@
-(example (utterance "What client x volume?")
+(example (utterance "client x volume?")
     (targetValue (string "SELECT Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x" )))
 
-(example (utterance "What client Joe cc?")
+(example (utterance "client Joe cc?")
     (targetValue (string "SELECT CC Total FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = Joe" )))
 
-(example (utterance "What client Mary net client?")
+(example (utterance "client Mary net client?")
     (targetValue (string "SELECT NetClientPosition FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = Mary" )))
 
-(example (utterance "What client x cc ?")
+(example (utterance "client x cc ?")
     (targetValue (string "SELECT CC Total FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x" )))
 
-(example (utterance "What client x volume?")
+(example (utterance "client x volume?")
     (targetValue (string "SELECT Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x" )))
 
-(example (utterance "What client x non-risk cc?")
+(example (utterance "client x non-risk cc?")
     (targetValue (string "SELECT CC NonRisk FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x" )))
 
-(example (utterance "what client x at risk cc?")
+(example (utterance "client x at risk cc?")
     (targetValue (string "SELECT CC AtRisk FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x" )))
 
-(example (utterance "what client x average rollover?")
+(example (utterance "client x average rollover?")
     (targetValue (string "SELECT AverageRolloverDays FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x" )))
 
-(example (utterance "what client y rollover ratio?")
+(example (utterance "client y rollover ratio?")
     (targetValue (string "SELECT RolloverRatio FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = y" )))
 
-(example (utterance "what client w net client?")
+(example (utterance "client w net client?")
     (targetValue (string "SELECT NetClientPosition FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = w" )))

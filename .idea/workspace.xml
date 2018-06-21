@@ -2,54 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c794ccc6-50a2-42fa-a476-00e8544db14f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/pyCharm/app/management/creating_rules_sempre.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pyCharm/app/management/sql_treatment.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/pyCharm/app/q_a/__init__.py" afterPath="$PROJECT_DIR$/pyCharm/app/management/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/pyCharm/app/q_a/nlp_processing.py" afterPath="$PROJECT_DIR$/pyCharm/app/management/nlp_processing.py" />
-      <change beforePath="$PROJECT_DIR$/pyCharm/app/q_a/synonyms.py" afterPath="$PROJECT_DIR$/pyCharm/app/management/synonyms.py" />
-      <change beforePath="$PROJECT_DIR$/pyCharm/example/settings.py" afterPath="$PROJECT_DIR$/pyCharm/example/settings.py" />
+      <change beforePath="$PROJECT_DIR$/pyCharm/app/management/nlp_processing.py" afterPath="$PROJECT_DIR$/pyCharm/app/management/nlp_processing.py" />
       <change beforePath="$PROJECT_DIR$/sempre/analyticsBot/interface.examples" afterPath="$PROJECT_DIR$/sempre/analyticsBot/interface.examples" />
-      <change beforePath="$PROJECT_DIR$/sempre/data/interface-questions.examples" afterPath="$PROJECT_DIR$/sempre/data/interface-questions.examples" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy-2.0.11.dist-info/INSTALLER" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy-2.0.11.dist-info/METADATA" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy-2.0.11.dist-info/RECORD" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy-2.0.11.dist-info/WHEEL" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy-2.0.11.dist-info/top_level.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/about.py" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/about.py" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/attrs.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/attrs.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/cli/_messages.py" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/cli/_messages.py" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/cli/init_model.py" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/cli/init_model.py" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/cli/package.py" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/cli/package.py" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/errors.py" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/errors.py" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/gold.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/gold.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/lang/da/__init__.py" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/lang/da/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/lexeme.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/lexeme.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/matcher.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/matcher.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/morphology.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/morphology.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/parts_of_speech.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/parts_of_speech.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/pipeline.pyx" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/pipeline.pyx" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/pipeline.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/pipeline.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/strings.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/strings.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/symbols.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/symbols.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/syntax/_beam_utils.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/syntax/_beam_utils.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/syntax/_state.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/syntax/_state.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/syntax/arc_eager.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/syntax/arc_eager.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/syntax/ner.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/syntax/ner.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/syntax/nn_parser.pyx" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/syntax/nn_parser.pyx" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/syntax/nn_parser.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/syntax/nn_parser.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/syntax/nonproj.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/syntax/nonproj.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/syntax/stateclass.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/syntax/stateclass.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/syntax/transition_system.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/syntax/transition_system.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/tokenizer.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/tokenizer.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/tokens/_retokenize.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/tokens/_retokenize.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/tokens/doc.pyx" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/tokens/doc.pyx" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/tokens/doc.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/tokens/doc.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/tokens/span.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/tokens/span.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/tokens/token.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/tokens/token.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/vectors.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/vectors.so" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/vocab.so" afterPath="$PROJECT_DIR$/venv/lib/python2.7/site-packages/spacy/vocab.so" />
-      <change beforePath="$PROJECT_DIR$/venv/pip-selfcheck.json" afterPath="$PROJECT_DIR$/venv/pip-selfcheck.json" />
+      <change beforePath="$PROJECT_DIR$/sempre/analyticsBot/interface.grammar" afterPath="$PROJECT_DIR$/sempre/analyticsBot/interface.grammar" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -63,22 +18,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="interface.examples" pinned="false" current-in-tab="true">
+      <file leaf-file-name="interface.examples" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface.examples">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+            <state relative-caret-position="108">
+              <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="interface-questions.examples" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sempre/data/interface-questions.examples">
+      <file leaf-file-name="interface.grammar" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface.grammar">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="1234">
+              <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nlp_processing.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pyCharm/app/management/nlp_processing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="17" column="33" lean-forward="false" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -102,6 +69,7 @@
       <find>phrase</find>
       <find>join</find>
       <find>numberfn</find>
+      <find>highest</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -116,7 +84,6 @@
         <option value="$PROJECT_DIR$/pyCharm/info.py" />
         <option value="$PROJECT_DIR$/sempre/data/interface.grammar" />
         <option value="$PROJECT_DIR$/pyCharm/app/q_a/rules.py" />
-        <option value="$PROJECT_DIR$/sempre/analyticsBot/interface.grammar" />
         <option value="$PROJECT_DIR$/pyCharm/app/management/synonyms.py" />
         <option value="$PROJECT_DIR$/pyCharm/app/management/tags.py" />
         <option value="$PROJECT_DIR$/pyCharm/app/q_a/nlp_processing.py" />
@@ -126,6 +93,8 @@
         <option value="$PROJECT_DIR$/pyCharm/app/management/creating_rules_sempre.py" />
         <option value="$PROJECT_DIR$/sempre/data/interface-questions.examples" />
         <option value="$PROJECT_DIR$/sempre/analyticsBot/interface.examples" />
+        <option value="$PROJECT_DIR$/pyCharm/app/management/nlp_processing.py" />
+        <option value="$PROJECT_DIR$/sempre/analyticsBot/interface.grammar" />
       </list>
     </option>
   </component>
@@ -138,7 +107,7 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="683" />
     <option name="y" value="27" />
-    <option name="width" value="683" />
+    <option name="width" value="673" />
     <option name="height" value="741" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -183,6 +152,24 @@
             <path>
               <item name="AnalyticsBot" type="b2602c69:ProjectViewProjectNode" />
               <item name="AnalyticsBot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AnalyticsBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AnalyticsBot" type="462c0819:PsiDirectoryNode" />
+              <item name="pyCharm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AnalyticsBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AnalyticsBot" type="462c0819:PsiDirectoryNode" />
+              <item name="pyCharm" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AnalyticsBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AnalyticsBot" type="462c0819:PsiDirectoryNode" />
+              <item name="pyCharm" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="management" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AnalyticsBot" type="b2602c69:ProjectViewProjectNode" />
@@ -287,19 +274,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1366" height="741" extended-state="6" />
+    <frame x="683" y="27" width="1366" height="741" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33110368" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17558528" sideWeight="0.24279211" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33444816" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33444816" sideWeight="0.4969651" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3361204" sideWeight="0.4969651" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3528428" sideWeight="0.7572079" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22837633" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23216996" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -309,6 +295,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -551,14 +538,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface.grammar">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="33" column="65" lean-forward="false" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sempre/src/edu/stanford/nlp/sempre/NumberValue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-270">
@@ -601,17 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pyCharm/app/management/nlp_processing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="24" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="23" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -619,7 +587,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -627,7 +594,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="87" column="28" lean-forward="false" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -635,9 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <marker date="1528984931716" expanded="true" signature="489:526" ph="SELECT clien... example_table" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -645,7 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -653,7 +615,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -665,10 +626,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pyCharm/app/management/nlp_processing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="17" column="33" lean-forward="false" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface.examples">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        <state relative-caret-position="108">
+          <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface.grammar">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1234">
+          <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
           <folding />
         </state>
       </provider>

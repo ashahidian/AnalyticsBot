@@ -14,7 +14,8 @@ def stop_words(question):
             'has', 'have',
             'does', 'do',
             'currency', 'deal', 'client', 'last',
-            'who', 'when', 'what', 'which']
+            'who', 'when', 'what', 'which',
+            '?','!', '.', ';', ',']
     pure_question = []
 
     for w in word_tokens:

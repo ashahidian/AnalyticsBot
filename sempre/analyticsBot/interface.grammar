@@ -1,4 +1,5 @@
 # METRIC RULES
+# Basic Metric rules where the metric is defined as a string constant
 (rule $Metric (volume) (ConstantFn (string "Volume")))
 (rule $Metric (cc) (ConstantFn (string "CC Total")))
 (rule $Metric (non risk cc) (ConstantFn (string "CC NonRisk")))
@@ -8,57 +9,66 @@
 (rule $Metric (net client) (ConstantFn (string "NetClientPosition")))
 
 # INDIVIDUAL RULES
+# Rules that will define key words such as client, and deal as string constant
 (rule $Client (client) (ConstantFn (string "Client")))
 (rule $Deal (deals) (ConstantFn (string "Deal ID")))
 
 # EXPIRATION DATE VARIATIONS
+# Rules for each of the variations of the word expire
+# might be removed in further improvements
 (rule $Expiration (expire) (ConstantFn (string "expiration")))
 (rule $Expiration (expiration date) (ConstantFn (string "expiration")))
 (rule $Expiration (expiry date) (ConstantFn (string "expiration")))
 (rule $Expiration (expiration) (ConstantFn (string "expiration")))
 
 # CURRENCY RULES
+# Example rule for the pairs of currency
+# Improvement is being made so that these rules can be added directly from the main system
 (rule $Currency (eur/usd) (ConstantFn (string "EUR/USD")))
 
 # MEASURE RULES
+# This rule allows the client to use the word "highest"
+# It has no effect here, but when used in the general rule, it will allow the word to start an action
 (rule $Measure (highest) (ConstantFn (string "highest")))
 
-# WH-WORD RULES
-(rule $Wh (what) (ConstantFn (string "what")))
-(rule $Wh (when) (ConstantFn (string "when")))
-(rule $Wh (who) (ConstantFn (string "who")))
-(rule $Wh (which) (ConstantFn (string "which")))
-
 # GENERAL RULES
-## Client unknown
-(rule $General (($Wh optional) (is optional) $Client $PHRASE $Metric (? optional))
+## This rule will obtain the metric value for a certain client
+## The desired client name needs to be provided in order to fire this rule
+## Metric name also needs to be provided
+(rule $General ($Client $PHRASE $Metric)
  (lambda c (lambda t (lambda m (call + (string "SELECT ") (var m)
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
   (string "WHERE ") (var c) (string " = ")  (var t))))))
 
-## Metric unknown
-(rule $General (($Wh optional) (is optional) $Client $Metric $TOKEN (? optional))
+## This rule will obtain the client name with certain metric name value
+## The desired metric name needs to be provided in order to fire this rule
+## Metric value also needs to be provided
+(rule $General ($Client $Metric $TOKEN)
  (lambda c (lambda m (lambda t (call + (string "SELECT ") (var c)
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
  (string "WHERE ") (var m) (string " = ")  (var t))))))
 
-## Deals with currency pair given
-(rule $General (($Wh optional) (are optional) (the optional) $Deal (with optional)
-(currency optional) (pair optional) $Currency (? optional))
- (lambda c (lambda m (call + (string "SELECT * Deal ID")
+## This rule will obtain all the deal identifications that have the currency desired
+## Currency name needs to be provided in order to fire this rule
+(rule $General ($Deal $Currency)
+ (lambda c (lambda m (call + (string "SELECT Deal ID")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
  (string "WHERE ") (var m) (string " = ") (var c)))))
 
-## Highest Values for given Metric
-(rule $General (($Wh optional) (are optional) (the optional) $Client (with optional) $Measure $Metric (? optional))
+## This rule will obtain the client name with the highest metric value
+## The desired metric name needs to be provided in order to fire this rule
+(rule $General ($Client $Measure $Metric)
  (lambda c (lambda t (lambda m (call + (string "SELECT TOP 10 ") (var m)
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] "))))))
 
-## Deal Expiration Date request
-(rule $General (($Wh optional) (is optional) (does optional) $TOKEN $Expiration (? optional))
+## This rule will obtain the date of expiration of the indicated deal
+## The desired deal identification needs to be provided in order to fire this rule
+(rule $General ($TOKEN $Expiration)
  (lambda t (lambda e (call + (string "SELECT Expiry Date")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
  (string "WHERE ") (string "Deal ID") (string " = ") (var t)))))
+
+## This rule will obtain the deal identifications of the deals to expire in a given time
 
 
 (rule $ROOT ($General) (IdentityFn))
