@@ -1,7 +1,6 @@
 # first, call the database and gather the client names, id's and currencies
-
+from pyCharm.app.rules.categories import category_names, category_currency, category_deal_id
 from pyCharm.app.management.sql_treatment import sql_call
-from pyCharm.app.management.categories import category_names, category_currency, category_deal_id
 
 
 # call sql_call function to get the values from the database

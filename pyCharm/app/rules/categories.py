@@ -2,6 +2,7 @@
 names = []
 currencies = []
 deals = []
+metrics = ['volume', 'cc', 'total cc']
 
 
 def category_names(list_names):
