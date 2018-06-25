@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c794ccc6-50a2-42fa-a476-00e8544db14f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/pyCharm/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pyCharm/app/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pyCharm/app/rules/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/pyCharm/app/management/categories.py" afterPath="$PROJECT_DIR$/pyCharm/app/rules/categories.py" />
-      <change beforePath="$PROJECT_DIR$/pyCharm/app/management/initial_setup.py" afterPath="$PROJECT_DIR$/pyCharm/app/management/initial_setup.py" />
-      <change beforePath="$PROJECT_DIR$/pyCharm/app/management/synonyms.py" afterPath="$PROJECT_DIR$/pyCharm/app/rules/synonyms.py" />
       <change beforePath="$PROJECT_DIR$/pyCharm/app/rules/rules.py" afterPath="$PROJECT_DIR$/pyCharm/app/rules/rules.py" />
+      <change beforePath="$PROJECT_DIR$/pyCharm/app/rules/synonyms.py" afterPath="$PROJECT_DIR$/pyCharm/app/rules/synonyms.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,11 +30,21 @@
       <file leaf-file-name="rules.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pyCharm/app/rules/rules.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-253">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="485">
+              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
               <folding>
                 <element signature="e#0#56#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="synonyms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pyCharm/app/rules/synonyms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -96,6 +99,7 @@
         <option value="$PROJECT_DIR$/sempre/analyticsBot/interface.grammar" />
         <option value="$PROJECT_DIR$/pyCharm/app/management/initial_setup.py" />
         <option value="$PROJECT_DIR$/pyCharm/app/rules/categories.py" />
+        <option value="$PROJECT_DIR$/pyCharm/app/rules/synonyms.py" />
         <option value="$PROJECT_DIR$/pyCharm/app/rules/rules.py" />
       </list>
     </option>
@@ -267,14 +271,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="166" y="27" width="1366" height="741" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33110368" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17558528" sideWeight="0.24279211" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33444816" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4882943" sideWeight="0.4969651" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3528428" sideWeight="0.7572079" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3528428" sideWeight="0.7572079" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26251897" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -615,14 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pyCharm/app/rules/synonyms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="41" column="10" lean-forward="true" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pyCharm/app/management/nlp_processing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -661,10 +656,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pyCharm/app/rules/synonyms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pyCharm/app/rules/rules.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-253">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="485">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
           </folding>

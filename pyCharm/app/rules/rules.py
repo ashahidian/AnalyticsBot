@@ -45,4 +45,11 @@ def read_sentence(question_tokens):
         elif deal_present(question_tokens):
             print("what is deal x's client")
 
+    elif 'deal' in question_tokens:
+
+        if 'expire' in question_tokens:
+            print("when does deal x expire")
+
+        elif metric_present(question_tokens):
+            print ("what is deal x metric")
 
