@@ -45,3 +45,15 @@ def time_synonyms(word):
 #             last_quarter = 'fourth quarter'
 #
 #         return last_quarter
+
+
+expire_synonyms = ['expiration', 'expire', 'expires', 'expiration date', 'expiry date', 'expiry']
+deals_synonyms = []
+
+
+def synonym_check(word):
+
+    if word in expire_synonyms:
+        return 'expire'
+    else:
+        return word

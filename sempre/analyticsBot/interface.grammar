@@ -9,17 +9,10 @@
 (rule $Metric (net client) (ConstantFn (string "NetClientPosition")))
 
 # INDIVIDUAL RULES
-# Rules that will define key words such as client, and deal as string constant
+# Rules that will define key words such as client, deal and expire as string constant
 (rule $Client (client) (ConstantFn (string "Client")))
 (rule $Deal (deals) (ConstantFn (string "Deal ID")))
-
-# EXPIRATION DATE VARIATIONS
-# Rules for each of the variations of the word expire
-# might be removed in further improvements
 (rule $Expiration (expire) (ConstantFn (string "expiration")))
-(rule $Expiration (expiration date) (ConstantFn (string "expiration")))
-(rule $Expiration (expiry date) (ConstantFn (string "expiration")))
-(rule $Expiration (expiration) (ConstantFn (string "expiration")))
 
 # CURRENCY RULES
 # Example rule for the pairs of currency
@@ -71,6 +64,13 @@
 ## This rule will obtain the deal identifications of the deals to expire in a given time
 (rule $General ($Deal $Expiration $TOKEN)
  (lambda d (lambda e (lambda t (call + (string "SELECT Deal ID Date")
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+ (string "WHERE ") (string "Expiry Date") (string " = ") (var t))))))
+
+
+## This rule will obtain the client identifications of the deals to expire in a given time
+(rule $General ($Client $Expiration $TOKEN)
+ (lambda d (lambda e (lambda t (call + (string "SELECT Client Id")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
  (string "WHERE ") (string "Expiry Date") (string " = ") (var t))))))
 
