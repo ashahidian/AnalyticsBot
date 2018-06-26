@@ -20,6 +20,7 @@ def time_synonyms(word):
 
 expire_synonyms = ['expiration', 'expire', 'expires', 'expiration date', 'expiry date', 'expiry']
 deals_synonyms = []
+higher_synonyms = ['more', 'greater', 'higher']
 
 
 def synonym_check(word):

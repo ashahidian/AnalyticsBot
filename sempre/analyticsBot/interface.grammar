@@ -67,7 +67,6 @@
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
  (string "WHERE ") (string "Expiry Date") (string " = ") (var t))))))
 
-
 ## This rule will obtain the client identifications of the deals to expire in a given time
 (rule $General ($Client $Expiration $TOKEN)
  (lambda d (lambda e (lambda t (call + (string "SELECT Client Id")

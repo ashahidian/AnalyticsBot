@@ -36,20 +36,40 @@ def read_sentence(question_tokens):
         if name_present(question_tokens):
             if deal_present(question_tokens):
                 print("what is client x deal id")
+
             elif metric_present(question_tokens):
-                print("what is client x metric")
+                if 'highest' in question_tokens:
+                    print("clients with highest metric")
+                else:
+                    print("what is client x metric")
+
+        elif currency_present(question_tokens):
+            print ("what is client currency x")
 
         elif metric_present(question_tokens):
             print("what is client with metric value x")
 
-        elif deal_present(question_tokens):
-            print("what is deal x's client")
+        elif 'expire' in question_tokens:
+            print("client with expiration x")
 
     elif 'deal' in question_tokens:
 
-        if 'expire' in question_tokens:
-            print("when does deal x expire")
+        if deal_present(question_tokens):
+
+            if 'client' in question_tokens:
+                print("what is deal x's client")
+
+            elif 'expire' in question_tokens:
+                print("when does deal x expire")
+
+            elif metric_present(question_tokens):
+                print ("what is deal x metric")
+
+        elif currency_present(question_tokens):
+            print ("what is deal currency x")
 
         elif metric_present(question_tokens):
-            print ("what is deal x metric")
+            print("what is deal with metric value x")
 
+        elif 'expire' in question_tokens:
+            print("deal with expiration x")
