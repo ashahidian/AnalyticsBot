@@ -94,11 +94,18 @@
  (lambda t (lambda m (lambda x (call + (string "SELECT TOP 10 ") (var x) (string " , ") (var t)
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] "))))))
 
-
 ## This rule will obtain the client name with the highest metric value
 ## The desired metric name needs to be provided in order to fire this rule
 (rule $General ($Client $Measure $Metric)
  (lambda c (lambda t (lambda m (call + (string "SELECT TOP 10 ") (var m) (string " , ") (var c)
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] "))))))
+
+## This rule will obtain the deal id for a certain client
+## The desired client name needs to be provided in order to fire this rule
+(rule $General ($Client $PHRASE $Deal)
+ (lambda c (lambda t (lambda d (call + (string "SELECT ") (var d)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var c) (string " = ")  (var t))))))
+
 
 (rule $ROOT ($General) (IdentityFn))
