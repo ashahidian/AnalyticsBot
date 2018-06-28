@@ -8,6 +8,11 @@
 (rule $Metric (rollover ratio) (ConstantFn (string "RolloverRatio")))
 (rule $Metric (net client) (ConstantFn (string "NetClientPosition")))
 
+# DB COLUMN RULES
+# Basic Rules for other columns (not metrics), where the column is defined as a string constant
+#(rule $Column () (ConstantFn (string "CC NonRisk")))
+#(rule $Column () (ConstantFn (string "CC AtRisk")))
+
 # INDIVIDUAL RULES
 # Rules that will define key words such as client, deal and expire as string constant
 (rule $Client (client) (ConstantFn (string "Client")))
@@ -48,12 +53,6 @@
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
  (string "WHERE ") (var m) (string " = ") (var c)))))
 
-## This rule will obtain the client name with the highest metric value
-## The desired metric name needs to be provided in order to fire this rule
-(rule $General ($Client $Measure $Metric)
- (lambda c (lambda t (lambda m (call + (string "SELECT TOP 10 ") (var m)
- (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] "))))))
-
 ## This rule will obtain the date of expiration of the indicated deal
 ## The desired deal identification needs to be provided in order to fire this rule
 (rule $General ($TOKEN $Expiration)
@@ -72,5 +71,34 @@
  (lambda d (lambda e (lambda t (call + (string "SELECT Client Id")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
  (string "WHERE ") (string "Expiry Date") (string " = ") (var t))))))
+
+# TO BE TESTED
+
+## This rule will obtain the metric value of the indicated deal
+## The desired deal identification needs to be provided in order to fire this rule
+(rule $General ($TOKEN $Metric)
+ (lambda t (lambda m (call + (string "SELECT ") (var m)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+ (string "WHERE ") (string "Deal ID") (string " = ") (var t)))))
+
+## This rule will obtain the client id of the indicated deal
+## The desired deal identification needs to be provided in order to fire this rule
+(rule $General ($TOKEN $Client)
+ (lambda t (lambda c (call + (string "SELECT ") (var c)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+ (string "WHERE ") (string "Deal ID") (string " = ") (var t)))))
+
+## This rule will obtain the deal id with the highest metric value
+## The desired metric name needs to be provided in order to fire this rule
+(rule $General ($TOKEN $Measure $Metric)
+ (lambda t (lambda m (lambda x (call + (string "SELECT TOP 10 ") (var x) (string " , ") (var t)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] "))))))
+
+
+## This rule will obtain the client name with the highest metric value
+## The desired metric name needs to be provided in order to fire this rule
+(rule $General ($Client $Measure $Metric)
+ (lambda c (lambda t (lambda m (call + (string "SELECT TOP 10 ") (var m) (string " , ") (var c)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] "))))))
 
 (rule $ROOT ($General) (IdentityFn))
