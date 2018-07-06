@@ -6,24 +6,28 @@
 </head>
 <body>
 
+<h1>Analytics Bot </h1>
+
+<form action="/dashboard/" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Go">
+</form>
+<p></p>
+
 <!--confirming if variables are not empty, and returning what has been created-->
 {% if tokenized %}
-    Tokenized: {{ tokenized }}<br/>
-    Pure Question: {{ pure_question }}<br/>
+    <b>Tokenized:</b> {{ tokenized }}<br/>
+    <b>Pure Question:</b> {{ pure_question }}<br/>
 {% endif %}
 {% if wh_word %}
-    wh: {{wh_word}}<br/>
-    space: {{spacy}}<br/>
-    pos: {{pos}}<br/>
-    ner: {{ner}}<br/>
+    <b>wh:</b> {{wh_word}}<br/>
+    <b>space:</b> {{spacy}}<br/>
+    <b>pos:</b> {{pos}}<br/>
+    <b>ner:</b> {{ner}}<br/>
 {% endif %}
 
-    <form action="/dashboard/" method="POST">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Go">
-    </form>
-
+<p></p>
 {% if html %}
     {{ html|safe }}
 {% endif %}
@@ -31,5 +35,7 @@
 {% if ner_diagram %}
     {{ ner_diagram|safe }}
 {% endif %}
+
+
 </body>
 </html>
