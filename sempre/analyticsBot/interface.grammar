@@ -12,15 +12,24 @@
 # Basic Rules for other columns (not metrics), where the column is defined as a string constant
 (rule $Exclude (exclude) (ConstantFn (string "exclude")))
 (rule $TradeStatus (trade status) (ConstantFn (string "TradeStatus")))
+(rule $TradeStatusValue (new) (ConstantFn (string "New")))
+(rule $TradeStatusValue (amended) (ConstantFn (string "Amended")))
 (rule $Leg (leg) (ConstantFn (string "Leg")))
-(rule $DealSide (client deal side) (ConstantFn (string "Deal Side")))
+(rule $LegValue (near) (ConstantFn (string "Near")))
+(rule $LegValue (far) (ConstantFn (string "Far")))
+(rule $DealSide (deal side) (ConstantFn (string "Deal Side")))
+(rule $DealSideValue (buy) (ConstantFn (string "Buy")))
+(rule $DealSideValue (sell) (ConstantFn (string "Sell")))
 
 (rule $Platform (360 t) (ConstantFn (string "360 T")))
 
 # INDIVIDUAL RULES
 # Rules that will define key words such as client, deal and expire as string constant
 (rule $Client (client) (ConstantFn (string "Client")))
-(rule $Deal (deals) (ConstantFn (string "Deal ID")))
+(rule $Deal (deal) (ConstantFn (string "Deal ID")))
+(rule $CRDSCode (crds code) (ConstantFn (string "CRDSCode")))
+(rule $CRDSCode (crdscode) (ConstantFn (string "CRDSCode")))
+
 (rule $Expiration (expire) (ConstantFn (string "expiration")))
 
 # CURRENCY RULES
@@ -53,16 +62,16 @@
 ## This rule will obtain all the deal identifications that have the currency desired
 ## Currency name needs to be provided in order to fire this rule
 (rule $General ($Deal $Currency)
- (lambda c (lambda m (call + (string "SELECT Deal ID")
+ (lambda d (lambda c (call + (string "SELECT Deal ID")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
- (string "WHERE ") (var m) (string " = ") (var c)))))
+ (string "WHERE Currency Pair") (string " = ") (var c)))))
 
 ## This rule will obtain the date of expiration of the indicated deal
 ## The desired deal identification needs to be provided in order to fire this rule
-(rule $General ($TOKEN $Expiration)
- (lambda t (lambda e (call + (string "SELECT Expiry Date")
+(rule $General ($Deal $TOKEN $Expiration)
+ (lambda d (lambda t (lambda e (call + (string "SELECT Expiry Date")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
- (string "WHERE ") (string "Deal ID") (string " = ") (var t)))))
+ (string "WHERE ") (string "Deal ID") (string " = ") (var t))))))
 
 ## This rule will obtain the deal identifications of the deals to expire in a given time
 (rule $General ($Deal $Expiration $TOKEN)
@@ -72,29 +81,27 @@
 
 ## This rule will obtain the client identifications of the deals to expire in a given time
 (rule $General ($Client $Expiration $TOKEN)
- (lambda d (lambda e (lambda t (call + (string "SELECT Client Id")
+ (lambda c (lambda e (lambda t (call + (string "SELECT Client Id")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
  (string "WHERE ") (string "Expiry Date") (string " = ") (var t))))))
 
-# TO BE TESTED
-
 ## This rule will obtain the metric value of the indicated deal
 ## The desired deal identification needs to be provided in order to fire this rule
-(rule $General ($TOKEN $Metric)
- (lambda t (lambda m (call + (string "SELECT ") (var m)
+(rule $General ($Deal $TOKEN $Metric)
+ (lambda d (lambda t (lambda m (call + (string "SELECT ") (var m)
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
- (string "WHERE ") (string "Deal ID") (string " = ") (var t)))))
+ (string "WHERE ") (string "Deal ID") (string " = ") (var t))))))
 
 ## This rule will obtain the client id of the indicated deal
 ## The desired deal identification needs to be provided in order to fire this rule
-(rule $General ($TOKEN $Client)
- (lambda t (lambda c (call + (string "SELECT ") (var c)
+(rule $General ($Deal $TOKEN $Client)
+ (lambda d (lambda t (lambda c (call + (string "SELECT ") (var c)
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
- (string "WHERE ") (string "Deal ID") (string " = ") (var t)))))
+ (string "WHERE ") (string "Deal ID") (string " = ") (var t))))))
 
 ## This rule will obtain the deal id with the highest metric value
 ## The desired metric name needs to be provided in order to fire this rule
-(rule $General ($TOKEN $Measure $Metric)
+(rule $General ($Deal $Measure $Metric)
  (lambda t (lambda m (lambda x (call + (string "SELECT TOP 10 ") (var x) (string " , ") (var t)
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] "))))))
 
@@ -113,73 +120,73 @@
 
 ## This rule will obtain the deal ids for a certain platform
 ## The desired platform name needs to be provided in order to fire this rule
-(rule $General ($Platform)
- (lambda p (call + (string "SELECT Deal ID")
+(rule $General ($Deal $Platform)
+ (lambda d (lambda p (call + (string "SELECT Deal ID")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE Platform") (string " = ")  (var p))))
+  (string "WHERE Platform") (string " = ")  (var p)))))
 
 ## This rule will obtain the client names for a certain platform
 ## The desired platform name needs to be provided in order to fire this rule
-(rule $General ($Platform)
- (lambda p (call + (string "SELECT Client")
+(rule $General ($Client $Platform)
+ (lambda c (lambda p (call + (string "SELECT Client")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE Platform") (string " = ")  (var p))))
+  (string "WHERE Platform") (string " = ")  (var p)))))
 
 ## This rule will obtain the deal ids for all platforms excluding one
 ## The desired excluded platform name needs to be provided in order to fire this rule
-(rule $General ($Exclude $Platform)
- (lambda e (lambda p (call + (string "SELECT Deal ID")
+(rule $General ($Deal $Exclude $Platform)
+ (lambda d (lambda e (lambda p (call + (string "SELECT Deal ID")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE Platform") (string " != ")  (var p)))))
+  (string "WHERE Platform") (string " != ")  (var p))))))
 
 ## This rule will obtain the client names for all platforms excluding one
 ## The desired excluded platform name needs to be provided in order to fire this rule
-(rule $General ($Exclude $Platform)
- (lambda e (lambda p (call + (string "SELECT Client")
+(rule $General ($Client $Exclude $Platform)
+ (lambda c (lambda e (lambda p (call + (string "SELECT Client")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE Platform") (string " != ")  (var p)))))
+  (string "WHERE Platform") (string " != ")  (var p))))))
 
 ## This rule will obtain the client names with trade status given
 ## The desired trade status needs to be provided in order to fire this rule
-(rule $General ($TradeStatus $TOKEN)
- (lambda t (lambda n (call + (string "SELECT Client")
+(rule $General ($Client $TradeStatus $TradeStatusValue)
+ (lambda c (lambda t (lambda n (call + (string "SELECT Client")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
- (string "WHERE ") (string "TradeStatus") (string " = ") (var t)))))
+ (string "WHERE ") (string "TradeStatus") (string " = ") (var n))))))
 
 ## This rule will obtain the deal id with trade status given
 ## The desired trade status needs to be provided in order to fire this rule
-(rule $General ($TradeStatus $TOKEN)
- (lambda t (lambda n (call + (string "SELECT Deal ID")
+(rule $General ($Deal $TradeStatus $TradeStatusValue)
+ (lambda d (lambda t (lambda n (call + (string "SELECT Deal ID")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
- (string "WHERE ") (string "TradeStatus") (string " = ") (var t)))))
+ (string "WHERE ") (string "TradeStatus") (string " = ") (var n))))))
 
 ## This rule will obtain the client names in given leg
 ## The desired leg needs to be provided in order to fire this rule
-(rule $General ($Leg $TOKEN)
- (lambda l (lambda t (call + (string "SELECT Client")
+(rule $General ($Client $Leg $LegValue)
+ (lambda c (lambda l (lambda t (call + (string "SELECT Client")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
- (string "WHERE ") (string "Leg") (string " = ") (var t)))))
+ (string "WHERE ") (string "Leg") (string " = ") (var t))))))
 
 ## This rule will obtain the deal id in given leg
 ## The desired leg needs to be provided in order to fire this rule
-(rule $General ($Leg $TOKEN)
- (lambda l (lambda t (call + (string "SELECT Deal ID")
+(rule $General ($Deal $Leg $LegValue)
+ (lambda d (lambda l (lambda t (call + (string "SELECT Deal ID")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
- (string "WHERE ") (string "Leg") (string " = ") (var t)))))
+ (string "WHERE ") (string "Leg") (string " = ") (var t))))))
 
 ## This rule will obtain the client names in given deal side
 ## The desired deal side needs to be provided in order to fire this rule
-(rule $General ($DealSide $TOKEN)
- (lambda d (lambda t (call + (string "SELECT Client")
+(rule $General ($Client $DealSide $DealSideValue)
+ (lambda c (lambda d (lambda t (call + (string "SELECT Client")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
- (string "WHERE ") (string "Client Deal Side") (string " = ") (var t)))))
+ (string "WHERE ") (string "Client Deal Side") (string " = ") (var t))))))
 
 ## This rule will obtain the deal id in given deal side
 ## The desired deal side needs to be provided in order to fire this rule
-(rule $General ($DealSide $TOKEN)
- (lambda d (lambda t (call + (string "SELECT Deal ID")
+(rule $General ($Deal $DealSide $DealSideValue)
+ (lambda x (lambda d (lambda t (call + (string "SELECT Deal ID")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
- (string "WHERE ") (string "Client Deal Side") (string " = ") (var t)))))
+ (string "WHERE ") (string "Client Deal Side") (string " = ") (var t))))))
 
 
 (rule $ROOT ($General) (IdentityFn))

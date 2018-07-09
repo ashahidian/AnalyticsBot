@@ -8,6 +8,15 @@
 
 <h1>Analytics Bot </h1>
 
+<h3>This bot can only reply to questions pertaining the table "FXLM Rollover Opportunities".<br/>
+    Conjuncted questions, such as "What is the volume AND CC of Client John Ham?" cannot be answered.<br/><br/>
+
+    If no answer is provided in a couple of minutes and you believe the question should be answered by this system, please reformulate. <br/>
+    For example, the question "What is the John Ham's volume?" can be reformulated as "What is the volume of John Ham?".
+
+</h3>
+
+
 <form action="/dashboard/" method="POST">
     {% csrf_token %}
     {{ form }}
