@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django import forms
 from django.shortcuts import render
 
 from forms import QuestionInputForm
@@ -9,7 +8,7 @@ from forms import QuestionInputForm
 #class QuestionForm(forms.Form):
 #    question = forms.CharField(max_length=100, required=True)
 
-from management.nlp_processing import tokenizing, stop_words, \
+from pyCharm.app.processing.nlp_processing import tokenizing, stop_words, \
     spacy_tokenization, spacy_pos_tagging, spacy_ner
 
 

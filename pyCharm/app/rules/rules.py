@@ -1,5 +1,4 @@
-from categories import names, currencies, deals, metrics
-import categories
+from pyCharm.app.management.categories import names, currencies, deals, metrics
 
 
 def name_present(question_tokens):
