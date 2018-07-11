@@ -1,0 +1,53 @@
+m:Volume
+m:TransactionNumber
+d:TradeStatus
+m:TotalTrades
+d:Tenor
+m:StdDevRolloverDays
+m:Spot Price Strike
+m:RolloverRatio
+m:Rank
+d-ProductKey
+d-Product Group
+d-Product
+d:Platform
+m:NewTrade
+m:NetVolumeRatio
+m:NetVolume
+d:NetClientPosition
+m:NearTenorDays
+m:NearLegVolume
+-MinID
+d:MaxFutureDate
+d:MarketingClientKey
+d:Marketer
+d:LocalBlotter
+d:Leg
+m:LatestRolloverDays
+-Inverted
+-ID
+m:FromDays
+m:FarTenorDays
+d:FarDateKey
+d:Expiry Date
+m:EV
+d:Deal ID
+d:Deal Date
+d:Date Today
+-CurrencyPairGroupKey
+d:CurrencyPairGroup
+d:Currency Pair
+d:CRDSCode
+d:Client Deal Side
+d:Client
+m:CC Total
+m:CC NonRisk
+m:CC AtRisk
+d:Broker_FXT
+m:AverageRolloverDays
+-BlotterKey
+-BlotterVisibilityKey
+m:MaxAbsNetVolume
+d:NDF Fixing Date
+
+

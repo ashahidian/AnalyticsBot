@@ -30,7 +30,7 @@ def time_synonyms(expression):
 
 expire_synonyms = ['expiration', 'expire', 'expires', 'expiration date', 'expiry date', 'expiry']
 exclude_synonyms = ['exclude', 'excluding', 'remove']
-higher_synonyms = ['more', 'greater', 'higher']
+higher_synonyms = ['more', 'greater', 'higher', 'superior', 'surpassing', 'larger', 'above']
 crdscode_synonyms = ['crds code', 'crdscode']
 
 

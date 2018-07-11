@@ -19,5 +19,5 @@ def category_currency(list_currencies):
 
 def category_deal_id(list_deal_id):
 
-    for id in list_deal_id:
-        deals.append(id)
+    for deal_id in list_deal_id:
+        deals.append(deal_id)

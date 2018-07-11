@@ -8,7 +8,7 @@ from forms import QuestionInputForm
 #class QuestionForm(forms.Form):
 #    question = forms.CharField(max_length=100, required=True)
 
-from pyCharm.app.processing.nlp_processing import tokenizing, stop_words, \
+from processing.nlp_processing import tokenizing, stop_words, \
     spacy_tokenization, spacy_pos_tagging, spacy_ner
 
 
