@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c794ccc6-50a2-42fa-a476-00e8544db14f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/bd_camps_dimensions" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/pyCharm/app/management/categories.py" afterPath="$PROJECT_DIR$/pyCharm/app/management/categories.py" />
-      <change beforePath="$PROJECT_DIR$/pyCharm/app/processing/nlp_processing.py" afterPath="$PROJECT_DIR$/pyCharm/app/processing/nlp_processing.py" />
-      <change beforePath="$PROJECT_DIR$/pyCharm/app/processing/synonyms.py" afterPath="$PROJECT_DIR$/pyCharm/app/processing/synonyms.py" />
-      <change beforePath="$PROJECT_DIR$/pyCharm/app/views.py" afterPath="$PROJECT_DIR$/pyCharm/app/views.py" />
+      <change beforePath="$PROJECT_DIR$/pyCharm/app/rules/rules.py" afterPath="$PROJECT_DIR$/pyCharm/app/rules/rules.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -71,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rules.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="rules.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pyCharm/app/rules/rules.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-216">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="162">
+              <caret line="66" column="47" lean-forward="true" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -84,18 +79,18 @@
       <file leaf-file-name="categories.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pyCharm/app/management/categories.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="126">
+              <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="synonyms.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="synonyms.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pyCharm/app/processing/synonyms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="-180">
+              <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -150,7 +145,6 @@
         <option value="$PROJECT_DIR$/pyCharm/app/rules/categories.py" />
         <option value="$PROJECT_DIR$/pyCharm/app/management/nlp_processing.py" />
         <option value="$PROJECT_DIR$/pyCharm/app/evaluation/questions" />
-        <option value="$PROJECT_DIR$/pyCharm/app/rules/rules.py" />
         <option value="$PROJECT_DIR$/pyCharm/app/templates/dashboard.html" />
         <option value="$PROJECT_DIR$/pyCharm/app/evaluation/test_battery.py" />
         <option value="$PROJECT_DIR$/pyCharm/app/rules/synonyms.py" />
@@ -160,6 +154,7 @@
         <option value="$PROJECT_DIR$/pyCharm/app/processing/nlp_processing.py" />
         <option value="$PROJECT_DIR$/pyCharm/app/processing/synonyms.py" />
         <option value="$PROJECT_DIR$/pyCharm/app/management/categories.py" />
+        <option value="$PROJECT_DIR$/pyCharm/app/rules/rules.py" />
       </list>
     </option>
   </component>
@@ -715,26 +710,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pyCharm/app/evaluation/questions">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="44" lean-forward="false" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bd_camps">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="738">
           <caret line="41" column="6" lean-forward="false" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pyCharm/app/management/sql_connection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -763,26 +742,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pyCharm/app/rules/rules.py">
+    <entry file="file://$PROJECT_DIR$/pyCharm/app/processing/synonyms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="-180">
+          <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pyCharm/app/management/categories.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="126">
+          <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pyCharm/app/processing/synonyms.py">
+    <entry file="file://$PROJECT_DIR$/pyCharm/app/management/sql_connection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="36">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyCharm/app/evaluation/questions">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="44" lean-forward="false" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyCharm/app/rules/rules.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="66" column="47" lean-forward="true" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
           <folding />
         </state>
       </provider>

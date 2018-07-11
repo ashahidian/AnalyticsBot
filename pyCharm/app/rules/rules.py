@@ -5,28 +5,35 @@ def name_present(question_tokens):
 
     for w in question_tokens:
         if w in names:
-            return True, w
+            return w
 
 
 def currency_present(question_tokens):
 
     for w in question_tokens:
         if w in currencies:
-            return True, w
+            return w
+
+
+def currency_swap_order(currency):
+    currency_one = currency[:3]
+    currency_two = currency[-3:]
+    new_currency = str(currency_two) + "/" + str(currency_one)
+    return new_currency
 
 
 def deal_present(question_tokens):
 
     for w in question_tokens:
         if w in deals:
-            return True, w
+            return w
 
 
 def metric_present(question_tokens):
 
     for w in question_tokens:
         if w in metrics:
-            return True, w
+            return w
 
 
 def read_sentence(question_tokens):
