@@ -317,5 +317,54 @@
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
   (string "WHERE ") (string "Client Deal Side") (string " = ") (var t))))))
 
+#----- RULES GENERALIZATION
+## This rule will obtain the metric value of the indicated dimension
+## The desired dimension needs to be provided in order to fire this rule
+(rule $General ($Dimension $TOKEN $Metric)
+ (lambda d (lambda t (lambda m (call + (string "SELECT ") (var m)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var d) (string " = ") (var t))))))
+
+## This rule will obtain the dimension with certain metric name value
+## The desired metric name needs to be provided in order to fire this rule
+## Metric value also needs to be provided
+(rule $General ($Dimension $Metric $TOKEN)
+ (lambda d (lambda m (lambda t (call + (string "SELECT ") (var d)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var m) (string " = ")  (var t))))))
+
+## This rule will obtain the dimension with the highest metric value
+## The desired metric name needs to be provided in order to fire this rule
+(rule $General ($Dimension $Measure $Metric)
+ (lambda d (lambda m (lambda x (call + (string "SELECT TOP 10 ") (var x) (string " , ") (var d)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] "))))))
+
+# dimension: crdscode, deal id, client
+# metric: currency pair, platform, (expiration date), (trade status), (leg), (deal side)
+
+## This rule will obtain the dimension of the indicated dimension
+## The desired dimensions need to be provided in order to fire this rule
+(rule $General ($Dimension $TOKEN $Dimension)
+ (lambda d (lambda t (lambda c (call + (string "SELECT ") (var c)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var d) (string " = ") (var t))))))
+
+## This rule will obtain the dimension with certain dimension value
+## The desired dimension needs to be provided in order to fire this rule
+## Dimension value also needs to be provided
+(rule $General ($Dimension $Dimension $TOKEN)
+ (lambda d (lambda m (lambda t (call + (string "SELECT ") (var d)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var m) (string " = ")  (var t))))))
+
+
+## This rule will obtain the dimension for all platforms excluding one
+## The desired excluded platform name needs to be provided in order to fire this rule
+(rule $General ($Dimension $Exclude $Platform)
+ (lambda d (lambda e (lambda p (call + (string "SELECT ") (var d)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE Platform") (string " != ")  (var p))))))
+
+
 #---------- ROOT RULE
 (rule $ROOT ($General) (IdentityFn))
