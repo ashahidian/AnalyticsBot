@@ -47,7 +47,10 @@ def read_sentence(question_tokens):
                 print("what is client x metric")
 
         elif currency_present(question_tokens):
+            new_currency = currency_swap_order(currency_present(question_tokens))
+            new_currency_string = str(new_currency)
             print ("what is client currency x")
+            print ("what is client currency " + new_currency_string)
 
         elif metric_present(question_tokens):
             if 'highest' in question_tokens:
@@ -87,7 +90,10 @@ def read_sentence(question_tokens):
                 print ("what is deal x metric")
 
         elif currency_present(question_tokens):
+            new_currency = currency_swap_order(currency_present(question_tokens))
+            new_currency_string = str(new_currency)
             print ("what is deal currency x")
+            print ("what is deal currency " + new_currency_string)
 
         elif metric_present(question_tokens):
             if 'highest' in question_tokens:

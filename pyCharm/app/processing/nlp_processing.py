@@ -13,15 +13,16 @@ def tokenizing(question):
 
 def stop_words(question):
     word_tokens = tokenizing(question)
-    stop = ['in', 'the', 'to', 'with', 'than',
-            'is', 'are',
-            'has', 'have',
-            'does', 'do',
-            'currency', 'deal', 'client', 'last',
-            'who', 'when', 'what', 'which',
-            'give', 'can', 'show', 'tell',
-            'me', 'you',
-            '?','!', '.', ';', ',']
+    stop = ["in", "the", "to", "with", "than", "that",
+            "is", "s", "are", "not", "no",
+            "has", "have",
+            "does", "do",
+            "currency", "deal", "client", "last",
+            "who", "when", "what", "which",
+            "give", "can", "show", "tell",
+            "me", "you",
+            "all", "present",
+            "?","!", ".", ";", ",", "'"]
     pure_question = []
 
     for w in word_tokens:

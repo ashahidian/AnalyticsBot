@@ -32,6 +32,7 @@ expire_synonyms = ['expiration', 'expire', 'expires', 'expiration date', 'expiry
 exclude_synonyms = ['exclude', 'excluding', 'remove']
 higher_synonyms = ['more', 'greater', 'higher', 'superior', 'surpassing', 'larger', 'above']
 crdscode_synonyms = ['crds code', 'crdscode']
+client_synonyms = ['clients', 'client']
 
 
 def synonym_check(word):
@@ -44,5 +45,7 @@ def synonym_check(word):
         return 'higher'
     elif word in crdscode_synonyms:
         return 'crdscode'
+    elif word in client_synonyms:
+        return 'client'
     else:
         return word
