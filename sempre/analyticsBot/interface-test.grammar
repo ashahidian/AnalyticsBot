@@ -1,0 +1,84 @@
+#---------- METRIC RULES
+# Basic Metric rules where the metric is defined as a string constant
+(rule $Metric (volume) (ConstantFn (string "Volume")))
+(rule $Metric (cc) (ConstantFn (string "CC Total")))
+(rule $Metric (non risk cc) (ConstantFn (string "CC NonRisk")))
+(rule $Metric (at risk cc) (ConstantFn (string "CC AtRisk")))
+(rule $Metric (average rollover) (ConstantFn (string "AverageRolloverDays")))
+(rule $Metric (rollover ratio) (ConstantFn (string "RolloverRatio")))
+(rule $Metric (net client) (ConstantFn (string "NetClientPosition")))
+(rule $Metric (currency pair) (ConstantFn (string "Currency Pair")))
+(rule $Metric (platform) (ConstantFn (string "Platform")))
+
+#---------- DIMENSION RULES
+# Basic Dimension rules where the dimension is defined as a string constant
+(rule $Dimension (crdscode) (ConstantFn (string "CRDSCode")))
+(rule $Dimension (deal id) (ConstantFn (string "Deal ID")))
+(rule $Dimension (client) (ConstantFn (string "Client")))
+(rule $Dimension (expire) (ConstantFn (string "Expiry Date")))
+(rule $Dimension (trade status) (ConstantFn (string "TradeStatus")))
+(rule $Dimension (leg) (ConstantFn (string "Leg")))
+(rule $Dimension (deal side) (ConstantFn (string "Deal Side")))
+
+# dimension: crdscode, deal id, client
+# metric: currency pair, platform, (expiration date), (trade status), (leg), (deal side)
+
+#---------- DB COLUMN RULES
+# Basic Rules for other columns (not metrics), where the column is defined as a string constant
+
+#---------- INDIVIDUAL RULES
+# Rules that will define key words
+(rule $Exclude (exclude) (ConstantFn (string "exclude")))
+
+#---------- MEASURE RULES
+# This rule allows the client to use the word "highest"
+# It has no effect here, but when used in the general rule, it will allow the word to start an action
+(rule $Measure (highest) (ConstantFn (string "highest")))
+
+#---------- GENERAL RULES
+#----- RULES GENERALIZATION
+## This rule will obtain the metric value of the indicated dimension
+## The desired dimension needs to be provided in order to fire this rule
+(rule $General ($Dimension $TOKEN $Metric)
+ (lambda d (lambda t (lambda m (call + (string "SELECT ") (var m)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var d) (string " = ") (var t))))))
+
+## This rule will obtain the dimension with certain metric name value
+## The desired metric name needs to be provided in order to fire this rule
+## Metric value also needs to be provided
+(rule $General ($Dimension $Metric $TOKEN)
+ (lambda d (lambda m (lambda t (call + (string "SELECT ") (var d)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var m) (string " = ")  (var t))))))
+
+## This rule will obtain the dimension with the highest metric value
+## The desired metric name needs to be provided in order to fire this rule
+(rule $General ($Dimension $Measure $Metric)
+ (lambda d (lambda m (lambda x (call + (string "SELECT TOP 10 ") (var x) (string " , ") (var d)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] "))))))
+
+## This rule will obtain the dimension of the indicated dimension
+## The desired dimensions need to be provided in order to fire this rule
+(rule $General ($Dimension $TOKEN $Dimension)
+ (lambda d (lambda t (lambda c (call + (string "SELECT ") (var c)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var d) (string " = ") (var t))))))
+
+## This rule will obtain the dimension with certain dimension value
+## The desired dimension needs to be provided in order to fire this rule
+## Dimension value also needs to be provided
+(rule $General ($Dimension $Dimension $TOKEN)
+ (lambda d (lambda m (lambda t (call + (string "SELECT ") (var d)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var m) (string " = ")  (var t))))))
+
+## This rule will obtain the dimension for all platforms excluding one
+## The desired excluded platform name needs to be provided in order to fire this rule
+(rule $General ($Dimension $Exclude $Platform)
+ (lambda d (lambda e (lambda p (call + (string "SELECT ") (var d)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE Platform") (string " != ")  (var p))))))
+
+#---------- ROOT RULE
+(rule $ROOT ($General) (IdentityFn))
