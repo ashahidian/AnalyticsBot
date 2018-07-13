@@ -34,6 +34,7 @@ higher_synonyms = ['more', 'greater', 'higher', 'superior', 'surpassing', 'large
 crdscode_synonyms = ['crds code', 'crdscode']
 client_synonyms = ['clients', 'client']
 currency_synonyms = ['currency', 'currency pair']
+deal_date_synonyms = ['deal date', 'signed', 'date', 'created']
 
 
 def synonym_check(word):
@@ -50,5 +51,7 @@ def synonym_check(word):
         return 'client'
     elif word in currency_synonyms:
         return 'currency'
+    elif word in deal_date_synonyms:
+        return 'date'
     else:
         return word

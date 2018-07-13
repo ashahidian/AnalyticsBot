@@ -14,6 +14,7 @@
 # Basic Dimension rules where the dimension is defined as a string constant
 (rule $Dimension (crdscode) (ConstantFn (string "CRDSCode")))
 (rule $Dimension (deal) (ConstantFn (string "Deal ID")))
+(rule $Dimension (date) (ConstantFn (string "Deal Date")))
 (rule $Dimension (client) (ConstantFn (string "Client")))
 (rule $Dimension (expire) (ConstantFn (string "Expiry Date")))
 (rule $Dimension (trade status) (ConstantFn (string "TradeStatus")))
