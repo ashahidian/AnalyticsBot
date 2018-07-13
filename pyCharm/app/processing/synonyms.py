@@ -33,6 +33,7 @@ exclude_synonyms = ['exclude', 'excluding', 'remove']
 higher_synonyms = ['more', 'greater', 'higher', 'superior', 'surpassing', 'larger', 'above']
 crdscode_synonyms = ['crds code', 'crdscode']
 client_synonyms = ['clients', 'client']
+currency_synonyms = ['currency', 'currency pair']
 
 
 def synonym_check(word):
@@ -47,5 +48,7 @@ def synonym_check(word):
         return 'crdscode'
     elif word in client_synonyms:
         return 'client'
+    elif word in currency_synonyms:
+        return 'currency'
     else:
         return word

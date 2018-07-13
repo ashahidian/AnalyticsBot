@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c794ccc6-50a2-42fa-a476-00e8544db14f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/sempre/analyticsBot/interface-test.grammar" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/pyCharm/app/processing/synonyms.py" afterPath="$PROJECT_DIR$/pyCharm/app/processing/synonyms.py" />
+      <change beforePath="$PROJECT_DIR$/sempre/analyticsBot/interface-test.grammar" afterPath="$PROJECT_DIR$/sempre/analyticsBot/interface.grammar" />
+      <change beforePath="$PROJECT_DIR$/sempre/analyticsBot/interface.grammar" afterPath="$PROJECT_DIR$/sempre/analyticsBot/old-interface.grammar" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,8 +18,8 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="interface.grammar" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface.grammar">
+      <file leaf-file-name="old-interface.grammar" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/old-interface.grammar">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="138">
               <caret line="204" column="21" lean-forward="false" selection-start-line="204" selection-start-column="21" selection-end-line="204" selection-end-column="21" />
@@ -27,31 +28,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="interface-test.grammar" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface-test.grammar">
+      <file leaf-file-name="interface.grammar" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface.grammar">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="162">
+              <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_battery.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test_battery.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pyCharm/app/evaluation/test_battery.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="22" column="55" lean-forward="true" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bd_camps_dimensions" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bd_camps_dimensions">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-54">
-              <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="5" />
+            <state relative-caret-position="36">
+              <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -60,8 +51,8 @@
       <file leaf-file-name="synonyms.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pyCharm/app/processing/synonyms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="40" column="23" lean-forward="false" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+            <state relative-caret-position="216">
+              <caret line="51" column="24" lean-forward="false" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -99,6 +90,7 @@
       <find>highest</find>
       <find>currency</find>
       <find>'</find>
+      <find>Token</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
@@ -137,11 +129,11 @@
         <option value="$PROJECT_DIR$/bd_camps_dimensions" />
         <option value="$PROJECT_DIR$/pyCharm/app/management/categories.py" />
         <option value="$PROJECT_DIR$/pyCharm/app/rules/rules.py" />
-        <option value="$PROJECT_DIR$/pyCharm/app/processing/synonyms.py" />
         <option value="$PROJECT_DIR$/pyCharm/app/processing/nlp_processing.py" />
         <option value="$PROJECT_DIR$/pyCharm/app/evaluation/test_battery.py" />
         <option value="$PROJECT_DIR$/sempre/analyticsBot/interface.grammar" />
         <option value="$PROJECT_DIR$/sempre/analyticsBot/interface-test.grammar" />
+        <option value="$PROJECT_DIR$/pyCharm/app/processing/synonyms.py" />
       </list>
     </option>
   </component>
@@ -152,10 +144,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-154" />
     <option name="y" value="27" />
-    <option name="width" value="1016" />
-    <option name="height" value="564" />
+    <option name="width" value="1366" />
+    <option name="height" value="741" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -354,8 +345,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-154" y="27" width="1366" height="741" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="27" width="1366" height="741" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33110368" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17558528" sideWeight="0.24279211" order="7" side_tool="true" content_ui="tabs" />
@@ -363,7 +353,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4882943" sideWeight="0.4969651" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33110368" sideWeight="0.7572079" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1828528" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37936267" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -707,7 +697,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface.grammar">
+    <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/old-interface.grammar">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="204" column="21" lean-forward="false" selection-start-line="204" selection-start-column="21" selection-end-line="204" selection-end-column="21" />
@@ -723,14 +713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pyCharm/app/processing/synonyms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="40" column="23" lean-forward="false" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bd_camps_dimensions">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-54">
@@ -739,18 +721,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pyCharm/app/evaluation/test_battery.py">
+    <entry file="file://$PROJECT_DIR$/pyCharm/app/processing/synonyms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="55" lean-forward="true" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
+        <state relative-caret-position="216">
+          <caret line="51" column="24" lean-forward="false" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface-test.grammar">
+    <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface.grammar">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state relative-caret-position="162">
+          <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyCharm/app/evaluation/test_battery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
           <folding />
         </state>
       </provider>
