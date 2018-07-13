@@ -35,6 +35,7 @@ crdscode_synonyms = ['crds code', 'crdscode']
 client_synonyms = ['clients', 'client']
 currency_synonyms = ['currency', 'currency pair']
 deal_date_synonyms = ['deal date', 'signed', 'date', 'created']
+rollover_synonyms = ['rollovered', 'rollover']
 
 
 def synonym_check(word):
@@ -53,5 +54,7 @@ def synonym_check(word):
         return 'currency'
     elif word in deal_date_synonyms:
         return 'date'
+    elif word in rollover_synonyms:
+        return 'rollover'
     else:
         return word

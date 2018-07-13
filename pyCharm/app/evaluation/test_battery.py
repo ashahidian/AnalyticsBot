@@ -29,12 +29,7 @@ def questions_to_run():
         "what are deals with client side sell?",
         "which clients have a client side buy?",
         "which deals were signed in 2016?",
-        "who rollovered in the last 5 months?",
-
-
+        "who rollovered in the last 5 months?"
     ]
 
-
-
-
-    return list
+    return question_list

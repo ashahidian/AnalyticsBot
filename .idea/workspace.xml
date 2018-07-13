@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c794ccc6-50a2-42fa-a476-00e8544db14f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/pyCharm/app/evaluation/test_battery.py" afterPath="$PROJECT_DIR$/pyCharm/app/evaluation/test_battery.py" />
       <change beforePath="$PROJECT_DIR$/pyCharm/app/processing/synonyms.py" afterPath="$PROJECT_DIR$/pyCharm/app/processing/synonyms.py" />
-      <change beforePath="$PROJECT_DIR$/sempre/analyticsBot/interface.grammar" afterPath="$PROJECT_DIR$/sempre/analyticsBot/interface.grammar" />
-      <change beforePath="$PROJECT_DIR$/sempre/data/interface-questions.examples" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,21 +17,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="interface.grammar" pinned="false" current-in-tab="false">
+      <file leaf-file-name="interface.grammar" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface.grammar">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="16" column="54" lean-forward="false" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+            <state relative-caret-position="-383">
+              <caret line="40" column="40" lean-forward="true" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_battery.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test_battery.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pyCharm/app/evaluation/test_battery.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+            <state relative-caret-position="179">
+              <caret line="31" column="23" lean-forward="false" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="synonyms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pyCharm/app/processing/synonyms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="233">
+              <caret line="54" column="36" lean-forward="true" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nlp_processing.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pyCharm/app/processing/nlp_processing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="43" column="1" lean-forward="true" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -104,8 +121,8 @@
         <option value="$PROJECT_DIR$/pyCharm/app/processing/nlp_processing.py" />
         <option value="$PROJECT_DIR$/sempre/analyticsBot/interface-test.grammar" />
         <option value="$PROJECT_DIR$/sempre/analyticsBot/interface.grammar" />
-        <option value="$PROJECT_DIR$/pyCharm/app/processing/synonyms.py" />
         <option value="$PROJECT_DIR$/pyCharm/app/evaluation/test_battery.py" />
+        <option value="$PROJECT_DIR$/pyCharm/app/processing/synonyms.py" />
       </list>
     </option>
   </component>
@@ -664,14 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pyCharm/app/processing/nlp_processing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="16" column="42" lean-forward="false" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/old-interface.grammar">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3564">
@@ -688,22 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pyCharm/app/processing/synonyms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="54" column="20" lean-forward="false" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface.grammar">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="54" lean-forward="false" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sempre/data/interface-questions.examples">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -712,10 +705,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pyCharm/app/processing/nlp_processing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="43" column="1" lean-forward="true" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyCharm/app/processing/synonyms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="54" column="36" lean-forward="true" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pyCharm/app/evaluation/test_battery.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+        <state relative-caret-position="179">
+          <caret line="31" column="23" lean-forward="false" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface.grammar">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-383">
+          <caret line="40" column="40" lean-forward="true" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
           <folding />
         </state>
       </provider>
