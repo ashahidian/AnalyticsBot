@@ -3,6 +3,10 @@ names = []
 currencies = []
 deals = []
 metrics = ['volume', 'cc', 'total cc']
+platforms = []
+tradestatus = []
+legs = []
+dealside = []
 
 
 def category_names(list_names):

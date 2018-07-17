@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c794ccc6-50a2-42fa-a476-00e8544db14f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/pyCharm/app/management/categories.py" afterPath="$PROJECT_DIR$/pyCharm/app/management/categories.py" />
       <change beforePath="$PROJECT_DIR$/pyCharm/app/rules/rules.py" afterPath="$PROJECT_DIR$/pyCharm/app/rules/rules.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,29 +21,12 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="test_battery.py" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/pyCharm/app/evaluation/test_battery.py">
+            <file leaf-file-name="interface.grammar" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface.grammar">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="558">
-                    <caret line="31" column="23" lean-forward="false" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+                  <state relative-caret-position="541">
+                    <caret line="68" column="51" lean-forward="true" selection-start-line="68" selection-start-column="51" selection-end-line="68" selection-end-column="51" />
                     <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="rules.py" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/pyCharm/app/rules/rules.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="406">
-                    <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-                    <folding>
-                      <marker date="1531755628430" expanded="true" signature="961:1035" ph="SELECT Deal " />
-                      <marker date="1531755628430" expanded="true" signature="961:1050" ph="SELECT Deal " />
-                      <marker date="1531755628430" expanded="true" signature="961:1052" ph="SELECT Deal " />
-                      <marker date="1531755628430" expanded="true" signature="1171:1253" ph="SELECT D FRO... " />
-                      <marker date="1531755628430" expanded="true" signature="1558:1649" ph="SELECT Clien... " />
-                      <marker date="1531755628430" expanded="true" signature="1813:1888" ph="SELECT TOP 1... " />
-                    </folding>
                   </state>
                 </provider>
               </entry>
@@ -54,11 +38,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="interface.grammar" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface.grammar">
+      <file leaf-file-name="rules.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pyCharm/app/rules/rules.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="66" column="55" lean-forward="true" selection-start-line="64" selection-start-column="40" selection-end-line="66" selection-end-column="55" />
+            <state relative-caret-position="2286">
+              <caret line="127" column="122" lean-forward="true" selection-start-line="127" selection-start-column="122" selection-end-line="127" selection-end-column="122" />
+              <folding>
+                <marker date="1531834900715" expanded="true" signature="1671:1745" ph="SELECT Deal " />
+                <marker date="1531834900715" expanded="true" signature="1671:1760" ph="SELECT Deal " />
+                <marker date="1531834900715" expanded="true" signature="1671:1762" ph="SELECT Deal " />
+                <marker date="1531834900715" expanded="true" signature="1671:1766" ph="SELECT Deal " />
+                <marker date="1531834900715" expanded="true" signature="1855:1944" ph="SELECT D FRO... " />
+                <marker date="1531834900715" expanded="true" signature="2171:2262" ph="SELECT Clien... " />
+                <marker date="1531834900715" expanded="true" signature="2287:2378" ph="SELECT Clien... " />
+                <marker date="1531834900715" expanded="true" signature="2731:2810" ph="SELECT Clien... " />
+                <marker date="1531834900715" expanded="true" signature="2731:2820" ph="SELECT Clien... " />
+                <marker date="1531834900715" expanded="true" signature="3157:3248" ph="SELECT Clien... " />
+                <marker date="1531834900715" expanded="true" signature="3337:3427" ph="SELECT Clien... " />
+                <marker date="1531834900715" expanded="true" signature="3511:3604" ph="SELECT Clien... " />
+                <marker date="1531834900715" expanded="true" signature="3679:3764" ph="SELECT Clien... " />
+                <marker date="1531834900715" expanded="true" signature="3846:3944" ph="SELECT Clien... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bd_camps" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bd_camps">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-342">
+              <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="categories.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pyCharm/app/management/categories.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -125,12 +144,12 @@
         <option value="$PROJECT_DIR$/pyCharm/app/rules/synonyms.py" />
         <option value="$PROJECT_DIR$/pyCharm/app/views.py" />
         <option value="$PROJECT_DIR$/bd_camps_dimensions" />
-        <option value="$PROJECT_DIR$/pyCharm/app/management/categories.py" />
         <option value="$PROJECT_DIR$/pyCharm/app/processing/nlp_processing.py" />
         <option value="$PROJECT_DIR$/sempre/analyticsBot/interface-test.grammar" />
         <option value="$PROJECT_DIR$/sempre/analyticsBot/interface.grammar" />
         <option value="$PROJECT_DIR$/pyCharm/app/evaluation/test_battery.py" />
         <option value="$PROJECT_DIR$/pyCharm/app/processing/synonyms.py" />
+        <option value="$PROJECT_DIR$/pyCharm/app/management/categories.py" />
         <option value="$PROJECT_DIR$/pyCharm/app/rules/rules.py" />
       </list>
     </option>
@@ -181,7 +200,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -189,11 +207,37 @@
               <item name="AnalyticsBot" type="b2602c69:ProjectViewProjectNode" />
               <item name="AnalyticsBot" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="AnalyticsBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AnalyticsBot" type="462c0819:PsiDirectoryNode" />
+              <item name="pyCharm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AnalyticsBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AnalyticsBot" type="462c0819:PsiDirectoryNode" />
+              <item name="pyCharm" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AnalyticsBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AnalyticsBot" type="462c0819:PsiDirectoryNode" />
+              <item name="pyCharm" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="management" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AnalyticsBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AnalyticsBot" type="462c0819:PsiDirectoryNode" />
+              <item name="pyCharm" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="rules" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -285,17 +329,17 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33110368" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17558528" sideWeight="0.24279211" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33444816" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4882943" sideWeight="0.4969651" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.080267556" sideWeight="0.7572079" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24506828" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24506828" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39966556" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -569,20 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pyCharm/app/management/categories.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bd_camps">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="41" column="6" lean-forward="false" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pyCharm/app/management/sql_connection.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -616,7 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
           <caret line="54" column="36" lean-forward="false" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -624,7 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
           <caret line="43" column="1" lean-forward="false" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -633,17 +661,8 @@
         <state split_layout="FIRST">
           <first_editor relative-caret-position="-216">
             <caret line="807" column="0" lean-forward="true" selection-start-line="807" selection-start-column="0" selection-end-line="807" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pyCharm/app/evaluation/test_battery.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="31" column="23" lean-forward="false" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -652,31 +671,62 @@
         <state split_layout="FIRST">
           <first_editor relative-caret-position="-991">
             <caret line="80" column="58" lean-forward="false" selection-start-line="80" selection-start-column="58" selection-end-line="80" selection-end-column="58" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pyCharm/app/evaluation/test_battery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="31" column="23" lean-forward="false" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface.grammar">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="66" column="55" lean-forward="true" selection-start-line="64" selection-start-column="40" selection-end-line="66" selection-end-column="55" />
+        <state relative-caret-position="541">
+          <caret line="68" column="51" lean-forward="true" selection-start-line="68" selection-start-column="51" selection-end-line="68" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyCharm/app/management/categories.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bd_camps">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-342">
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pyCharm/app/rules/rules.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="2286">
+          <caret line="127" column="122" lean-forward="true" selection-start-line="127" selection-start-column="122" selection-end-line="127" selection-end-column="122" />
           <folding>
-            <marker date="1531755628430" expanded="true" signature="961:1035" ph="SELECT Deal " />
-            <marker date="1531755628430" expanded="true" signature="961:1050" ph="SELECT Deal " />
-            <marker date="1531755628430" expanded="true" signature="961:1052" ph="SELECT Deal " />
-            <marker date="1531755628430" expanded="true" signature="1171:1253" ph="SELECT D FRO... " />
-            <marker date="1531755628430" expanded="true" signature="1558:1649" ph="SELECT Clien... " />
-            <marker date="1531755628430" expanded="true" signature="1813:1888" ph="SELECT TOP 1... " />
+            <marker date="1531834900715" expanded="true" signature="1671:1745" ph="SELECT Deal " />
+            <marker date="1531834900715" expanded="true" signature="1671:1760" ph="SELECT Deal " />
+            <marker date="1531834900715" expanded="true" signature="1671:1762" ph="SELECT Deal " />
+            <marker date="1531834900715" expanded="true" signature="1671:1766" ph="SELECT Deal " />
+            <marker date="1531834900715" expanded="true" signature="1855:1944" ph="SELECT D FRO... " />
+            <marker date="1531834900715" expanded="true" signature="2171:2262" ph="SELECT Clien... " />
+            <marker date="1531834900715" expanded="true" signature="2287:2378" ph="SELECT Clien... " />
+            <marker date="1531834900715" expanded="true" signature="2731:2810" ph="SELECT Clien... " />
+            <marker date="1531834900715" expanded="true" signature="2731:2820" ph="SELECT Clien... " />
+            <marker date="1531834900715" expanded="true" signature="3157:3248" ph="SELECT Clien... " />
+            <marker date="1531834900715" expanded="true" signature="3337:3427" ph="SELECT Clien... " />
+            <marker date="1531834900715" expanded="true" signature="3511:3604" ph="SELECT Clien... " />
+            <marker date="1531834900715" expanded="true" signature="3679:3764" ph="SELECT Clien... " />
+            <marker date="1531834900715" expanded="true" signature="3846:3944" ph="SELECT Clien... " />
           </folding>
         </state>
       </provider>

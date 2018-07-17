@@ -1,4 +1,4 @@
-from pyCharm.app.management.categories import names, currencies, deals, metrics
+from pyCharm.app.management.categories import *
 
 
 def name_present(question_tokens):
@@ -36,58 +36,96 @@ def metric_present(question_tokens):
             return w
 
 
+def platform_present(question_tokens):
+
+    for w in question_tokens:
+        if w in platforms:
+            return w
+
+
+def tradestatus_present(question_tokens):
+    for w in question_tokens:
+        if w in tradestatus:
+            return w
+
+
+def leg_present(question_tokens):
+    for w in question_tokens:
+        if w in legs:
+            return w
+
+
+def dealside_present(question_tokens):
+    for w in question_tokens:
+        if w in dealside:
+            return w
+
+
 def read_sentence(question_tokens):
+    n = name_present(question_tokens)
+    c = currency_present(question_tokens)
+    m = metric_present(question_tokens)
+    d = deal_present(question_tokens)
+    p = platform_present(question_tokens)
+    t = tradestatus_present(question_tokens)
+    l = leg_present(question_tokens)
+    ds = dealside_present(question_tokens)
+
     if 'client' in question_tokens:
 
-        if name_present(question_tokens):
-            if deal_present(question_tokens):
+        if n:
+
+            if d:
                 # "what is client x deal id"
-                print("SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client =")
+                print("SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = ", n)
 
-            elif metric_present(question_tokens):
+            elif m:
                 # "what is client x metric"
-                print("SELECT FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE  Client =")
+                print("SELECT ", m, "FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE  Client =", n)
 
-        elif currency_present(question_tokens):
-            new_currency = currency_swap_order(currency_present(question_tokens))
-            new_currency_string = str(new_currency)
+        elif c:
+            new_currency = currency_swap_order(c)
+            nc = str(new_currency)
             # what is client currency x
             # what is client currency + new_currency_string
-            print("SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE  Currency =")
+            print("SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE  Currency =", c)
+            print("SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE  Currency =", nc)
 
-        elif metric_present(question_tokens):
+        elif m:
             if 'highest' in question_tokens:
                 # clients with highest metric
-                print("SELECT TOP 10 , FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]")
+                print("SELECT TOP 10 ", c, " , ", m, " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunit ies]")
 
             else:
                 # what is client with metric value x
-                print("SELECT FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE = ")
+                # FINISH
+                print("SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", m, " = ",)
 
         elif 'expire' in question_tokens:
             # client with expiration x
+            # FINISH
             print("SELECT FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE = ")
 
-        elif 'platform' in question_tokens:
+        elif p:
             if 'exclude' in question_tokens:
                 # clients excluding platform x
-                print("SELECT FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE = ")
+                print("SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform != ", p)
 
             else:
                 # clients in platform x
-                print("SELECT FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE = ")
+                print("SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform = ", p)
 
-        elif 'trade status' in question_tokens:
+        elif t:
             # client with trade status x
-            print("SELECT FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE = ")
+            print("SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE TradeStatus = ", t)
 
-        elif 'leg' in question_tokens:
+        elif l:
             # client with leg x
-            print("SELECT FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE = ")
+            print("SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE = Leg ", l)
 
-        elif 'deal side' in question_tokens:
+        elif ds:
             # client with deal side x
-            print("SELECT FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE = ")
+            print("SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE = Client Deal Side ", ds)
 
     elif 'deal' in question_tokens:
 
