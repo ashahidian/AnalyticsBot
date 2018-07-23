@@ -2,11 +2,11 @@
 names = []
 currencies = []
 deals = []
-metrics = ['volume', 'cc', 'total cc']
 platforms = []
-tradestatus = []
-legs = []
-dealside = []
+metrics = ['volume', 'cc', 'total cc', 'rollover ration', 'net volume', ]
+tradestatus = ['new', 'amended']
+legs = ['near leg', 'far leg', 'spot']
+dealside = ['buy', 'sell']
 
 
 def category_names(list_names):
@@ -25,3 +25,9 @@ def category_deal_id(list_deal_id):
 
     for deal_id in list_deal_id:
         deals.append(deal_id)
+
+
+def category_platform(list_platform):
+
+    for platform in list_platform:
+        platforms.append(platform)

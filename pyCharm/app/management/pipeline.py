@@ -1,4 +1,5 @@
 from pyCharm.app.management.initial_setup import values_from_database, setup_categories
+import subprocess
 
 
 def pipeline():
@@ -9,3 +10,5 @@ def pipeline():
     setup_categories(client_list, deal_id_list, currency_list)
 
     # call initial setup to create synonym dictionaries
+
+

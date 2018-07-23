@@ -1,0 +1,29 @@
+main() {
+  Grammar.read {
+    Valid tags: []
+    Used tags: []
+    48 rules
+  }
+  BeamParser: 14 catUnaryRules (sorted), 34 nonCatUnaryRules (in trie)
+  Dataset.read 
+  Learner.learn() {
+    Iteration 0/0 
+  }
+  Enter an utterance to parse or one of the following commands:
+    (help): show this help message
+    (status): prints out status of the system
+    (get |option|): get a command-line option (e.g., (get Parser.verbose))
+    (set |option| |value|): set a command-line option (e.g., (set Parser.verbose 5))
+    (reload): reload the grammar/parameters
+    (grammar): prints out the grammar
+    (params [|file|]): dumps all the model parameters
+    (select |candidate index|): show information about the |index|-th candidate of the last utterance.
+    (accept |candidate index|): record the |index|-th candidate as the correct answer for the last utterance.
+    (answer |answer|): record |answer| as the correct answer for the last utterance (e.g., (answer (list (number 3)))).
+    (rule |lhs| (|rhs_1| ... |rhs_k|) |sem|): adds a rule to the grammar (e.g., (rule $Number ($TOKEN) (NumberFn)))
+    (type |logical form|): perform type inference (e.g., (type (number 3)))
+    (execute |logical form|): execute the logical form (e.g., (execute (call + (number 3) (number 4))))
+    (def |key| |value|): define a macro to replace |key| with |value| in all commands (e.g., (def type fb:type.object type)))
+    (context [(user |user|) (date |date|) (exchange |exchange|) (graph |graph|)]): prints out or set the context
+  Press Ctrl-D to exit.
+> }
