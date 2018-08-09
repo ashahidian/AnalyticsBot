@@ -19,7 +19,7 @@
 (rule $Dimension (expire) (ConstantFn (string "Expiry Date")))
 (rule $Dimension (trade status) (ConstantFn (string "TradeStatus")))
 (rule $Dimension (leg) (ConstantFn (string "Leg")))
-(rule $Dimension (deal side) (ConstantFn (string "Deal Side")))
+(rule $Dimension (client deal) (ConstantFn (string "Client Deal Side")))
 
 # dimension: crdscode, deal id, client
 # metric: currency pair, platform, (expiration date), (trade status), (leg), (deal side)
@@ -38,6 +38,34 @@
 
 #---------- GENERAL RULES
 #----- RULES GENERALIZATION
+## This rule will obtain the value of the indicated dimension
+## The desired dimension needs to be provided in order to fire this rule
+(rule $General ($Dimension $TOKEN)
+ (lambda d (lambda t (call + (string "SELECT * ")
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var d) (string " = ") (var t))))))
+
+## This rule will obtain the value of the indicated dimension
+## The desired dimension needs to be provided in order to fire this rule
+(rule $General ($TOKEN $Dimension)
+ (lambda t (lambda d (call + (string "SELECT * ")
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var d) (string " = ") (var t))))))
+
+## This rule will obtain the value of the indicated metric
+## The desired metric needs to be provided in order to fire this rule
+(rule $General ($Metric $TOKEN)
+ (lambda m (lambda t (call + (string "SELECT * ")
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var m) (string " = ") (var t))))))
+
+## This rule will obtain the value of the indicated dimension
+## The desired dimension needs to be provided in order to fire this rule
+(rule $General ($TOKEN $Metric)
+ (lambda t (lambda m (call + (string "SELECT * ")
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var d) (string " = ") (var t))))))
+
 ## This rule will obtain the metric value of the indicated dimension
 ## The desired dimension needs to be provided in order to fire this rule
 (rule $General ($Dimension $TOKEN $Metric)

@@ -4,9 +4,13 @@ from subprocess import call, check_output
 # testing SEMPRE rules
 from time import sleep
 
+# ultimas duas questoes temporais precisam de ser trabalhadas
+# pergunta 7 e 9 tambem precisa de tratamento
+# TODO
+
 question_list = [
     "what is client x 's volume?",
-    "who are the clients with metric x?",
+    "who are the clients with rollover ratio x?",
     "what are the deals with currency eur/usd?",
     "who are the clients with the highest volume?",
     "what is deal x expiration date?",
@@ -31,6 +35,16 @@ question_list = [
     "which deals were signed in 2016?",
     "who rollovered in the last 5 months?"
 ]
+
+# client Joe cc?
+# client Mary net client?
+# client x cc ?
+# client x volume?
+# client x non-risk cc?
+# client x at risk cc?
+# client x average rollover?
+# client y rollover ratio?
+# client w net client?
 
 
 def call_shell():

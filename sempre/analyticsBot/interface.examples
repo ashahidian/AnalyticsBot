@@ -1,29 +1,84 @@
-(example (utterance "client x volume?")
-    (targetValue (string "SELECT Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x" )))
-
-(example (utterance "client Joe cc?")
-    (targetValue (string "SELECT CC Total FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = Joe" )))
-
-(example (utterance "client Mary net client?")
-    (targetValue (string "SELECT NetClientPosition FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = Mary" )))
-
-(example (utterance "client x cc ?")
-    (targetValue (string "SELECT CC Total FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x" )))
-
-(example (utterance "client x volume?")
-    (targetValue (string "SELECT Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x" )))
-
-(example (utterance "client x non-risk cc?")
-    (targetValue (string "SELECT CC NonRisk FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x" )))
-
-(example (utterance "client x at risk cc?")
-    (targetValue (string "SELECT CC AtRisk FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x" )))
-
-(example (utterance "client x average rollover?")
-    (targetValue (string "SELECT AverageRolloverDays FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x" )))
-
-(example (utterance "client y rollover ratio?")
-    (targetValue (string "SELECT RolloverRatio FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = y" )))
-
-(example (utterance "client w net client?")
-    (targetValue (string "SELECT NetClientPosition FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = w" )))
+(example
+  (utterance "client x volume")
+  (targetValue (string "SELECT Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x" ))
+)
+(example
+  (utterance "client rolloverratio x")
+  (targetValue (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE RolloverRatio = x" ))
+)
+(example
+  (utterance "deal currency eur/usd")
+  (targetValue (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Currency Pair = EUR/USD" ))
+)
+(example
+  (utterance "client highest volume")
+  (targetValue (string "SELECT TOP 10 Client, Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]" ))
+)
+(example
+  (utterance "deal x expire")
+  (targetValue (string "SELECT Expiry Date FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Deal = x" ))
+)
+(example
+  (utterance "client x expire")
+  (targetValue (string "SELECT Expiry Date FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x" ))
+)
+(example
+  (utterance "client x deal id")
+  (targetValue (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x" ))
+)
+(example
+  (utterance "deal x client name")
+  (targetValue (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Deal ID = x" ))
+)
+(example
+  (utterance "deal x volume")
+  (targetValue (string "SELECT Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Deal ID = x" ))
+)
+(example
+  (utterance "client currency eur/usd")
+  (targetValue (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Currency Pair = EUR/USD" ))
+)
+(example
+  (utterance "deal highest cc total")
+  (targetValue (string "SELECT TOP 10 Deal ID, CC Total FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]" ))
+)
+(example
+  (utterance "deal platform x")
+  (targetValue (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform = x" ))
+)
+(example
+  (utterance "deal platform excluding x")
+  (targetValue (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform != x" ))
+)
+(example
+  (utterance "client platform x")
+  (targetValue (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform = x" ))
+)
+(example
+  (utterance "client exclude platform x")
+  (targetValue (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform != x" ))
+)
+(example
+  (utterance "deal trade status new")
+  (targetValue (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE TradeStatus = new" ))
+)
+(example
+  (utterance "client trade status amended")
+  (targetValue (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE TradeStatus = amended" ))
+)
+(example
+  (utterance "deal near leg")
+  (targetValue (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Leg = near" ))
+)
+(example
+  (utterance "client far leg")
+  (targetValue (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Leg = far" ))
+)
+(example
+  (utterance "deal client deal sell")
+  (targetValue (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client Deal Side = sell" ))
+)
+(example
+  (utterance "client client deal buy")
+  (targetValue (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client Deal Side = buy" ))
+)
