@@ -1,0 +1,287 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> statement
+Rule 1     statement -> METRIC TOKEN
+Rule 2     statement -> DIMENSION TOKEN
+Rule 3     statement -> TOKEN METRIC
+Rule 4     statement -> TOKEN DIMENSION
+Rule 5     statement -> METRIC TOKEN EXCLUDE
+Rule 6     statement -> DIMENSION TOKEN EXCLUDE
+Rule 7     statement -> EXCLUDE METRIC TOKEN
+Rule 8     statement -> EXCLUDE DIMENSION TOKEN
+Rule 9     statement -> DIMENSION TOKEN METRIC
+Rule 10    statement -> METRIC TOKEN DIMENSION
+Rule 11    statement -> DIMENSION TOKEN DIMENSION
+Rule 12    statement -> DIMENSION METRIC TOKEN
+Rule 13    statement -> METRIC DIMENSION TOKEN
+Rule 14    statement -> DIMENSION DIMENSION TOKEN
+Rule 15    statement -> DIMENSION MEASURE METRIC
+Rule 16    statement -> METRIC MEASURE DIMENSION
+
+Terminals, with rules where they appear
+
+DIMENSION            : 2 4 6 8 9 10 11 11 12 13 14 14 15 16
+EXCLUDE              : 5 6 7 8
+MEASURE              : 15 16
+METRIC               : 1 3 5 7 9 10 12 13 15 16
+TOKEN                : 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+error                : 
+
+Nonterminals, with rules where they appear
+
+statement            : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . statement
+    (1) statement -> . METRIC TOKEN
+    (2) statement -> . DIMENSION TOKEN
+    (3) statement -> . TOKEN METRIC
+    (4) statement -> . TOKEN DIMENSION
+    (5) statement -> . METRIC TOKEN EXCLUDE
+    (6) statement -> . DIMENSION TOKEN EXCLUDE
+    (7) statement -> . EXCLUDE METRIC TOKEN
+    (8) statement -> . EXCLUDE DIMENSION TOKEN
+    (9) statement -> . DIMENSION TOKEN METRIC
+    (10) statement -> . METRIC TOKEN DIMENSION
+    (11) statement -> . DIMENSION TOKEN DIMENSION
+    (12) statement -> . DIMENSION METRIC TOKEN
+    (13) statement -> . METRIC DIMENSION TOKEN
+    (14) statement -> . DIMENSION DIMENSION TOKEN
+    (15) statement -> . DIMENSION MEASURE METRIC
+    (16) statement -> . METRIC MEASURE DIMENSION
+
+    METRIC          shift and go to state 1
+    DIMENSION       shift and go to state 5
+    TOKEN           shift and go to state 2
+    EXCLUDE         shift and go to state 4
+
+    statement                      shift and go to state 3
+
+state 1
+
+    (1) statement -> METRIC . TOKEN
+    (5) statement -> METRIC . TOKEN EXCLUDE
+    (10) statement -> METRIC . TOKEN DIMENSION
+    (13) statement -> METRIC . DIMENSION TOKEN
+    (16) statement -> METRIC . MEASURE DIMENSION
+
+    TOKEN           shift and go to state 7
+    DIMENSION       shift and go to state 8
+    MEASURE         shift and go to state 6
+
+
+state 2
+
+    (3) statement -> TOKEN . METRIC
+    (4) statement -> TOKEN . DIMENSION
+
+    METRIC          shift and go to state 9
+    DIMENSION       shift and go to state 10
+
+
+state 3
+
+    (0) S' -> statement .
+
+
+
+state 4
+
+    (7) statement -> EXCLUDE . METRIC TOKEN
+    (8) statement -> EXCLUDE . DIMENSION TOKEN
+
+    METRIC          shift and go to state 11
+    DIMENSION       shift and go to state 12
+
+
+state 5
+
+    (2) statement -> DIMENSION . TOKEN
+    (6) statement -> DIMENSION . TOKEN EXCLUDE
+    (9) statement -> DIMENSION . TOKEN METRIC
+    (11) statement -> DIMENSION . TOKEN DIMENSION
+    (12) statement -> DIMENSION . METRIC TOKEN
+    (14) statement -> DIMENSION . DIMENSION TOKEN
+    (15) statement -> DIMENSION . MEASURE METRIC
+
+    TOKEN           shift and go to state 14
+    METRIC          shift and go to state 13
+    DIMENSION       shift and go to state 15
+    MEASURE         shift and go to state 16
+
+
+state 6
+
+    (16) statement -> METRIC MEASURE . DIMENSION
+
+    DIMENSION       shift and go to state 17
+
+
+state 7
+
+    (1) statement -> METRIC TOKEN .
+    (5) statement -> METRIC TOKEN . EXCLUDE
+    (10) statement -> METRIC TOKEN . DIMENSION
+
+    $end            reduce using rule 1 (statement -> METRIC TOKEN .)
+    EXCLUDE         shift and go to state 18
+    DIMENSION       shift and go to state 19
+
+
+state 8
+
+    (13) statement -> METRIC DIMENSION . TOKEN
+
+    TOKEN           shift and go to state 20
+
+
+state 9
+
+    (3) statement -> TOKEN METRIC .
+
+    $end            reduce using rule 3 (statement -> TOKEN METRIC .)
+
+
+state 10
+
+    (4) statement -> TOKEN DIMENSION .
+
+    $end            reduce using rule 4 (statement -> TOKEN DIMENSION .)
+
+
+state 11
+
+    (7) statement -> EXCLUDE METRIC . TOKEN
+
+    TOKEN           shift and go to state 21
+
+
+state 12
+
+    (8) statement -> EXCLUDE DIMENSION . TOKEN
+
+    TOKEN           shift and go to state 22
+
+
+state 13
+
+    (12) statement -> DIMENSION METRIC . TOKEN
+
+    TOKEN           shift and go to state 23
+
+
+state 14
+
+    (2) statement -> DIMENSION TOKEN .
+    (6) statement -> DIMENSION TOKEN . EXCLUDE
+    (9) statement -> DIMENSION TOKEN . METRIC
+    (11) statement -> DIMENSION TOKEN . DIMENSION
+
+    $end            reduce using rule 2 (statement -> DIMENSION TOKEN .)
+    EXCLUDE         shift and go to state 25
+    METRIC          shift and go to state 24
+    DIMENSION       shift and go to state 26
+
+
+state 15
+
+    (14) statement -> DIMENSION DIMENSION . TOKEN
+
+    TOKEN           shift and go to state 27
+
+
+state 16
+
+    (15) statement -> DIMENSION MEASURE . METRIC
+
+    METRIC          shift and go to state 28
+
+
+state 17
+
+    (16) statement -> METRIC MEASURE DIMENSION .
+
+    $end            reduce using rule 16 (statement -> METRIC MEASURE DIMENSION .)
+
+
+state 18
+
+    (5) statement -> METRIC TOKEN EXCLUDE .
+
+    $end            reduce using rule 5 (statement -> METRIC TOKEN EXCLUDE .)
+
+
+state 19
+
+    (10) statement -> METRIC TOKEN DIMENSION .
+
+    $end            reduce using rule 10 (statement -> METRIC TOKEN DIMENSION .)
+
+
+state 20
+
+    (13) statement -> METRIC DIMENSION TOKEN .
+
+    $end            reduce using rule 13 (statement -> METRIC DIMENSION TOKEN .)
+
+
+state 21
+
+    (7) statement -> EXCLUDE METRIC TOKEN .
+
+    $end            reduce using rule 7 (statement -> EXCLUDE METRIC TOKEN .)
+
+
+state 22
+
+    (8) statement -> EXCLUDE DIMENSION TOKEN .
+
+    $end            reduce using rule 8 (statement -> EXCLUDE DIMENSION TOKEN .)
+
+
+state 23
+
+    (12) statement -> DIMENSION METRIC TOKEN .
+
+    $end            reduce using rule 12 (statement -> DIMENSION METRIC TOKEN .)
+
+
+state 24
+
+    (9) statement -> DIMENSION TOKEN METRIC .
+
+    $end            reduce using rule 9 (statement -> DIMENSION TOKEN METRIC .)
+
+
+state 25
+
+    (6) statement -> DIMENSION TOKEN EXCLUDE .
+
+    $end            reduce using rule 6 (statement -> DIMENSION TOKEN EXCLUDE .)
+
+
+state 26
+
+    (11) statement -> DIMENSION TOKEN DIMENSION .
+
+    $end            reduce using rule 11 (statement -> DIMENSION TOKEN DIMENSION .)
+
+
+state 27
+
+    (14) statement -> DIMENSION DIMENSION TOKEN .
+
+    $end            reduce using rule 14 (statement -> DIMENSION DIMENSION TOKEN .)
+
+
+state 28
+
+    (15) statement -> DIMENSION MEASURE METRIC .
+
+    $end            reduce using rule 15 (statement -> DIMENSION MEASURE METRIC .)
+

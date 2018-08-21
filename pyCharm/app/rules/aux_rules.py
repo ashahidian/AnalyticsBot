@@ -1,5 +1,6 @@
 from pyCharm.app.management.categories import *
 
+
 def name_present(question_tokens):
 
     for w in question_tokens:
@@ -15,6 +16,7 @@ def currency_present(question_tokens):
 
 
 def currency_swap_order(currency):
+
     currency_one = currency[:3]
     currency_two = currency[-3:]
     new_currency = str(currency_two) + "/" + str(currency_one)
@@ -59,3 +61,8 @@ def dealside_present(question_tokens):
         if w in dealside:
             return w
 
+
+def crdscode_present(question_tokens):
+    for w in question_tokens:
+        if w in crds_code:
+            return w

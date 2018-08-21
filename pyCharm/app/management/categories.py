@@ -3,10 +3,15 @@ names = []
 currencies = []
 deals = []
 platforms = []
-metrics = ['volume', 'cc', 'total cc', 'rollover ration', 'net volume', ]
+volume = []
+cc = []
+total_cc = []
+rollover_ration = []
+netvolume = []
 tradestatus = ['new', 'amended']
 legs = ['near leg', 'far leg', 'spot']
 dealside = ['buy', 'sell']
+crds_code = []
 
 
 def category_names(list_names):
@@ -31,3 +36,9 @@ def category_platform(list_platform):
 
     for platform in list_platform:
         platforms.append(platform)
+
+
+def crdscode(list_crds):
+
+    for code in list_crds:
+        crds_code.append(code)

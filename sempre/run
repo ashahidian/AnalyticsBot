@@ -445,7 +445,7 @@ nil) })
 # Just start a simple interactive shell to try out SEMPRE commands
 addMode('simple', 'Simple shell', lambda { |e| l(
   codalab, 'java', '-cp', 'libsempre/*:lib/*', '-ea', 'edu.stanford.nlp.sempre.Main',
-  o('Main.interactive'),
+  o('Main.server'),
 nil) })
 
 addMode('simple-sparql', 'Simple shell for querying SPARQL', lambda { |e| l(
