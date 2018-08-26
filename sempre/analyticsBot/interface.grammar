@@ -55,12 +55,12 @@
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
   (string "WHERE ") (var m) (string " = ") (var t)))))
 
-## This rule will obtain the value of the indicated dimension
-## The desired dimension needs to be provided in order to fire this rule
+## This rule will obtain the value of the indicated metric
+## The desired metric needs to be provided in order to fire this rule
 (rule $General ($TOKEN $Metric)
  (lambda t (lambda m (call + (string "SELECT * ")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var d) (string " = ") (var t)))))
+  (string "WHERE ") (var m) (string " = ") (var t)))))
 
 ## This rule will obtain the metric value of the indicated dimension
 ## The desired dimension needs to be provided in order to fire this rule
@@ -68,6 +68,14 @@
  (lambda d (lambda t (lambda m (call + (string "SELECT ") (var m)
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
   (string "WHERE ") (var d) (string " = ") (var t))))))
+
+
+## This rule will obtain the metric value of the indicated dimension
+## The desired dimension needs to be provided in order to fire this rule
+(rule $General ($Metric $TOKEN $Dimension)
+ (lambda m (lambda t (lambda d (call + (string "SELECT ") (var d)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var m) (string " = ") (var t))))))
 
 ## This rule will obtain the dimension with certain metric name value
 ## The desired metric name needs to be provided in order to fire this rule
@@ -77,10 +85,24 @@
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
   (string "WHERE ") (var m) (string " = ")  (var t))))))
 
+## This rule will obtain the dimension with certain metric name value
+## The desired metric name needs to be provided in order to fire this rule
+## Metric value also needs to be provided
+(rule $General ($Metric $Dimension $TOKEN)
+ (lambda m (lambda d (lambda t (call + (string "SELECT ") (var m)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var d) (string " = ")  (var t))))))
+
 ## This rule will obtain the dimension with the highest metric value
 ## The desired metric name needs to be provided in order to fire this rule
 (rule $General ($Dimension $Measure $Metric)
- (lambda d (lambda m (lambda x (call + (string "SELECT TOP 10 ") (var x) (string " , ") (var d)
+ (lambda d (lambda m (lambda x (call + (string "SELECT TOP 10 ") (var m) (string " , ") (var d)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] "))))))
+
+## This rule will obtain the dimension with the highest metric value
+## The desired metric name needs to be provided in order to fire this rule
+(rule $General ($Metric $Measure $Dimension)
+ (lambda m (lambda m (lambda d (call + (string "SELECT TOP 10 ") (var d) (string " , ") (var m)
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] "))))))
 
 ## This rule will obtain the dimension of the indicated dimension
@@ -104,6 +126,38 @@
  (lambda d (lambda e (lambda m (lambda t (call + (string "SELECT ") (var d)
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
   (string "WHERE ") (var m) (string " != ")  (var t)))))))
+
+## This rule will obtain the dimension with certain metric name value
+## The desired metric name needs to be provided in order to fire this rule
+## Metric value also needs to be provided
+(rule $General ($Metric $Exclude $TOKEN)
+ (lambda m (lambda e (lambda t (call + (string "SELECT *")
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var m) (string " != ")  (var t))))))
+
+## This rule will obtain the dimension with certain metric name value
+## The desired metric name needs to be provided in order to fire this rule
+## Metric value also needs to be provided
+(rule $General ($Dimension $Exclude $TOKEN)
+ (lambda d (lambda e (lambda t (call + (string "SELECT *")
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var d) (string " != ")  (var t))))))
+
+## This rule will obtain the dimension with certain metric name value
+## The desired metric name needs to be provided in order to fire this rule
+## Metric value also needs to be provided
+(rule $General ($Exclude $Metric $TOKEN)
+ (lambda e (lambda m (lambda t (call + (string "SELECT *")
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var m) (string " != ")  (var t))))))
+
+## This rule will obtain the dimension with certain metric name value
+## The desired metric name needs to be provided in order to fire this rule
+## Metric value also needs to be provided
+(rule $General ($Exclude $Dimension $TOKEN)
+ (lambda e (lambda d (lambda t (call + (string "SELECT *")
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var d) (string " != ")  (var t))))))
 
 #---------- ROOT RULE
 (rule $ROOT ($General) (IdentityFn))

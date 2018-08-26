@@ -11,7 +11,6 @@ def values_from_database():
     deal_id_list = sql_call("SELECT DISTINCT Deal ID FROM example_table")
     platform_list = sql_call("SELECT DISTINCT Platform FROM example_table")
 
-
     return client_list, currency_list, deal_id_list, platform_list
 
 

@@ -1,4 +1,4 @@
-from pyCharm.app.management.aux_setup import values_from_database, setup_categories
+from pyCharm.app.management.category_builder import values_from_database, setup_categories
 import subprocess
 
 
