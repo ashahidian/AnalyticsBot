@@ -159,5 +159,24 @@
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
   (string "WHERE ") (var d) (string " != ")  (var t))))))
 
+
+(rule $General ($Dimension $TOKEN $Dimension $TOKEN)
+ (lambda c (lambda a (lambda d (lambda b (call + (string "SELECT * ")
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var c) (string " = ")  (var a) (string " AND ") (var d) (string " = ") (var b)))))))
+
+
+(rule $General ($Metric $TOKEN $Dimension $TOKEN)
+ (lambda c (lambda a (lambda d (lambda b (call + (string "SELECT * ")
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var c) (string " = ")  (var a) (string " AND ") (var d) (string " = ") (var b)))))))
+
+
+(rule $General ($Dimension $TOKEN $Metric $TOKEN)
+ (lambda c (lambda a (lambda d (lambda b (call + (string "SELECT * ")
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
+  (string "WHERE ") (var c) (string " = ")  (var a) (string " AND ") (var d) (string " = ") (var b)))))))
+
+
 #---------- ROOT RULE
 (rule $ROOT ($General) (IdentityFn))
