@@ -1,5 +1,5 @@
 m:Volume
-m:TransactionNumber
+-:TransactionNumber
 d:TradeStatus
 m:TotalTrades
 d:Tenor
@@ -7,28 +7,28 @@ m:StdDevRolloverDays
 m:Spot Price Strike
 m:RolloverRatio
 m:Rank
-d-ProductKey
-d-Product Group
-d-Product
+-ProductKey
+d:Product Group
+d:Product
 d:Platform
-m:NewTrade
+d:NewTrade
 m:NetVolumeRatio
 m:NetVolume
 d:NetClientPosition
-m:NearTenorDays
+d:NearTenorDays
 m:NearLegVolume
 -MinID
 d:MaxFutureDate
-d:MarketingClientKey
+-MarketingClientKey
 d:Marketer
 d:LocalBlotter
 d:Leg
 m:LatestRolloverDays
 -Inverted
 -ID
-m:FromDays
-m:FarTenorDays
-d:FarDateKey
+d:FromDays
+d:FarTenorDays
+-FarDateKey
 d:Expiry Date
 m:EV
 d:Deal ID

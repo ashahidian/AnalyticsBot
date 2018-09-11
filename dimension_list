@@ -1,16 +1,17 @@
 TradeStatus
 Tenor
-ProductKey
 Product Group
 Product
 Platform
+NewTrade
 NetClientPosition
+NearTenorDays
 MaxFutureDate
-MarketingClientKey
 Marketer
 LocalBlotter
 Leg
-FarDateKey
+FromDays
+FarTenorDays
 Expiry Date
 Deal ID
 Deal Date

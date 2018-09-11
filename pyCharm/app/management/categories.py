@@ -1,10 +1,12 @@
 # create categories receiving the list of things to be in the category
+
 names = []
 currencies = []
 deals = []
 platforms = []
 volume = []
-cc = []
+at_risk_cc = []
+non_risk_cc = []
 total_cc = []
 rollover_ratio = []
 netvolume = []
@@ -58,10 +60,16 @@ def category_volume(list_volume):
         volume.append(v)
 
 
-def category_cc(list_cc):
+def category_at_risk_cc(list_at_risk_cc):
 
-    for c in list_cc:
-        cc.append(c)
+    for c in list_at_risk_cc:
+        at_risk_cc.append(c)
+
+
+def category_non_risk_cc(list_non_risk_cc):
+
+    for c in list_non_risk_cc:
+        non_risk_cc.append(c)
 
 
 def category_total_cc(list_total_cc):
@@ -86,3 +94,50 @@ def crdscode(list_crds):
 
     for code in list_crds:
         crds_code.append(code)
+
+
+def identify_category(token):
+    if token in names :
+        return 'Client'
+
+    elif token in currencies:
+        return 'Currency Pair'
+
+    elif token in deals:
+        return 'Deal ID'
+
+    elif token in platforms:
+        return 'Platform'
+
+    elif token in volume:
+        return 'Volume'
+
+    elif token in at_risk_cc:
+        return 'CC AtRisk'
+
+    elif token in non_risk_cc:
+        return 'CC NonRisk'
+
+    elif token in total_cc:
+        return 'CC Total'
+
+    elif token in rollover_ratio:
+        return 'RolloverRatio'
+
+    elif token in netvolume:
+        return 'NetVolume'
+
+    elif token in tradestatus:
+        return 'TradeStatus'
+
+    elif token in legs:
+        return 'Leg'
+
+    elif token in dealside:
+        return 'Client Deal Side'
+
+    elif token in crds_code:
+        return 'CRDSCode'
+
+    else:
+        return ''
