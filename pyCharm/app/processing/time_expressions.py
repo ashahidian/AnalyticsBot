@@ -4,7 +4,7 @@ import re
 
 
 def time_synonyms_simple(expression):
-    matched = re.search(r"(next|last)\s([0-9\s]*)(day|week|year|quarter)")
+    matched = re.search(r"(next|last)\s([0-9\s]*)(day|week|year|quarter)", expression)
 
     if expression == 'yesterday':
         yesterday = "{:%Y-%m-%d}".format(datetime.today() - timedelta(days=1))
@@ -14,33 +14,15 @@ def time_synonyms_simple(expression):
         tomorrow = "{:%Y-%m-%d}".format(datetime.today() + timedelta(days=1))
         return tomorrow
 
-    elif expression == 'last week':
-        other = "{:%Y-%m-%d}".format(datetime.today() - timedelta(days=7))
-        return [other, "{:%Y-%m-%d}".format(datetime.today())]
-
-    elif expression == 'next week':
-        other = "{:%Y-%m-%d}".format(datetime.today() + timedelta(days=7))
-        return ["{:%Y-%m-%d}".format(datetime.today()), other]
-
     elif expression == 'this year':
         # calculating the current year
         now = datetime.now()
-        return now.year
-
-    elif expression == 'last year':
-        now = datetime.now()
-        last_year = now - timedelta(days=365)
-        return [str(last_year.year) + str("-01-01"), str(last_year.year) + str("-12-31")]
-
-    elif expression == 'next year':
-        now = datetime.now()
-        next_year = now + timedelta(days=365)
-        return [str(next_year.year) + str("-01-01"), str(next_year.year) + str("-12-31")]
+        return ["{:%Y-%m-%d}".format(datetime(now.year, 1, 1)), "{:%Y-%m-%d}".format(datetime(now.year, 12, 31))]
 
     elif matched.group(1) == 'next':
         if matched.group(3) == 'day':
             if matched.group(2) != "":
-                number = matched.group(2)
+                number = int(matched.group(2))
                 other = "{:%Y-%m-%d}".format(datetime.today() + timedelta(days=number))
                 return ["{:%Y-%m-%d}".format(datetime.today()), other]
 
@@ -51,7 +33,7 @@ def time_synonyms_simple(expression):
 
         elif matched.group(3) == 'week':
             if matched.group(2) != "":
-                number = matched.group(2)
+                number = int(matched.group(2))
                 other = "{:%Y-%m-%d}".format(datetime.today() + timedelta(weeks=number))
                 return ["{:%Y-%m-%d}".format(datetime.today()), other]
 
@@ -62,7 +44,7 @@ def time_synonyms_simple(expression):
 
         elif matched.group(3) == 'year':
             if matched.group(2) != "":
-                number = matched.group(2)
+                number = int(matched.group(2))
                 other = "{:%Y-%m-%d}".format(datetime.today() + timedelta(weeks=number * 52))
                 return ["{:%Y-%m-%d}".format(datetime.today()), other]
 
@@ -71,39 +53,45 @@ def time_synonyms_simple(expression):
                 other = "{:%Y-%m-%d}".format(datetime.today() + timedelta(weeks=number * 52))
                 return ["{:%Y-%m-%d}".format(datetime.today()), other]
 
+        elif matched.group(3) == 'quarter':
+            return calculate_next_quarter()
+
     elif matched.group(1) == 'last':
         if matched.group(3) == 'day':
             if matched.group(2) != "":
-                number = matched.group(2)
+                number = int(matched.group(2))
                 other = "{:%Y-%m-%d}".format(datetime.today() - timedelta(days=number))
                 return [other, "{:%Y-%m-%d}".format(datetime.today())]
 
             else:
                 number = 1
-                other = "{:%Y-%m-%d}".format(datetime.today() + timedelta(days=number))
-                return ["{:%Y-%m-%d}".format(datetime.today()), other]
+                other = "{:%Y-%m-%d}".format(datetime.today() - timedelta(days=number))
+                return [other, "{:%Y-%m-%d}".format(datetime.today())]
 
         elif matched.group(3) == 'week':
             if matched.group(2) != "":
-                number = matched.group(2)
+                number = int(matched.group(2))
                 other = "{:%Y-%m-%d}".format(datetime.today() - timedelta(weeks=number))
                 return [other, "{:%Y-%m-%d}".format(datetime.today())]
 
             else:
                 number = 1
-                other = "{:%Y-%m-%d}".format(datetime.today() + timedelta(weeks=number))
-                return ["{:%Y-%m-%d}".format(datetime.today()), other]
+                other = "{:%Y-%m-%d}".format(datetime.today() - timedelta(weeks=number))
+                return [other, "{:%Y-%m-%d}".format(datetime.today())]
 
         elif matched.group(3) == 'year':
             if matched.group(2) != "":
-                number = matched.group(2)
+                number = int(matched.group(2))
                 other = "{:%Y-%m-%d}".format(datetime.today() - timedelta(weeks=number * 52))
                 return [other, "{:%Y-%m-%d}".format(datetime.today())]
 
             else:
                 number = 1
-                other = "{:%Y-%m-%d}".format(datetime.today() + timedelta(weeks=number * 52))
-                return ["{:%Y-%m-%d}".format(datetime.today()), other]
+                other = "{:%Y-%m-%d}".format(datetime.today() - timedelta(weeks=number * 52))
+                return [other, "{:%Y-%m-%d}".format(datetime.today())]
+
+        elif matched.group(3) == 'quarter':
+            return calculate_last_quarter()
 
 
 def calculate_last_quarter():
@@ -129,6 +117,9 @@ def calculate_next_quarter():
 
 
 #if __name__ == '__main__':
+#    test = time_synonyms_simple("")
+
+#    print(test)
 #    last = calculate_last_quarter()
 #    next = calculate_next_quarter()
 
