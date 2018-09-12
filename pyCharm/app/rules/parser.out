@@ -17,16 +17,20 @@ Rule 11    statement -> DIMENSION TOKEN DIMENSION
 Rule 12    statement -> DIMENSION METRIC TOKEN
 Rule 13    statement -> METRIC DIMENSION TOKEN
 Rule 14    statement -> DIMENSION DIMENSION TOKEN
-Rule 15    statement -> DIMENSION MEASURE METRIC
-Rule 16    statement -> METRIC MEASURE DIMENSION
+Rule 15    statement -> DIMENSION TOKEN METRIC TOKEN
+Rule 16    statement -> METRIC TOKEN DIMENSION TOKEN
+Rule 17    statement -> DIMENSION TOKEN DIMENSION TOKEN
+Rule 18    statement -> DIMENSION MEASURE METRIC
+Rule 19    statement -> METRIC MEASURE DIMENSION
+Rule 20    statement -> DIMENSION MEASURE DIMENSION
 
 Terminals, with rules where they appear
 
-DIMENSION            : 2 4 6 8 9 10 11 11 12 13 14 14 15 16
+DIMENSION            : 2 4 6 8 9 10 11 11 12 13 14 14 15 16 17 17 18 19 20 20
 EXCLUDE              : 5 6 7 8
-MEASURE              : 15 16
-METRIC               : 1 3 5 7 9 10 12 13 15 16
-TOKEN                : 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+MEASURE              : 18 19 20
+METRIC               : 1 3 5 7 9 10 12 13 15 16 18 19
+TOKEN                : 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 15 16 16 17 17
 error                : 
 
 Nonterminals, with rules where they appear
@@ -52,8 +56,12 @@ state 0
     (12) statement -> . DIMENSION METRIC TOKEN
     (13) statement -> . METRIC DIMENSION TOKEN
     (14) statement -> . DIMENSION DIMENSION TOKEN
-    (15) statement -> . DIMENSION MEASURE METRIC
-    (16) statement -> . METRIC MEASURE DIMENSION
+    (15) statement -> . DIMENSION TOKEN METRIC TOKEN
+    (16) statement -> . METRIC TOKEN DIMENSION TOKEN
+    (17) statement -> . DIMENSION TOKEN DIMENSION TOKEN
+    (18) statement -> . DIMENSION MEASURE METRIC
+    (19) statement -> . METRIC MEASURE DIMENSION
+    (20) statement -> . DIMENSION MEASURE DIMENSION
 
     METRIC          shift and go to state 1
     DIMENSION       shift and go to state 5
@@ -68,7 +76,8 @@ state 1
     (5) statement -> METRIC . TOKEN EXCLUDE
     (10) statement -> METRIC . TOKEN DIMENSION
     (13) statement -> METRIC . DIMENSION TOKEN
-    (16) statement -> METRIC . MEASURE DIMENSION
+    (16) statement -> METRIC . TOKEN DIMENSION TOKEN
+    (19) statement -> METRIC . MEASURE DIMENSION
 
     TOKEN           shift and go to state 7
     DIMENSION       shift and go to state 8
@@ -107,7 +116,10 @@ state 5
     (11) statement -> DIMENSION . TOKEN DIMENSION
     (12) statement -> DIMENSION . METRIC TOKEN
     (14) statement -> DIMENSION . DIMENSION TOKEN
-    (15) statement -> DIMENSION . MEASURE METRIC
+    (15) statement -> DIMENSION . TOKEN METRIC TOKEN
+    (17) statement -> DIMENSION . TOKEN DIMENSION TOKEN
+    (18) statement -> DIMENSION . MEASURE METRIC
+    (20) statement -> DIMENSION . MEASURE DIMENSION
 
     TOKEN           shift and go to state 14
     METRIC          shift and go to state 13
@@ -117,7 +129,7 @@ state 5
 
 state 6
 
-    (16) statement -> METRIC MEASURE . DIMENSION
+    (19) statement -> METRIC MEASURE . DIMENSION
 
     DIMENSION       shift and go to state 17
 
@@ -127,6 +139,7 @@ state 7
     (1) statement -> METRIC TOKEN .
     (5) statement -> METRIC TOKEN . EXCLUDE
     (10) statement -> METRIC TOKEN . DIMENSION
+    (16) statement -> METRIC TOKEN . DIMENSION TOKEN
 
     $end            reduce using rule 1 (statement -> METRIC TOKEN .)
     EXCLUDE         shift and go to state 18
@@ -181,6 +194,8 @@ state 14
     (6) statement -> DIMENSION TOKEN . EXCLUDE
     (9) statement -> DIMENSION TOKEN . METRIC
     (11) statement -> DIMENSION TOKEN . DIMENSION
+    (15) statement -> DIMENSION TOKEN . METRIC TOKEN
+    (17) statement -> DIMENSION TOKEN . DIMENSION TOKEN
 
     $end            reduce using rule 2 (statement -> DIMENSION TOKEN .)
     EXCLUDE         shift and go to state 25
@@ -197,16 +212,18 @@ state 15
 
 state 16
 
-    (15) statement -> DIMENSION MEASURE . METRIC
+    (18) statement -> DIMENSION MEASURE . METRIC
+    (20) statement -> DIMENSION MEASURE . DIMENSION
 
     METRIC          shift and go to state 28
+    DIMENSION       shift and go to state 29
 
 
 state 17
 
-    (16) statement -> METRIC MEASURE DIMENSION .
+    (19) statement -> METRIC MEASURE DIMENSION .
 
-    $end            reduce using rule 16 (statement -> METRIC MEASURE DIMENSION .)
+    $end            reduce using rule 19 (statement -> METRIC MEASURE DIMENSION .)
 
 
 state 18
@@ -219,8 +236,10 @@ state 18
 state 19
 
     (10) statement -> METRIC TOKEN DIMENSION .
+    (16) statement -> METRIC TOKEN DIMENSION . TOKEN
 
     $end            reduce using rule 10 (statement -> METRIC TOKEN DIMENSION .)
+    TOKEN           shift and go to state 30
 
 
 state 20
@@ -254,8 +273,10 @@ state 23
 state 24
 
     (9) statement -> DIMENSION TOKEN METRIC .
+    (15) statement -> DIMENSION TOKEN METRIC . TOKEN
 
     $end            reduce using rule 9 (statement -> DIMENSION TOKEN METRIC .)
+    TOKEN           shift and go to state 31
 
 
 state 25
@@ -268,8 +289,10 @@ state 25
 state 26
 
     (11) statement -> DIMENSION TOKEN DIMENSION .
+    (17) statement -> DIMENSION TOKEN DIMENSION . TOKEN
 
     $end            reduce using rule 11 (statement -> DIMENSION TOKEN DIMENSION .)
+    TOKEN           shift and go to state 32
 
 
 state 27
@@ -281,7 +304,35 @@ state 27
 
 state 28
 
-    (15) statement -> DIMENSION MEASURE METRIC .
+    (18) statement -> DIMENSION MEASURE METRIC .
 
-    $end            reduce using rule 15 (statement -> DIMENSION MEASURE METRIC .)
+    $end            reduce using rule 18 (statement -> DIMENSION MEASURE METRIC .)
+
+
+state 29
+
+    (20) statement -> DIMENSION MEASURE DIMENSION .
+
+    $end            reduce using rule 20 (statement -> DIMENSION MEASURE DIMENSION .)
+
+
+state 30
+
+    (16) statement -> METRIC TOKEN DIMENSION TOKEN .
+
+    $end            reduce using rule 16 (statement -> METRIC TOKEN DIMENSION TOKEN .)
+
+
+state 31
+
+    (15) statement -> DIMENSION TOKEN METRIC TOKEN .
+
+    $end            reduce using rule 15 (statement -> DIMENSION TOKEN METRIC TOKEN .)
+
+
+state 32
+
+    (17) statement -> DIMENSION TOKEN DIMENSION TOKEN .
+
+    $end            reduce using rule 17 (statement -> DIMENSION TOKEN DIMENSION TOKEN .)
 
