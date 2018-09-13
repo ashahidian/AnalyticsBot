@@ -36,16 +36,6 @@ question_list = [
     "who rollovered in the last 5 months?"
 ]
 
-# client Joe cc?
-# client Mary net client?
-# client x cc ?
-# client x volume?
-# client x non-risk cc?
-# client x at risk cc?
-# client x average rollover?
-# client y rollover ratio?
-# client w net client?
-
 
 def call_shell():
     ps = subprocess.Popen('cd /home/anisa/Documents/AnalyticsBot/sempre && ./run @mode=simple -Grammar.inPaths /home/anisa/Documents/AnalyticsBot/sempre/analyticsBot/interface.grammar',

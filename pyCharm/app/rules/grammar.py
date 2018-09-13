@@ -3,12 +3,13 @@ import ply.yacc as yacc
 
 
 tokens = (
-    'METRIC', 'DIMENSION', 'EXCLUDE', 'TOKEN', 'MEASURE')
+    'METRIC', 'DIMENSION', 'EXCLUDE', 'TOKEN', 'MEASURE', 'DATE')
 
 # Tokens
 t_METRIC = r'Volume|Transaction Number|TotalTrades'
 t_DIMENSION = r'TradeStatus|Tenor|ProductKey'
 t_TOKEN = r'[a-zA-Z_0-9]+'
+t_DATE = r'(next|last)\s([0-9\s]*)(day|week|year|quarter) | ([0-9]{4}) | yesterday | tomorrow | this year '
 
 
 def t_EXCLUDE(t):
