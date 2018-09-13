@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c794ccc6-50a2-42fa-a476-00e8544db14f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/pyCharm/app/evaluation/test_battery.py" afterPath="$PROJECT_DIR$/pyCharm/app/evaluation/test_battery.py" />
       <change beforePath="$PROJECT_DIR$/pyCharm/app/processing/time_expressions.py" afterPath="$PROJECT_DIR$/pyCharm/app/processing/time_expressions.py" />
-      <change beforePath="$PROJECT_DIR$/pyCharm/app/rules/grammar.py" afterPath="$PROJECT_DIR$/pyCharm/app/rules/grammar.py" />
-      <change beforePath="$PROJECT_DIR$/sempre/analyticsBot/interface.grammar" afterPath="$PROJECT_DIR$/sempre/analyticsBot/interface.grammar" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,19 +16,35 @@
     <SUITE FILE_PATH="coverage/AnalyticsBot$sql_treatment.coverage" NAME="sql_treatment Coverage Results" MODIFIED="1529585034976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyCharm/app/management" />
     <SUITE FILE_PATH="coverage/AnalyticsBot$grammar.coverage" NAME="grammar Coverage Results" MODIFIED="1536691420856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyCharm/app/rules" />
     <SUITE FILE_PATH="coverage/AnalyticsBot$pipeline.coverage" NAME="pipeline Coverage Results" MODIFIED="1532297592905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyCharm/app/management" />
-    <SUITE FILE_PATH="coverage/AnalyticsBot$time_expressions.coverage" NAME="time_expressions Coverage Results" MODIFIED="1536836972680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyCharm/app/processing" />
+    <SUITE FILE_PATH="coverage/AnalyticsBot$time_expressions.coverage" NAME="time_expressions Coverage Results" MODIFIED="1536864295441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyCharm/app/processing" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="time_expressions.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pyCharm/app/processing/time_expressions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="45" column="38" lean-forward="true" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+            <state relative-caret-position="162">
+              <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
-                <element signature="e#3855#4263#0" expanded="false" />
-                <element signature="e#4300#4813#0" expanded="false" />
+                <element signature="e#391#605#0" expanded="false" />
+                <element signature="e#650#861#0" expanded="false" />
+                <element signature="e#907#1207#0" expanded="false" />
+                <element signature="e#1240#1531#0" expanded="false" />
+                <element signature="e#1579#3914#0" expanded="false" />
+                <element signature="e#1622#2303#0" expanded="false" />
+                <element signature="e#1665#1976#0" expanded="false" />
+                <element signature="e#2012#2303#0" expanded="false" />
+                <element signature="e#2359#3042#0" expanded="false" />
+                <element signature="e#2402#2714#0" expanded="false" />
+                <element signature="e#2750#3042#0" expanded="false" />
+                <element signature="e#3141#3458#0" expanded="false" />
+                <element signature="e#3494#3791#0" expanded="false" />
+                <element signature="e#3849#3914#0" expanded="false" />
+                <element signature="e#4005#4525#0" expanded="false" />
+                <element signature="e#5318#6011#0" expanded="false" />
+                <element signature="e#6145#6699#0" expanded="false" />
+                <element signature="e#6740#7395#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -441,8 +454,8 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33110368" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17558528" sideWeight="0.24279211" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33444816" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43143812" sideWeight="0.4969651" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29765886" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22742476" sideWeight="0.4969651" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29765886" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32107022" sideWeight="0.7572079" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21016692" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -490,7 +503,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="20" />
+      <option name="time" value="29" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -839,12 +852,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pyCharm/app/processing/time_expressions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="45" column="38" lean-forward="true" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+        <state relative-caret-position="162">
+          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
-            <element signature="e#3855#4263#0" expanded="false" />
-            <element signature="e#4300#4813#0" expanded="false" />
+            <element signature="e#391#605#0" expanded="false" />
+            <element signature="e#650#861#0" expanded="false" />
+            <element signature="e#907#1207#0" expanded="false" />
+            <element signature="e#1240#1531#0" expanded="false" />
+            <element signature="e#1579#3914#0" expanded="false" />
+            <element signature="e#1622#2303#0" expanded="false" />
+            <element signature="e#1665#1976#0" expanded="false" />
+            <element signature="e#2012#2303#0" expanded="false" />
+            <element signature="e#2359#3042#0" expanded="false" />
+            <element signature="e#2402#2714#0" expanded="false" />
+            <element signature="e#2750#3042#0" expanded="false" />
+            <element signature="e#3141#3458#0" expanded="false" />
+            <element signature="e#3494#3791#0" expanded="false" />
+            <element signature="e#3849#3914#0" expanded="false" />
+            <element signature="e#4005#4525#0" expanded="false" />
+            <element signature="e#5318#6011#0" expanded="false" />
+            <element signature="e#6145#6699#0" expanded="false" />
+            <element signature="e#6740#7395#0" expanded="false" />
           </folding>
         </state>
       </provider>
