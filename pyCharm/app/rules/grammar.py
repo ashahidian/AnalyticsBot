@@ -1,7 +1,6 @@
 import ply.lex as lex
 import ply.yacc as yacc
 
-
 tokens = (
     'METRIC', 'DIMENSION', 'EXCLUDE', 'TOKEN', 'MEASURE', 'DATE')
 
@@ -72,14 +71,16 @@ def p_statement_multiple_token_second(p):
     ''' statement : DIMENSION TOKEN METRIC
                 | METRIC TOKEN DIMENSION
                 | DIMENSION TOKEN DIMENSION '''
-    p[0] = "".join(('SELECT ', p[3], ' FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[1], ' = ', p[2]))
+    p[0] = "".join(
+        ('SELECT ', p[3], ' FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[1], ' = ', p[2]))
 
 
 def p_statement_multiple_token_third(p):
     ''' statement : DIMENSION METRIC TOKEN
                 | METRIC DIMENSION TOKEN
                 | DIMENSION DIMENSION TOKEN '''
-    p[0] = "".join(('SELECT ', p[1], ' FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[2], ' = ', p[3]))
+    p[0] = "".join(
+        ('SELECT ', p[1], ' FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[2], ' = ', p[3]))
 
 
 def p_statement_multiple_token_four(p):
@@ -94,7 +95,40 @@ def p_statement_measure(p):
     ''' statement : DIMENSION MEASURE METRIC
                 | METRIC MEASURE DIMENSION
                 | DIMENSION MEASURE DIMENSION '''
-    p[0] ="".join(('SELECT TOP 10 ', p[1], ', ', p[3], ' FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] '))
+    p[0] = "".join(
+        ('SELECT TOP 10 ', p[1], ', ', p[3], ' FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] '))
+
+
+def p_statement_time(p):
+    '''statement : DIMENSION TIME'''
+
+    p[0] = "".join(
+        ('SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[1], ' = ', p[2]))
+
+
+def p_statement_dimension_time(p):
+    '''statement : DIMENSION DIMENSION TIME
+                | METRIC DIMENSION TIME'''
+
+    p[0] = "".join(
+        ('SELECT ', p[1], ' FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[2], ' = ', p[3]))
+
+
+def p_statement_time_time(p):
+    '''statement : DIMENSION TIME TIME'''
+
+    p[0] = "".join(
+        ('SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[1], ' >= ', p[2], ' AND ',
+         p[1], ' <= ', p[3]))
+
+
+def p_statement_dimension_time_time(p):
+    '''statement : DIMENSION DIMENSION TIME TIME
+                | METRIC DIMENSION TIME TIME'''
+
+    p[0] = "".join(
+        ('SELECT ', p[1], ' FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[2], ' >= ', p[3], ' AND ',
+         p[2], ' <= ', p[4]))
 
 
 def p_error(p):
@@ -103,7 +137,6 @@ def p_error(p):
 
 
 yacc.yacc()
-
 
 try:
     s = 'Tenor highest Volume'
