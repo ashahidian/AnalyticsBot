@@ -5,9 +5,16 @@ tokens = (
     'MEASURE', 'ATTRIBUTE', 'EXCLUDE', 'TOKEN', 'COMPARE', 'DATE')
 
 # Tokens
-t_MEASURE = r'Volume|Transaction Number|TotalTrades'
-t_ATTRIBUTE = r'TradeStatus|Tenor|ProductKey'
+t_MEASURE = r'Volume|TotalTrades|StdDevRolloverDays|Spot\sPrice\sStrike|RolloverRatio|Rank|NetVolumeRatio|NetVolume' \
+            r'NearLegVolume|LatestRolloverDays|EV|CC\sTotal|CC\sNonRisk|CC\sAtRisk|AverageRolloverDays|MaxAbsNetVolume'
+
+t_ATTRIBUTE = r'TradeStatus|Tenor|Product\sGroup|Product|Platform|NewTrade|NetClientPosition|NearTenorDays|' \
+              r'MaxFutureDate|Marketer|LocalBlotter|Leg|FromDays|FarTenorDays|Expiry\sDate|Deal\sID|Deal Date' \
+              r'|CurrencyPairGroup|Currency\sPair|CRDSCode|Client\sDeal\sSide|Client' \
+              r'|Broker_FXT|NDF|Fixing\sDate'
+
 t_TOKEN = r'[a-zA-Z_0-9]+'
+
 t_DATE = r'(next|last)\s([0-9\s]*)(day|week|year|quarter) | ([0-9]{4}) | yesterday | tomorrow | this year '
 
 
@@ -78,7 +85,8 @@ def p_statement_exclude_large(p):
                 | ATTRIBUTE EXCLUDE MEASURE TOKEN
                 | ATTRIBUTE EXCLUDE ATTRIBUTE TOKEN
                 | MEASURE EXCLUDE MEASURE TOKEN '''
-    p[0] = "".join(('SELECT ', p[1],' FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[3], ' != ', p[4]))
+    p[0] = "".join(
+        ('SELECT ', p[1], ' FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[3], ' != ', p[4]))
 
 
 def p_statement_multiple_token_second(p):
@@ -141,7 +149,8 @@ def p_statement_attribute_time_time(p):
                 | MEASURE ATTRIBUTE DATE DATE'''
 
     p[0] = "".join(
-        ('SELECT ', p[1], ' FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[2], ' >= ', p[3], ' AND ',
+        ('SELECT ', p[1], ' FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[2], ' >= ', p[3],
+         ' AND ',
          p[2], ' <= ', p[4]))
 
 
@@ -151,12 +160,12 @@ def p_error(p):
 
 
 yacc.yacc()
-#TotalTrades
-#TradeStatus
-#Volume
-#Tenor
+# TotalTrades
+# TradeStatus
+# Volume
+# Tenor
 try:
-    s = 'Tenor last year'
+    s = 'Broker_FXT x'
 except EOFError:
     pass
 r = yacc.parse(s)

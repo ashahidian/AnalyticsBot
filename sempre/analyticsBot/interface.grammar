@@ -5,26 +5,57 @@
 #---------- METRIC RULES
 # Basic Metric rules where the metric is defined as a string constant
 (rule $Measure (volume) (ConstantFn (string "Volume")))
-(rule $Measure (cc) (ConstantFn (string "CC Total")))
-(rule $Measure (non risk cc) (ConstantFn (string "CC NonRisk")))
-(rule $Measure (at risk cc) (ConstantFn (string "CC AtRisk")))
-(rule $Measure (average rollover) (ConstantFn (string "AverageRolloverDays")))
-(rule $Measure (rollover ratio) (ConstantFn (string "RolloverRatio")))
-(rule $Measure (net client) (ConstantFn (string "NetClientPosition")))
-(rule $Measure (currency) (ConstantFn (string "Currency Pair")))
-(rule $Measure (platform) (ConstantFn (string "Platform")))
+(rule $Measure (totaltrades) (ConstantFn (string "TotalTrades")))
+(rule $Measure (stddevrollover) (ConstantFn (string "StdDevRolloverDays")))
+(rule $Measure (spotpricestrike) (ConstantFn (string "Spot Price Strike")))
+(rule $Measure (rolloverratio) (ConstantFn (string "RolloverRatio")))
+(rule $Measure (rank) (ConstantFn (string "Rank")))
+(rule $Measure (netvolumeratio) (ConstantFn (string "NetVolumeRatio")))
+(rule $Measure (netvolume) (ConstantFn (string "NetVolume")))
+(rule $Measure (nearlegvolume) (ConstantFn (string "NearLegVolume")))
+(rule $Measure (rollover) (ConstantFn (string "LatestRolloverDays")))
+(rule $Measure (ev) (ConstantFn (string "EV")))
+(rule $Measure (cctotal) (ConstantFn (string "CC Total")))
+(rule $Measure (ccnonrisk) (ConstantFn (string "CC NonRisk")))
+(rule $Measure (ccatrisk) (ConstantFn (string "CC AtRisk")))
+(rule $Measure (avgrollover) (ConstantFn (string "AverageRolloverDays")))
+(rule $Measure (maxabsnetvolume) (ConstantFn (string "MaxAbsNetVolume")))
+
 
 
 #---------- ATTRIBUTE RULES
 # Basic Dimension rules where the dimension is defined as a string constant
-(rule $Attribute (crdscode) (ConstantFn (string "CRDSCode")))
+(rule $Attribute (tradestatus) (ConstantFn (string "TradeStatus")))
+(rule $Attribute (tenor) (ConstantFn (string "Tenor")))
+(rule $Attribute (productgroup) (ConstantFn (string "Product Group")))
+(rule $Attribute (product) (ConstantFn (string "Product")))
+(rule $Attribute (platform) (ConstantFn (string "Platform")))
+(rule $Attribute (newtrade) (ConstantFn (string "NewTrade")))
+(rule $Attribute (netclientposition) (ConstantFn (string "NetClientPosition")))
+(rule $Attribute (neartenordays) (ConstantFn (string "NearTenorDays")))
+(rule $Attribute (maxfuturedate) (ConstantFn (string "MaxFutureDate")))
+(rule $Attribute (marketer) (ConstantFn (string "Marketer")))
+(rule $Attribute (localblotter) (ConstantFn (string "LocalBlotter")))
+(rule $Attribute (leg) (ConstantFn (string "Leg")))
+(rule $Attribute (fromdays) (ConstantFn (string "FromDays")))
+(rule $Attribute (fartenordays) (ConstantFn (string "FarTenorDays")))
+(rule $Attribute (expire) (ConstantFn (string "Expiry Date")))
 (rule $Attribute (deal) (ConstantFn (string "Deal ID")))
 (rule $Attribute (date) (ConstantFn (string "Deal Date")))
+(rule $Attribute (currencypairgroup) (ConstantFn (string "CurrencyPairGroup")))
+(rule $Attribute (currency) (ConstantFn (string "Currency Pair")))
+(rule $Attribute (crdscode) (ConstantFn (string "CRDSCode")))
+(rule $Attribute (clientdeal) (ConstantFn (string "Client Deal Side")))
 (rule $Attribute (client) (ConstantFn (string "Client")))
-(rule $Attribute (expire) (ConstantFn (string "Expiry Date")))
-(rule $Attribute (trade status) (ConstantFn (string "TradeStatus")))
-(rule $Attribute (leg) (ConstantFn (string "Leg")))
-(rule $Attribute (client deal) (ConstantFn (string "Client Deal Side")))
+(rule $Attribute (broker) (ConstantFn (string "Brooker_FXT")))
+(rule $Attribute (ndfdate) (ConstantFn (string "NDF Fixing Date")))
+
+
+
+
+
+
+
 
 
 #---------- DB COLUMN RULES
