@@ -1,4 +1,4 @@
-from pyCharm.app.management.category_builder import values_from_database, setup_categories
+from bot.app.management.category_builder import values_from_database, setup_categories
 import subprocess
 
 

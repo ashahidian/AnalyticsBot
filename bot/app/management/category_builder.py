@@ -1,6 +1,6 @@
 # first, call the database and gather the client names, id's and currencies
-from pyCharm.app.management.categories import *
-from pyCharm.app.management.sql_connection import sql_call
+from bot.app.management.categories import *
+from bot.app.management.sql_connection import sql_call
 
 
 # call sql_call function to get the values from the database
