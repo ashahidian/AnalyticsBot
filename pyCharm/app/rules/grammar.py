@@ -2,11 +2,11 @@ import ply.lex as lex
 import ply.yacc as yacc
 
 tokens = (
-    'METRIC', 'DIMENSION', 'EXCLUDE', 'TOKEN', 'MEASURE', 'DATE')
+    'MEASURE', 'ATTRIBUTE', 'EXCLUDE', 'TOKEN', 'COMPARE', 'DATE')
 
 # Tokens
-t_METRIC = r'Volume|Transaction Number|TotalTrades'
-t_DIMENSION = r'TradeStatus|Tenor|ProductKey'
+t_MEASURE = r'Volume|Transaction Number|TotalTrades'
+t_ATTRIBUTE = r'TradeStatus|Tenor|ProductKey'
 t_TOKEN = r'[a-zA-Z_0-9]+'
 t_DATE = r'(next|last)\s([0-9\s]*)(day|week|year|quarter) | ([0-9]{4}) | yesterday | tomorrow | this year '
 
@@ -16,7 +16,7 @@ def t_EXCLUDE(t):
     return t
 
 
-def t_MEASURE(t):
+def t_COMPARE(t):
     r'highest'
     return t
 
@@ -43,88 +43,102 @@ names = {}
 
 
 def p_statement_single(p):
-    ''' statement : METRIC TOKEN
-                | DIMENSION TOKEN '''
+    ''' statement : MEASURE TOKEN
+                | ATTRIBUTE TOKEN '''
 
     p[0] = "".join(('SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[1], ' = ', p[2]))
 
 
 def p_statement_single_second(p):
-    ''' statement : TOKEN METRIC
-                | TOKEN DIMENSION '''
+    ''' statement : TOKEN MEASURE
+                | TOKEN ATTRIBUTE '''
     p[0] = "".join(('SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[2], ' = ', p[1]))
 
 
 def p_statement_exclude(p):
-    ''' statement : METRIC TOKEN EXCLUDE
-                | DIMENSION TOKEN EXCLUDE '''
+    ''' statement : MEASURE TOKEN EXCLUDE
+                | ATTRIBUTE TOKEN EXCLUDE '''
     p[0] = "".join(('SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[1], ' != ', p[2]))
 
 
+def p_statement_exclude_middle(p):
+    ''' statement : MEASURE EXCLUDE TOKEN
+                | ATTRIBUTE EXCLUDE TOKEN '''
+    p[0] = "".join(('SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[1], ' != ', p[3]))
+
+
 def p_statement_exclude_first(p):
-    ''' statement : EXCLUDE METRIC TOKEN
-                | EXCLUDE DIMENSION TOKEN '''
+    ''' statement : EXCLUDE MEASURE TOKEN
+                | EXCLUDE ATTRIBUTE TOKEN '''
     p[0] = "".join(('SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[2], ' != ', p[3]))
 
 
+def p_statement_exclude_large(p):
+    ''' statement : MEASURE EXCLUDE ATTRIBUTE TOKEN
+                | ATTRIBUTE EXCLUDE MEASURE TOKEN
+                | ATTRIBUTE EXCLUDE ATTRIBUTE TOKEN
+                | MEASURE EXCLUDE MEASURE TOKEN '''
+    p[0] = "".join(('SELECT ', p[1],' FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[3], ' != ', p[4]))
+
+
 def p_statement_multiple_token_second(p):
-    ''' statement : DIMENSION TOKEN METRIC
-                | METRIC TOKEN DIMENSION
-                | DIMENSION TOKEN DIMENSION '''
+    ''' statement : ATTRIBUTE TOKEN MEASURE
+                | MEASURE TOKEN ATTRIBUTE
+                | ATTRIBUTE TOKEN ATTRIBUTE '''
     p[0] = "".join(
         ('SELECT ', p[3], ' FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[1], ' = ', p[2]))
 
 
 def p_statement_multiple_token_third(p):
-    ''' statement : DIMENSION METRIC TOKEN
-                | METRIC DIMENSION TOKEN
-                | DIMENSION DIMENSION TOKEN '''
+    ''' statement : ATTRIBUTE MEASURE TOKEN
+                | MEASURE ATTRIBUTE TOKEN
+                | ATTRIBUTE ATTRIBUTE TOKEN '''
     p[0] = "".join(
         ('SELECT ', p[1], ' FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[2], ' = ', p[3]))
 
 
 def p_statement_multiple_token_four(p):
-    ''' statement : DIMENSION TOKEN METRIC TOKEN
-                | METRIC TOKEN DIMENSION TOKEN
-                | DIMENSION TOKEN DIMENSION TOKEN'''
+    ''' statement : ATTRIBUTE TOKEN MEASURE TOKEN
+                | MEASURE TOKEN ATTRIBUTE TOKEN
+                | ATTRIBUTE TOKEN ATTRIBUTE TOKEN'''
     p[0] = "".join(('SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[1], ' = ', p[2],
                     ' AND ', p[3], ' = ', p[4]))
 
 
-def p_statement_measure(p):
-    ''' statement : DIMENSION MEASURE METRIC
-                | METRIC MEASURE DIMENSION
-                | DIMENSION MEASURE DIMENSION '''
+def p_statement_compare(p):
+    ''' statement : ATTRIBUTE COMPARE MEASURE
+                | MEASURE COMPARE ATTRIBUTE
+                | ATTRIBUTE COMPARE ATTRIBUTE '''
     p[0] = "".join(
-        ('SELECT TOP 10 ', p[1], ', ', p[3], ' FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] '))
+        ('SELECT TOP 10 ', p[3], ', ', p[1], ' FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] '))
 
 
 def p_statement_time(p):
-    '''statement : DIMENSION TIME'''
+    '''statement : ATTRIBUTE DATE'''
 
     p[0] = "".join(
         ('SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[1], ' = ', p[2]))
 
 
-def p_statement_dimension_time(p):
-    '''statement : DIMENSION DIMENSION TIME
-                | METRIC DIMENSION TIME'''
+def p_statement_attribute_time(p):
+    '''statement : ATTRIBUTE ATTRIBUTE DATE
+                | MEASURE ATTRIBUTE DATE'''
 
     p[0] = "".join(
         ('SELECT ', p[1], ' FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[2], ' = ', p[3]))
 
 
 def p_statement_time_time(p):
-    '''statement : DIMENSION TIME TIME'''
+    '''statement : ATTRIBUTE DATE DATE'''
 
     p[0] = "".join(
         ('SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[1], ' >= ', p[2], ' AND ',
          p[1], ' <= ', p[3]))
 
 
-def p_statement_dimension_time_time(p):
-    '''statement : DIMENSION DIMENSION TIME TIME
-                | METRIC DIMENSION TIME TIME'''
+def p_statement_attribute_time_time(p):
+    '''statement : ATTRIBUTE ATTRIBUTE DATE DATE
+                | MEASURE ATTRIBUTE DATE DATE'''
 
     p[0] = "".join(
         ('SELECT ', p[1], ' FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ', p[2], ' >= ', p[3], ' AND ',
@@ -137,9 +151,12 @@ def p_error(p):
 
 
 yacc.yacc()
-
+#TotalTrades
+#TradeStatus
+#Volume
+#Tenor
 try:
-    s = 'Tenor highest Volume'
+    s = 'Tenor last year'
 except EOFError:
     pass
 r = yacc.parse(s)

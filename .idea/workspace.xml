@@ -4,8 +4,10 @@
     <list default="true" id="c794ccc6-50a2-42fa-a476-00e8544db14f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/pyCharm/app/management/creating_rules_sempre.py" afterPath="$PROJECT_DIR$/pyCharm/app/management/creating_rules_sempre.py" />
-      <change beforePath="$PROJECT_DIR$/pyCharm/app/processing/time_expressions.py" afterPath="$PROJECT_DIR$/pyCharm/app/processing/time_expressions.py" />
+      <change beforePath="$PROJECT_DIR$/pyCharm/app/processing/time_expressions.py" afterPath="$PROJECT_DIR$/pyCharm/app/processing/date_expressions.py" />
       <change beforePath="$PROJECT_DIR$/pyCharm/app/rules/grammar.py" afterPath="$PROJECT_DIR$/pyCharm/app/rules/grammar.py" />
+      <change beforePath="$PROJECT_DIR$/pyCharm/app/rules/parser.out" afterPath="$PROJECT_DIR$/pyCharm/app/rules/parser.out" />
+      <change beforePath="$PROJECT_DIR$/pyCharm/app/rules/parsetab.py" afterPath="$PROJECT_DIR$/pyCharm/app/rules/parsetab.py" />
       <change beforePath="$PROJECT_DIR$/sempre/analyticsBot/interface.grammar" afterPath="$PROJECT_DIR$/sempre/analyticsBot/interface.grammar" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,18 +20,19 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/AnalyticsBot$sub.coverage" NAME="sub Coverage Results" MODIFIED="1534674574659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyCharm" />
     <SUITE FILE_PATH="coverage/AnalyticsBot$sql_treatment.coverage" NAME="sql_treatment Coverage Results" MODIFIED="1529585034976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyCharm/app/management" />
-    <SUITE FILE_PATH="coverage/AnalyticsBot$grammar.coverage" NAME="grammar Coverage Results" MODIFIED="1536691420856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyCharm/app/rules" />
+    <SUITE FILE_PATH="coverage/AnalyticsBot$grammar.coverage" NAME="grammar Coverage Results" MODIFIED="1537183591400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyCharm/app/rules" />
     <SUITE FILE_PATH="coverage/AnalyticsBot$creating_rules_sempre.coverage" NAME="creating_rules_sempre Coverage Results" MODIFIED="1536917501975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyCharm/app/management" />
+    <SUITE FILE_PATH="coverage/AnalyticsBot$grammar__1_.coverage" NAME="grammar (1) Coverage Results" MODIFIED="1537221186326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyCharm/app/rules" />
     <SUITE FILE_PATH="coverage/AnalyticsBot$pipeline.coverage" NAME="pipeline Coverage Results" MODIFIED="1532297592905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyCharm/app/management" />
     <SUITE FILE_PATH="coverage/AnalyticsBot$time_expressions.coverage" NAME="time_expressions Coverage Results" MODIFIED="1536925034505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyCharm/app/processing" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="time_expressions.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pyCharm/app/processing/time_expressions.py">
+      <file leaf-file-name="date_expressions.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pyCharm/app/processing/date_expressions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="162">
+              <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -37,30 +40,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="grammar.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="grammar.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pyCharm/app/rules/grammar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
-              <caret line="131" column="0" lean-forward="true" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+            <state relative-caret-position="694">
+              <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
               <folding>
-                <marker date="1536927465299" expanded="true" signature="873:947" ph="SELECT * FRO... " />
-                <marker date="1536927465299" expanded="true" signature="1099:1173" ph="SELECT * FRO... " />
-                <marker date="1536927465299" expanded="true" signature="1335:1409" ph="SELECT * FRO... " />
-                <marker date="1536927465299" expanded="true" signature="1578:1652" ph="SELECT * FRO... " />
-                <marker date="1536927465299" expanded="true" signature="2514:2588" ph="SELECT * FRO... " />
-                <marker date="1536927465299" expanded="true" signature="3054:3128" ph="SELECT * FRO... " />
-                <marker date="1536927465299" expanded="true" signature="3519:3593" ph="SELECT * FRO... " />
-                <marker date="1536927465299" expanded="true" signature="3826:3909" ph="SELECT * FRO... " />
+                <element signature="e#0#21#0" expanded="true" />
+                <marker date="1537221186315" expanded="true" signature="876:950" ph="SELECT * FRO... " />
+                <marker date="1537221186315" expanded="true" signature="1103:1177" ph="SELECT * FRO... " />
+                <marker date="1537221186315" expanded="true" signature="1340:1414" ph="SELECT * FRO... " />
+                <marker date="1537221186315" expanded="true" signature="1585:1659" ph="SELECT * FRO... " />
+                <marker date="1537221186315" expanded="true" signature="1829:1903" ph="SELECT * FRO... " />
+                <marker date="1537221186315" expanded="true" signature="2191:2273" ph="SELECT * FRO... " />
+                <marker date="1537221186315" expanded="true" signature="3141:3215" ph="SELECT * FRO... " />
+                <marker date="1537221186315" expanded="true" signature="3683:3757" ph="SELECT * FRO... " />
+                <marker date="1537221186315" expanded="true" signature="4149:4223" ph="SELECT * FRO... " />
+                <marker date="1537221186315" expanded="true" signature="4457:4540" ph="SELECT * FRO... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="interface.grammar" pinned="false" current-in-tab="false">
+      <file leaf-file-name="interface.grammar" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface.grammar">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="846">
-              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state relative-caret-position="144">
+              <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -69,8 +75,8 @@
       <file leaf-file-name="creating_rules_sempre.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pyCharm/app/management/creating_rules_sempre.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="28" column="20" lean-forward="true" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+            <state relative-caret-position="304">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -79,8 +85,8 @@
       <file leaf-file-name="bd_camps_dimensions" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bd_camps_dimensions">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="50" column="14" lean-forward="true" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+            <state relative-caret-position="384">
+              <caret line="50" column="14" lean-forward="false" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -90,7 +96,7 @@
         <entry file="file://$PROJECT_DIR$/pyCharm/app/processing/synonyms.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
-              <caret line="8" column="44" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+              <caret line="8" column="44" lean-forward="false" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -107,7 +113,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>rollo</find>
       <find>Spot</find>
       <find>Near</find>
       <find>whw</find>
@@ -130,10 +135,24 @@
       <find>arithme</find>
       <find>f</find>
       <find>&quot;{:%Y-%m-%d}&quot;.format(now)</find>
+      <find>exclude</find>
+      <find>$dimension $measure</find>
+      <find>$metric $token</find>
+      <find>$metric $token $ex</find>
+      <find>$Metric</find>
+      <find>$Extra</find>
+      <find>METRIC</find>
+      <find>DIMENSION</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
       <replace>formatted_now</replace>
+      <replace>$Attribue</replace>
+      <replace>$Compare</replace>
+      <replace>$Measure</replace>
+      <replace>$Date</replace>
+      <replace>MEASURE</replace>
+      <replace>ATTRIBUTE</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -183,9 +202,10 @@
         <option value="$PROJECT_DIR$/dimension_list" />
         <option value="$PROJECT_DIR$/measure_list" />
         <option value="$PROJECT_DIR$/pyCharm/app/evaluation/test_battery.py" />
+        <option value="$PROJECT_DIR$/pyCharm/app/processing/time_expressions.py" />
         <option value="$PROJECT_DIR$/pyCharm/app/management/creating_rules_sempre.py" />
         <option value="$PROJECT_DIR$/sempre/analyticsBot/interface.grammar" />
-        <option value="$PROJECT_DIR$/pyCharm/app/processing/time_expressions.py" />
+        <option value="$PROJECT_DIR$/pyCharm/app/processing/date_expressions.py" />
         <option value="$PROJECT_DIR$/pyCharm/app/rules/grammar.py" />
       </list>
     </option>
@@ -267,6 +287,13 @@
               <item name="AnalyticsBot" type="462c0819:PsiDirectoryNode" />
               <item name="pyCharm" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="processing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AnalyticsBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AnalyticsBot" type="462c0819:PsiDirectoryNode" />
+              <item name="pyCharm" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="rules" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -319,7 +346,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.time_expressions">
+  <component name="RunManager" selected="Python.grammar (1)">
     <configuration name="creating_rules_sempre" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -339,6 +366,25 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="grammar (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyCharm/app/rules" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="AnalyticsBot" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyCharm/app/rules/grammar.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="grammar" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -353,25 +399,6 @@
       <module name="AnalyticsBot" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyCharm/app/rules/time_expressions.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="pipeline" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyCharm/app/management" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="AnalyticsBot" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyCharm/app/management/pipeline.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -409,26 +436,26 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="AnalyticsBot" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyCharm/app/processing/time_expressions.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyCharm/app/processing/date_expressions.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.pipeline" />
-      <item index="1" class="java.lang.String" itemvalue="Python.sub" />
-      <item index="2" class="java.lang.String" itemvalue="Python.grammar" />
-      <item index="3" class="java.lang.String" itemvalue="Python.time_expressions" />
-      <item index="4" class="java.lang.String" itemvalue="Python.creating_rules_sempre" />
+      <item index="0" class="java.lang.String" itemvalue="Python.sub" />
+      <item index="1" class="java.lang.String" itemvalue="Python.grammar" />
+      <item index="2" class="java.lang.String" itemvalue="Python.time_expressions" />
+      <item index="3" class="java.lang.String" itemvalue="Python.creating_rules_sempre" />
+      <item index="4" class="java.lang.String" itemvalue="Python.grammar (1)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.time_expressions" />
-        <item index="1" class="java.lang.String" itemvalue="Python.creating_rules_sempre" />
-        <item index="2" class="java.lang.String" itemvalue="Python.grammar" />
-        <item index="3" class="java.lang.String" itemvalue="Python.sub" />
-        <item index="4" class="java.lang.String" itemvalue="Python.pipeline" />
+        <item index="0" class="java.lang.String" itemvalue="Python.grammar (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Python.grammar" />
+        <item index="2" class="java.lang.String" itemvalue="Python.time_expressions" />
+        <item index="3" class="java.lang.String" itemvalue="Python.creating_rules_sempre" />
+        <item index="4" class="java.lang.String" itemvalue="Python.sub" />
       </list>
     </recent_temporary>
   </component>
@@ -465,9 +492,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17558528" sideWeight="0.24279211" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33444816" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22742476" sideWeight="0.4969651" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30267558" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32107022" sideWeight="0.7572079" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23216996" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.319398" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39464882" sideWeight="0.7572079" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19802731" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -741,7 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1602">
           <caret line="89" column="5" lean-forward="false" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -749,13 +775,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="32" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-          <folding>
-            <element signature="e#76#123#0" expanded="false" />
-            <marker date="1535288930718" expanded="true" signature="343:384" ph="SELECT DISTI... example_table" />
-            <marker date="1535288930718" expanded="true" signature="417:465" ph="SELECT DISTI... example_table" />
-            <marker date="1535288930718" expanded="true" signature="497:539" ph="SELECT DISTI... example_table" />
-            <marker date="1535288930718" expanded="true" signature="572:615" ph="SELECT DISTI... example_table" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -777,9 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#90#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -787,7 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -803,7 +818,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="20" lean-forward="true" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -811,46 +825,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="34" column="29" lean-forward="true" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pyCharm/app/processing/synonyms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="8" column="44" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+          <caret line="8" column="44" lean-forward="false" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bd_camps_dimensions">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="50" column="14" lean-forward="true" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+        <state relative-caret-position="384">
+          <caret line="50" column="14" lean-forward="false" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pyCharm/app/management/creating_rules_sempre.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="28" column="20" lean-forward="true" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+        <state relative-caret-position="304">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface.grammar">
+    <entry file="file://$PROJECT_DIR$/pyCharm/app/processing/date_expressions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="846">
-          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pyCharm/app/processing/time_expressions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="162">
+          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
@@ -859,18 +864,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pyCharm/app/rules/grammar.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="131" column="0" lean-forward="true" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+        <state relative-caret-position="694">
+          <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
           <folding>
-            <marker date="1536927465299" expanded="true" signature="873:947" ph="SELECT * FRO... " />
-            <marker date="1536927465299" expanded="true" signature="1099:1173" ph="SELECT * FRO... " />
-            <marker date="1536927465299" expanded="true" signature="1335:1409" ph="SELECT * FRO... " />
-            <marker date="1536927465299" expanded="true" signature="1578:1652" ph="SELECT * FRO... " />
-            <marker date="1536927465299" expanded="true" signature="2514:2588" ph="SELECT * FRO... " />
-            <marker date="1536927465299" expanded="true" signature="3054:3128" ph="SELECT * FRO... " />
-            <marker date="1536927465299" expanded="true" signature="3519:3593" ph="SELECT * FRO... " />
-            <marker date="1536927465299" expanded="true" signature="3826:3909" ph="SELECT * FRO... " />
+            <element signature="e#0#21#0" expanded="true" />
+            <marker date="1537221186315" expanded="true" signature="876:950" ph="SELECT * FRO... " />
+            <marker date="1537221186315" expanded="true" signature="1103:1177" ph="SELECT * FRO... " />
+            <marker date="1537221186315" expanded="true" signature="1340:1414" ph="SELECT * FRO... " />
+            <marker date="1537221186315" expanded="true" signature="1585:1659" ph="SELECT * FRO... " />
+            <marker date="1537221186315" expanded="true" signature="1829:1903" ph="SELECT * FRO... " />
+            <marker date="1537221186315" expanded="true" signature="2191:2273" ph="SELECT * FRO... " />
+            <marker date="1537221186315" expanded="true" signature="3141:3215" ph="SELECT * FRO... " />
+            <marker date="1537221186315" expanded="true" signature="3683:3757" ph="SELECT * FRO... " />
+            <marker date="1537221186315" expanded="true" signature="4149:4223" ph="SELECT * FRO... " />
+            <marker date="1537221186315" expanded="true" signature="4457:4540" ph="SELECT * FRO... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface.grammar">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>

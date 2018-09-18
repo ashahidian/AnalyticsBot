@@ -6,7 +6,7 @@ import re
 
 # type 1 will give in dates
 # type 0 will give in days
-def time_synonyms(expression, type):
+def date_synonyms(expression, type):
     matched = re.search(r"(next|last)\s([0-9\s]*)(day|week|year|quarter)", expression)
     year_request = re.search(r"([0-9]{4})", expression)
     month_year_request = re.search(
@@ -458,5 +458,5 @@ def calculate_next_quarter(type):
 
 
 #if __name__ == '__main__':
-#   test = time_synonyms("may 2018", 1)
+#   test = date_synonyms("may 2018", 1)
 #   print(test)

@@ -3,34 +3,47 @@ Created by PLY version 3.11 (http://www.dabeaz.com/ply)
 Grammar
 
 Rule 0     S' -> statement
-Rule 1     statement -> METRIC TOKEN
-Rule 2     statement -> DIMENSION TOKEN
-Rule 3     statement -> TOKEN METRIC
-Rule 4     statement -> TOKEN DIMENSION
-Rule 5     statement -> METRIC TOKEN EXCLUDE
-Rule 6     statement -> DIMENSION TOKEN EXCLUDE
-Rule 7     statement -> EXCLUDE METRIC TOKEN
-Rule 8     statement -> EXCLUDE DIMENSION TOKEN
-Rule 9     statement -> DIMENSION TOKEN METRIC
-Rule 10    statement -> METRIC TOKEN DIMENSION
-Rule 11    statement -> DIMENSION TOKEN DIMENSION
-Rule 12    statement -> DIMENSION METRIC TOKEN
-Rule 13    statement -> METRIC DIMENSION TOKEN
-Rule 14    statement -> DIMENSION DIMENSION TOKEN
-Rule 15    statement -> DIMENSION TOKEN METRIC TOKEN
-Rule 16    statement -> METRIC TOKEN DIMENSION TOKEN
-Rule 17    statement -> DIMENSION TOKEN DIMENSION TOKEN
-Rule 18    statement -> DIMENSION MEASURE METRIC
-Rule 19    statement -> METRIC MEASURE DIMENSION
-Rule 20    statement -> DIMENSION MEASURE DIMENSION
+Rule 1     statement -> MEASURE TOKEN
+Rule 2     statement -> ATTRIBUTE TOKEN
+Rule 3     statement -> TOKEN MEASURE
+Rule 4     statement -> TOKEN ATTRIBUTE
+Rule 5     statement -> MEASURE TOKEN EXCLUDE
+Rule 6     statement -> ATTRIBUTE TOKEN EXCLUDE
+Rule 7     statement -> MEASURE EXCLUDE TOKEN
+Rule 8     statement -> ATTRIBUTE EXCLUDE TOKEN
+Rule 9     statement -> EXCLUDE MEASURE TOKEN
+Rule 10    statement -> EXCLUDE ATTRIBUTE TOKEN
+Rule 11    statement -> MEASURE EXCLUDE ATTRIBUTE TOKEN
+Rule 12    statement -> ATTRIBUTE EXCLUDE MEASURE TOKEN
+Rule 13    statement -> ATTRIBUTE EXCLUDE ATTRIBUTE TOKEN
+Rule 14    statement -> MEASURE EXCLUDE MEASURE TOKEN
+Rule 15    statement -> ATTRIBUTE TOKEN MEASURE
+Rule 16    statement -> MEASURE TOKEN ATTRIBUTE
+Rule 17    statement -> ATTRIBUTE TOKEN ATTRIBUTE
+Rule 18    statement -> ATTRIBUTE MEASURE TOKEN
+Rule 19    statement -> MEASURE ATTRIBUTE TOKEN
+Rule 20    statement -> ATTRIBUTE ATTRIBUTE TOKEN
+Rule 21    statement -> ATTRIBUTE TOKEN MEASURE TOKEN
+Rule 22    statement -> MEASURE TOKEN ATTRIBUTE TOKEN
+Rule 23    statement -> ATTRIBUTE TOKEN ATTRIBUTE TOKEN
+Rule 24    statement -> ATTRIBUTE COMPARE MEASURE
+Rule 25    statement -> MEASURE COMPARE ATTRIBUTE
+Rule 26    statement -> ATTRIBUTE COMPARE ATTRIBUTE
+Rule 27    statement -> ATTRIBUTE DATE
+Rule 28    statement -> ATTRIBUTE ATTRIBUTE DATE
+Rule 29    statement -> MEASURE ATTRIBUTE DATE
+Rule 30    statement -> ATTRIBUTE DATE DATE
+Rule 31    statement -> ATTRIBUTE ATTRIBUTE DATE DATE
+Rule 32    statement -> MEASURE ATTRIBUTE DATE DATE
 
 Terminals, with rules where they appear
 
-DIMENSION            : 2 4 6 8 9 10 11 11 12 13 14 14 15 16 17 17 18 19 20 20
-EXCLUDE              : 5 6 7 8
-MEASURE              : 18 19 20
-METRIC               : 1 3 5 7 9 10 12 13 15 16 18 19
-TOKEN                : 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 15 16 16 17 17
+ATTRIBUTE            : 2 4 6 8 10 11 12 13 13 15 16 17 17 18 19 20 20 21 22 23 23 24 25 26 26 27 28 28 29 30 31 31 32
+COMPARE              : 24 25 26
+DATE                 : 27 28 29 30 30 31 31 32 32
+EXCLUDE              : 5 6 7 8 9 10 11 12 13 14
+MEASURE              : 1 3 5 7 9 11 12 14 14 15 16 18 19 21 22 24 25 29 32
+TOKEN                : 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 21 22 22 23 23
 error                : 
 
 Nonterminals, with rules where they appear
@@ -42,55 +55,81 @@ Parsing method: LALR
 state 0
 
     (0) S' -> . statement
-    (1) statement -> . METRIC TOKEN
-    (2) statement -> . DIMENSION TOKEN
-    (3) statement -> . TOKEN METRIC
-    (4) statement -> . TOKEN DIMENSION
-    (5) statement -> . METRIC TOKEN EXCLUDE
-    (6) statement -> . DIMENSION TOKEN EXCLUDE
-    (7) statement -> . EXCLUDE METRIC TOKEN
-    (8) statement -> . EXCLUDE DIMENSION TOKEN
-    (9) statement -> . DIMENSION TOKEN METRIC
-    (10) statement -> . METRIC TOKEN DIMENSION
-    (11) statement -> . DIMENSION TOKEN DIMENSION
-    (12) statement -> . DIMENSION METRIC TOKEN
-    (13) statement -> . METRIC DIMENSION TOKEN
-    (14) statement -> . DIMENSION DIMENSION TOKEN
-    (15) statement -> . DIMENSION TOKEN METRIC TOKEN
-    (16) statement -> . METRIC TOKEN DIMENSION TOKEN
-    (17) statement -> . DIMENSION TOKEN DIMENSION TOKEN
-    (18) statement -> . DIMENSION MEASURE METRIC
-    (19) statement -> . METRIC MEASURE DIMENSION
-    (20) statement -> . DIMENSION MEASURE DIMENSION
+    (1) statement -> . MEASURE TOKEN
+    (2) statement -> . ATTRIBUTE TOKEN
+    (3) statement -> . TOKEN MEASURE
+    (4) statement -> . TOKEN ATTRIBUTE
+    (5) statement -> . MEASURE TOKEN EXCLUDE
+    (6) statement -> . ATTRIBUTE TOKEN EXCLUDE
+    (7) statement -> . MEASURE EXCLUDE TOKEN
+    (8) statement -> . ATTRIBUTE EXCLUDE TOKEN
+    (9) statement -> . EXCLUDE MEASURE TOKEN
+    (10) statement -> . EXCLUDE ATTRIBUTE TOKEN
+    (11) statement -> . MEASURE EXCLUDE ATTRIBUTE TOKEN
+    (12) statement -> . ATTRIBUTE EXCLUDE MEASURE TOKEN
+    (13) statement -> . ATTRIBUTE EXCLUDE ATTRIBUTE TOKEN
+    (14) statement -> . MEASURE EXCLUDE MEASURE TOKEN
+    (15) statement -> . ATTRIBUTE TOKEN MEASURE
+    (16) statement -> . MEASURE TOKEN ATTRIBUTE
+    (17) statement -> . ATTRIBUTE TOKEN ATTRIBUTE
+    (18) statement -> . ATTRIBUTE MEASURE TOKEN
+    (19) statement -> . MEASURE ATTRIBUTE TOKEN
+    (20) statement -> . ATTRIBUTE ATTRIBUTE TOKEN
+    (21) statement -> . ATTRIBUTE TOKEN MEASURE TOKEN
+    (22) statement -> . MEASURE TOKEN ATTRIBUTE TOKEN
+    (23) statement -> . ATTRIBUTE TOKEN ATTRIBUTE TOKEN
+    (24) statement -> . ATTRIBUTE COMPARE MEASURE
+    (25) statement -> . MEASURE COMPARE ATTRIBUTE
+    (26) statement -> . ATTRIBUTE COMPARE ATTRIBUTE
+    (27) statement -> . ATTRIBUTE DATE
+    (28) statement -> . ATTRIBUTE ATTRIBUTE DATE
+    (29) statement -> . MEASURE ATTRIBUTE DATE
+    (30) statement -> . ATTRIBUTE DATE DATE
+    (31) statement -> . ATTRIBUTE ATTRIBUTE DATE DATE
+    (32) statement -> . MEASURE ATTRIBUTE DATE DATE
 
-    METRIC          shift and go to state 1
-    DIMENSION       shift and go to state 5
+    MEASURE         shift and go to state 4
+    ATTRIBUTE       shift and go to state 1
     TOKEN           shift and go to state 2
-    EXCLUDE         shift and go to state 4
+    EXCLUDE         shift and go to state 5
 
     statement                      shift and go to state 3
 
 state 1
 
-    (1) statement -> METRIC . TOKEN
-    (5) statement -> METRIC . TOKEN EXCLUDE
-    (10) statement -> METRIC . TOKEN DIMENSION
-    (13) statement -> METRIC . DIMENSION TOKEN
-    (16) statement -> METRIC . TOKEN DIMENSION TOKEN
-    (19) statement -> METRIC . MEASURE DIMENSION
+    (2) statement -> ATTRIBUTE . TOKEN
+    (6) statement -> ATTRIBUTE . TOKEN EXCLUDE
+    (8) statement -> ATTRIBUTE . EXCLUDE TOKEN
+    (12) statement -> ATTRIBUTE . EXCLUDE MEASURE TOKEN
+    (13) statement -> ATTRIBUTE . EXCLUDE ATTRIBUTE TOKEN
+    (15) statement -> ATTRIBUTE . TOKEN MEASURE
+    (17) statement -> ATTRIBUTE . TOKEN ATTRIBUTE
+    (18) statement -> ATTRIBUTE . MEASURE TOKEN
+    (20) statement -> ATTRIBUTE . ATTRIBUTE TOKEN
+    (21) statement -> ATTRIBUTE . TOKEN MEASURE TOKEN
+    (23) statement -> ATTRIBUTE . TOKEN ATTRIBUTE TOKEN
+    (24) statement -> ATTRIBUTE . COMPARE MEASURE
+    (26) statement -> ATTRIBUTE . COMPARE ATTRIBUTE
+    (27) statement -> ATTRIBUTE . DATE
+    (28) statement -> ATTRIBUTE . ATTRIBUTE DATE
+    (30) statement -> ATTRIBUTE . DATE DATE
+    (31) statement -> ATTRIBUTE . ATTRIBUTE DATE DATE
 
-    TOKEN           shift and go to state 7
-    DIMENSION       shift and go to state 8
-    MEASURE         shift and go to state 6
+    TOKEN           shift and go to state 8
+    EXCLUDE         shift and go to state 11
+    MEASURE         shift and go to state 9
+    ATTRIBUTE       shift and go to state 7
+    COMPARE         shift and go to state 6
+    DATE            shift and go to state 10
 
 
 state 2
 
-    (3) statement -> TOKEN . METRIC
-    (4) statement -> TOKEN . DIMENSION
+    (3) statement -> TOKEN . MEASURE
+    (4) statement -> TOKEN . ATTRIBUTE
 
-    METRIC          shift and go to state 9
-    DIMENSION       shift and go to state 10
+    MEASURE         shift and go to state 13
+    ATTRIBUTE       shift and go to state 12
 
 
 state 3
@@ -101,238 +140,385 @@ state 3
 
 state 4
 
-    (7) statement -> EXCLUDE . METRIC TOKEN
-    (8) statement -> EXCLUDE . DIMENSION TOKEN
+    (1) statement -> MEASURE . TOKEN
+    (5) statement -> MEASURE . TOKEN EXCLUDE
+    (7) statement -> MEASURE . EXCLUDE TOKEN
+    (11) statement -> MEASURE . EXCLUDE ATTRIBUTE TOKEN
+    (14) statement -> MEASURE . EXCLUDE MEASURE TOKEN
+    (16) statement -> MEASURE . TOKEN ATTRIBUTE
+    (19) statement -> MEASURE . ATTRIBUTE TOKEN
+    (22) statement -> MEASURE . TOKEN ATTRIBUTE TOKEN
+    (25) statement -> MEASURE . COMPARE ATTRIBUTE
+    (29) statement -> MEASURE . ATTRIBUTE DATE
+    (32) statement -> MEASURE . ATTRIBUTE DATE DATE
 
-    METRIC          shift and go to state 11
-    DIMENSION       shift and go to state 12
+    TOKEN           shift and go to state 16
+    EXCLUDE         shift and go to state 17
+    ATTRIBUTE       shift and go to state 15
+    COMPARE         shift and go to state 14
 
 
 state 5
 
-    (2) statement -> DIMENSION . TOKEN
-    (6) statement -> DIMENSION . TOKEN EXCLUDE
-    (9) statement -> DIMENSION . TOKEN METRIC
-    (11) statement -> DIMENSION . TOKEN DIMENSION
-    (12) statement -> DIMENSION . METRIC TOKEN
-    (14) statement -> DIMENSION . DIMENSION TOKEN
-    (15) statement -> DIMENSION . TOKEN METRIC TOKEN
-    (17) statement -> DIMENSION . TOKEN DIMENSION TOKEN
-    (18) statement -> DIMENSION . MEASURE METRIC
-    (20) statement -> DIMENSION . MEASURE DIMENSION
+    (9) statement -> EXCLUDE . MEASURE TOKEN
+    (10) statement -> EXCLUDE . ATTRIBUTE TOKEN
 
-    TOKEN           shift and go to state 14
-    METRIC          shift and go to state 13
-    DIMENSION       shift and go to state 15
-    MEASURE         shift and go to state 16
+    MEASURE         shift and go to state 19
+    ATTRIBUTE       shift and go to state 18
 
 
 state 6
 
-    (19) statement -> METRIC MEASURE . DIMENSION
+    (24) statement -> ATTRIBUTE COMPARE . MEASURE
+    (26) statement -> ATTRIBUTE COMPARE . ATTRIBUTE
 
-    DIMENSION       shift and go to state 17
+    MEASURE         shift and go to state 21
+    ATTRIBUTE       shift and go to state 20
 
 
 state 7
 
-    (1) statement -> METRIC TOKEN .
-    (5) statement -> METRIC TOKEN . EXCLUDE
-    (10) statement -> METRIC TOKEN . DIMENSION
-    (16) statement -> METRIC TOKEN . DIMENSION TOKEN
+    (20) statement -> ATTRIBUTE ATTRIBUTE . TOKEN
+    (28) statement -> ATTRIBUTE ATTRIBUTE . DATE
+    (31) statement -> ATTRIBUTE ATTRIBUTE . DATE DATE
 
-    $end            reduce using rule 1 (statement -> METRIC TOKEN .)
-    EXCLUDE         shift and go to state 18
-    DIMENSION       shift and go to state 19
+    TOKEN           shift and go to state 23
+    DATE            shift and go to state 22
 
 
 state 8
 
-    (13) statement -> METRIC DIMENSION . TOKEN
+    (2) statement -> ATTRIBUTE TOKEN .
+    (6) statement -> ATTRIBUTE TOKEN . EXCLUDE
+    (15) statement -> ATTRIBUTE TOKEN . MEASURE
+    (17) statement -> ATTRIBUTE TOKEN . ATTRIBUTE
+    (21) statement -> ATTRIBUTE TOKEN . MEASURE TOKEN
+    (23) statement -> ATTRIBUTE TOKEN . ATTRIBUTE TOKEN
 
-    TOKEN           shift and go to state 20
+    $end            reduce using rule 2 (statement -> ATTRIBUTE TOKEN .)
+    EXCLUDE         shift and go to state 26
+    MEASURE         shift and go to state 25
+    ATTRIBUTE       shift and go to state 24
 
 
 state 9
 
-    (3) statement -> TOKEN METRIC .
-
-    $end            reduce using rule 3 (statement -> TOKEN METRIC .)
-
-
-state 10
-
-    (4) statement -> TOKEN DIMENSION .
-
-    $end            reduce using rule 4 (statement -> TOKEN DIMENSION .)
-
-
-state 11
-
-    (7) statement -> EXCLUDE METRIC . TOKEN
-
-    TOKEN           shift and go to state 21
-
-
-state 12
-
-    (8) statement -> EXCLUDE DIMENSION . TOKEN
-
-    TOKEN           shift and go to state 22
-
-
-state 13
-
-    (12) statement -> DIMENSION METRIC . TOKEN
-
-    TOKEN           shift and go to state 23
-
-
-state 14
-
-    (2) statement -> DIMENSION TOKEN .
-    (6) statement -> DIMENSION TOKEN . EXCLUDE
-    (9) statement -> DIMENSION TOKEN . METRIC
-    (11) statement -> DIMENSION TOKEN . DIMENSION
-    (15) statement -> DIMENSION TOKEN . METRIC TOKEN
-    (17) statement -> DIMENSION TOKEN . DIMENSION TOKEN
-
-    $end            reduce using rule 2 (statement -> DIMENSION TOKEN .)
-    EXCLUDE         shift and go to state 25
-    METRIC          shift and go to state 24
-    DIMENSION       shift and go to state 26
-
-
-state 15
-
-    (14) statement -> DIMENSION DIMENSION . TOKEN
+    (18) statement -> ATTRIBUTE MEASURE . TOKEN
 
     TOKEN           shift and go to state 27
 
 
+state 10
+
+    (27) statement -> ATTRIBUTE DATE .
+    (30) statement -> ATTRIBUTE DATE . DATE
+
+    $end            reduce using rule 27 (statement -> ATTRIBUTE DATE .)
+    DATE            shift and go to state 28
+
+
+state 11
+
+    (8) statement -> ATTRIBUTE EXCLUDE . TOKEN
+    (12) statement -> ATTRIBUTE EXCLUDE . MEASURE TOKEN
+    (13) statement -> ATTRIBUTE EXCLUDE . ATTRIBUTE TOKEN
+
+    TOKEN           shift and go to state 30
+    MEASURE         shift and go to state 31
+    ATTRIBUTE       shift and go to state 29
+
+
+state 12
+
+    (4) statement -> TOKEN ATTRIBUTE .
+
+    $end            reduce using rule 4 (statement -> TOKEN ATTRIBUTE .)
+
+
+state 13
+
+    (3) statement -> TOKEN MEASURE .
+
+    $end            reduce using rule 3 (statement -> TOKEN MEASURE .)
+
+
+state 14
+
+    (25) statement -> MEASURE COMPARE . ATTRIBUTE
+
+    ATTRIBUTE       shift and go to state 32
+
+
+state 15
+
+    (19) statement -> MEASURE ATTRIBUTE . TOKEN
+    (29) statement -> MEASURE ATTRIBUTE . DATE
+    (32) statement -> MEASURE ATTRIBUTE . DATE DATE
+
+    TOKEN           shift and go to state 34
+    DATE            shift and go to state 33
+
+
 state 16
 
-    (18) statement -> DIMENSION MEASURE . METRIC
-    (20) statement -> DIMENSION MEASURE . DIMENSION
+    (1) statement -> MEASURE TOKEN .
+    (5) statement -> MEASURE TOKEN . EXCLUDE
+    (16) statement -> MEASURE TOKEN . ATTRIBUTE
+    (22) statement -> MEASURE TOKEN . ATTRIBUTE TOKEN
 
-    METRIC          shift and go to state 28
-    DIMENSION       shift and go to state 29
+    $end            reduce using rule 1 (statement -> MEASURE TOKEN .)
+    EXCLUDE         shift and go to state 35
+    ATTRIBUTE       shift and go to state 36
 
 
 state 17
 
-    (19) statement -> METRIC MEASURE DIMENSION .
+    (7) statement -> MEASURE EXCLUDE . TOKEN
+    (11) statement -> MEASURE EXCLUDE . ATTRIBUTE TOKEN
+    (14) statement -> MEASURE EXCLUDE . MEASURE TOKEN
 
-    $end            reduce using rule 19 (statement -> METRIC MEASURE DIMENSION .)
+    TOKEN           shift and go to state 37
+    ATTRIBUTE       shift and go to state 38
+    MEASURE         shift and go to state 39
 
 
 state 18
 
-    (5) statement -> METRIC TOKEN EXCLUDE .
+    (10) statement -> EXCLUDE ATTRIBUTE . TOKEN
 
-    $end            reduce using rule 5 (statement -> METRIC TOKEN EXCLUDE .)
+    TOKEN           shift and go to state 40
 
 
 state 19
 
-    (10) statement -> METRIC TOKEN DIMENSION .
-    (16) statement -> METRIC TOKEN DIMENSION . TOKEN
+    (9) statement -> EXCLUDE MEASURE . TOKEN
 
-    $end            reduce using rule 10 (statement -> METRIC TOKEN DIMENSION .)
-    TOKEN           shift and go to state 30
+    TOKEN           shift and go to state 41
 
 
 state 20
 
-    (13) statement -> METRIC DIMENSION TOKEN .
+    (26) statement -> ATTRIBUTE COMPARE ATTRIBUTE .
 
-    $end            reduce using rule 13 (statement -> METRIC DIMENSION TOKEN .)
+    $end            reduce using rule 26 (statement -> ATTRIBUTE COMPARE ATTRIBUTE .)
 
 
 state 21
 
-    (7) statement -> EXCLUDE METRIC TOKEN .
+    (24) statement -> ATTRIBUTE COMPARE MEASURE .
 
-    $end            reduce using rule 7 (statement -> EXCLUDE METRIC TOKEN .)
+    $end            reduce using rule 24 (statement -> ATTRIBUTE COMPARE MEASURE .)
 
 
 state 22
 
-    (8) statement -> EXCLUDE DIMENSION TOKEN .
+    (28) statement -> ATTRIBUTE ATTRIBUTE DATE .
+    (31) statement -> ATTRIBUTE ATTRIBUTE DATE . DATE
 
-    $end            reduce using rule 8 (statement -> EXCLUDE DIMENSION TOKEN .)
+    $end            reduce using rule 28 (statement -> ATTRIBUTE ATTRIBUTE DATE .)
+    DATE            shift and go to state 42
 
 
 state 23
 
-    (12) statement -> DIMENSION METRIC TOKEN .
+    (20) statement -> ATTRIBUTE ATTRIBUTE TOKEN .
 
-    $end            reduce using rule 12 (statement -> DIMENSION METRIC TOKEN .)
+    $end            reduce using rule 20 (statement -> ATTRIBUTE ATTRIBUTE TOKEN .)
 
 
 state 24
 
-    (9) statement -> DIMENSION TOKEN METRIC .
-    (15) statement -> DIMENSION TOKEN METRIC . TOKEN
+    (17) statement -> ATTRIBUTE TOKEN ATTRIBUTE .
+    (23) statement -> ATTRIBUTE TOKEN ATTRIBUTE . TOKEN
 
-    $end            reduce using rule 9 (statement -> DIMENSION TOKEN METRIC .)
-    TOKEN           shift and go to state 31
+    $end            reduce using rule 17 (statement -> ATTRIBUTE TOKEN ATTRIBUTE .)
+    TOKEN           shift and go to state 43
 
 
 state 25
 
-    (6) statement -> DIMENSION TOKEN EXCLUDE .
+    (15) statement -> ATTRIBUTE TOKEN MEASURE .
+    (21) statement -> ATTRIBUTE TOKEN MEASURE . TOKEN
 
-    $end            reduce using rule 6 (statement -> DIMENSION TOKEN EXCLUDE .)
+    $end            reduce using rule 15 (statement -> ATTRIBUTE TOKEN MEASURE .)
+    TOKEN           shift and go to state 44
 
 
 state 26
 
-    (11) statement -> DIMENSION TOKEN DIMENSION .
-    (17) statement -> DIMENSION TOKEN DIMENSION . TOKEN
+    (6) statement -> ATTRIBUTE TOKEN EXCLUDE .
 
-    $end            reduce using rule 11 (statement -> DIMENSION TOKEN DIMENSION .)
-    TOKEN           shift and go to state 32
+    $end            reduce using rule 6 (statement -> ATTRIBUTE TOKEN EXCLUDE .)
 
 
 state 27
 
-    (14) statement -> DIMENSION DIMENSION TOKEN .
+    (18) statement -> ATTRIBUTE MEASURE TOKEN .
 
-    $end            reduce using rule 14 (statement -> DIMENSION DIMENSION TOKEN .)
+    $end            reduce using rule 18 (statement -> ATTRIBUTE MEASURE TOKEN .)
 
 
 state 28
 
-    (18) statement -> DIMENSION MEASURE METRIC .
+    (30) statement -> ATTRIBUTE DATE DATE .
 
-    $end            reduce using rule 18 (statement -> DIMENSION MEASURE METRIC .)
+    $end            reduce using rule 30 (statement -> ATTRIBUTE DATE DATE .)
 
 
 state 29
 
-    (20) statement -> DIMENSION MEASURE DIMENSION .
+    (13) statement -> ATTRIBUTE EXCLUDE ATTRIBUTE . TOKEN
 
-    $end            reduce using rule 20 (statement -> DIMENSION MEASURE DIMENSION .)
+    TOKEN           shift and go to state 45
 
 
 state 30
 
-    (16) statement -> METRIC TOKEN DIMENSION TOKEN .
+    (8) statement -> ATTRIBUTE EXCLUDE TOKEN .
 
-    $end            reduce using rule 16 (statement -> METRIC TOKEN DIMENSION TOKEN .)
+    $end            reduce using rule 8 (statement -> ATTRIBUTE EXCLUDE TOKEN .)
 
 
 state 31
 
-    (15) statement -> DIMENSION TOKEN METRIC TOKEN .
+    (12) statement -> ATTRIBUTE EXCLUDE MEASURE . TOKEN
 
-    $end            reduce using rule 15 (statement -> DIMENSION TOKEN METRIC TOKEN .)
+    TOKEN           shift and go to state 46
 
 
 state 32
 
-    (17) statement -> DIMENSION TOKEN DIMENSION TOKEN .
+    (25) statement -> MEASURE COMPARE ATTRIBUTE .
 
-    $end            reduce using rule 17 (statement -> DIMENSION TOKEN DIMENSION TOKEN .)
+    $end            reduce using rule 25 (statement -> MEASURE COMPARE ATTRIBUTE .)
+
+
+state 33
+
+    (29) statement -> MEASURE ATTRIBUTE DATE .
+    (32) statement -> MEASURE ATTRIBUTE DATE . DATE
+
+    $end            reduce using rule 29 (statement -> MEASURE ATTRIBUTE DATE .)
+    DATE            shift and go to state 47
+
+
+state 34
+
+    (19) statement -> MEASURE ATTRIBUTE TOKEN .
+
+    $end            reduce using rule 19 (statement -> MEASURE ATTRIBUTE TOKEN .)
+
+
+state 35
+
+    (5) statement -> MEASURE TOKEN EXCLUDE .
+
+    $end            reduce using rule 5 (statement -> MEASURE TOKEN EXCLUDE .)
+
+
+state 36
+
+    (16) statement -> MEASURE TOKEN ATTRIBUTE .
+    (22) statement -> MEASURE TOKEN ATTRIBUTE . TOKEN
+
+    $end            reduce using rule 16 (statement -> MEASURE TOKEN ATTRIBUTE .)
+    TOKEN           shift and go to state 48
+
+
+state 37
+
+    (7) statement -> MEASURE EXCLUDE TOKEN .
+
+    $end            reduce using rule 7 (statement -> MEASURE EXCLUDE TOKEN .)
+
+
+state 38
+
+    (11) statement -> MEASURE EXCLUDE ATTRIBUTE . TOKEN
+
+    TOKEN           shift and go to state 49
+
+
+state 39
+
+    (14) statement -> MEASURE EXCLUDE MEASURE . TOKEN
+
+    TOKEN           shift and go to state 50
+
+
+state 40
+
+    (10) statement -> EXCLUDE ATTRIBUTE TOKEN .
+
+    $end            reduce using rule 10 (statement -> EXCLUDE ATTRIBUTE TOKEN .)
+
+
+state 41
+
+    (9) statement -> EXCLUDE MEASURE TOKEN .
+
+    $end            reduce using rule 9 (statement -> EXCLUDE MEASURE TOKEN .)
+
+
+state 42
+
+    (31) statement -> ATTRIBUTE ATTRIBUTE DATE DATE .
+
+    $end            reduce using rule 31 (statement -> ATTRIBUTE ATTRIBUTE DATE DATE .)
+
+
+state 43
+
+    (23) statement -> ATTRIBUTE TOKEN ATTRIBUTE TOKEN .
+
+    $end            reduce using rule 23 (statement -> ATTRIBUTE TOKEN ATTRIBUTE TOKEN .)
+
+
+state 44
+
+    (21) statement -> ATTRIBUTE TOKEN MEASURE TOKEN .
+
+    $end            reduce using rule 21 (statement -> ATTRIBUTE TOKEN MEASURE TOKEN .)
+
+
+state 45
+
+    (13) statement -> ATTRIBUTE EXCLUDE ATTRIBUTE TOKEN .
+
+    $end            reduce using rule 13 (statement -> ATTRIBUTE EXCLUDE ATTRIBUTE TOKEN .)
+
+
+state 46
+
+    (12) statement -> ATTRIBUTE EXCLUDE MEASURE TOKEN .
+
+    $end            reduce using rule 12 (statement -> ATTRIBUTE EXCLUDE MEASURE TOKEN .)
+
+
+state 47
+
+    (32) statement -> MEASURE ATTRIBUTE DATE DATE .
+
+    $end            reduce using rule 32 (statement -> MEASURE ATTRIBUTE DATE DATE .)
+
+
+state 48
+
+    (22) statement -> MEASURE TOKEN ATTRIBUTE TOKEN .
+
+    $end            reduce using rule 22 (statement -> MEASURE TOKEN ATTRIBUTE TOKEN .)
+
+
+state 49
+
+    (11) statement -> MEASURE EXCLUDE ATTRIBUTE TOKEN .
+
+    $end            reduce using rule 11 (statement -> MEASURE EXCLUDE ATTRIBUTE TOKEN .)
+
+
+state 50
+
+    (14) statement -> MEASURE EXCLUDE MEASURE TOKEN .
+
+    $end            reduce using rule 14 (statement -> MEASURE EXCLUDE MEASURE TOKEN .)
 

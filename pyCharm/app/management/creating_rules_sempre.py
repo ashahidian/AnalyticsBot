@@ -24,6 +24,6 @@ def create_rule(time_expression):
 
 
 if __name__ == '__main__':
-    test = create_rule("2-03-1998")
+    create_rule("2-03-1998")
 
     print("testing")
