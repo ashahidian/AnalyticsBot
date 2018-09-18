@@ -13,40 +13,43 @@ def date_synonyms(expression, type):
         r"(january|february|march|april|may|june|july|august|september|october|november|december)"
         r"| ((january|february|march|april|may|june|july|august|september|october|november|december)([0-9]{4}))",
         expression)
+    quick = re.search(r"yesterday|tomorrow|(this year)", expression)
 
     now = datetime.today()
     formatted_now = "{:%Y-%m-%d}".format(now)
 
-    if expression == 'yesterday':
-        yesterday = now - timedelta(days=1)
+    if quick:
 
-        if type == 1:
-            return "{:%Y-%m-%d}".format(yesterday)
+        if quick.group(1) == 'yesterday':
+            yesterday = now - timedelta(days=1)
 
-        else:
-            difference = now.date() - yesterday.date()
-            return difference.days
+            if type == 1:
+                return "{:%Y-%m-%d}".format(yesterday)
 
-    elif expression == 'tomorrow':
-        tomorrow = now + timedelta(days=1)
+            else:
+                difference = now.date() - yesterday.date()
+                return difference.days
 
-        if type == 1:
-            return "{:%Y-%m-%d}".format(tomorrow)
+        elif quick.group(1) == 'tomorrow':
+            tomorrow = now + timedelta(days=1)
 
-        else:
-            difference = tomorrow.date() - now.date()
-            return difference.days
+            if type == 1:
+                return "{:%Y-%m-%d}".format(tomorrow)
 
-    elif expression == 'this year':
-        first_day = datetime(now.year, 1, 1)
-        last_day = datetime(now.year, 12, 31)
+            else:
+                difference = tomorrow.date() - now.date()
+                return difference.days
 
-        if type == 1:
-            return ["{:%Y-%m-%d}".format(first_day), "{:%Y-%m-%d}".format(last_day)]
+        elif quick.group(1) == 'this year':
+            first_day = datetime(now.year, 1, 1)
+            last_day = datetime(now.year, 12, 31)
 
-        else:
-            difference = last_day.date() - first_day.date()
-            return difference.days
+            if type == 1:
+                return ["{:%Y-%m-%d}".format(first_day), "{:%Y-%m-%d}".format(last_day)]
+
+            else:
+                difference = last_day.date() - first_day.date()
+                return difference.days
 
     elif year_request:
         first_day = datetime(int(year_request.group(1)), 1, 1)
@@ -64,7 +67,7 @@ def date_synonyms(expression, type):
         if month_year_request.group(1) == 'january':
 
             if month_year_request.group(2):
-                year = month_year_request.group(2)
+                year = int(month_year_request.group(2))
                 first_day = datetime(year, 1, 1)
                 last_day = datetime(year, 1, 31)
 
@@ -82,7 +85,7 @@ def date_synonyms(expression, type):
         elif month_year_request.group(1) == 'february':
 
             if month_year_request.group(2):
-                year = month_year_request.group(2)
+                year = int(month_year_request.group(2))
                 first_day = datetime(year, 2, 1)
                 last_day = datetime(year, 2, monthrange(now.year, 2)[1])
 
@@ -277,152 +280,155 @@ def date_synonyms(expression, type):
                 difference = now.date() - first_day.date()
                 return difference.days
 
-    elif matched.group(1) == 'next':
+    elif matched:
+        if matched.group(1) == 'next':
 
-        if matched.group(3) == 'day':
+            if matched.group(3) == 'day':
 
-            if matched.group(2) != "":
-                number = int(matched.group(2))
-                other = now + timedelta(days=number)
+                if matched.group(2) != "":
+                    number = int(matched.group(2))
+                    other = now + timedelta(days=number)
 
-                if type == 1:
-                    return [formatted_now, "{:%Y-%m-%d}".format(other)]
+                    if type == 1:
+                        return [formatted_now, "{:%Y-%m-%d}".format(other)]
 
-                else:
-                    difference = other.date() - now.date()
-                    return difference.days
-
-            else:
-                number = 1
-                other = now + timedelta(days=number)
-
-                if type == 1:
-                    return [formatted_now, "{:%Y-%m-%d}".format(other)]
+                    else:
+                        difference = other.date() - now.date()
+                        return difference.days
 
                 else:
-                    difference = now.date() - other.date()
-                    return difference.days
+                    number = 1
+                    other = now + timedelta(days=number)
 
-        elif matched.group(3) == 'week':
+                    if type == 1:
+                        return [formatted_now, "{:%Y-%m-%d}".format(other)]
 
-            if matched.group(2) != "":
-                number = int(matched.group(2))
-                other = now + timedelta(weeks=number)
+                    else:
+                        difference = now.date() - other.date()
+                        return difference.days
 
-                if type == 1:
-                    return [formatted_now, "{:%Y-%m-%d}".format(other)]
+            elif matched.group(3) == 'week':
 
-                else:
-                    difference = other.date() - now.date()
-                    return difference.days
+                if matched.group(2) != "":
+                    number = int(matched.group(2))
+                    other = now + timedelta(weeks=number)
 
-            else:
-                number = 1
-                other = now + timedelta(weeks=number)
+                    if type == 1:
+                        return [formatted_now, "{:%Y-%m-%d}".format(other)]
 
-                if type == 1:
-                    return [formatted_now, "{:%Y-%m-%d}".format(other)]
-
-                else:
-                    difference = other.date() - now.date()
-                    return difference.days
-
-        elif matched.group(3) == 'year':
-
-            if matched.group(2) != "":
-                number = int(matched.group(2))
-                other = now + timedelta(weeks=number * 52)
-
-                if type == 1:
-                    return [formatted_now, "{:%Y-%m-%d}".format(other)]
+                    else:
+                        difference = other.date() - now.date()
+                        return difference.days
 
                 else:
-                    difference = other.date() - now.date()
-                    return difference.days
+                    number = 1
+                    other = now + timedelta(weeks=number)
 
-            else:
-                number = 1
-                other = now + timedelta(weeks=number * 52)
+                    if type == 1:
+                        return [formatted_now, "{:%Y-%m-%d}".format(other)]
 
-                if type == 1:
-                    return [formatted_now, "{:%Y-%m-%d}".format(other)]
+                    else:
+                        difference = other.date() - now.date()
+                        return difference.days
 
-                else:
-                    difference = other.date() - now.date()
-                    return difference.days
+            elif matched.group(3) == 'year':
 
-        elif matched.group(3) == 'quarter':
-            quarter = calculate_next_quarter(type)
-            return quarter
+                if matched.group(2) != "":
+                    number = int(matched.group(2))
+                    other = now + timedelta(weeks=number * 52)
 
-    elif matched.group(1) == 'last':
+                    if type == 1:
+                        return [formatted_now, "{:%Y-%m-%d}".format(other)]
 
-        if matched.group(3) == 'day':
-
-            if matched.group(2) != "":
-                number = int(matched.group(2))
-                other = now - timedelta(days=number)
-
-                if type == 1:
-                    return ["{:%Y-%m-%d}".format(other), formatted_now]
+                    else:
+                        difference = other.date() - now.date()
+                        return difference.days
 
                 else:
-                    difference = now.date() - other.date()
-                    return difference.days
+                    number = 1
+                    other = now + timedelta(weeks=number * 52)
 
-            else:
-                number = 1
-                other = "{:%Y-%m-%d}".format(now - timedelta(days=number))
-                return [other, formatted_now]
+                    if type == 1:
+                        return [formatted_now, "{:%Y-%m-%d}".format(other)]
 
-        elif matched.group(3) == 'week':
-            if matched.group(2) != "":
-                number = int(matched.group(2))
-                other = now - timedelta(weeks=number)
+                    else:
+                        difference = other.date() - now.date()
+                        return difference.days
 
-                if type == 1:
-                    return ["{:%Y-%m-%d}".format(other), formatted_now]
+            elif matched.group(3) == 'quarter':
+                quarter = calculate_next_quarter(type)
+                return quarter
 
-                else:
-                    difference = now.date() - other.date()
-                    return difference.days
+        elif matched.group(1) == 'last':
 
-            else:
-                number = 1
-                other = now - timedelta(weeks=number)
+            if matched.group(3) == 'day':
 
-                if type == 1:
-                    return ["{:%Y-%m-%d}".format(other), formatted_now]
+                if matched.group(2) != "":
+                    number = int(matched.group(2))
+                    other = now - timedelta(days=number)
 
-                else:
-                    difference = now.date() - other.date()
-                    return difference.days
+                    if type == 1:
+                        return ["{:%Y-%m-%d}".format(other), formatted_now]
 
-        elif matched.group(3) == 'year':
-            if matched.group(2) != "":
-                number = int(matched.group(2))
-                other = now - timedelta(weeks=number * 52)
-
-                if type == 1:
-                    return ["{:%Y-%m-%d}".format(other), formatted_now]
+                    else:
+                        difference = now.date() - other.date()
+                        return difference.days
 
                 else:
-                    difference = now.date() - other.date()
-                    return difference.days
+                    number = 1
+                    other = "{:%Y-%m-%d}".format(now - timedelta(days=number))
+                    return [other, formatted_now]
 
-            else:
-                number = 1
-                other = now - timedelta(weeks=number * 52)
+            elif matched.group(3) == 'week':
+                if matched.group(2) != "":
+                    number = int(matched.group(2))
+                    other = now - timedelta(weeks=number)
 
-                if type == 1:
-                    return ["{:%Y-%m-%d}".format(other), formatted_now]
+                    if type == 1:
+                        return ["{:%Y-%m-%d}".format(other), formatted_now]
+
+                    else:
+                        difference = now.date() - other.date()
+                        return difference.days
 
                 else:
-                    difference = now.date() - other.date()
-                    return difference.days
+                    number = 1
+                    other = now - timedelta(weeks=number)
 
-        elif matched.group(3) == 'quarter':
-            return calculate_last_quarter(type)
+                    if type == 1:
+                        return ["{:%Y-%m-%d}".format(other), formatted_now]
+
+                    else:
+                        difference = now.date() - other.date()
+                        return difference.days
+
+            elif matched.group(3) == 'year':
+                if matched.group(2) != "":
+                    number = int(matched.group(2))
+                    other = now - timedelta(weeks=number * 52)
+
+                    if type == 1:
+                        return ["{:%Y-%m-%d}".format(other), formatted_now]
+
+                    else:
+                        difference = now.date() - other.date()
+                        return difference.days
+
+                else:
+                    number = 1
+                    other = now - timedelta(weeks=number * 52)
+
+                    if type == 1:
+                        return ["{:%Y-%m-%d}".format(other), formatted_now]
+
+                    else:
+                        difference = now.date() - other.date()
+                        return difference.days
+
+            elif matched.group(3) == 'quarter':
+                return calculate_last_quarter(type)
+    else:
+        return 0
 
 
 def calculate_last_quarter(type):
@@ -458,5 +464,5 @@ def calculate_next_quarter(type):
 
 
 #if __name__ == '__main__':
-#   test = date_synonyms("may 2018", 1)
-#   print(test)
+ #  test = date_synonyms("january", 1)
+  # print(test)
