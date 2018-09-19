@@ -26,9 +26,9 @@ def dashboard_view(request):
             #pos, html = spacy_pos_tagging(question_submitted)
             #ner, ner_diagram = spacy_ner(question_submitted)
             #return render(request, 'dashboard.html',
-                          {'form': form_q, 'tokenized': tokenized,'pure_question': pure_question,
-                           'spacy': spacy, 'pos': pos, 'ner': ner, 'html': html,
-                           'ner_diagram': ner_diagram})
+                    #      {'form': form_q, 'tokenized': tokenized,'pure_question': pure_question,
+                    #       'spacy': spacy, 'pos': pos, 'ner': ner, 'html': html,
+                    #       'ner_diagram': ner_diagram})
 
     else:
         form_q = QuestionInputForm()

@@ -1,8 +1,3 @@
-#---------- DATE RULES
-# Rules on top will be added by the system "automatically" in runtime
-(rule $Date (2018-04-20) (ConstantFn (string '2018-04-20')))
-(rule $Date (2018-04-25) (ConstantFn (string '2018-04-25')))
-
 
 #---------- METRIC RULES
 # Basic Metric rules where the metric is defined as a string constant
@@ -53,13 +48,6 @@
 (rule $Attribute (ndfdate) (ConstantFn (string [NDF Fixing Date])))
 
 
-
-
-
-
-
-
-
 #---------- DB COLUMN RULES
 # Basic Rules for other columns (not metrics), where the column is defined as a string constant
 
@@ -81,7 +69,7 @@
 (rule $General ($Attribute $TOKEN)
  (lambda d (lambda t (call + (string "SELECT * ")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var d) (string " = ") (var t)))))
+  (string "WHERE ") (var d) (string " = ") (string "'") (var t) (string "'")))))
 
 
 ## This rule will obtain the value of the indicated dimension
@@ -89,7 +77,7 @@
 (rule $General ($TOKEN $Attribute)
  (lambda t (lambda d (call + (string "SELECT * ")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var d) (string " = ") (var t)))))
+  (string "WHERE ") (var d) (string " = ") (string "'") (var t) (string "'")))))
 
 
 ## This rule will obtain the value of the indicated metric
@@ -97,7 +85,7 @@
 (rule $General ($Measure $TOKEN)
  (lambda m (lambda t (call + (string "SELECT * ")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var m) (string " = ") (var t)))))
+  (string "WHERE ") (var m) (string " = ") (string "'") (var t) (string "'")))))
 
 
 ## This rule will obtain the value of the indicated metric
@@ -105,7 +93,7 @@
 (rule $General ($TOKEN $Measure)
  (lambda t (lambda m (call + (string "SELECT * ")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var m) (string " = ") (var t)))))
+  (string "WHERE ") (var m) (string " = ") (string "'") (var t) (string "'")))))
 
 
 ## This rule will obtain the metric value of the indicated dimension
@@ -113,7 +101,7 @@
 (rule $General ($Attribute $TOKEN $Measure)
  (lambda d (lambda t (lambda m (call + (string "SELECT ") (var m)
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var d) (string " = ") (var t))))))
+  (string "WHERE ") (var d) (string " = ") (string "'") (var t) (string "'"))))))
 
 
 ## This rule will obtain the metric value of the indicated dimension
@@ -121,7 +109,7 @@
 (rule $General ($Measure $TOKEN $Attribute)
  (lambda m (lambda t (lambda d (call + (string "SELECT ") (var d)
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var m) (string " = ") (var t))))))
+  (string "WHERE ") (var m) (string " = ") (string "'") (var t) (string "'"))))))
 
 
 ## This rule will obtain the dimension with certain metric name value
@@ -130,7 +118,7 @@
 (rule $General ($Attribute $Measure $TOKEN)
  (lambda d (lambda m (lambda t (call + (string "SELECT ") (var d)
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var m) (string " = ")  (var t))))))
+  (string "WHERE ") (var m) (string " = ") (string "'") (var t) (string "'"))))))
 
 
 ## This rule will obtain the dimension with certain metric name value
@@ -139,7 +127,7 @@
 (rule $General ($Measure $Attribute $TOKEN)
  (lambda m (lambda d (lambda t (call + (string "SELECT ") (var m)
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var d) (string " = ")  (var t))))))
+  (string "WHERE ") (var d) (string " = ") (string "'") (var t) (string "'"))))))
 
 
 ## This rule will obtain the dimension with the highest metric value
@@ -167,7 +155,7 @@
 (rule $General ($Attribute $TOKEN $Attribute)
  (lambda d (lambda t (lambda c (call + (string "SELECT ") (var c)
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var d) (string " = ") (var t))))))
+  (string "WHERE ") (var d) (string " = ") (string "'") (var t) (string "'"))))))
 
 
 ## This rule will obtain the dimension with certain dimension value
@@ -176,7 +164,7 @@
 (rule $General ($Attribute $Attribute $TOKEN)
  (lambda d (lambda m (lambda t (call + (string "SELECT ") (var d)
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var m) (string " = ")  (var t))))))
+  (string "WHERE ") (var m) (string " = ") (string "'") (var t) (string "'"))))))
 
 
 ## This rule will obtain the dimension for all platforms excluding one
@@ -184,28 +172,28 @@
 (rule $General ($Attribute $Exclude $Measure $TOKEN)
  (lambda d (lambda e (lambda m (lambda t (call + (string "SELECT ") (var d)
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var m) (string " != ")  (var t)))))))
+  (string "WHERE ") (var m) (string " != ") (string "'") (var t) (string "'")))))))
 
 ## This rule will obtain the dimension for all platforms excluding one
 ## The desired excluded platform name needs to be provided in order to fire this rule
 (rule $General ($Measure $Exclude $Attribute $TOKEN)
  (lambda d (lambda e (lambda m (lambda t (call + (string "SELECT ") (var d)
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var m) (string " != ")  (var t)))))))
+  (string "WHERE ") (var m) (string " != ") (string "'") (var t) (string "'")))))))
 
 ## This rule will obtain the dimension for all platforms excluding one
 ## The desired excluded platform name needs to be provided in order to fire this rule
 (rule $General ($Measure $Exclude $Measure $TOKEN)
  (lambda d (lambda e (lambda m (lambda t (call + (string "SELECT ") (var d)
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var m) (string " != ")  (var t)))))))
+  (string "WHERE ") (var m) (string " != ") (string "'") (var t) (string "'")))))))
 
 ## This rule will obtain the dimension for all platforms excluding one
 ## The desired excluded platform name needs to be provided in order to fire this rule
 (rule $General ($Attribute $Exclude $Attribute $TOKEN)
  (lambda d (lambda e (lambda m (lambda t (call + (string "SELECT ") (var d)
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var m) (string " != ")  (var t)))))))
+  (string "WHERE ") (var m) (string " != ") (string "'") (var t) (string "'")))))))
 
 
 ## This rule will obtain the dimension with certain metric name value
@@ -214,7 +202,7 @@
 (rule $General ($Measure $Exclude $TOKEN)
  (lambda m (lambda e (lambda t (call + (string "SELECT *")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var m) (string " != ")  (var t))))))
+  (string "WHERE ") (var m) (string " != ") (string "'") (var t) (string "'"))))))
 
 ## This rule will obtain the dimension with certain metric name value
 ## The desired metric name needs to be provided in order to fire this rule
@@ -222,7 +210,7 @@
 (rule $General ($Measure $TOKEN $Exclude)
  (lambda m (lambda t (lambda e (call + (string "SELECT *")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var m) (string " != ")  (var t))))))
+  (string "WHERE ") (var m) (string " != ") (string "'") (var t) (string "'"))))))
 
 
 ## This rule will obtain the dimension with certain metric name value
@@ -231,7 +219,7 @@
 (rule $General ($Attribute $Exclude $TOKEN)
  (lambda d (lambda e (lambda t (call + (string "SELECT *")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var d) (string " != ")  (var t))))))
+  (string "WHERE ") (var d) (string " != ") (string "'") (var t) (string "'"))))))
 
 ## This rule will obtain the dimension with certain metric name value
 ## The desired metric name needs to be provided in order to fire this rule
@@ -239,7 +227,7 @@
 (rule $General ($Attribute $TOKEN $Exclude)
  (lambda d (lambda t (lambda e (call + (string "SELECT *")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var d) (string " != ")  (var t))))))
+  (string "WHERE ") (var d) (string " != ") (string "'") (var t) (string "'"))))))
 
 ## This rule will obtain the dimension with certain metric name value
 ## The desired metric name needs to be provided in order to fire this rule
@@ -247,7 +235,7 @@
 (rule $General ($Exclude $Measure $TOKEN)
  (lambda e (lambda m (lambda t (call + (string "SELECT *")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var m) (string " != ")  (var t))))))
+  (string "WHERE ") (var m) (string " != ") (string "'") (var t) (string "'"))))))
 
 
 ## This rule will obtain the dimension with certain metric name value
@@ -256,31 +244,31 @@
 (rule $General ($Exclude $Attribute $TOKEN)
  (lambda e (lambda d (lambda t (call + (string "SELECT *")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var d) (string " != ")  (var t))))))
+  (string "WHERE ") (var d) (string " != ") (string "'") (var t) (string "'"))))))
 
 
 (rule $General ($Attribute $TOKEN $Attribute $TOKEN)
  (lambda c (lambda a (lambda d (lambda b (call + (string "SELECT * ")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var c) (string " = ")  (var a) (string " AND ") (var d) (string " = ") (var b)))))))
+  (string "WHERE ") (var c) (string " = ") (string "'") (var a) (string "'") (string " AND ") (var d) (string " = ") (string "'") (var b) (string "'")))))))
 
 
 (rule $General ($Measure $TOKEN $Attribute $TOKEN)
  (lambda c (lambda a (lambda d (lambda b (call + (string "SELECT * ")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var c) (string " = ")  (var a) (string " AND ") (var d) (string " = ") (var b)))))))
+  (string "WHERE ") (var c) (string " = ") (string "'") (var a) (string "'") (string " AND ") (var d) (string " = ") (string "'") (var b) (string "'")))))))
 
 
 (rule $General ($Attribute $TOKEN $Measure $TOKEN)
  (lambda c (lambda a (lambda d (lambda b (call + (string "SELECT * ")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var c) (string " = ")  (var a) (string " AND ") (var d) (string " = ") (var b)))))))
+  (string "WHERE ") (var c) (string " = ") (string "'") (var a) (string "'") (string " AND ") (var d) (string " = ") (string "'") (var b) (string "'")))))))
 
 
 (rule $General ($Attribute $Date)
  (lambda d (lambda e (call + (string "SELECT * ")
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")
-  (string "WHERE ") (var d) (string " = ") (var e)))))
+  (string "WHERE ") (var d) (string " = ") (string "'") (var e) (string "'")))))
 
 
 (rule $General ($Attribute $Date $Date)
@@ -312,3 +300,6 @@
 
 #---------- ROOT RULE
 (rule $ROOT ($General) (IdentityFn))
+
+#---------- DATE RULES
+# Rules on bottom will be added by the system "automatically" in runtime

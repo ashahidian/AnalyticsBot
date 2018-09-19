@@ -28,4 +28,4 @@ class SQLQuestionMapper(object):
         return candidates[0]['value'].replace('(string "', '').replace('")', '')
 
 
-print(SQLQuestionMapper().convert("client x volume"))
+#print(SQLQuestionMapper().convert("client x tenor"))

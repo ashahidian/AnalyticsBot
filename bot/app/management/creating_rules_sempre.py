@@ -15,15 +15,15 @@ def write_rules(rule):
 
 
 def create_time_rule(time_expression):
-    return '(rule $Time ('+time_expression+') (ConstantFn (string "'+time_expression+'")))'
+    return "\n(rule $Date (" + time_expression + ") (ConstantFn (string '" + time_expression + "')))"
 
 
-def create_rule(time_expression):
+def create_sempre_rule(time_expression):
     rule = create_time_rule(time_expression)
     write_rules(rule)
 
 
-if __name__ == '__main__':
-    create_rule("2-03-1998")
+#if __name__ == '__main__':
+#    create_rule("2-03-1998")
 
-    print("testing")
+#    print("testing")
