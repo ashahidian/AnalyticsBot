@@ -149,6 +149,18 @@
  (lambda m (lambda x (lambda d (call + (string "SELECT TOP 10 ") (var d) (string " , ") (var m)
  (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] "))))))
 
+## This rule will obtain the dimension with the highest metric value
+## The desired metric name needs to be provided in order to fire this rule
+(rule $General ($Compare $Attribute)
+ (lambda x (lambda a (call + (string "SELECT TOP 10 ") (var a)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")))))
+
+
+## This rule will obtain the dimension with the highest metric value
+## The desired metric name needs to be provided in order to fire this rule
+(rule $General ($Compare $Measure)
+ (lambda x (lambda a (call + (string "SELECT TOP 10 ") (var a)
+ (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")))))
 
 ## This rule will obtain the dimension of the indicated dimension
 ## The desired dimensions need to be provided in order to fire this rule

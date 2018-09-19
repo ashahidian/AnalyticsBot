@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c794ccc6-50a2-42fa-a476-00e8544db14f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/bot/app/management/creating_rules_sempre.py" afterPath="$PROJECT_DIR$/bot/app/management/creating_rules_sempre.py" />
+      <change beforePath="$PROJECT_DIR$/bot/app/management/categories.py" afterPath="$PROJECT_DIR$/bot/app/management/categories.py" />
+      <change beforePath="$PROJECT_DIR$/bot/app/management/category_builder.py" afterPath="$PROJECT_DIR$/bot/app/management/category_builder.py" />
       <change beforePath="$PROJECT_DIR$/bot/app/management/pipeline.py" afterPath="$PROJECT_DIR$/bot/app/management/pipeline.py" />
-      <change beforePath="$PROJECT_DIR$/bot/app/management/query.py" afterPath="$PROJECT_DIR$/bot/app/management/sempre_query.py" />
+      <change beforePath="$PROJECT_DIR$/bot/app/processing/nlp_processing.py" afterPath="$PROJECT_DIR$/bot/app/processing/nlp_processing.py" />
+      <change beforePath="$PROJECT_DIR$/bot/app/processing/synonyms.py" afterPath="$PROJECT_DIR$/bot/app/processing/synonyms.py" />
+      <change beforePath="$PROJECT_DIR$/bot/app/processing/synonyms_lists.py" afterPath="$PROJECT_DIR$/bot/app/processing/synonyms_lists.py" />
       <change beforePath="$PROJECT_DIR$/bot/app/rules/grammar.py" afterPath="$PROJECT_DIR$/bot/app/rules/grammar.py" />
       <change beforePath="$PROJECT_DIR$/bot/app/rules/parser.out" afterPath="$PROJECT_DIR$/bot/app/rules/parser.out" />
       <change beforePath="$PROJECT_DIR$/bot/app/rules/parsetab.py" afterPath="$PROJECT_DIR$/bot/app/rules/parsetab.py" />
-      <change beforePath="$PROJECT_DIR$/bot/app/views.py" afterPath="$PROJECT_DIR$/bot/app/views.py" />
       <change beforePath="$PROJECT_DIR$/sempre/analyticsBot/interface.grammar" afterPath="$PROJECT_DIR$/sempre/analyticsBot/interface.grammar" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,11 +24,11 @@
     <SUITE FILE_PATH="coverage/AnalyticsBot$sub.coverage" NAME="sub Coverage Results" MODIFIED="1534674574659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyCharm" />
     <SUITE FILE_PATH="coverage/AnalyticsBot$sql_treatment.coverage" NAME="sql_treatment Coverage Results" MODIFIED="1529585034976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyCharm/app/management" />
     <SUITE FILE_PATH="coverage/AnalyticsBot$grammar.coverage" NAME="grammar Coverage Results" MODIFIED="1537183591400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyCharm/app/rules" />
-    <SUITE FILE_PATH="coverage/AnalyticsBot$grammar__2_.coverage" NAME="grammar (2) Coverage Results" MODIFIED="1537348660180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bot/app/rules" />
+    <SUITE FILE_PATH="coverage/AnalyticsBot$grammar__2_.coverage" NAME="grammar (2) Coverage Results" MODIFIED="1537358173895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bot/app/rules" />
     <SUITE FILE_PATH="coverage/AnalyticsBot$date_expressions.coverage" NAME="date_expressions Coverage Results" MODIFIED="1537286613888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bot/app/processing" />
     <SUITE FILE_PATH="coverage/AnalyticsBot$creating_rules_sempre.coverage" NAME="creating_rules_sempre Coverage Results" MODIFIED="1537349592204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bot/app/management" />
     <SUITE FILE_PATH="coverage/AnalyticsBot$grammar__1_.coverage" NAME="grammar (1) Coverage Results" MODIFIED="1537263308088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyCharm/app/rules" />
-    <SUITE FILE_PATH="coverage/AnalyticsBot$pipeline.coverage" NAME="pipeline Coverage Results" MODIFIED="1537350321329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bot/app/management" />
+    <SUITE FILE_PATH="coverage/AnalyticsBot$pipeline.coverage" NAME="pipeline Coverage Results" MODIFIED="1537356986048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bot/app/management" />
     <SUITE FILE_PATH="coverage/AnalyticsBot$time_expressions.coverage" NAME="time_expressions Coverage Results" MODIFIED="1536925034505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyCharm/app/processing" />
     <SUITE FILE_PATH="coverage/AnalyticsBot$sempre_query.coverage" NAME="sempre_query Coverage Results" MODIFIED="1537346730529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bot/app/management" />
   </component>
@@ -36,7 +37,7 @@
       <file leaf-file-name="date_expressions.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bot/app/processing/date_expressions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
+            <state relative-caret-position="90">
               <caret line="430" column="0" lean-forward="false" selection-start-line="430" selection-start-column="0" selection-end-line="430" selection-end-column="0" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
@@ -45,72 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="grammar.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bot/app/rules/grammar.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="186" column="18" lean-forward="true" selection-start-line="186" selection-start-column="18" selection-end-line="186" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-                <marker date="1537350321303" expanded="true" signature="1415:1489" ph="SELECT * FRO... " />
-                <marker date="1537350321303" expanded="true" signature="1969:2043" ph="SELECT * FRO... " />
-                <marker date="1537350321303" expanded="true" signature="1969:2112" ph="SELECT * FRO... " />
-                <marker date="1537350321303" expanded="true" signature="2697:2771" ph="SELECT * FRO... " />
-                <marker date="1537350321303" expanded="true" signature="2972:3046" ph="SELECT * FRO... " />
-                <marker date="1537350321303" expanded="true" signature="3257:3331" ph="SELECT * FRO... " />
-                <marker date="1537350321303" expanded="true" signature="3550:3624" ph="SELECT * FRO... " />
-                <marker date="1537350321303" expanded="true" signature="3842:3916" ph="SELECT * FRO... " />
-                <marker date="1537350321303" expanded="true" signature="5365:5439" ph="SELECT * FRO... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="interface.grammar" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface.grammar">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4410">
-              <caret line="305" column="0" lean-forward="false" selection-start-line="305" selection-start-column="0" selection-end-line="305" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="creating_rules_sempre.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bot/app/management/creating_rules_sempre.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="25" column="15" lean-forward="false" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parser.out" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bot/app/management/parser.out">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parsetab.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bot/app/management/parsetab.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-898">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="pipeline.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bot/app/management/pipeline.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="71" column="31" lean-forward="false" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
+            <state relative-caret-position="72">
+              <caret line="127" column="30" lean-forward="false" selection-start-line="127" selection-start-column="26" selection-end-line="127" selection-end-column="30" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -121,57 +61,108 @@
       <file leaf-file-name="nlp_processing.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bot/app/processing/nlp_processing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="18">
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="categories.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bot/app/management/categories.py">
+      <file leaf-file-name="interface.grammar" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface.grammar">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="774">
+              <caret line="43" column="61" lean-forward="true" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="grammar.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bot/app/rules/grammar.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
-                <marker date="1537279502527" expanded="true" signature="163:169" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="220:234" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="279:286" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="333:341" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="389:398" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="455:473" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="526:540" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="593:607" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="653:662" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="713:726" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="819:828" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="880:893" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="946:958" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="1003:1011" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="1058:1068" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="1125:1143" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="1194:1208" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="1255:1265" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="1372:1379" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="1424:1435" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="1488:1504" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="1554:1561" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="1611:1623" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="1682:1701" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="1749:1767" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="1819:1833" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="1875:1880" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="1934:1951" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="2008:2009" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="2062:2076" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="2129:2148" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="2188:2191" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="2237:2246" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="2294:2305" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="2352:2362" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="2412:2432" ph="SELECT DISTI... example_table" />
-                <marker date="1537279502527" expanded="true" signature="2488:2504" ph="SELECT DISTI... example_table" />
+                <element signature="e#0#21#0" expanded="true" />
+                <marker date="1537358173883" expanded="true" signature="1448:1522" ph="SELECT * FRO... " />
+                <marker date="1537358173883" expanded="true" signature="1990:2064" ph="SELECT * FRO... " />
+                <marker date="1537358173883" expanded="true" signature="1990:2129" ph="SELECT * FRO... " />
+                <marker date="1537358173883" expanded="true" signature="2699:2773" ph="SELECT * FRO... " />
+                <marker date="1537358173883" expanded="true" signature="2970:3044" ph="SELECT * FRO... " />
+                <marker date="1537358173883" expanded="true" signature="3251:3325" ph="SELECT * FRO... " />
+                <marker date="1537358173883" expanded="true" signature="3540:3614" ph="SELECT * FRO... " />
+                <marker date="1537358173883" expanded="true" signature="3828:3902" ph="SELECT * FRO... " />
+                <marker date="1537358173883" expanded="true" signature="5323:5397" ph="SELECT * FRO... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="category_builder.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bot/app/management/category_builder.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-936">
+              <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+              <folding>
+                <marker date="1537355763291" expanded="true" signature="1695:1753" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="1788:1854" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="1883:1943" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="1973:2034" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="2065:2126" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="2167:2237" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="2274:2340" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="2377:2443" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="2473:2534" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="2569:2634" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="2665:2726" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="2762:2827" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="2864:2928" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="2957:3017" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="3048:3110" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="3151:3221" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="3256:3327" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="3358:3420" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="3448:3507" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="3536:3599" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="3636:3704" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="3734:3793" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="3827:3891" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="3934:4005" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="4037:4107" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="4143:4209" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="4235:4292" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="4330:4399" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="4431:4493" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="4530:4596" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="4633:4704" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="4728:4783" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="4813:4874" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="4906:4969" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="5000:5062" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="5096:5168" ph="SELECT DISTI... example_table" />
+                <marker date="1537355763291" expanded="true" signature="5208:5276" ph="SELECT DISTI... example_table" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="synonyms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bot/app/processing/synonyms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="254" column="0" lean-forward="false" selection-start-line="254" selection-start-column="0" selection-end-line="254" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="synonyms_lists.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bot/app/processing/synonyms_lists.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="59" column="30" lean-forward="false" selection-start-line="59" selection-start-column="30" selection-end-line="59" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -187,15 +178,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>s</find>
-      <find>jsonFormat</find>
-      <find>simple</find>
-      <find>params</find>
-      <find>learning</find>
-      <find>example</find>
-      <find>arithmetic</find>
-      <find>arithme</find>
-      <find>f</find>
       <find>&quot;{:%Y-%m-%d}&quot;.format(now)</find>
       <find>exclude</find>
       <find>$dimension $measure</find>
@@ -217,6 +199,15 @@
       <find>=</find>
       <find>'</find>
       <find>&quot; ' &quot;</find>
+      <find>&quot; [ &quot;</find>
+      <find>&quot; ] &quot;</find>
+      <find />
+      <find>tenor</find>
+      <find>product_g</find>
+      <find>product</find>
+      <find>client</find>
+      <find>ev</find>
+      <find>deal</find>
     </findStrings>
     <replaceStrings>
       <replace>formatted_now</replace>
@@ -231,6 +222,8 @@
       <replace>[</replace>
       <replace>]</replace>
       <replace>&quot;</replace>
+      <replace>&quot;[&quot;</replace>
+      <replace>&quot;]&quot;</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -239,8 +232,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pyCharm/app/management/tags.py" />
-        <option value="$PROJECT_DIR$/pyCharm/app/q_a/nlp_processing.py" />
         <option value="$PROJECT_DIR$/pyCharm/example/settings.py" />
         <option value="$PROJECT_DIR$/sempre/data/interface-questions.examples" />
         <option value="$PROJECT_DIR$/pyCharm/app/management/creating_rules_python.py" />
@@ -279,17 +270,19 @@
         <option value="$PROJECT_DIR$/pyCharm/app/rules/grammar.py" />
         <option value="$PROJECT_DIR$/pyCharm/app/processing/synonyms.py" />
         <option value="$PROJECT_DIR$/pyCharm/app/processing/synonyms_lists.py" />
-        <option value="$PROJECT_DIR$/bot/app/management/categories.py" />
         <option value="$PROJECT_DIR$/bot/app/management/category_helper.py" />
-        <option value="$PROJECT_DIR$/bot/app/management/category_builder.py" />
         <option value="$PROJECT_DIR$/bot/app/processing/date_expressions.py" />
-        <option value="$PROJECT_DIR$/bot/app/processing/nlp_processing.py" />
         <option value="$PROJECT_DIR$/bot/app/views.py" />
         <option value="$PROJECT_DIR$/bot/app/management/creating_rules_sempre.py" />
+        <option value="$PROJECT_DIR$/bot/app/management/sempre_query.py" />
+        <option value="$PROJECT_DIR$/bot/app/processing/synonyms.py" />
+        <option value="$PROJECT_DIR$/bot/app/management/categories.py" />
+        <option value="$PROJECT_DIR$/bot/app/management/category_builder.py" />
+        <option value="$PROJECT_DIR$/bot/app/processing/synonyms_lists.py" />
+        <option value="$PROJECT_DIR$/bot/app/processing/nlp_processing.py" />
         <option value="$PROJECT_DIR$/bot/app/management/pipeline.py" />
         <option value="$PROJECT_DIR$/sempre/analyticsBot/interface.grammar" />
         <option value="$PROJECT_DIR$/bot/app/rules/grammar.py" />
-        <option value="$PROJECT_DIR$/bot/app/management/sempre_query.py" />
       </list>
     </option>
   </component>
@@ -375,6 +368,13 @@
             <path>
               <item name="AnalyticsBot" type="b2602c69:ProjectViewProjectNode" />
               <item name="AnalyticsBot" type="462c0819:PsiDirectoryNode" />
+              <item name="bot" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="rules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AnalyticsBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AnalyticsBot" type="462c0819:PsiDirectoryNode" />
               <item name="sempre" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -422,7 +422,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.pipeline">
+  <component name="RunManager" selected="Python.grammar (2)">
     <configuration name="creating_rules_sempre" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -527,9 +527,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.pipeline" />
-        <item index="1" class="java.lang.String" itemvalue="Python.creating_rules_sempre" />
-        <item index="2" class="java.lang.String" itemvalue="Python.grammar (2)" />
+        <item index="0" class="java.lang.String" itemvalue="Python.grammar (2)" />
+        <item index="1" class="java.lang.String" itemvalue="Python.pipeline" />
+        <item index="2" class="java.lang.String" itemvalue="Python.creating_rules_sempre" />
         <item index="3" class="java.lang.String" itemvalue="Python.sempre_query" />
         <item index="4" class="java.lang.String" itemvalue="Python.date_expressions" />
       </list>
@@ -568,16 +568,16 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17558528" sideWeight="0.24279211" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33444816" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22742476" sideWeight="0.4969651" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33277592" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32107022" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39464882" sideWeight="0.7572079" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19878604" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28528073" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39632106" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44481605" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.06354515" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -616,7 +616,24 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="76" />
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/bot/app/management/pipeline.py</url>
+          <line>127</line>
+          <option name="timeStamp" value="111" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/bot/app/management/pipeline.py</url>
+          <line>104</line>
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/bot/app/rules/grammar.py</url>
+          <line>211</line>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="126" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -712,34 +729,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bot/app/attribute_list">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bot/app/processing/synonyms_lists.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="120" column="7" lean-forward="false" selection-start-line="120" selection-start-column="7" selection-end-line="120" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bot/app/rules/parser.out">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bot/app/processing/synonyms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -796,14 +789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-864">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bot/app/measure_list">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -882,52 +867,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bot/app/management/category_builder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-342">
-          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding>
-            <marker date="1537279879599" expanded="true" signature="981:1039" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="1072:1138" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="1165:1225" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="1253:1314" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="1343:1404" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="1443:1513" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="1548:1614" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="1649:1715" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="1743:1804" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="1837:1902" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="1931:1992" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="2026:2091" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="2126:2190" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="2217:2277" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="2306:2368" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="2407:2477" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="2510:2581" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="2610:2672" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="2698:2757" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="2784:2847" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="2882:2950" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="2977:3036" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="3068:3132" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="3173:3244" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="3274:3344" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="3378:3444" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="3468:3525" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="3561:3630" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="3660:3722" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="3757:3823" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="3858:3929" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="3951:4006" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="4034:4095" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="4125:4188" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="4217:4279" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="4311:4383" ph="SELECT DISTI... example_table" />
-            <marker date="1537279879599" expanded="true" signature="4421:4489" ph="SELECT DISTI... example_table" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python2.7/sre_compile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="93">
@@ -944,70 +883,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ply/lex.py">
+    <entry file="file://$PROJECT_DIR$/bot/app/management/sempre_query.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="320" column="0" lean-forward="false" selection-start-line="320" selection-start-column="0" selection-end-line="320" selection-end-column="0" />
+        <state relative-caret-position="540">
+          <caret line="30" column="53" lean-forward="true" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ply/yacc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="332" column="0" lean-forward="false" selection-start-line="332" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bot/app/processing/date_expressions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="430" column="0" lean-forward="false" selection-start-line="430" selection-start-column="0" selection-end-line="430" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bot/app/processing/nlp_processing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface.grammar">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4410">
-          <caret line="305" column="0" lean-forward="false" selection-start-line="305" selection-start-column="0" selection-end-line="305" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bot/app/rules/grammar.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="186" column="18" lean-forward="true" selection-start-line="186" selection-start-column="18" selection-end-line="186" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <marker date="1537350321303" expanded="true" signature="1415:1489" ph="SELECT * FRO... " />
-            <marker date="1537350321303" expanded="true" signature="1969:2043" ph="SELECT * FRO... " />
-            <marker date="1537350321303" expanded="true" signature="1969:2112" ph="SELECT * FRO... " />
-            <marker date="1537350321303" expanded="true" signature="2697:2771" ph="SELECT * FRO... " />
-            <marker date="1537350321303" expanded="true" signature="2972:3046" ph="SELECT * FRO... " />
-            <marker date="1537350321303" expanded="true" signature="3257:3331" ph="SELECT * FRO... " />
-            <marker date="1537350321303" expanded="true" signature="3550:3624" ph="SELECT * FRO... " />
-            <marker date="1537350321303" expanded="true" signature="3842:3916" ph="SELECT * FRO... " />
-            <marker date="1537350321303" expanded="true" signature="5365:5439" ph="SELECT * FRO... " />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bot/app/management/creating_rules_sempre.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
+        <state relative-caret-position="230">
           <caret line="25" column="15" lean-forward="false" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
           <folding />
         </state>
@@ -1023,72 +909,199 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bot/app/management/parsetab.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-898">
+        <state relative-caret-position="-832">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bot/app/management/pipeline.py">
+    <entry file="file://$PROJECT_DIR$/bot/app/attribute_list">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="71" column="31" lean-forward="false" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="383">
+          <caret line="24" column="15" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bot/app/management/sempre_query.py">
+    <entry file="file://$PROJECT_DIR$/bot/app/measure_list">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="30" column="53" lean-forward="true" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
+        <state relative-caret-position="72">
+          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bot/app/management/categories.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="-722">
+          <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding>
-            <marker date="1537279502527" expanded="true" signature="163:169" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="220:234" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="279:286" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="333:341" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="389:398" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="455:473" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="526:540" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="593:607" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="653:662" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="713:726" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="819:828" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="880:893" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="946:958" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="1003:1011" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="1058:1068" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="1125:1143" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="1194:1208" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="1255:1265" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="1372:1379" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="1424:1435" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="1488:1504" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="1554:1561" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="1611:1623" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="1682:1701" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="1749:1767" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="1819:1833" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="1875:1880" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="1934:1951" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="2008:2009" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="2062:2076" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="2129:2148" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="2188:2191" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="2237:2246" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="2294:2305" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="2352:2362" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="2412:2432" ph="SELECT DISTI... example_table" />
-            <marker date="1537279502527" expanded="true" signature="2488:2504" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="300:301" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="444:445" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="503:504" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="558:559" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="613:614" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="661:662" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="714:715" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="807:808" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="861:862" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="916:917" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="963:964" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="1012:1013" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="1071:1072" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="1214:1215" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="1308:1309" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="1355:1356" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="1410:1411" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="1462:1463" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="1514:1515" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="1575:1576" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="1625:1626" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="1679:1680" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="1723:1724" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="1779:1780" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="1829:1830" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="1884:1885" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="1939:1940" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="1981:1982" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="2029:2030" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="2079:2080" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="2128:2129" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="2180:2181" ph="SELECT DISTI... example_table" />
+            <marker date="1537355024723" expanded="true" signature="2238:2239" ph="SELECT DISTI... example_table" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot/app/processing/synonyms_lists.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="59" column="30" lean-forward="false" selection-start-line="59" selection-start-column="30" selection-end-line="59" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot/app/management/category_builder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-936">
+          <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+          <folding>
+            <marker date="1537355763291" expanded="true" signature="1695:1753" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="1788:1854" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="1883:1943" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="1973:2034" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="2065:2126" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="2167:2237" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="2274:2340" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="2377:2443" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="2473:2534" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="2569:2634" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="2665:2726" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="2762:2827" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="2864:2928" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="2957:3017" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="3048:3110" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="3151:3221" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="3256:3327" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="3358:3420" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="3448:3507" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="3536:3599" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="3636:3704" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="3734:3793" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="3827:3891" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="3934:4005" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="4037:4107" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="4143:4209" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="4235:4292" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="4330:4399" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="4431:4493" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="4530:4596" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="4633:4704" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="4728:4783" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="4813:4874" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="4906:4969" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="5000:5062" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="5096:5168" ph="SELECT DISTI... example_table" />
+            <marker date="1537355763291" expanded="true" signature="5208:5276" ph="SELECT DISTI... example_table" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot/app/processing/synonyms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="254" column="0" lean-forward="false" selection-start-line="254" selection-start-column="0" selection-end-line="254" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot/app/processing/date_expressions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="430" column="0" lean-forward="false" selection-start-line="430" selection-start-column="0" selection-end-line="430" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot/app/processing/nlp_processing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sempre/analyticsBot/interface.grammar">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="43" column="61" lean-forward="true" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot/app/management/pipeline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="127" column="30" lean-forward="false" selection-start-line="127" selection-start-column="26" selection-end-line="127" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ply/yacc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-233">
+          <caret line="239" column="32" lean-forward="true" selection-start-line="239" selection-start-column="32" selection-end-line="239" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ply/lex.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15984">
+          <caret line="908" column="0" lean-forward="false" selection-start-line="908" selection-start-column="0" selection-end-line="908" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot/app/rules/grammar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <marker date="1537358173883" expanded="true" signature="1448:1522" ph="SELECT * FRO... " />
+            <marker date="1537358173883" expanded="true" signature="1990:2064" ph="SELECT * FRO... " />
+            <marker date="1537358173883" expanded="true" signature="1990:2129" ph="SELECT * FRO... " />
+            <marker date="1537358173883" expanded="true" signature="2699:2773" ph="SELECT * FRO... " />
+            <marker date="1537358173883" expanded="true" signature="2970:3044" ph="SELECT * FRO... " />
+            <marker date="1537358173883" expanded="true" signature="3251:3325" ph="SELECT * FRO... " />
+            <marker date="1537358173883" expanded="true" signature="3540:3614" ph="SELECT * FRO... " />
+            <marker date="1537358173883" expanded="true" signature="3828:3902" ph="SELECT * FRO... " />
+            <marker date="1537358173883" expanded="true" signature="5323:5397" ph="SELECT * FRO... " />
           </folding>
         </state>
       </provider>

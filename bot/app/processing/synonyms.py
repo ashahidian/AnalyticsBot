@@ -179,11 +179,11 @@ def synonym_check(word, type):
         elif type == 1:
             return 'platform'
 
-    elif word in new_trade_synonyms:
-        if type == 0:
-            return 'NewTrade'
-        elif type == 1:
-            return 'newtrade'
+    # elif word in new_trade_synonyms:
+    #     if type == 0:
+    #         return 'NewTrade'
+    #     elif type == 1:
+    #         return 'newtrade'
 
     elif word in net_client_position_synonyms:
         if type == 0:

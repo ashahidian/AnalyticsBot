@@ -2,126 +2,134 @@ from category_builder import *
 
 
 def identify_category(token):
-    if token in tradestatus:
-        return 'TradeStatus'
+
+    if token in entries:
+        return '0'
+
+    elif token in other:
+        return '0'
+
+    elif token in tradestatus:
+        return '0'
 
     elif token in tenor:
-        return 'Tenor'
+        return '0'
 
     elif token in product_group:
-        return 'Product Group'
+        return '0'
 
     elif token in product:
-        return 'Product'
+        return '0'
 
     elif token in platform:
-        return 'Platform'
+        return '0'
 
     elif token in new_trade:
-        return 'NewTrade'
+        return '0'
 
     elif token in net_client_position:
-        return 'NetClientPosition'
+        return '0'
 
     elif token in near_tenor_days:
-        return 'NearTenorDays'
+        return '0'
 
     elif token in max_future_date:
-        return 'MaxFutureDate'
+        return '0'
 
     elif token in marketer:
-        return 'Marketer'
+        return '0'
 
     elif token in local_blotter:
-        return 'LocalBlotter'
+        return '0'
 
     elif token in legs:
-        return 'Leg'
+        return '0'
 
     elif token in from_days:
-        return 'FromDays'
+        return '0'
 
     elif token in far_tenor_days:
-        return 'FarTenorDays'
+        return '0'
 
     elif token in expiration_date:
-        return 'Expiry Date'
+        return '0'
 
     elif token in deal_id:
-        return 'Deal ID'
+        return '0'
 
     elif token in deal_date:
-        return 'Deal Date'
+        return '0'
 
     elif token in currency_pair_group:
-        return 'CurrencyPairGroup'
+        return '0'
 
     elif token in currency_pair:
-        return 'Currency Pair'
+        #currency_pair.append(new_token)
+        return '1'
 
     elif token in crds_code:
-        return 'CRDS Code'
+        return '0'
 
     elif token in dealside:
-        return 'Client Deal Side'
+        return '0'
 
     elif token in client:
-        return 'Client'
+        return '0'
 
     elif token in brooker:
-        return 'Broker_FXT'
+        return '0'
 
     elif token in ndf_fixing_date:
-        return 'NDF Fixing Date'
+        return '0'
 
     #
     elif token in volume:
-        return 'Volume'
+        return '0'
 
     elif token in total_trades:
-        return 'TotalTrades'
+        return '0'
 
     elif token in std_dev_rollover_days:
-        return 'StdDevRolloverDays'
+        return '0'
 
     elif token in spot_price:
-        return 'Spot Price Strike'
+        return '0'
 
     elif token in rollover_ratio:
-        return 'RolloverRatio'
+        return '0'
 
     elif token in rank:
-        return 'Rank'
+        return '0'
 
     elif token in net_volume_ratio:
-        return 'NetRolloverRatio'
+        return '0'
 
     elif token in net_volume:
-        return 'NetVolume'
+        return '0'
 
     elif token in near_leg_volume:
-        return 'NearLegVolume'
+        return '0'
 
     elif token in latest_rollover:
-        return 'LatestRolloverDays'
+        return '0'
 
     elif token in ev:
-        return 'EV'
+        return '0'
 
     elif token in cc_total:
-        return 'CC Total'
+        return '0'
 
     elif token in cc_nonrisk:
-        return 'CC NonRisk'
+        return '0'
 
     elif token in cc_atrisk:
-        return 'CC AtRisk'
+        return '0'
 
     elif token in avg_rollover:
-        return 'AverageRolloverDays'
+        return '0'
 
     elif token in max_abs_net_volume:
-        return 'MaxAbsNetVolume'
+        return '0'
 
     else:
         return ''

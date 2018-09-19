@@ -20,7 +20,6 @@ def stop_words(question):
             "is", "s", "are",
             "has", "have",
             "does", "do",
-            "currency", "deal", "client", "last",
             "who", "when", "what", "which",
             "give", "can", "show", "tell",
             "me", "you",

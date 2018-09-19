@@ -1,5 +1,5 @@
 exclude_synonyms = ['exclude', 'excluding', 'remove', 'no', 'not', 'different']
-higher_synonyms = ['more', 'greater', 'higher', 'superior', 'surpassing', 'larger', 'above']
+higher_synonyms = ['more', 'greater', 'higher', 'superior', 'surpassing', 'larger', 'above', 'highest']
 #______________________________________________________________________________________
 
 #TradeStatus
@@ -66,7 +66,7 @@ crdscode_synonyms = ['crds code', 'crdscode']
 client_deal_side_synonyms = ['client deal side', 'client deal', 'client side']
 
 #Client
-client_synonyms = ['clients', 'client', 'client name', 'clients name']
+client_synonyms = ['clients', 'client', 'client name', 'clients name', 'id', 'client id']
 
 #Brooker_FXT
 brooker_fxt_synonyms = ['brooker', 'brooker fxt']

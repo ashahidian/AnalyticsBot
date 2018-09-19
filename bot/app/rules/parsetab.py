@@ -6,9 +6,9 @@ _tabversion = '3.10'
 
 _lr_method = 'LALR'
 
-_lr_signature = 'ATTRIBUTE COMPARE DATE EXCLUDE MEASURE TOKENstatement : ATTRIBUTE DATEstatement : ATTRIBUTE ATTRIBUTE DATE\n                | MEASURE ATTRIBUTE DATEstatement : ATTRIBUTE DATE DATEstatement : ATTRIBUTE ATTRIBUTE DATE DATE\n                | MEASURE ATTRIBUTE DATE DATE statement : MEASURE TOKEN\n                | ATTRIBUTE TOKEN  statement : TOKEN MEASURE\n                | TOKEN ATTRIBUTE  statement : MEASURE TOKEN EXCLUDE\n                | ATTRIBUTE TOKEN EXCLUDE  statement : MEASURE EXCLUDE TOKEN\n                | ATTRIBUTE EXCLUDE TOKEN  statement : EXCLUDE MEASURE TOKEN\n                | EXCLUDE ATTRIBUTE TOKEN  statement : MEASURE EXCLUDE ATTRIBUTE TOKEN\n                | ATTRIBUTE EXCLUDE MEASURE TOKEN\n                | ATTRIBUTE EXCLUDE ATTRIBUTE TOKEN\n                | MEASURE EXCLUDE MEASURE TOKEN  statement : ATTRIBUTE TOKEN MEASURE\n                | MEASURE TOKEN ATTRIBUTE\n                | ATTRIBUTE TOKEN ATTRIBUTE  statement : ATTRIBUTE MEASURE TOKEN\n                | MEASURE ATTRIBUTE TOKEN\n                | ATTRIBUTE ATTRIBUTE TOKEN  statement : ATTRIBUTE TOKEN MEASURE TOKEN\n                | MEASURE TOKEN ATTRIBUTE TOKEN\n                | ATTRIBUTE TOKEN ATTRIBUTE TOKEN statement : ATTRIBUTE COMPARE MEASURE\n                | MEASURE COMPARE ATTRIBUTE\n                | ATTRIBUTE COMPARE ATTRIBUTE '
+_lr_signature = 'ATTRIBUTE COMPARE DATE EXCLUDE MEASURE TOKENstatement : ATTRIBUTE DATEstatement : ATTRIBUTE ATTRIBUTE DATE\n                | MEASURE ATTRIBUTE DATEstatement : ATTRIBUTE DATE DATEstatement : ATTRIBUTE ATTRIBUTE DATE DATE\n                | MEASURE ATTRIBUTE DATE DATE statement : MEASURE TOKEN\n                | ATTRIBUTE TOKEN statement : TOKEN MEASURE\n                | TOKEN ATTRIBUTE  statement : MEASURE TOKEN EXCLUDE\n                | ATTRIBUTE TOKEN EXCLUDE  statement : MEASURE EXCLUDE TOKEN\n                | ATTRIBUTE EXCLUDE TOKEN  statement : EXCLUDE MEASURE TOKEN\n                | EXCLUDE ATTRIBUTE TOKEN  statement : MEASURE EXCLUDE ATTRIBUTE TOKEN\n                | ATTRIBUTE EXCLUDE MEASURE TOKEN\n                | ATTRIBUTE EXCLUDE ATTRIBUTE TOKEN\n                | MEASURE EXCLUDE MEASURE TOKEN  statement : ATTRIBUTE TOKEN MEASURE\n                | MEASURE TOKEN ATTRIBUTE\n                | ATTRIBUTE TOKEN ATTRIBUTE  statement : ATTRIBUTE MEASURE TOKEN\n                | MEASURE ATTRIBUTE TOKEN\n                | ATTRIBUTE ATTRIBUTE TOKEN  statement : ATTRIBUTE TOKEN MEASURE TOKEN\n                | MEASURE TOKEN ATTRIBUTE TOKEN\n                | ATTRIBUTE TOKEN ATTRIBUTE TOKEN statement : ATTRIBUTE COMPARE MEASURE\n                | MEASURE COMPARE ATTRIBUTE\n                | ATTRIBUTE COMPARE ATTRIBUTE  statement : COMPARE MEASURE\n                | COMPARE ATTRIBUTE '
     
-_lr_action_items = {'COMPARE':([1,4,],[6,14,]),'ATTRIBUTE':([0,1,2,4,5,6,8,11,14,16,17,],[1,7,12,15,18,20,24,29,32,36,38,]),'TOKEN':([0,1,4,7,9,11,15,17,18,19,24,25,29,31,36,38,39,],[2,8,16,23,27,30,34,37,40,41,43,44,45,46,48,49,50,]),'MEASURE':([0,1,2,5,6,8,11,17,],[4,9,13,19,21,25,31,39,]),'DATE':([1,7,10,15,22,33,],[10,22,28,33,42,47,]),'EXCLUDE':([0,1,4,8,16,],[5,11,17,26,35,]),'$end':([3,8,10,12,13,16,20,21,22,23,24,25,26,27,28,30,32,33,34,35,36,37,40,41,42,43,44,45,46,47,48,49,50,],[0,-8,-1,-10,-9,-7,-32,-30,-2,-26,-23,-21,-12,-24,-4,-14,-31,-3,-25,-11,-22,-13,-16,-15,-5,-29,-27,-19,-18,-6,-28,-17,-20,]),}
+_lr_action_items = {'COMPARE':([0,2,5,],[1,9,17,]),'ATTRIBUTE':([0,1,2,3,5,6,9,11,14,17,19,20,],[2,7,10,15,18,21,23,27,32,35,39,41,]),'TOKEN':([0,2,5,10,12,14,18,20,21,22,27,28,32,34,39,41,42,],[3,11,19,26,30,33,37,40,43,44,46,47,48,49,51,52,53,]),'MEASURE':([0,1,2,3,6,9,11,14,20,],[5,8,12,16,22,24,28,34,42,]),'DATE':([2,10,13,18,25,36,],[13,25,31,36,45,50,]),'EXCLUDE':([0,2,5,11,19,],[6,14,20,29,38,]),'$end':([4,7,8,11,13,15,16,19,23,24,25,26,27,28,29,30,31,33,35,36,37,38,39,40,43,44,45,46,47,48,49,50,51,52,53,],[0,-34,-33,-8,-1,-10,-9,-7,-32,-30,-2,-26,-23,-21,-12,-24,-4,-14,-31,-3,-25,-11,-22,-13,-16,-15,-5,-29,-27,-19,-18,-6,-28,-17,-20,]),}
 
 _lr_action = {}
 for _k, _v in _lr_action_items.items():
@@ -17,7 +17,7 @@ for _k, _v in _lr_action_items.items():
       _lr_action[_x][_k] = _y
 del _lr_action_items
 
-_lr_goto_items = {'statement':([0,],[3,]),}
+_lr_goto_items = {'statement':([0,],[4,]),}
 
 _lr_goto = {}
 for _k, _v in _lr_goto_items.items():
@@ -27,36 +27,38 @@ for _k, _v in _lr_goto_items.items():
 del _lr_goto_items
 _lr_productions = [
   ("S' -> statement","S'",1,None,None,None),
-  ('statement -> ATTRIBUTE DATE','statement',2,'p_statement_time','grammar.py',53),
-  ('statement -> ATTRIBUTE ATTRIBUTE DATE','statement',3,'p_statement_attribute_time','grammar.py',60),
-  ('statement -> MEASURE ATTRIBUTE DATE','statement',3,'p_statement_attribute_time','grammar.py',61),
-  ('statement -> ATTRIBUTE DATE DATE','statement',3,'p_statement_time_time','grammar.py',68),
-  ('statement -> ATTRIBUTE ATTRIBUTE DATE DATE','statement',4,'p_statement_attribute_time_time','grammar.py',76),
-  ('statement -> MEASURE ATTRIBUTE DATE DATE','statement',4,'p_statement_attribute_time_time','grammar.py',77),
-  ('statement -> MEASURE TOKEN','statement',2,'p_statement_single','grammar.py',86),
-  ('statement -> ATTRIBUTE TOKEN','statement',2,'p_statement_single','grammar.py',87),
-  ('statement -> TOKEN MEASURE','statement',2,'p_statement_single_second','grammar.py',93),
-  ('statement -> TOKEN ATTRIBUTE','statement',2,'p_statement_single_second','grammar.py',94),
-  ('statement -> MEASURE TOKEN EXCLUDE','statement',3,'p_statement_exclude','grammar.py',99),
-  ('statement -> ATTRIBUTE TOKEN EXCLUDE','statement',3,'p_statement_exclude','grammar.py',100),
-  ('statement -> MEASURE EXCLUDE TOKEN','statement',3,'p_statement_exclude_middle','grammar.py',105),
-  ('statement -> ATTRIBUTE EXCLUDE TOKEN','statement',3,'p_statement_exclude_middle','grammar.py',106),
-  ('statement -> EXCLUDE MEASURE TOKEN','statement',3,'p_statement_exclude_first','grammar.py',111),
-  ('statement -> EXCLUDE ATTRIBUTE TOKEN','statement',3,'p_statement_exclude_first','grammar.py',112),
-  ('statement -> MEASURE EXCLUDE ATTRIBUTE TOKEN','statement',4,'p_statement_exclude_large','grammar.py',117),
-  ('statement -> ATTRIBUTE EXCLUDE MEASURE TOKEN','statement',4,'p_statement_exclude_large','grammar.py',118),
-  ('statement -> ATTRIBUTE EXCLUDE ATTRIBUTE TOKEN','statement',4,'p_statement_exclude_large','grammar.py',119),
-  ('statement -> MEASURE EXCLUDE MEASURE TOKEN','statement',4,'p_statement_exclude_large','grammar.py',120),
-  ('statement -> ATTRIBUTE TOKEN MEASURE','statement',3,'p_statement_multiple_token_second','grammar.py',126),
-  ('statement -> MEASURE TOKEN ATTRIBUTE','statement',3,'p_statement_multiple_token_second','grammar.py',127),
-  ('statement -> ATTRIBUTE TOKEN ATTRIBUTE','statement',3,'p_statement_multiple_token_second','grammar.py',128),
-  ('statement -> ATTRIBUTE MEASURE TOKEN','statement',3,'p_statement_multiple_token_third','grammar.py',134),
-  ('statement -> MEASURE ATTRIBUTE TOKEN','statement',3,'p_statement_multiple_token_third','grammar.py',135),
-  ('statement -> ATTRIBUTE ATTRIBUTE TOKEN','statement',3,'p_statement_multiple_token_third','grammar.py',136),
-  ('statement -> ATTRIBUTE TOKEN MEASURE TOKEN','statement',4,'p_statement_multiple_token_four','grammar.py',142),
-  ('statement -> MEASURE TOKEN ATTRIBUTE TOKEN','statement',4,'p_statement_multiple_token_four','grammar.py',143),
-  ('statement -> ATTRIBUTE TOKEN ATTRIBUTE TOKEN','statement',4,'p_statement_multiple_token_four','grammar.py',144),
-  ('statement -> ATTRIBUTE COMPARE MEASURE','statement',3,'p_statement_compare','grammar.py',150),
-  ('statement -> MEASURE COMPARE ATTRIBUTE','statement',3,'p_statement_compare','grammar.py',151),
-  ('statement -> ATTRIBUTE COMPARE ATTRIBUTE','statement',3,'p_statement_compare','grammar.py',152),
+  ('statement -> ATTRIBUTE DATE','statement',2,'p_statement_time','grammar.py',56),
+  ('statement -> ATTRIBUTE ATTRIBUTE DATE','statement',3,'p_statement_attribute_time','grammar.py',65),
+  ('statement -> MEASURE ATTRIBUTE DATE','statement',3,'p_statement_attribute_time','grammar.py',66),
+  ('statement -> ATTRIBUTE DATE DATE','statement',3,'p_statement_time_time','grammar.py',74),
+  ('statement -> ATTRIBUTE ATTRIBUTE DATE DATE','statement',4,'p_statement_attribute_time_time','grammar.py',83),
+  ('statement -> MEASURE ATTRIBUTE DATE DATE','statement',4,'p_statement_attribute_time_time','grammar.py',84),
+  ('statement -> MEASURE TOKEN','statement',2,'p_statement_single','grammar.py',94),
+  ('statement -> ATTRIBUTE TOKEN','statement',2,'p_statement_single','grammar.py',95),
+  ('statement -> TOKEN MEASURE','statement',2,'p_statement_single_second','grammar.py',102),
+  ('statement -> TOKEN ATTRIBUTE','statement',2,'p_statement_single_second','grammar.py',103),
+  ('statement -> MEASURE TOKEN EXCLUDE','statement',3,'p_statement_exclude','grammar.py',109),
+  ('statement -> ATTRIBUTE TOKEN EXCLUDE','statement',3,'p_statement_exclude','grammar.py',110),
+  ('statement -> MEASURE EXCLUDE TOKEN','statement',3,'p_statement_exclude_middle','grammar.py',116),
+  ('statement -> ATTRIBUTE EXCLUDE TOKEN','statement',3,'p_statement_exclude_middle','grammar.py',117),
+  ('statement -> EXCLUDE MEASURE TOKEN','statement',3,'p_statement_exclude_first','grammar.py',123),
+  ('statement -> EXCLUDE ATTRIBUTE TOKEN','statement',3,'p_statement_exclude_first','grammar.py',124),
+  ('statement -> MEASURE EXCLUDE ATTRIBUTE TOKEN','statement',4,'p_statement_exclude_large','grammar.py',130),
+  ('statement -> ATTRIBUTE EXCLUDE MEASURE TOKEN','statement',4,'p_statement_exclude_large','grammar.py',131),
+  ('statement -> ATTRIBUTE EXCLUDE ATTRIBUTE TOKEN','statement',4,'p_statement_exclude_large','grammar.py',132),
+  ('statement -> MEASURE EXCLUDE MEASURE TOKEN','statement',4,'p_statement_exclude_large','grammar.py',133),
+  ('statement -> ATTRIBUTE TOKEN MEASURE','statement',3,'p_statement_multiple_token_second','grammar.py',140),
+  ('statement -> MEASURE TOKEN ATTRIBUTE','statement',3,'p_statement_multiple_token_second','grammar.py',141),
+  ('statement -> ATTRIBUTE TOKEN ATTRIBUTE','statement',3,'p_statement_multiple_token_second','grammar.py',142),
+  ('statement -> ATTRIBUTE MEASURE TOKEN','statement',3,'p_statement_multiple_token_third','grammar.py',149),
+  ('statement -> MEASURE ATTRIBUTE TOKEN','statement',3,'p_statement_multiple_token_third','grammar.py',150),
+  ('statement -> ATTRIBUTE ATTRIBUTE TOKEN','statement',3,'p_statement_multiple_token_third','grammar.py',151),
+  ('statement -> ATTRIBUTE TOKEN MEASURE TOKEN','statement',4,'p_statement_multiple_token_four','grammar.py',158),
+  ('statement -> MEASURE TOKEN ATTRIBUTE TOKEN','statement',4,'p_statement_multiple_token_four','grammar.py',159),
+  ('statement -> ATTRIBUTE TOKEN ATTRIBUTE TOKEN','statement',4,'p_statement_multiple_token_four','grammar.py',160),
+  ('statement -> ATTRIBUTE COMPARE MEASURE','statement',3,'p_statement_compare','grammar.py',167),
+  ('statement -> MEASURE COMPARE ATTRIBUTE','statement',3,'p_statement_compare','grammar.py',168),
+  ('statement -> ATTRIBUTE COMPARE ATTRIBUTE','statement',3,'p_statement_compare','grammar.py',169),
+  ('statement -> COMPARE MEASURE','statement',2,'p_statement_compare_single','grammar.py',176),
+  ('statement -> COMPARE ATTRIBUTE','statement',2,'p_statement_compare_single','grammar.py',177),
 ]

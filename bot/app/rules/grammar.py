@@ -13,7 +13,9 @@ t_ATTRIBUTE = r'tradestatus|tenor|product\sgroup|product|platform|newtrade|netcl
               r'|currencypairgroup|currency\spair|crdscode|client\sdeal\sside|client' \
               r'|broker_fxt|ndf|fixing\sdate'
 
-t_TOKEN = r'[a-zA-Z_0-9]+'
+t_TOKEN = r'([a-zA-Z]{3}[/][a-zA-Z]{3}) | [a-zA-Z_0-9]+ '
+
+
 
 # t_DATE = r'(next|last)\s([0-9\s]*)(day|week|year|quarter) | ([0-9]{4}) | yesterday | tomorrow | this year '
 t_DATE = r'([0-9]{4}-[0-9]{2}-[0-9]{2}) | ([0-9]{9})'
@@ -55,7 +57,7 @@ def p_statement_time(p):
 
     p[0] = "".join(
         (
-        "SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", " [ ", p[1], " ] ", " = ", " ' ",
+        "SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[", p[1], "]", " = ", " ' ",
         p[2], " ' ",))
 
 
@@ -64,17 +66,17 @@ def p_statement_attribute_time(p):
                 | MEASURE ATTRIBUTE DATE'''
 
     p[0] = "".join(
-        ("SELECT ", " [ ", p[1], " ] ", " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", " [ ",
-         p[2], " ] ", " = ", " ' ", p[3], " ' "))
+        ("SELECT ", "[", p[1], "]", " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[",
+         p[2], "]", " = ", " ' ", p[3], " ' "))
 
 
 def p_statement_time_time(p):
     '''statement : ATTRIBUTE DATE DATE'''
 
     p[0] = "".join(
-        ("SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", " [ ", p[1], " ] ", " >= ",
+        ("SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[", p[1], "]", " >= ",
          " ' ", p[2], " ' ", " AND ",
-         " [ ", p[1], " ] ", " <= ", " ' ", p[3], " ' "))
+         "[", p[1], "]", " <= ", " ' ", p[3], " ' "))
 
 
 def p_statement_attribute_time_time(p):
@@ -82,45 +84,45 @@ def p_statement_attribute_time_time(p):
                 | MEASURE ATTRIBUTE DATE DATE'''
 
     p[0] = "".join(
-        ("SELECT ", " [ ", p[1], " ] ", " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", " [ ",
-         p[2], " ] ", " >= ", " ' ", p[3], " ' ",
+        ("SELECT ", "[", p[1], "]", " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[",
+         p[2], "]", " >= ", " ' ", p[3], " ' ",
          " AND ",
-         " [ ", p[2], "]", " <= ", " ' ", p[4], " ' "))
+         "[", p[2], "]", " <= ", " ' ", p[4], " ' "))
 
 
 def p_statement_single(p):
     ''' statement : MEASURE TOKEN
-                | ATTRIBUTE TOKEN '''
+                | ATTRIBUTE TOKEN'''
 
-    p[0] = "".join(("SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", " [ ", p[1], " ] ",
+    p[0] = "".join(("SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[", p[1], "]",
                     " = ", " ' ", p[2], " ' "))
 
 
 def p_statement_single_second(p):
     ''' statement : TOKEN MEASURE
                 | TOKEN ATTRIBUTE '''
-    p[0] = "".join(("SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", " [ ", p[2], " ] ",
+    p[0] = "".join(("SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[", p[2], "]",
                     " = ", " ' ", p[1], " ' "))
 
 
 def p_statement_exclude(p):
     ''' statement : MEASURE TOKEN EXCLUDE
                 | ATTRIBUTE TOKEN EXCLUDE '''
-    p[0] = "".join(("SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", " [ ", p[1], " ] ",
+    p[0] = "".join(("SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[", p[1], "]",
                     " != ", " ' ", p[2], " ' "))
 
 
 def p_statement_exclude_middle(p):
     ''' statement : MEASURE EXCLUDE TOKEN
                 | ATTRIBUTE EXCLUDE TOKEN '''
-    p[0] = "".join(("SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", " [ ", p[1], " ] ",
+    p[0] = "".join(("SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[", p[1], "]",
                     " != ", " ' ", p[3], " ' "))
 
 
 def p_statement_exclude_first(p):
     ''' statement : EXCLUDE MEASURE TOKEN
                 | EXCLUDE ATTRIBUTE TOKEN '''
-    p[0] = "".join(("SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", " [ ", p[2], " ] ",
+    p[0] = "".join(("SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[", p[2], "]",
                     " != ", " ' ", p[3], " ' "))
 
 
@@ -130,8 +132,8 @@ def p_statement_exclude_large(p):
                 | ATTRIBUTE EXCLUDE ATTRIBUTE TOKEN
                 | MEASURE EXCLUDE MEASURE TOKEN '''
     p[0] = "".join(
-        ("SELECT ", " [ ", p[1], " ] ", " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", " [ ",
-         p[3], " ] ", " != ", " ' ", p[4], " ' "))
+        ("SELECT ", "[", p[1], "]", " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[",
+         p[3], "]", " != ", " ' ", p[4], " ' "))
 
 
 def p_statement_multiple_token_second(p):
@@ -139,8 +141,8 @@ def p_statement_multiple_token_second(p):
                 | MEASURE TOKEN ATTRIBUTE
                 | ATTRIBUTE TOKEN ATTRIBUTE '''
     p[0] = "".join(
-        ("SELECT ", " [ ", p[3], " ] ", " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", " [ ",
-         p[1], " ] ", " = ", " ' ", p[2], " ' "))
+        ("SELECT ", "[", p[3], "]", " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[",
+         p[1], "]", " = ", " ' ", p[2], " ' "))
 
 
 def p_statement_multiple_token_third(p):
@@ -148,17 +150,17 @@ def p_statement_multiple_token_third(p):
                 | MEASURE ATTRIBUTE TOKEN
                 | ATTRIBUTE ATTRIBUTE TOKEN '''
     p[0] = "".join(
-        ("SELECT ", " [ ", p[1], " ] ", " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", " [ ",
-         p[2], " ] ", " = ", " ' ", p[3], " ' "))
+        ("SELECT ", "[", p[1], "]", " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[",
+         p[2], "]", " = ", " ' ", p[3], " ' "))
 
 
 def p_statement_multiple_token_four(p):
     ''' statement : ATTRIBUTE TOKEN MEASURE TOKEN
                 | MEASURE TOKEN ATTRIBUTE TOKEN
                 | ATTRIBUTE TOKEN ATTRIBUTE TOKEN'''
-    p[0] = "".join(("SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", " [ ", p[1], " ] ",
+    p[0] = "".join(("SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[", p[1], "]",
                     " = ", " ' ", p[2], " ' ",
-                    " AND ", " [ ", p[3], " ] ", " = ", " ' ", p[4], " ' "))
+                    " AND ", "[", p[3], "]", " = ", " ' ", p[4], " ' "))
 
 
 def p_statement_compare(p):
@@ -166,7 +168,15 @@ def p_statement_compare(p):
                 | MEASURE COMPARE ATTRIBUTE
                 | ATTRIBUTE COMPARE ATTRIBUTE '''
     p[0] = "".join(
-        ("SELECT TOP 10 ", " [ ", p[3], " ] ", ", ", " [ ", p[1], " ] ",
+        ("SELECT TOP 10 ", "[", p[3], "]", ", ", "[", p[1], "]",
+         " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] "))
+
+
+def p_statement_compare_single(p):
+    ''' statement : COMPARE MEASURE
+                | COMPARE ATTRIBUTE '''
+    p[0] = "".join(
+        ("SELECT TOP 10 ", "[", p[2], "]",
          " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] "))
 
 
@@ -184,7 +194,7 @@ def grammar_function(question):
     except EOFError:
         pass
     r = yacc.parse(s)
-    return(str(r))
+    return str(r)
 
 
 # TotalTrades
@@ -198,5 +208,5 @@ def grammar_function(question):
 # r = yacc.parse(s)
 # print(r)
 
-#if __name__ == '__main__':
-#    grammar_function('exclude volume 4567')
+if __name__ == '__main__':
+    print (grammar_function('ev tradestatus eur/usd'))
