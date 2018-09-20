@@ -16,7 +16,7 @@ def tokenizing(question):
 
 def stop_words(question):
     word_tokens = tokenizing(question)
-    stop = ["in", "the", "to", "with", "than", "that", "of", "a", "an",
+    stop = ["in", "the", "to", "with", "than", "that", "of", "a", "an", "for",
             "is", "s", "are",
             "has", "have",
             "does", "do",
@@ -34,21 +34,6 @@ def stop_words(question):
     return cleaned_question
 
 
-def remove_date_expressions(question):
-    word_tokens = tokenizing(question)
-    stop = ["next", "last", "day", "week", "year", "quarter",
-            "january", "february", "march", "april", "may", "june", "july", "august", "september", "october",
-            "november", "december", "yesterday", "tomorrow", "this"]
-
-    cleaned_question = []
-
-    for w in word_tokens:
-        if w not in stop:
-            cleaned_question.append(str(w))
-
-    final_clean = ' '.join([i for i in cleaned_question if not i.isdigit()])
-
-    return final_clean
 
 # def spacy_tokenization(question):
 #     nlp = spacy.load('en')

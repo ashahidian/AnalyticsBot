@@ -9,175 +9,130 @@ def synonym_check(word, type):
         return 'exclude'
 
     elif word in higher_synonyms:
-        return 'higher'
+        return 'highest'
 
     elif word in expire_synonyms:
         if type == 0:
-            return 'Expiry Date'
+            return 'expiry date'
         elif type == 1:
             return 'expire'
 
     elif word in crdscode_synonyms:
-        if type == 0:
-            return 'CRDSCode'
-        elif type == 1:
-            return 'crdscode'
+        return 'crdscode'
 
     elif word in client_synonyms:
-        if type == 0:
-            'Client'
-        elif type == 1:
-            return 'client'
+        return 'client'
 
     elif word in currency_synonyms:
         if type == 0:
-            return 'Currency Pair'
+            return 'currency pair'
         elif type == 1:
             return 'currency'
 
     elif word in deal_id_synonyms:
         if type == 0:
-            return 'Deal ID'
+            return 'deal id'
         elif type == 1:
             return 'deal'
 
     elif word in deal_date_synonyms:
         if type == 0:
-            return 'Deal Date'
+            return 'deal date'
         elif type == 1:
             return 'date'
 
     elif word in std_dev_rollover_days_synonyms:
         if type == 0:
-            return 'StdDevRolloverDays'
+            return 'stddevrolloverdays'
         elif type == 1:
             return 'stddevrollover'
 
     elif word in rollover_synonyms:
         if type == 0:
-            return 'LatestRolloverDays'
+            return 'latestrolloverdays'
         elif type == 1:
             return 'rollover'
 
     elif word in rollover_ratio_synonyms:
-        if type == 0:
-            return 'RolloverRatio'
-        elif type == 1:
-            return 'rolloverratio'
+        return 'rolloverratio'
 
     elif word in average_rollover_synonyms:
         if type == 0:
-            return 'AverageRolloverDays'
+            return 'averagerolloverdays'
         elif type == 1:
             return 'avgrollover'
 
     elif word in client_deal_side_synonyms:
         if type == 0:
-            return 'Client Deal Side'
+            return 'client deal side'
         elif type == 1:
             return 'clientdeal'
 
     elif word in volume_synonyms:
-        if type == 0:
-            return 'Volume'
-        elif type == 1:
-            return 'volume'
+        return 'volume'
 
     elif word in total_trades_synonyms:
-        if type == 0:
-            return 'TotalTrades'
-        elif type == 1:
-            return 'totaltrades'
+        return 'totaltrades'
 
     elif word in spot_price_synonyms:
         if type == 0:
-            return 'Spot Price Strike'
+            return 'spot price strike'
         elif type == 1:
             return 'spotpricestrike'
 
     elif word in rank_synonyms:
-        if type == 0:
-            return 'Rank'
-        elif type == 1:
-            return 'rank'
+        return 'rank'
 
     elif word in net_volume_ratio_synonyms:
-        if type == 0:
-            return 'NetVolumeRatio'
-        elif type == 1:
-            return 'netvolumeratio'
+        return 'netvolumeratio'
 
     elif word in net_volume_synonyms:
-        if type == 0:
-            return 'NetVolume'
-        elif type == 1:
-            return 'netvolume'
+        return 'netvolume'
 
     elif word in near_leg_volume_synonyms:
-        if type == 0:
-            return 'NearLegVolume'
-        elif type == 1:
-            return 'nearlegvolume'
+        return 'nearlegvolume'
 
     elif word in ev_synonyms:
-        if type == 0:
-            return 'EV'
-        elif type == 1:
-            return 'ev'
+        return 'ev'
 
     elif word in cc_total_synonyms:
         if type == 0:
-            return 'CC Total'
+            return 'cc total'
         elif type == 1:
             return 'cctotal'
 
     elif word in cc_non_risk_synonyms:
         if type == 0:
-            return 'CC NonRisk'
+            return 'cc nonrisk'
         elif type == 1:
             return 'ccnonrisk'
 
     elif word in cc_at_risk_synonyms:
         if type == 0:
-            return 'CC AtRisk'
+            return 'cc atrisk'
         elif type == 1:
             return 'ccatrisk'
 
     elif word in max_abs_net_volume_synonyms:
-        if type == 0:
-            return 'MaxAbsNetVolume'
-        elif type == 1:
-            return 'maxabsnetvolume'
+        return 'maxabsnetvolume'
 
     elif word in trade_status_synonyms:
-        if type == 0:
-            return 'TradeStatus'
-        elif type == 1:
-            return 'tradestatus'
+        return 'tradestatus'
 
     elif word in tenor_synonyms:
-        if type == 0:
-            return 'Tenor'
-        elif type == 1:
-            return 'tenor'
+        return 'tenor'
 
     elif word in product_group_synonyms:
         if type == 0:
-            return 'Product Group'
+            return 'product group'
         elif type == 1:
             return 'productgroup'
 
     elif word in product_synonyms:
-        if type == 0:
-            return 'Product'
-        elif type == 1:
-            return 'product'
+        return 'product'
 
     elif word in platform_synonyms:
-        if type == 0:
-            return 'Platform'
-        elif type == 1:
-            return 'platform'
+        return 'platform'
 
     # elif word in new_trade_synonyms:
     #     if type == 0:
@@ -186,70 +141,43 @@ def synonym_check(word, type):
     #         return 'newtrade'
 
     elif word in net_client_position_synonyms:
-        if type == 0:
-            return 'NetClientPosition'
-        elif type == 1:
-            return 'netclientposition'
+        return 'netclientposition'
 
     elif word in near_tenor_days_synonyms:
-        if type == 0:
-            return 'NearTenorDays'
-        elif type == 1:
-            return 'neartenordays'
+        return 'neartenordays'
 
     elif word in max_future_date_synonyms:
-        if type == 0:
-            return 'MaxFutureDate'
-        elif type == 1:
-            return 'maxfuturedate'
+        return 'maxfuturedate'
 
     elif word in marketer_synonyms:
-        if type == 0:
-            return 'Marketer'
-        elif type == 1:
-            return 'marketer'
+        return 'marketer'
 
     elif word in local_blotter_synonyms:
-        if type == 0:
-            return 'LocalBlotter'
-        elif type == 1:
-            return 'localblotter'
+        return 'localblotter'
 
     elif word in leg_synonyms:
-        if type == 0:
-            return 'Leg'
-        elif type == 1:
-            return 'leg'
+        return 'leg'
 
     elif word in from_days_synonyms:
-        if type == 0:
-            return 'FromDays'
-        elif type == 1:
-            return 'fromdays'
+        return 'fromdays'
 
     elif word in far_tenor_days_synonyms:
-        if type == 0:
-            return 'FarTenorDays'
-        elif type == 1:
-            return 'fartenordays'
+        return 'fartenordays'
 
     elif word in currency_pair_group_synonyms:
-        if type == 0:
-            return 'CurrencyPairGroup'
-        elif type == 1:
-            return 'currencypairgroup'
+        return 'currencypairgroup'
 
     elif word in brooker_fxt_synonyms:
         if type == 0:
-            return 'Brooker_FXT'
+            return 'brooker_fxt'
         elif type == 1:
             return 'brooker'
 
     elif word in ndf_fixing_date_synonyms:
         if type == 0:
-            return 'NDF Fixing Date'
+            return 'ndf fixing date'
         elif type == 1:
             return 'ndfdate'
 
     else:
-        return word
+        return ''

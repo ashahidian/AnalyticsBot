@@ -1,11 +1,12 @@
 from datetime import datetime, timedelta
 from calendar import monthrange
+from nlp_processing import *
 # import parsedatetime as pdt #pip
 import re
 
 
 # type 1 will give in dates
-# type 0 will give in days
+# type 0 will give in days      Qaaaaa<b
 def date_synonyms(expression, type):
     matched = re.search(r"(next|last)\s([0-9\s]*)(day|week|year|quarter)", expression)
     year_request = re.search(r"([0-9]{4})", expression)
@@ -462,6 +463,22 @@ def calculate_next_quarter(type):
         difference = future_quarter_last.date() - future_quarter_first.date()
         return difference.days
 
+
+def remove_date_expressions(question):
+    word_tokens = tokenizing(question)
+    stop = ["next", "last", "day", "week", "year", "quarter",
+            "january", "february", "march", "april", "may", "june", "july", "august", "september", "october",
+            "november", "december", "yesterday", "tomorrow", "this"]
+
+    cleaned_question = []
+
+    for w in word_tokens:
+        if w not in stop:
+            cleaned_question.append(str(w))
+
+    final_clean = ' '.join([i for i in cleaned_question if not i.isdigit()])
+
+    return final_clean
 
 #if __name__ == '__main__':
  #  test = date_synonyms("january", 1)

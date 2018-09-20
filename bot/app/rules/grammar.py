@@ -13,9 +13,9 @@ t_ATTRIBUTE = r'tradestatus|tenor|product\sgroup|product|platform|newtrade|netcl
               r'|currencypairgroup|currency\spair|crdscode|client\sdeal\sside|client' \
               r'|broker_fxt|ndf|fixing\sdate'
 
-t_TOKEN = r'([a-zA-Z]{3}[/][a-zA-Z]{3}) | [a-zA-Z_0-9]+ '
+t_TOKEN = r'([a-zA-Z]{3}[/][a-zA-Z]{3})|[a-zA-Z_0-9]+ '
 
-
+#t_CURRENCY = r'([a-zA-Z]{3}[/][a-zA-Z]{3})'
 
 # t_DATE = r'(next|last)\s([0-9\s]*)(day|week|year|quarter) | ([0-9]{4}) | yesterday | tomorrow | this year '
 t_DATE = r'([0-9]{4}-[0-9]{2}-[0-9]{2}) | ([0-9]{9})'
@@ -92,7 +92,7 @@ def p_statement_attribute_time_time(p):
 
 def p_statement_single(p):
     ''' statement : MEASURE TOKEN
-                | ATTRIBUTE TOKEN'''
+                | ATTRIBUTE TOKEN '''
 
     p[0] = "".join(("SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[", p[1], "]",
                     " = ", " ' ", p[2], " ' "))
@@ -209,4 +209,4 @@ def grammar_function(question):
 # print(r)
 
 if __name__ == '__main__':
-    print (grammar_function('ev tradestatus eur/usd'))
+    print (grammar_function('cc total jpmorgan'))
