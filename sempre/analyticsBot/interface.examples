@@ -47,8 +47,8 @@
   (targetValue (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform = x" ))
 )
 (example
-  (utterance "deal platform excluding x")
-  (targetValue (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform != x" ))
+  (utterance "platform excluding x")
+  (targetValue (string "SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform != x" ))
 )
 (example
   (utterance "client platform x")

@@ -18,7 +18,7 @@ t_TOKEN = r'([a-zA-Z]{3}[/][a-zA-Z]{3})|[a-zA-Z_0-9]+ '
 #t_CURRENCY = r'([a-zA-Z]{3}[/][a-zA-Z]{3})'
 
 # t_DATE = r'(next|last)\s([0-9\s]*)(day|week|year|quarter) | ([0-9]{4}) | yesterday | tomorrow | this year '
-t_DATE = r'([0-9]{4}-[0-9]{2}-[0-9]{2}) | ([0-9]{9})'
+t_DATE = r'([0-9]{4}[-][0-9]{2}[-][0-9]{2})|([0-9]{9})'
 
 
 def t_EXCLUDE(t):
@@ -209,4 +209,4 @@ def grammar_function(question):
 # print(r)
 
 if __name__ == '__main__':
-    print (grammar_function('cc total jpmorgan'))
+    print (grammar_function('platform exclude x'))

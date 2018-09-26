@@ -6,13 +6,13 @@ import re
 
 
 # type 1 will give in dates
-# type 0 will give in days      Qaaaaa<b
+# type 0 will give in days
 def date_synonyms(expression, type):
     matched = re.search(r"(next|last)\s([0-9\s]*)(day|week|year|quarter)", expression)
     year_request = re.search(r"([0-9]{4})", expression)
     month_year_request = re.search(
-        r"(january|february|march|april|may|june|july|august|september|october|november|december)"
-        r"| ((january|february|march|april|may|june|july|august|september|october|november|december)([0-9]{4}))",
+        r"(january|february|march|april|may|june|july|august|september|october|november|december)\s([0-9]{4})"
+        r"|((january|february|march|april|may|june|july|august|september|october|november|december))",
         expression)
     quick = re.search(r"yesterday|tomorrow|(this year)", expression)
 
@@ -21,7 +21,7 @@ def date_synonyms(expression, type):
 
     if quick:
 
-        if quick.group(1) == 'yesterday':
+        if quick.string == 'yesterday':
             yesterday = now - timedelta(days=1)
 
             if type == 1:
@@ -31,7 +31,7 @@ def date_synonyms(expression, type):
                 difference = now.date() - yesterday.date()
                 return difference.days
 
-        elif quick.group(1) == 'tomorrow':
+        elif quick.string == 'tomorrow':
             tomorrow = now + timedelta(days=1)
 
             if type == 1:
@@ -41,7 +41,7 @@ def date_synonyms(expression, type):
                 difference = tomorrow.date() - now.date()
                 return difference.days
 
-        elif quick.group(1) == 'this year':
+        elif quick.string == 'this year':
             first_day = datetime(now.year, 1, 1)
             last_day = datetime(now.year, 12, 31)
 
@@ -52,23 +52,13 @@ def date_synonyms(expression, type):
                 difference = last_day.date() - first_day.date()
                 return difference.days
 
-    elif year_request:
-        first_day = datetime(int(year_request.group(1)), 1, 1)
-        last_day = datetime(int(year_request.group(1)), 12, 31)
-
-        if type == 1:
-            return ["{:%Y-%m-%d}".format(first_day), "{:%Y-%m-%d}".format(last_day)]
-
-        else:
-            difference = now.date() - first_day.date()
-            return difference.days
-
     elif month_year_request:
+        month_year = month_year_request.string.split()
 
-        if month_year_request.group(1) == 'january':
+        if month_year[0] == 'january':
 
-            if month_year_request.group(2):
-                year = int(month_year_request.group(2))
+            if month_year[1]:
+                year = int(month_year[1])
                 first_day = datetime(year, 1, 1)
                 last_day = datetime(year, 1, 31)
 
@@ -83,10 +73,10 @@ def date_synonyms(expression, type):
                 difference = now.date() - first_day.date()
                 return difference.days
 
-        elif month_year_request.group(1) == 'february':
+        elif month_year[0] == 'february':
 
-            if month_year_request.group(2):
-                year = int(month_year_request.group(2))
+            if month_year[1]:
+                year = int(month_year[1])
                 first_day = datetime(year, 2, 1)
                 last_day = datetime(year, 2, monthrange(now.year, 2)[1])
 
@@ -101,10 +91,10 @@ def date_synonyms(expression, type):
                 difference = now.date() - first_day.date()
                 return difference.days
 
-        elif month_year_request.group(1) == 'march':
+        elif month_year[0] == 'march':
 
-            if month_year_request.group(2):
-                year = month_year_request.group(2)
+            if month_year[1]:
+                year = month_year[1]
                 first_day = datetime(year, 3, 1)
                 last_day = datetime(year, 3, 31)
 
@@ -119,10 +109,10 @@ def date_synonyms(expression, type):
                 difference = now.date() - first_day.date()
                 return difference.days
 
-        elif month_year_request.group(1) == 'april':
+        elif month_year[0] == 'april':
 
-            if month_year_request.group(2):
-                year = month_year_request.group(2)
+            if month_year[1]:
+                year = month_year[1]
                 first_day = datetime(year, 4, 1)
                 last_day = datetime(year, 4, 30)
 
@@ -137,10 +127,10 @@ def date_synonyms(expression, type):
                 difference = now.date() - first_day.date()
                 return difference.days
 
-        elif month_year_request.group(1) == 'may':
+        elif month_year[0] == 'may':
 
-            if month_year_request.group(2):
-                year = month_year_request.group(2)
+            if month_year[1]:
+                year = month_year[1]
                 first_day = datetime(year, 5, 1)
                 last_day = datetime(year, 5, 31)
 
@@ -155,10 +145,10 @@ def date_synonyms(expression, type):
                 difference = now.date() - first_day.date()
                 return difference.days
 
-        elif month_year_request.group(1) == 'june':
+        elif month_year[0] == 'june':
 
-            if month_year_request.group(2):
-                year = month_year_request.group(2)
+            if month_year[1]:
+                year = month_year[1]
                 first_day = datetime(year, 6, 1)
                 last_day = datetime(year, 6, 30)
 
@@ -173,10 +163,10 @@ def date_synonyms(expression, type):
                 difference = now.date() - first_day.date()
                 return difference.days
 
-        elif month_year_request.group(1) == 'july':
+        elif month_year[0] == 'july':
 
-            if month_year_request.group(2):
-                year = month_year_request.group(2)
+            if month_year[1]:
+                year = month_year[1]
                 first_day = datetime(year, 7, 1)
                 last_day = datetime(year, 7, 31)
 
@@ -191,10 +181,10 @@ def date_synonyms(expression, type):
                 difference = now.date() - first_day.date()
                 return difference.days
 
-        elif month_year_request.group(1) == 'august':
+        elif month_year[0] == 'august':
 
-            if month_year_request.group(2):
-                year = month_year_request.group(2)
+            if month_year[1]:
+                year = month_year[1]
                 first_day = datetime(year, 8, 1)
                 last_day = datetime(year, 8, 31)
 
@@ -209,10 +199,10 @@ def date_synonyms(expression, type):
                 difference = now.date() - first_day.date()
                 return difference.days
 
-        elif month_year_request.group(1) == 'september':
+        elif month_year[0] == 'september':
 
-            if month_year_request.group(2):
-                year = month_year_request.group(2)
+            if month_year[1]:
+                year = month_year[1]
                 first_day = datetime(year, 9, 1)
                 last_day = datetime(year, 9, 30)
 
@@ -227,10 +217,10 @@ def date_synonyms(expression, type):
                 difference = now.date() - first_day.date()
                 return difference.days
 
-        elif month_year_request.group(1) == 'october':
+        elif month_year[0] == 'october':
 
-            if month_year_request.group(2):
-                year = month_year_request.group(2)
+            if month_year[1]:
+                year = month_year[1]
                 first_day = datetime(year, 10, 1)
                 last_day = datetime(year, 10, 31)
 
@@ -245,10 +235,10 @@ def date_synonyms(expression, type):
                 difference = now.date() - first_day.date()
                 return difference.days
 
-        elif month_year_request.group(1) == 'november':
+        elif month_year[0] == 'november':
 
-            if month_year_request.group(2):
-                year = month_year_request.group(2)
+            if month_year[1]:
+                year = month_year[1]
                 first_day = datetime(year, 11, 1)
                 last_day = datetime(year, 11, 30)
 
@@ -263,10 +253,10 @@ def date_synonyms(expression, type):
                 difference = now.date() - first_day.date()
                 return difference.days
 
-        elif month_year_request.group(1) == 'december':
+        elif month_year[0] == 'december':
 
-            if month_year_request.group(2):
-                year = month_year_request.group(2)
+            if month_year[1]:
+                year = month_year[1]
                 first_day = datetime(year, 12, 1)
                 last_day = datetime(year, 12, 31)
 
@@ -281,13 +271,26 @@ def date_synonyms(expression, type):
                 difference = now.date() - first_day.date()
                 return difference.days
 
+        elif year_request:
+            first_day = datetime(int(year_request.string), 1, 1)
+            last_day = datetime(int(year_request.string), 12, 31)
+
+            if type == 1:
+                return ["{:%Y-%m-%d}".format(first_day), "{:%Y-%m-%d}".format(last_day)]
+
+            else:
+                difference = now.date() - first_day.date()
+                return difference.days
+
     elif matched:
-        if matched.group(1) == 'next':
+        matched_values = matched.string.split()
 
-            if matched.group(3) == 'day':
+        if matched_values[0] == 'next':
 
-                if matched.group(2) != "":
-                    number = int(matched.group(2))
+            if matched_values[2] == 'day':
+
+                if matched_values[1] != "":
+                    number = int(matched_values[1])
                     other = now + timedelta(days=number)
 
                     if type == 1:
@@ -308,10 +311,10 @@ def date_synonyms(expression, type):
                         difference = now.date() - other.date()
                         return difference.days
 
-            elif matched.group(3) == 'week':
+            elif matched_values[2] == 'week':
 
-                if matched.group(2) != "":
-                    number = int(matched.group(2))
+                if matched_values[1] != "":
+                    number = int(matched_values[1])
                     other = now + timedelta(weeks=number)
 
                     if type == 1:
@@ -332,10 +335,10 @@ def date_synonyms(expression, type):
                         difference = other.date() - now.date()
                         return difference.days
 
-            elif matched.group(3) == 'year':
+            elif matched_values[2] == 'year':
 
-                if matched.group(2) != "":
-                    number = int(matched.group(2))
+                if matched_values[1] != "":
+                    number = int(matched_values[1])
                     other = now + timedelta(weeks=number * 52)
 
                     if type == 1:
@@ -356,16 +359,16 @@ def date_synonyms(expression, type):
                         difference = other.date() - now.date()
                         return difference.days
 
-            elif matched.group(3) == 'quarter':
+            elif matched_values[2] == 'quarter':
                 quarter = calculate_next_quarter(type)
                 return quarter
 
-        elif matched.group(1) == 'last':
+        elif matched_values[0] == 'last':
 
-            if matched.group(3) == 'day':
+            if matched_values[2] == 'day':
 
-                if matched.group(2) != "":
-                    number = int(matched.group(2))
+                if matched_values[1] != "":
+                    number = int(matched_values[1])
                     other = now - timedelta(days=number)
 
                     if type == 1:
@@ -380,9 +383,9 @@ def date_synonyms(expression, type):
                     other = "{:%Y-%m-%d}".format(now - timedelta(days=number))
                     return [other, formatted_now]
 
-            elif matched.group(3) == 'week':
-                if matched.group(2) != "":
-                    number = int(matched.group(2))
+            elif matched_values[2] == 'week':
+                if matched_values[1] != "":
+                    number = int(matched_values[1])
                     other = now - timedelta(weeks=number)
 
                     if type == 1:
@@ -403,9 +406,9 @@ def date_synonyms(expression, type):
                         difference = now.date() - other.date()
                         return difference.days
 
-            elif matched.group(3) == 'year':
-                if matched.group(2) != "":
-                    number = int(matched.group(2))
+            elif matched_values[2] == 'year':
+                if matched_values[1] != "":
+                    number = int(matched_values[1])
                     other = now - timedelta(weeks=number * 52)
 
                     if type == 1:
@@ -426,10 +429,10 @@ def date_synonyms(expression, type):
                         difference = now.date() - other.date()
                         return difference.days
 
-            elif matched.group(3) == 'quarter':
+            elif matched_values[2] == 'quarter':
                 return calculate_last_quarter(type)
     else:
-        return 0
+        return ''
 
 
 def calculate_last_quarter(type):

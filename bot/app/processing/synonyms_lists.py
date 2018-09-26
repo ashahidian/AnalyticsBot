@@ -1,9 +1,11 @@
+
+
 exclude_synonyms = ['exclude', 'excluding', 'remove', 'no', 'not', 'different']
 higher_synonyms = ['more', 'greater', 'higher', 'superior', 'surpassing', 'larger', 'above', 'highest']
 #______________________________________________________________________________________
 
 #TradeStatus
-trade_status_synonyms = ['trade status', 'status trade']
+trade_status_synonyms = ['trade status', 'status trade', 'tradestatus']
 
 #Tenor
 tenor_synonyms = ['tenor']
@@ -39,13 +41,13 @@ local_blotter_synonyms = ['blotter', 'local blotter']
 leg_synonyms = ['leg']
 
 #FromDays
-from_days_synonyms = ['from days']
+from_days_synonyms = ['from days', 'fromdays']
 
 #FarTenorDays
-far_tenor_days_synonyms = ['far tenor days', 'far days']
+far_tenor_days_synonyms = ['far tenor days', 'far days', 'fardays', 'fartenordays']
 
 #Expiry Date
-expire_synonyms = ['expiration', 'expire', 'expires', 'expiration date', 'expiry date', 'expiry', 'end', 'terminate']
+expire_synonyms = ['expiration', 'expire', 'expires', 'expiry', 'end', 'terminate']
 
 #Deal ID
 deal_id_synonyms = ['deal', 'deal name', 'deal id', 'deals']
@@ -63,7 +65,7 @@ currency_synonyms = ['currency', 'currency pair']
 crdscode_synonyms = ['crds code', 'crdscode']
 
 #Client Deal Side
-client_deal_side_synonyms = ['client deal side', 'client deal', 'client side']
+client_deal_side_synonyms = ['client deal side', 'client deal', 'client side', 'side']
 
 #Client
 client_synonyms = ['clients', 'client', 'client name', 'clients name', 'id', 'client id']
@@ -73,16 +75,12 @@ brooker_fxt_synonyms = ['brooker', 'brooker fxt']
 
 #NDF Fixing Date
 ndf_fixing_date_synonyms = ['ndf', 'ndf fixing date', 'ndf date']
-#______________________________________________________________________________________
-
-#Volume
-volume_synonyms = ['volume', 'ammount']
 
 #TotalTrades
 total_trades_synonyms = ['total trades', 'trades total', 'trades value']
 
 #StdDevRolloveredDays
-std_dev_rollover_days_synonyms = ['std dev rollover', 'std dev rollover days', 'standard rollover', 'rollover']
+std_dev_rollover_days_synonyms = ['std dev rollover', 'std dev rollover days', 'standard rollover']
 
 #Spot Price Strike
 spot_price_synonyms = ['spot price', 'spot price strike', 'price strike']
@@ -102,20 +100,23 @@ net_volume_synonyms = ['net volume', 'volume net']
 #NearLegVolume
 near_leg_volume_synonyms = ['near leg', 'near leg volume']
 
+#Volume
+volume_synonyms = ['volume', 'ammount']
+
 #LatestRolloverDays
 rollover_synonyms = ['rollovered', 'rollover']
 
 #EV
 ev_synonyms = ['ev']
 
-#CC Total
-cc_total_synonyms = ['cc', 'cc total', 'total cc']
-
 #CC NonRisk
 cc_non_risk_synonyms = ['cc non risk', 'non risk cc', 'cc nonrisk']
 
 #CC AtRisk
 cc_at_risk_synonyms = ['cc at risk', 'at risk cc', 'cc atrisk']
+
+#CC Total
+cc_total_synonyms = ['cc', 'cc total', 'total cc']
 
 #AverageRolloverDays
 average_rollover_synonyms = ['average rollover', 'average rollover days', 'average days rollovered']

@@ -2,6 +2,7 @@ from synonyms_lists import *
 
 
 def synonym_check(word, type):
+
     # type 0 = semantic grammar
     # type 1 = SEMPRE
 
@@ -20,26 +21,26 @@ def synonym_check(word, type):
     elif word in crdscode_synonyms:
         return 'crdscode'
 
+    elif word in client_deal_side_synonyms:
+        if type == 0:
+            return 'client deal side'
+        elif type == 1:
+            return 'clientdeal'
+
     elif word in client_synonyms:
         return 'client'
-
-    elif word in currency_synonyms:
-        if type == 0:
-            return 'currency pair'
-        elif type == 1:
-            return 'currency'
-
-    elif word in deal_id_synonyms:
-        if type == 0:
-            return 'deal id'
-        elif type == 1:
-            return 'deal'
 
     elif word in deal_date_synonyms:
         if type == 0:
             return 'deal date'
         elif type == 1:
             return 'date'
+
+    elif word in deal_id_synonyms:
+        if type == 0:
+            return 'deal id'
+        elif type == 1:
+            return 'deal'
 
     elif word in std_dev_rollover_days_synonyms:
         if type == 0:
@@ -62,15 +63,6 @@ def synonym_check(word, type):
         elif type == 1:
             return 'avgrollover'
 
-    elif word in client_deal_side_synonyms:
-        if type == 0:
-            return 'client deal side'
-        elif type == 1:
-            return 'clientdeal'
-
-    elif word in volume_synonyms:
-        return 'volume'
-
     elif word in total_trades_synonyms:
         return 'totaltrades'
 
@@ -91,6 +83,9 @@ def synonym_check(word, type):
 
     elif word in near_leg_volume_synonyms:
         return 'nearlegvolume'
+
+    elif word in volume_synonyms:
+        return 'volume'
 
     elif word in ev_synonyms:
         return 'ev'
@@ -134,12 +129,6 @@ def synonym_check(word, type):
     elif word in platform_synonyms:
         return 'platform'
 
-    # elif word in new_trade_synonyms:
-    #     if type == 0:
-    #         return 'NewTrade'
-    #     elif type == 1:
-    #         return 'newtrade'
-
     elif word in net_client_position_synonyms:
         return 'netclientposition'
 
@@ -166,6 +155,12 @@ def synonym_check(word, type):
 
     elif word in currency_pair_group_synonyms:
         return 'currencypairgroup'
+
+    elif word in currency_synonyms:
+        if type == 0:
+            return 'currency pair'
+        elif type == 1:
+            return 'currency'
 
     elif word in brooker_fxt_synonyms:
         if type == 0:

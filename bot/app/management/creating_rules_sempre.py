@@ -15,7 +15,7 @@ def write_rules(rule):
 
 
 def create_time_rule(time_expression):
-    return "\n(rule $Date (" + time_expression + ") (ConstantFn (string '" + time_expression + "')))"
+    return "\n(rule $Date (" + str(time_expression) + ") (ConstantFn (string '" + str(time_expression) + "')))"
 
 
 def create_sempre_rule(time_expression):

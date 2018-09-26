@@ -1,4 +1,5 @@
 import requests
+import json, ast
 
 
 class SQLQuestionMapper(object):
@@ -25,7 +26,9 @@ class SQLQuestionMapper(object):
             return ""
 
         # the last replace can be a bit dangerous
-        return candidates[0]['value'].replace('(string "', '').replace('")', '')
+        variable = candidates[0]['value'].replace('(string "', '').replace('")', '')
+
+        return ast.literal_eval(json.dumps(variable))
 
 
 #print(SQLQuestionMapper().convert("client x tenor"))
