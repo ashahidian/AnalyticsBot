@@ -1,5 +1,5 @@
 
-from bot.app.rules.grammar import *
+from app.rules.grammar import *
 from creating_rules_sempre import *
 from categories import *
 from pipeline_aux import *
@@ -28,7 +28,7 @@ def pipeline(question):
     # see how many words can be matched in a synonym
     matched, words_grammar, words_sempre = get_max_match(q)
 
-    for i in q:
+    for i in q :
 
         if i not in matched:
 
@@ -52,9 +52,7 @@ def pipeline(question):
                         date = test[2]
 
                         if days == '':
-
-                            exit(1)
-
+                            return None
                         else:
 
                             if last_word_sempre == 'expire' or last_word_sempre == 'date' or last_word_sempre == 'ndfdate':
@@ -119,6 +117,7 @@ def pipeline(question):
                 new_question_grammar = new_question_grammar + " " + popped_grammar
 
                 last_word_sempre = popped_sempre
+                continue
 
             elif type == 1:
                 new_question_sempre_currency = new_question_sempre_currency + " " + popped_sempre
@@ -127,6 +126,7 @@ def pipeline(question):
                 new_question_grammar_currency_2 = new_question_grammar_currency_2 + " " + popped_grammar
 
                 last_word_sempre = popped_sempre
+                continue
 
     if type == 0:
 
@@ -142,7 +142,7 @@ def pipeline(question):
 
 
 if __name__ == '__main__':
-    s = pipeline("deal side sell")
+    s = pipeline("client JHKL deal id")
 
     print(s)
     # print(s)

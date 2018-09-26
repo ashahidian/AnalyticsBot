@@ -22,28 +22,12 @@
     {{ form }}
     <input type="submit" value="Go">
 </form>
-<p></p>
 
-<!--confirming if variables are not empty, and returning what has been created-->
-{% if tokenized %}
-    <b>Tokenized:</b> {{ tokenized }}<br/>
-    <b>Pure Question:</b> {{ pure_question }}<br/>
-{% endif %}
-{% if wh_word %}
-    <b>wh:</b> {{wh_word}}<br/>
-    <b>space:</b> {{spacy}}<br/>
-    <b>pos:</b> {{pos}}<br/>
-    <b>ner:</b> {{ner}}<br/>
+{% if pipeline_result %}
+    <p>{{ pipeline_result }}</p>
 {% endif %}
 
-<p></p>
-{% if html %}
-    {{ html|safe }}
-{% endif %}
 
-{% if ner_diagram %}
-    {{ ner_diagram|safe }}
-{% endif %}
 
 
 </body>

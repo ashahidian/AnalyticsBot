@@ -209,4 +209,4 @@ def grammar_function(question):
 # print(r)
 
 if __name__ == '__main__':
-    print (grammar_function('platform exclude x'))
+    print (grammar_function('client JHKL deal id'))

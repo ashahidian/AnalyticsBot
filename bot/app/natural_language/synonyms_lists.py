@@ -68,7 +68,7 @@ crdscode_synonyms = ['crds code', 'crdscode']
 client_deal_side_synonyms = ['client deal side', 'client deal', 'client side', 'side']
 
 #Client
-client_synonyms = ['clients', 'client', 'client name', 'clients name', 'id', 'client id']
+client_synonyms = ['clients', 'client', 'client name', 'clients name', 'client id']
 
 #Brooker_FXT
 brooker_fxt_synonyms = ['brooker', 'brooker fxt']

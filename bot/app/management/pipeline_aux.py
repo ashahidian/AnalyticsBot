@@ -1,15 +1,10 @@
-from bot.app.management.category_builder import *
-from bot.app.processing.nlp_processing import *
-from bot.app.management.sempre_query import *
-from bot.app.processing.date_expressions import *
-from bot.app.processing.synonyms import *
-import subprocess
-from nltk.tokenize import word_tokenize
-from nltk.util import ngrams
+from app.management.sempre_query import *
+from app.natural_language.date_expressions import *
+from app.natural_language.synonyms import *
 
 
 def to_sempre(question):
-    query = (SQLQuestionMapper().convert(question))
+    query = SQLQuestionMapper().convert(question)
 
     return query
 
@@ -123,7 +118,7 @@ def get_date_match(question_tokens):
 
         if grams != '':
             if grams[0] not in words_with_date and grams[1] not in words_with_date and grams[2] not in words_with_date:
-                aux = " ".join([x for x in grams])
+                aux = " ".join(grams)
                 actual_word = date_synonyms(aux, 0)
                 #actual_word = date_synonyms(list(grams[0] + " " + grams[1] + " " + grams[2]), 0)
 
@@ -140,7 +135,7 @@ def get_date_match(question_tokens):
         if grams[0] not in words_with_date and grams[1] not in words_with_date:
             if grams != '':
 
-                aux = " ".join([x for x in grams])
+                aux = " ".join(grams)
                 actual_word = date_synonyms(aux, 0)
                 # actual_word = date_synonyms(list(grams[0] + " " + grams[1]), 0)
 
@@ -156,7 +151,7 @@ def get_date_match(question_tokens):
         if grams != '':
             if grams[0] not in words_with_date:
 
-                aux = " ".join([x for x in grams])
+                aux = " ".join(grams)
                 actual_word = date_synonyms(aux, 0)
 
                 if actual_word != '':

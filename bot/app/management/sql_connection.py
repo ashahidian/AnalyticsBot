@@ -29,7 +29,6 @@ def sql_call(sql_request):
 
     for (client_name) in cursor:
         value = "client names {}".format(client_name)
-
     cursor.close()
     connection.close()
 

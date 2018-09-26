@@ -1,0 +1,1982 @@
+main() {
+  Grammar.read {
+    WARNING: Category not defined in the grammar: $Date; used in rule: $General -> $Intermediate58 $Date (JoinFn forward betaReduce)
+    WARNING: Category not defined in the grammar: $Date; used in rule: $Intermediate60 -> $Intermediate59 $Date (JoinFn forward betaReduce)
+    WARNING: Category not defined in the grammar: $Date; used in rule: $General -> $Intermediate60 $Date (JoinFn forward betaReduce)
+    WARNING: Category not defined in the grammar: $Date; used in rule: $General -> $Intermediate62 $Date (JoinFn forward betaReduce)
+    WARNING: Category not defined in the grammar: $Date; used in rule: $General -> $Intermediate64 $Date (JoinFn forward betaReduce)
+    WARNING: Category not defined in the grammar: $Date; used in rule: $Intermediate67 -> $Intermediate66 $Date (JoinFn forward betaReduce)
+    WARNING: Category not defined in the grammar: $Date; used in rule: $General -> $Intermediate67 $Date (JoinFn forward betaReduce)
+    WARNING: Category not defined in the grammar: $Date; used in rule: $Intermediate70 -> $Intermediate69 $Date (JoinFn forward betaReduce)
+    WARNING: Category not defined in the grammar: $Date; used in rule: $General -> $Intermediate70 $Date (JoinFn forward betaReduce)
+    Valid tags: []
+    Used tags: []
+    147 rules
+  }
+  BeamParser: 35 catUnaryRules (sorted), 112 nonCatUnaryRules (in trie)
+  Dataset.read {
+    Reading analyticsBot/interface.examples {
+      Example analyticsBot/interface.examples:0 (0): [client, x, volume] => (string "SELECT Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x")
+      Example analyticsBot/interface.examples:1 (1): [client, rolloverratio, x] => (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE RolloverRatio = x")
+      Example analyticsBot/interface.examples:2 (2): [deal, currency, eur/usd] => (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Currency Pair = EUR/USD")
+      Example analyticsBot/interface.examples:3 (3): [client, highest, volume] => (string "SELECT TOP 10 Client, Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]")
+      Example analyticsBot/interface.examples:4 (4): [deal, x, expire] => (string "SELECT Expiry Date FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Deal = x")
+      Example analyticsBot/interface.examples:5 (5): [client, x, expire] => (string "SELECT Expiry Date FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x")
+      Example analyticsBot/interface.examples:6 (6): [client, x, deal, id] => (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x")
+      Example analyticsBot/interface.examples:7 (7): [deal, x, client, name] => (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Deal ID = x")
+      Example analyticsBot/interface.examples:8 (8): [deal, x, volume] => (string "SELECT Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Deal ID = x")
+      Example analyticsBot/interface.examples:9 (9): [client, currency, eur/usd] => (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Currency Pair = EUR/USD")
+      Example analyticsBot/interface.examples:10 (10): [deal, highest, cc, total] => (string "SELECT TOP 10 Deal ID, CC Total FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]")
+      Example analyticsBot/interface.examples:11 (11): [deal, platform, x] => (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform = x")
+      Example analyticsBot/interface.examples:12 (12): [platform, excluding, x] => (string "SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform != x")
+      Example analyticsBot/interface.examples:13 (13): [client, platform, x] => (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform = x")
+      Example analyticsBot/interface.examples:14 (14): [client, exclude, platform, x] => (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform != x")
+      Example analyticsBot/interface.examples:15 (15): [deal, trade, status, new] => (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE TradeStatus = new")
+      Example analyticsBot/interface.examples:16 (16): [client, trade, status, amended] => (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE TradeStatus = amended")
+      Example analyticsBot/interface.examples:17 (17): [deal, near, leg] => (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Leg = near")
+      Example analyticsBot/interface.examples:18 (18): [client, far, leg] => (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Leg = far")
+      Example analyticsBot/interface.examples:19 (19): [deal, client, deal, sell] => (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client Deal Side = sell")
+      Example analyticsBot/interface.examples:20 (20): [client, client, deal, buy] => (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client Deal Side = buy")
+    }
+  }
+  Learner.learn() {
+    Iteration 0/3 {
+      Processing iter=0.train: 21 examples {
+        Examples {
+          iter=0.train: example 0/21: analyticsBot/interface.examples:18 {
+            Example: client far leg {
+              Tokens: [client, far, leg]
+              Lemmatized tokens: [client, far, leg]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Leg = far")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Leg]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string far) (string '))) (value (string "SELECT [Leg] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'far'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=33 maxCellSize=1 fallOffBeam=0 totalDerivs=72 numOfFeaturizedDerivs=72
+            Cumulative(iter=0.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=33 maxCellSize=1 fallOffBeam=0 totalDerivs=72 numOfFeaturizedDerivs=72
+          }
+          iter=0.train: example 1/21: analyticsBot/interface.examples:9 {
+            Example: client currency eur/usd {
+              Tokens: [client, currency, eur/usd]
+              Lemmatized tokens: [client, currency, eur/usd]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Currency Pair = EUR/USD")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Client]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Currency Pair]") (string " = ") (string ') (string eur/usd) (string '))) (value (string "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Currency Pair] = 'eur/usd'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=7 maxCellSize=2 fallOffBeam=0 totalDerivs=81 numOfFeaturizedDerivs=81
+            Cumulative(iter=0.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=20 maxCellSize=1$500 fallOffBeam=0 totalDerivs=76$500 numOfFeaturizedDerivs=76$500
+          }
+          iter=0.train: example 2/21: analyticsBot/interface.examples:19 {
+            Example: deal client deal sell {
+              Tokens: [deal, client, deal, sell]
+              Lemmatized tokens: [deal, client, deal, sell]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client Deal Side = sell")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT * ") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Deal ID]") (string " = ") (string ') (string client) (string ') (string " AND ") (string "[Deal ID]") (string " = ") (string ') (string sell) (string '))) (value (string "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'client' AND [Deal ID] = 'sell'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=4 parseTime=19 maxCellSize=2 fallOffBeam=0 totalDerivs=130 numOfFeaturizedDerivs=130
+            Cumulative(iter=0.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3$333 parseTime=19$667 maxCellSize=1$667 fallOffBeam=0 totalDerivs=94$333 numOfFeaturizedDerivs=94$333
+          }
+          iter=0.train: example 3/21: analyticsBot/interface.examples:0 {
+            Example: client x volume {
+              Tokens: [client, x, volume]
+              Lemmatized tokens: [client, x, volume]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Volume]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Volume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=9 maxCellSize=1 fallOffBeam=0 totalDerivs=66 numOfFeaturizedDerivs=66
+            Cumulative(iter=0.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3$250 parseTime=17 maxCellSize=1$500 fallOffBeam=0 totalDerivs=87$250 numOfFeaturizedDerivs=87$250
+          }
+          iter=0.train: example 4/21: analyticsBot/interface.examples:17 {
+            Example: deal near leg {
+              Tokens: [deal, near, leg]
+              Lemmatized tokens: [deal, near, leg]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Leg = near")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Leg]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Deal ID]") (string " = ") (string ') (string near) (string '))) (value (string "SELECT [Leg] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'near'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=6 maxCellSize=1 fallOffBeam=0 totalDerivs=72 numOfFeaturizedDerivs=72
+            Cumulative(iter=0.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3$200 parseTime=14$800 maxCellSize=1$400 fallOffBeam=0 totalDerivs=84$200 numOfFeaturizedDerivs=84$200
+          }
+          iter=0.train: example 5/21: analyticsBot/interface.examples:5 {
+            Example: client x expire {
+              Tokens: [client, x, expire]
+              Lemmatized tokens: [client, x, expire]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Expiry Date FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string "[Expiry Date]") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Expiry Date] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=5 maxCellSize=1 fallOffBeam=0 totalDerivs=72 numOfFeaturizedDerivs=72
+            Cumulative(iter=0.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3$167 parseTime=13$167 maxCellSize=1$333 fallOffBeam=0 totalDerivs=82$167 numOfFeaturizedDerivs=82$167
+          }
+          iter=0.train: example 6/21: analyticsBot/interface.examples:20 {
+            Example: client client deal buy {
+              Tokens: [client, client, deal, buy]
+              Lemmatized tokens: [client, client, deal, buy]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client Deal Side = buy")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT * ") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string client) (string ') (string " AND ") (string "[Deal ID]") (string " = ") (string ') (string buy) (string '))) (value (string "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'client' AND [Deal ID] = 'buy'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=4 parseTime=9 maxCellSize=2 fallOffBeam=0 totalDerivs=130 numOfFeaturizedDerivs=130
+            Cumulative(iter=0.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3$286 parseTime=12$571 maxCellSize=1$429 fallOffBeam=0 totalDerivs=89 numOfFeaturizedDerivs=89
+          }
+          iter=0.train: example 7/21: analyticsBot/interface.examples:15 {
+            Example: deal trade status new {
+              Tokens: [deal, trade, status, new]
+              Lemmatized tokens: [deal, trade, statu, new]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE TradeStatus = new")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 0 candidates 
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0 numCandidates=0 numCorrect=0 numPartialCorrect=0 numIncorrect=0 numTokens=4 parseTime=3 maxCellSize=1 fallOffBeam=0 totalDerivs=61 numOfFeaturizedDerivs=61
+            Cumulative(iter=0.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$875 numCandidates=0$875 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=0$875 numTokens=3$375 parseTime=11$375 maxCellSize=1$375 fallOffBeam=0 totalDerivs=85$500 numOfFeaturizedDerivs=85$500
+          }
+          iter=0.train: example 8/21: analyticsBot/interface.examples:4 {
+            Example: deal x expire {
+              Tokens: [deal, x, expire]
+              Lemmatized tokens: [deal, x, expire]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Expiry Date FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Deal = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string "[Expiry Date]") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Deal ID]") (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Expiry Date] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=5 maxCellSize=1 fallOffBeam=0 totalDerivs=72 numOfFeaturizedDerivs=72
+            Cumulative(iter=0.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$889 numCandidates=0$889 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=0$889 numTokens=3$333 parseTime=10$667 maxCellSize=1$333 fallOffBeam=0 totalDerivs=84 numOfFeaturizedDerivs=84
+          }
+          iter=0.train: example 9/21: analyticsBot/interface.examples:13 {
+            Example: client platform x {
+              Tokens: [client, platform, x]
+              Lemmatized tokens: [client, platform, x]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Client]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Platform]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Platform] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=5 maxCellSize=2 fallOffBeam=0 totalDerivs=81 numOfFeaturizedDerivs=81
+            Cumulative(iter=0.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$900 numCandidates=0$900 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=0$900 numTokens=3$300 parseTime=10$100 maxCellSize=1$400 fallOffBeam=0 totalDerivs=83$700 numOfFeaturizedDerivs=83$700
+          }
+          iter=0.train: example 10/21: analyticsBot/interface.examples:16 {
+            Example: client trade status amended {
+              Tokens: [client, trade, status, amended]
+              Lemmatized tokens: [client, trade, statu, amended]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE TradeStatus = amended")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 0 candidates 
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0 numCandidates=0 numCorrect=0 numPartialCorrect=0 numIncorrect=0 numTokens=4 parseTime=3 maxCellSize=1 fallOffBeam=0 totalDerivs=61 numOfFeaturizedDerivs=61
+            Cumulative(iter=0.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$818 numCandidates=0$818 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=0$818 numTokens=3$364 parseTime=9$455 maxCellSize=1$364 fallOffBeam=0 totalDerivs=81$636 numOfFeaturizedDerivs=81$636
+          }
+          iter=0.train: example 11/21: analyticsBot/interface.examples:14 {
+            Example: client exclude platform x {
+              Tokens: [client, exclude, platform, x]
+              Lemmatized tokens: [client, exclude, platform, x]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform != x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 2 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Client]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Platform]) (string " != ") (string ') (string x) (string '))) (value (string "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Platform] != 'x'")) (type fb:type.any)) [score=0, prob=0$500, comp=0]
+              Pred@0001: (derivation (formula (call + (string "SELECT * ") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string exclude) (string ') (string " AND ") (string [Platform]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'exclude' AND [Platform] = 'x'")) (type fb:type.any)) [score=0, prob=0$500, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=2 parsedNumCandidates=2 numCorrect=0 numPartialCorrect=0 numIncorrect=2 numTokens=4 parseTime=8 maxCellSize=2 fallOffBeam=0 totalDerivs=107 numOfFeaturizedDerivs=107
+            Cumulative(iter=0.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$833 numCandidates=0$917 parsedNumCandidates=1$100 numCorrect=0 numPartialCorrect=0 numIncorrect=0$917 numTokens=3$417 parseTime=9$333 maxCellSize=1$417 fallOffBeam=0 totalDerivs=83$750 numOfFeaturizedDerivs=83$750
+          }
+          iter=0.train: example 12/21: analyticsBot/interface.examples:1 {
+            Example: client rolloverratio x {
+              Tokens: [client, rolloverratio, x]
+              Lemmatized tokens: [client, rolloverratio, x]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE RolloverRatio = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Client]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [RolloverRatio]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [RolloverRatio] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=5 maxCellSize=2 fallOffBeam=0 totalDerivs=71 numOfFeaturizedDerivs=71
+            Cumulative(iter=0.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$846 numCandidates=0$923 parsedNumCandidates=1$091 numCorrect=0 numPartialCorrect=0 numIncorrect=0$923 numTokens=3$385 parseTime=9 maxCellSize=1$462 fallOffBeam=0 totalDerivs=82$769 numOfFeaturizedDerivs=82$769
+          }
+          iter=0.train: example 13/21: analyticsBot/interface.examples:11 {
+            Example: deal platform x {
+              Tokens: [deal, platform, x]
+              Lemmatized tokens: [deal, platform, x]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string "[Deal ID]") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Platform]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Deal ID] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Platform] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=6 maxCellSize=2 fallOffBeam=0 totalDerivs=81 numOfFeaturizedDerivs=81
+            Cumulative(iter=0.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$857 numCandidates=0$929 parsedNumCandidates=1$083 numCorrect=0 numPartialCorrect=0 numIncorrect=0$929 numTokens=3$357 parseTime=8$786 maxCellSize=1$500 fallOffBeam=0 totalDerivs=82$643 numOfFeaturizedDerivs=82$643
+          }
+          iter=0.train: example 14/21: analyticsBot/interface.examples:10 {
+            Example: deal highest cc total {
+              Tokens: [deal, highest, cc, total]
+              Lemmatized tokens: [deal, highest, cc, total]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT TOP 10 Deal ID, CC Total FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 0 candidates 
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0 numCandidates=0 numCorrect=0 numPartialCorrect=0 numIncorrect=0 numTokens=4 parseTime=4 maxCellSize=1 fallOffBeam=0 totalDerivs=66 numOfFeaturizedDerivs=66
+            Cumulative(iter=0.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$800 numCandidates=0$867 parsedNumCandidates=1$083 numCorrect=0 numPartialCorrect=0 numIncorrect=0$867 numTokens=3$400 parseTime=8$467 maxCellSize=1$467 fallOffBeam=0 totalDerivs=81$533 numOfFeaturizedDerivs=81$533
+          }
+          iter=0.train: example 15/21: analyticsBot/interface.examples:2 {
+            Example: deal currency eur/usd {
+              Tokens: [deal, currency, eur/usd]
+              Lemmatized tokens: [deal, currency, eur/usd]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Currency Pair = EUR/USD")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string "[Deal ID]") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Currency Pair]") (string " = ") (string ') (string eur/usd) (string '))) (value (string "SELECT [Deal ID] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Currency Pair] = 'eur/usd'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=4 maxCellSize=2 fallOffBeam=0 totalDerivs=81 numOfFeaturizedDerivs=81
+            Cumulative(iter=0.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$813 numCandidates=0$875 parsedNumCandidates=1$077 numCorrect=0 numPartialCorrect=0 numIncorrect=0$875 numTokens=3$375 parseTime=8$188 maxCellSize=1$500 fallOffBeam=0 totalDerivs=81$500 numOfFeaturizedDerivs=81$500
+          }
+          iter=0.train: example 16/21: analyticsBot/interface.examples:3 {
+            Example: client highest volume {
+              Tokens: [client, highest, volume]
+              Lemmatized tokens: [client, highest, volume]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT TOP 10 Client, Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 2 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT TOP 10 ") (string [Volume]) (string " , ") (string [Client]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] "))) (value (string "SELECT TOP 10 [Volume] , [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")) (type fb:type.any)) [score=0, prob=0$500, comp=0]
+              Pred@0001: (derivation (formula (call + (string "SELECT ") (string [Volume]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string highest) (string '))) (value (string "SELECT [Volume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'highest'")) (type fb:type.any)) [score=0, prob=0$500, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=2 parsedNumCandidates=2 numCorrect=0 numPartialCorrect=0 numIncorrect=2 numTokens=3 parseTime=3 maxCellSize=2 fallOffBeam=0 totalDerivs=75 numOfFeaturizedDerivs=75
+            Cumulative(iter=0.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$824 numCandidates=0$941 parsedNumCandidates=1$143 numCorrect=0 numPartialCorrect=0 numIncorrect=0$941 numTokens=3$353 parseTime=7$882 maxCellSize=1$529 fallOffBeam=0 totalDerivs=81$118 numOfFeaturizedDerivs=81$118
+          }
+          iter=0.train: example 17/21: analyticsBot/interface.examples:6 {
+            Example: client x deal id {
+              Tokens: [client, x, deal, id]
+              Lemmatized tokens: [client, x, deal, id]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT * ") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string x) (string ') (string " AND ") (string "[Deal ID]") (string " = ") (string ') (string id) (string '))) (value (string "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'x' AND [Deal ID] = 'id'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=4 parseTime=4 maxCellSize=1 fallOffBeam=0 totalDerivs=93 numOfFeaturizedDerivs=93
+            Cumulative(iter=0.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$833 numCandidates=0$944 parsedNumCandidates=1$133 numCorrect=0 numPartialCorrect=0 numIncorrect=0$944 numTokens=3$389 parseTime=7$667 maxCellSize=1$500 fallOffBeam=0 totalDerivs=81$778 numOfFeaturizedDerivs=81$778
+          }
+          iter=0.train: example 18/21: analyticsBot/interface.examples:12 {
+            Example: platform excluding x {
+              Tokens: [platform, excluding, x]
+              Lemmatized tokens: [platform, excluding, x]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform != x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 0 candidates 
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0 numCandidates=0 numCorrect=0 numPartialCorrect=0 numIncorrect=0 numTokens=3 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=49 numOfFeaturizedDerivs=49
+            Cumulative(iter=0.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$789 numCandidates=0$895 parsedNumCandidates=1$133 numCorrect=0 numPartialCorrect=0 numIncorrect=0$895 numTokens=3$368 parseTime=7$368 maxCellSize=1$474 fallOffBeam=0 totalDerivs=80$053 numOfFeaturizedDerivs=80$053
+          }
+          iter=0.train: example 19/21: analyticsBot/interface.examples:7 {
+            Example: deal x client name {
+              Tokens: [deal, x, client, name]
+              Lemmatized tokens: [deal, x, client, name]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Deal ID = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT * ") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Deal ID]") (string " = ") (string ') (string x) (string ') (string " AND ") (string [Client]) (string " = ") (string ') (string name) (string '))) (value (string "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'x' AND [Client] = 'name'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=4 parseTime=4 maxCellSize=1 fallOffBeam=0 totalDerivs=93 numOfFeaturizedDerivs=93
+            Cumulative(iter=0.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$800 numCandidates=0$900 parsedNumCandidates=1$125 numCorrect=0 numPartialCorrect=0 numIncorrect=0$900 numTokens=3$400 parseTime=7$200 maxCellSize=1$450 fallOffBeam=0 totalDerivs=80$700 numOfFeaturizedDerivs=80$700
+          }
+          iter=0.train: example 20/21: analyticsBot/interface.examples:8 {
+            Example: deal x volume {
+              Tokens: [deal, x, volume]
+              Lemmatized tokens: [deal, x, volume]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Deal ID = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Volume]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Deal ID]") (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Volume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=66 numOfFeaturizedDerivs=66
+            Cumulative(iter=0.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$810 numCandidates=0$905 parsedNumCandidates=1$118 numCorrect=0 numPartialCorrect=0 numIncorrect=0$905 numTokens=3$381 parseTime=6$952 maxCellSize=1$429 fallOffBeam=0 totalDerivs=80 numOfFeaturizedDerivs=80
+          }
+        }
+        Stats for iter=0.train: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$810 numCandidates=0$905 parsedNumCandidates=1$118 numCorrect=0 numPartialCorrect=0 numIncorrect=0$905 numTokens=3$381 parseTime=6$952 maxCellSize=1$429 fallOffBeam=0 totalDerivs=80 numOfFeaturizedDerivs=80
+        Evaluation stats for iter=0.train {
+          correct = 0/ << 0 ~ 0 >> /0 (21)
+          oracle = 0/ << 0 ~ 0 >> /0 (21)
+          partCorrect = 0/ << 0 ~ 0 >> /0 (21)
+          partOracle = 0/ << 0 ~ 0 >> /0 (21)
+          parsed = 0/ << 0$810 ~ 0$393 >> /1 (21)
+          numCandidates = 0/ << 0$905 ~ 0$526 >> /2 (21)
+          parsedNumCandidates = 1/ << 1$118 ~ 0$322 >> /2 (17)
+          numCorrect = 0/ << 0 ~ 0 >> /0 (21)
+          numPartialCorrect = 0/ << 0 ~ 0 >> /0 (21)
+          numIncorrect = 0/ << 0$905 ~ 0$526 >> /2 (21)
+          numTokens = 3/ << 3$381 ~ 0$486 >> /4 (21)
+          parseTime = 2/ << 6$952 ~ 6$835 >> /33 (21)
+          maxCellSize = 1@$Attribute:0:1/ << 1$429 ~ 0$495 >> /2@$General:0:2 (21)
+          fallOffBeam = 0/ << 0 ~ 0 >> /0 (21)
+          totalDerivs = 49/ << 80 ~ 20$359 >> /130 (21)
+          numOfFeaturizedDerivs = 49/ << 80 ~ 20$359 >> /130 (21)
+        }
+      }
+      StopWatchSet {
+        FeatureExtractor.extractLocal	0.024s (0.0s x 1680)
+        ConstantFn	0.005s (0.0s x 43)
+        JoinFn	0.014s (0.0s x 1096)
+        IdentityFn	0.006s (0.0s x 83)
+        Executor.execute	0.007s (0.0s x 19)
+        Parser.parse	0.16s (0.007s x 21)
+        Learner.updateWeights	0.008s (0.0s x 21)
+      }
+      StopWatchSet {
+        FeatureExtractor.extractLocal	0.024s (0.0s x 1680)
+        ConstantFn	0.005s (0.0s x 43)
+        JoinFn	0.014s (0.0s x 1096)
+        IdentityFn	0.006s (0.0s x 83)
+        Executor.execute	0.007s (0.0s x 19)
+        Parser.parse	0.16s (0.007s x 21)
+        Learner.updateWeights	0.008s (0.0s x 21)
+      }
+    }
+    Iteration 1/3 {
+      Processing iter=1.train: 21 examples {
+        Examples {
+          iter=1.train: example 0/21: analyticsBot/interface.examples:18 {
+            Example: client far leg {
+              Tokens: [client, far, leg]
+              Lemmatized tokens: [client, far, leg]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Leg = far")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Leg]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string far) (string '))) (value (string "SELECT [Leg] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'far'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=3 maxCellSize=1 fallOffBeam=0 totalDerivs=72 numOfFeaturizedDerivs=72
+            Cumulative(iter=1.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=3 maxCellSize=1 fallOffBeam=0 totalDerivs=72 numOfFeaturizedDerivs=72
+          }
+          iter=1.train: example 1/21: analyticsBot/interface.examples:9 {
+            Example: client currency eur/usd {
+              Tokens: [client, currency, eur/usd]
+              Lemmatized tokens: [client, currency, eur/usd]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Currency Pair = EUR/USD")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Client]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Currency Pair]") (string " = ") (string ') (string eur/usd) (string '))) (value (string "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Currency Pair] = 'eur/usd'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=2 fallOffBeam=0 totalDerivs=81 numOfFeaturizedDerivs=81
+            Cumulative(iter=1.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2$500 maxCellSize=1$500 fallOffBeam=0 totalDerivs=76$500 numOfFeaturizedDerivs=76$500
+          }
+          iter=1.train: example 2/21: analyticsBot/interface.examples:19 {
+            Example: deal client deal sell {
+              Tokens: [deal, client, deal, sell]
+              Lemmatized tokens: [deal, client, deal, sell]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client Deal Side = sell")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT * ") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Deal ID]") (string " = ") (string ') (string client) (string ') (string " AND ") (string "[Deal ID]") (string " = ") (string ') (string sell) (string '))) (value (string "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'client' AND [Deal ID] = 'sell'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=4 parseTime=5 maxCellSize=2 fallOffBeam=0 totalDerivs=130 numOfFeaturizedDerivs=130
+            Cumulative(iter=1.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3$333 parseTime=3$333 maxCellSize=1$667 fallOffBeam=0 totalDerivs=94$333 numOfFeaturizedDerivs=94$333
+          }
+          iter=1.train: example 3/21: analyticsBot/interface.examples:0 {
+            Example: client x volume {
+              Tokens: [client, x, volume]
+              Lemmatized tokens: [client, x, volume]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Volume]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Volume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=3 maxCellSize=1 fallOffBeam=0 totalDerivs=66 numOfFeaturizedDerivs=66
+            Cumulative(iter=1.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3$250 parseTime=3$250 maxCellSize=1$500 fallOffBeam=0 totalDerivs=87$250 numOfFeaturizedDerivs=87$250
+          }
+          iter=1.train: example 4/21: analyticsBot/interface.examples:17 {
+            Example: deal near leg {
+              Tokens: [deal, near, leg]
+              Lemmatized tokens: [deal, near, leg]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Leg = near")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Leg]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Deal ID]") (string " = ") (string ') (string near) (string '))) (value (string "SELECT [Leg] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'near'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=72 numOfFeaturizedDerivs=72
+            Cumulative(iter=1.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3$200 parseTime=3 maxCellSize=1$400 fallOffBeam=0 totalDerivs=84$200 numOfFeaturizedDerivs=84$200
+          }
+          iter=1.train: example 5/21: analyticsBot/interface.examples:5 {
+            Example: client x expire {
+              Tokens: [client, x, expire]
+              Lemmatized tokens: [client, x, expire]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Expiry Date FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string "[Expiry Date]") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Expiry Date] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=72 numOfFeaturizedDerivs=72
+            Cumulative(iter=1.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3$167 parseTime=2$833 maxCellSize=1$333 fallOffBeam=0 totalDerivs=82$167 numOfFeaturizedDerivs=82$167
+          }
+          iter=1.train: example 6/21: analyticsBot/interface.examples:20 {
+            Example: client client deal buy {
+              Tokens: [client, client, deal, buy]
+              Lemmatized tokens: [client, client, deal, buy]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client Deal Side = buy")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT * ") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string client) (string ') (string " AND ") (string "[Deal ID]") (string " = ") (string ') (string buy) (string '))) (value (string "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'client' AND [Deal ID] = 'buy'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=4 parseTime=5 maxCellSize=2 fallOffBeam=0 totalDerivs=130 numOfFeaturizedDerivs=130
+            Cumulative(iter=1.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3$286 parseTime=3$143 maxCellSize=1$429 fallOffBeam=0 totalDerivs=89 numOfFeaturizedDerivs=89
+          }
+          iter=1.train: example 7/21: analyticsBot/interface.examples:15 {
+            Example: deal trade status new {
+              Tokens: [deal, trade, status, new]
+              Lemmatized tokens: [deal, trade, statu, new]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE TradeStatus = new")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 0 candidates 
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0 numCandidates=0 numCorrect=0 numPartialCorrect=0 numIncorrect=0 numTokens=4 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=61 numOfFeaturizedDerivs=61
+            Cumulative(iter=1.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$875 numCandidates=0$875 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=0$875 numTokens=3$375 parseTime=3 maxCellSize=1$375 fallOffBeam=0 totalDerivs=85$500 numOfFeaturizedDerivs=85$500
+          }
+          iter=1.train: example 8/21: analyticsBot/interface.examples:4 {
+            Example: deal x expire {
+              Tokens: [deal, x, expire]
+              Lemmatized tokens: [deal, x, expire]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Expiry Date FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Deal = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string "[Expiry Date]") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Deal ID]") (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Expiry Date] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=72 numOfFeaturizedDerivs=72
+            Cumulative(iter=1.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$889 numCandidates=0$889 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=0$889 numTokens=3$333 parseTime=2$889 maxCellSize=1$333 fallOffBeam=0 totalDerivs=84 numOfFeaturizedDerivs=84
+          }
+          iter=1.train: example 9/21: analyticsBot/interface.examples:13 {
+            Example: client platform x {
+              Tokens: [client, platform, x]
+              Lemmatized tokens: [client, platform, x]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Client]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Platform]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Platform] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=2 fallOffBeam=0 totalDerivs=81 numOfFeaturizedDerivs=81
+            Cumulative(iter=1.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$900 numCandidates=0$900 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=0$900 numTokens=3$300 parseTime=2$800 maxCellSize=1$400 fallOffBeam=0 totalDerivs=83$700 numOfFeaturizedDerivs=83$700
+          }
+          iter=1.train: example 10/21: analyticsBot/interface.examples:16 {
+            Example: client trade status amended {
+              Tokens: [client, trade, status, amended]
+              Lemmatized tokens: [client, trade, statu, amended]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE TradeStatus = amended")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 0 candidates 
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0 numCandidates=0 numCorrect=0 numPartialCorrect=0 numIncorrect=0 numTokens=4 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=61 numOfFeaturizedDerivs=61
+            Cumulative(iter=1.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$818 numCandidates=0$818 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=0$818 numTokens=3$364 parseTime=2$727 maxCellSize=1$364 fallOffBeam=0 totalDerivs=81$636 numOfFeaturizedDerivs=81$636
+          }
+          iter=1.train: example 11/21: analyticsBot/interface.examples:14 {
+            Example: client exclude platform x {
+              Tokens: [client, exclude, platform, x]
+              Lemmatized tokens: [client, exclude, platform, x]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform != x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 2 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Client]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Platform]) (string " != ") (string ') (string x) (string '))) (value (string "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Platform] != 'x'")) (type fb:type.any)) [score=0, prob=0$500, comp=0]
+              Pred@0001: (derivation (formula (call + (string "SELECT * ") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string exclude) (string ') (string " AND ") (string [Platform]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'exclude' AND [Platform] = 'x'")) (type fb:type.any)) [score=0, prob=0$500, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=2 parsedNumCandidates=2 numCorrect=0 numPartialCorrect=0 numIncorrect=2 numTokens=4 parseTime=3 maxCellSize=2 fallOffBeam=0 totalDerivs=107 numOfFeaturizedDerivs=107
+            Cumulative(iter=1.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$833 numCandidates=0$917 parsedNumCandidates=1$100 numCorrect=0 numPartialCorrect=0 numIncorrect=0$917 numTokens=3$417 parseTime=2$750 maxCellSize=1$417 fallOffBeam=0 totalDerivs=83$750 numOfFeaturizedDerivs=83$750
+          }
+          iter=1.train: example 12/21: analyticsBot/interface.examples:1 {
+            Example: client rolloverratio x {
+              Tokens: [client, rolloverratio, x]
+              Lemmatized tokens: [client, rolloverratio, x]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE RolloverRatio = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Client]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [RolloverRatio]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [RolloverRatio] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=2 fallOffBeam=0 totalDerivs=71 numOfFeaturizedDerivs=71
+            Cumulative(iter=1.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$846 numCandidates=0$923 parsedNumCandidates=1$091 numCorrect=0 numPartialCorrect=0 numIncorrect=0$923 numTokens=3$385 parseTime=2$692 maxCellSize=1$462 fallOffBeam=0 totalDerivs=82$769 numOfFeaturizedDerivs=82$769
+          }
+          iter=1.train: example 13/21: analyticsBot/interface.examples:11 {
+            Example: deal platform x {
+              Tokens: [deal, platform, x]
+              Lemmatized tokens: [deal, platform, x]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string "[Deal ID]") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Platform]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Deal ID] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Platform] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=2 fallOffBeam=0 totalDerivs=81 numOfFeaturizedDerivs=81
+            Cumulative(iter=1.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$857 numCandidates=0$929 parsedNumCandidates=1$083 numCorrect=0 numPartialCorrect=0 numIncorrect=0$929 numTokens=3$357 parseTime=2$643 maxCellSize=1$500 fallOffBeam=0 totalDerivs=82$643 numOfFeaturizedDerivs=82$643
+          }
+          iter=1.train: example 14/21: analyticsBot/interface.examples:10 {
+            Example: deal highest cc total {
+              Tokens: [deal, highest, cc, total]
+              Lemmatized tokens: [deal, highest, cc, total]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT TOP 10 Deal ID, CC Total FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 0 candidates 
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0 numCandidates=0 numCorrect=0 numPartialCorrect=0 numIncorrect=0 numTokens=4 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=66 numOfFeaturizedDerivs=66
+            Cumulative(iter=1.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$800 numCandidates=0$867 parsedNumCandidates=1$083 numCorrect=0 numPartialCorrect=0 numIncorrect=0$867 numTokens=3$400 parseTime=2$600 maxCellSize=1$467 fallOffBeam=0 totalDerivs=81$533 numOfFeaturizedDerivs=81$533
+          }
+          iter=1.train: example 15/21: analyticsBot/interface.examples:2 {
+            Example: deal currency eur/usd {
+              Tokens: [deal, currency, eur/usd]
+              Lemmatized tokens: [deal, currency, eur/usd]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Currency Pair = EUR/USD")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string "[Deal ID]") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Currency Pair]") (string " = ") (string ') (string eur/usd) (string '))) (value (string "SELECT [Deal ID] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Currency Pair] = 'eur/usd'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=3 maxCellSize=2 fallOffBeam=0 totalDerivs=81 numOfFeaturizedDerivs=81
+            Cumulative(iter=1.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$813 numCandidates=0$875 parsedNumCandidates=1$077 numCorrect=0 numPartialCorrect=0 numIncorrect=0$875 numTokens=3$375 parseTime=2$625 maxCellSize=1$500 fallOffBeam=0 totalDerivs=81$500 numOfFeaturizedDerivs=81$500
+          }
+          iter=1.train: example 16/21: analyticsBot/interface.examples:3 {
+            Example: client highest volume {
+              Tokens: [client, highest, volume]
+              Lemmatized tokens: [client, highest, volume]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT TOP 10 Client, Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 2 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT TOP 10 ") (string [Volume]) (string " , ") (string [Client]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] "))) (value (string "SELECT TOP 10 [Volume] , [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")) (type fb:type.any)) [score=0, prob=0$500, comp=0]
+              Pred@0001: (derivation (formula (call + (string "SELECT ") (string [Volume]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string highest) (string '))) (value (string "SELECT [Volume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'highest'")) (type fb:type.any)) [score=0, prob=0$500, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=2 parsedNumCandidates=2 numCorrect=0 numPartialCorrect=0 numIncorrect=2 numTokens=3 parseTime=2 maxCellSize=2 fallOffBeam=0 totalDerivs=75 numOfFeaturizedDerivs=75
+            Cumulative(iter=1.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$824 numCandidates=0$941 parsedNumCandidates=1$143 numCorrect=0 numPartialCorrect=0 numIncorrect=0$941 numTokens=3$353 parseTime=2$588 maxCellSize=1$529 fallOffBeam=0 totalDerivs=81$118 numOfFeaturizedDerivs=81$118
+          }
+          iter=1.train: example 17/21: analyticsBot/interface.examples:6 {
+            Example: client x deal id {
+              Tokens: [client, x, deal, id]
+              Lemmatized tokens: [client, x, deal, id]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT * ") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string x) (string ') (string " AND ") (string "[Deal ID]") (string " = ") (string ') (string id) (string '))) (value (string "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'x' AND [Deal ID] = 'id'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=4 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=93 numOfFeaturizedDerivs=93
+            Cumulative(iter=1.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$833 numCandidates=0$944 parsedNumCandidates=1$133 numCorrect=0 numPartialCorrect=0 numIncorrect=0$944 numTokens=3$389 parseTime=2$556 maxCellSize=1$500 fallOffBeam=0 totalDerivs=81$778 numOfFeaturizedDerivs=81$778
+          }
+          iter=1.train: example 18/21: analyticsBot/interface.examples:12 {
+            Example: platform excluding x {
+              Tokens: [platform, excluding, x]
+              Lemmatized tokens: [platform, excluding, x]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform != x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 0 candidates 
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0 numCandidates=0 numCorrect=0 numPartialCorrect=0 numIncorrect=0 numTokens=3 parseTime=1 maxCellSize=1 fallOffBeam=0 totalDerivs=49 numOfFeaturizedDerivs=49
+            Cumulative(iter=1.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$789 numCandidates=0$895 parsedNumCandidates=1$133 numCorrect=0 numPartialCorrect=0 numIncorrect=0$895 numTokens=3$368 parseTime=2$474 maxCellSize=1$474 fallOffBeam=0 totalDerivs=80$053 numOfFeaturizedDerivs=80$053
+          }
+          iter=1.train: example 19/21: analyticsBot/interface.examples:7 {
+            Example: deal x client name {
+              Tokens: [deal, x, client, name]
+              Lemmatized tokens: [deal, x, client, name]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Deal ID = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT * ") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Deal ID]") (string " = ") (string ') (string x) (string ') (string " AND ") (string [Client]) (string " = ") (string ') (string name) (string '))) (value (string "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'x' AND [Client] = 'name'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=4 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=93 numOfFeaturizedDerivs=93
+            Cumulative(iter=1.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$800 numCandidates=0$900 parsedNumCandidates=1$125 numCorrect=0 numPartialCorrect=0 numIncorrect=0$900 numTokens=3$400 parseTime=2$450 maxCellSize=1$450 fallOffBeam=0 totalDerivs=80$700 numOfFeaturizedDerivs=80$700
+          }
+          iter=1.train: example 20/21: analyticsBot/interface.examples:8 {
+            Example: deal x volume {
+              Tokens: [deal, x, volume]
+              Lemmatized tokens: [deal, x, volume]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Deal ID = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Volume]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Deal ID]") (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Volume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=66 numOfFeaturizedDerivs=66
+            Cumulative(iter=1.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$810 numCandidates=0$905 parsedNumCandidates=1$118 numCorrect=0 numPartialCorrect=0 numIncorrect=0$905 numTokens=3$381 parseTime=2$429 maxCellSize=1$429 fallOffBeam=0 totalDerivs=80 numOfFeaturizedDerivs=80
+          }
+        }
+        Stats for iter=1.train: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$810 numCandidates=0$905 parsedNumCandidates=1$118 numCorrect=0 numPartialCorrect=0 numIncorrect=0$905 numTokens=3$381 parseTime=2$429 maxCellSize=1$429 fallOffBeam=0 totalDerivs=80 numOfFeaturizedDerivs=80
+        Evaluation stats for iter=1.train {
+          correct = 0/ << 0 ~ 0 >> /0 (21)
+          oracle = 0/ << 0 ~ 0 >> /0 (21)
+          partCorrect = 0/ << 0 ~ 0 >> /0 (21)
+          partOracle = 0/ << 0 ~ 0 >> /0 (21)
+          parsed = 0/ << 0$810 ~ 0$393 >> /1 (21)
+          numCandidates = 0/ << 0$905 ~ 0$526 >> /2 (21)
+          parsedNumCandidates = 1/ << 1$118 ~ 0$322 >> /2 (17)
+          numCorrect = 0/ << 0 ~ 0 >> /0 (21)
+          numPartialCorrect = 0/ << 0 ~ 0 >> /0 (21)
+          numIncorrect = 0/ << 0$905 ~ 0$526 >> /2 (21)
+          numTokens = 3/ << 3$381 ~ 0$486 >> /4 (21)
+          parseTime = 1/ << 2$429 ~ 0$955 >> /5 (21)
+          maxCellSize = 1@$Attribute:0:1/ << 1$429 ~ 0$495 >> /2@$General:0:2 (21)
+          fallOffBeam = 0/ << 0 ~ 0 >> /0 (21)
+          totalDerivs = 49/ << 80 ~ 20$359 >> /130 (21)
+          numOfFeaturizedDerivs = 49/ << 80 ~ 20$359 >> /130 (21)
+        }
+      }
+      StopWatchSet {
+        FeatureExtractor.extractLocal	0.028s (0.0s x 3360)
+        ConstantFn	0.005s (0.0s x 86)
+        JoinFn	0.016s (0.0s x 2192)
+        IdentityFn	0.006s (0.0s x 166)
+        Executor.execute	0.013s (0.0s x 38)
+        Parser.parse	0.22s (0.005s x 42)
+        Learner.updateWeights	0.012s (0.0s x 42)
+      }
+      StopWatchSet {
+        FeatureExtractor.extractLocal	0.028s (0.0s x 3360)
+        ConstantFn	0.005s (0.0s x 86)
+        JoinFn	0.016s (0.0s x 2192)
+        IdentityFn	0.006s (0.0s x 166)
+        Executor.execute	0.013s (0.0s x 38)
+        Parser.parse	0.22s (0.005s x 42)
+        Learner.updateWeights	0.012s (0.0s x 42)
+      }
+    }
+    Iteration 2/3 {
+      Processing iter=2.train: 21 examples {
+        Examples {
+          iter=2.train: example 0/21: analyticsBot/interface.examples:18 {
+            Example: client far leg {
+              Tokens: [client, far, leg]
+              Lemmatized tokens: [client, far, leg]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Leg = far")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Leg]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string far) (string '))) (value (string "SELECT [Leg] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'far'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=1 maxCellSize=1 fallOffBeam=0 totalDerivs=72 numOfFeaturizedDerivs=72
+            Cumulative(iter=2.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=1 maxCellSize=1 fallOffBeam=0 totalDerivs=72 numOfFeaturizedDerivs=72
+          }
+          iter=2.train: example 1/21: analyticsBot/interface.examples:9 {
+            Example: client currency eur/usd {
+              Tokens: [client, currency, eur/usd]
+              Lemmatized tokens: [client, currency, eur/usd]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Currency Pair = EUR/USD")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Client]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Currency Pair]") (string " = ") (string ') (string eur/usd) (string '))) (value (string "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Currency Pair] = 'eur/usd'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=2 fallOffBeam=0 totalDerivs=81 numOfFeaturizedDerivs=81
+            Cumulative(iter=2.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=1$500 maxCellSize=1$500 fallOffBeam=0 totalDerivs=76$500 numOfFeaturizedDerivs=76$500
+          }
+          iter=2.train: example 2/21: analyticsBot/interface.examples:19 {
+            Example: deal client deal sell {
+              Tokens: [deal, client, deal, sell]
+              Lemmatized tokens: [deal, client, deal, sell]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client Deal Side = sell")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT * ") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Deal ID]") (string " = ") (string ') (string client) (string ') (string " AND ") (string "[Deal ID]") (string " = ") (string ') (string sell) (string '))) (value (string "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'client' AND [Deal ID] = 'sell'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=4 parseTime=3 maxCellSize=2 fallOffBeam=0 totalDerivs=130 numOfFeaturizedDerivs=130
+            Cumulative(iter=2.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3$333 parseTime=2 maxCellSize=1$667 fallOffBeam=0 totalDerivs=94$333 numOfFeaturizedDerivs=94$333
+          }
+          iter=2.train: example 3/21: analyticsBot/interface.examples:0 {
+            Example: client x volume {
+              Tokens: [client, x, volume]
+              Lemmatized tokens: [client, x, volume]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Volume]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Volume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=66 numOfFeaturizedDerivs=66
+            Cumulative(iter=2.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3$250 parseTime=2 maxCellSize=1$500 fallOffBeam=0 totalDerivs=87$250 numOfFeaturizedDerivs=87$250
+          }
+          iter=2.train: example 4/21: analyticsBot/interface.examples:17 {
+            Example: deal near leg {
+              Tokens: [deal, near, leg]
+              Lemmatized tokens: [deal, near, leg]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Leg = near")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Leg]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Deal ID]") (string " = ") (string ') (string near) (string '))) (value (string "SELECT [Leg] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'near'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=72 numOfFeaturizedDerivs=72
+            Cumulative(iter=2.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3$200 parseTime=2 maxCellSize=1$400 fallOffBeam=0 totalDerivs=84$200 numOfFeaturizedDerivs=84$200
+          }
+          iter=2.train: example 5/21: analyticsBot/interface.examples:5 {
+            Example: client x expire {
+              Tokens: [client, x, expire]
+              Lemmatized tokens: [client, x, expire]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Expiry Date FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string "[Expiry Date]") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Expiry Date] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=72 numOfFeaturizedDerivs=72
+            Cumulative(iter=2.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3$167 parseTime=2 maxCellSize=1$333 fallOffBeam=0 totalDerivs=82$167 numOfFeaturizedDerivs=82$167
+          }
+          iter=2.train: example 6/21: analyticsBot/interface.examples:20 {
+            Example: client client deal buy {
+              Tokens: [client, client, deal, buy]
+              Lemmatized tokens: [client, client, deal, buy]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client Deal Side = buy")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT * ") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string client) (string ') (string " AND ") (string "[Deal ID]") (string " = ") (string ') (string buy) (string '))) (value (string "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'client' AND [Deal ID] = 'buy'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=4 parseTime=4 maxCellSize=2 fallOffBeam=0 totalDerivs=130 numOfFeaturizedDerivs=130
+            Cumulative(iter=2.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3$286 parseTime=2$286 maxCellSize=1$429 fallOffBeam=0 totalDerivs=89 numOfFeaturizedDerivs=89
+          }
+          iter=2.train: example 7/21: analyticsBot/interface.examples:15 {
+            Example: deal trade status new {
+              Tokens: [deal, trade, status, new]
+              Lemmatized tokens: [deal, trade, statu, new]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE TradeStatus = new")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 0 candidates 
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0 numCandidates=0 numCorrect=0 numPartialCorrect=0 numIncorrect=0 numTokens=4 parseTime=3 maxCellSize=1 fallOffBeam=0 totalDerivs=61 numOfFeaturizedDerivs=61
+            Cumulative(iter=2.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$875 numCandidates=0$875 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=0$875 numTokens=3$375 parseTime=2$375 maxCellSize=1$375 fallOffBeam=0 totalDerivs=85$500 numOfFeaturizedDerivs=85$500
+          }
+          iter=2.train: example 8/21: analyticsBot/interface.examples:4 {
+            Example: deal x expire {
+              Tokens: [deal, x, expire]
+              Lemmatized tokens: [deal, x, expire]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Expiry Date FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Deal = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string "[Expiry Date]") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Deal ID]") (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Expiry Date] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=72 numOfFeaturizedDerivs=72
+            Cumulative(iter=2.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$889 numCandidates=0$889 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=0$889 numTokens=3$333 parseTime=2$333 maxCellSize=1$333 fallOffBeam=0 totalDerivs=84 numOfFeaturizedDerivs=84
+          }
+          iter=2.train: example 9/21: analyticsBot/interface.examples:13 {
+            Example: client platform x {
+              Tokens: [client, platform, x]
+              Lemmatized tokens: [client, platform, x]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Client]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Platform]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Platform] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=3 maxCellSize=2 fallOffBeam=0 totalDerivs=81 numOfFeaturizedDerivs=81
+            Cumulative(iter=2.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$900 numCandidates=0$900 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=0$900 numTokens=3$300 parseTime=2$400 maxCellSize=1$400 fallOffBeam=0 totalDerivs=83$700 numOfFeaturizedDerivs=83$700
+          }
+          iter=2.train: example 10/21: analyticsBot/interface.examples:16 {
+            Example: client trade status amended {
+              Tokens: [client, trade, status, amended]
+              Lemmatized tokens: [client, trade, statu, amended]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE TradeStatus = amended")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 0 candidates 
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0 numCandidates=0 numCorrect=0 numPartialCorrect=0 numIncorrect=0 numTokens=4 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=61 numOfFeaturizedDerivs=61
+            Cumulative(iter=2.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$818 numCandidates=0$818 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=0$818 numTokens=3$364 parseTime=2$364 maxCellSize=1$364 fallOffBeam=0 totalDerivs=81$636 numOfFeaturizedDerivs=81$636
+          }
+          iter=2.train: example 11/21: analyticsBot/interface.examples:14 {
+            Example: client exclude platform x {
+              Tokens: [client, exclude, platform, x]
+              Lemmatized tokens: [client, exclude, platform, x]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform != x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 2 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Client]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Platform]) (string " != ") (string ') (string x) (string '))) (value (string "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Platform] != 'x'")) (type fb:type.any)) [score=0, prob=0$500, comp=0]
+              Pred@0001: (derivation (formula (call + (string "SELECT * ") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string exclude) (string ') (string " AND ") (string [Platform]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'exclude' AND [Platform] = 'x'")) (type fb:type.any)) [score=0, prob=0$500, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=2 parsedNumCandidates=2 numCorrect=0 numPartialCorrect=0 numIncorrect=2 numTokens=4 parseTime=3 maxCellSize=2 fallOffBeam=0 totalDerivs=107 numOfFeaturizedDerivs=107
+            Cumulative(iter=2.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$833 numCandidates=0$917 parsedNumCandidates=1$100 numCorrect=0 numPartialCorrect=0 numIncorrect=0$917 numTokens=3$417 parseTime=2$417 maxCellSize=1$417 fallOffBeam=0 totalDerivs=83$750 numOfFeaturizedDerivs=83$750
+          }
+          iter=2.train: example 12/21: analyticsBot/interface.examples:1 {
+            Example: client rolloverratio x {
+              Tokens: [client, rolloverratio, x]
+              Lemmatized tokens: [client, rolloverratio, x]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE RolloverRatio = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Client]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [RolloverRatio]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [RolloverRatio] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=2 fallOffBeam=0 totalDerivs=71 numOfFeaturizedDerivs=71
+            Cumulative(iter=2.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$846 numCandidates=0$923 parsedNumCandidates=1$091 numCorrect=0 numPartialCorrect=0 numIncorrect=0$923 numTokens=3$385 parseTime=2$385 maxCellSize=1$462 fallOffBeam=0 totalDerivs=82$769 numOfFeaturizedDerivs=82$769
+          }
+          iter=2.train: example 13/21: analyticsBot/interface.examples:11 {
+            Example: deal platform x {
+              Tokens: [deal, platform, x]
+              Lemmatized tokens: [deal, platform, x]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string "[Deal ID]") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Platform]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Deal ID] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Platform] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=2 fallOffBeam=0 totalDerivs=81 numOfFeaturizedDerivs=81
+            Cumulative(iter=2.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$857 numCandidates=0$929 parsedNumCandidates=1$083 numCorrect=0 numPartialCorrect=0 numIncorrect=0$929 numTokens=3$357 parseTime=2$357 maxCellSize=1$500 fallOffBeam=0 totalDerivs=82$643 numOfFeaturizedDerivs=82$643
+          }
+          iter=2.train: example 14/21: analyticsBot/interface.examples:10 {
+            Example: deal highest cc total {
+              Tokens: [deal, highest, cc, total]
+              Lemmatized tokens: [deal, highest, cc, total]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT TOP 10 Deal ID, CC Total FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 0 candidates 
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0 numCandidates=0 numCorrect=0 numPartialCorrect=0 numIncorrect=0 numTokens=4 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=66 numOfFeaturizedDerivs=66
+            Cumulative(iter=2.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$800 numCandidates=0$867 parsedNumCandidates=1$083 numCorrect=0 numPartialCorrect=0 numIncorrect=0$867 numTokens=3$400 parseTime=2$333 maxCellSize=1$467 fallOffBeam=0 totalDerivs=81$533 numOfFeaturizedDerivs=81$533
+          }
+          iter=2.train: example 15/21: analyticsBot/interface.examples:2 {
+            Example: deal currency eur/usd {
+              Tokens: [deal, currency, eur/usd]
+              Lemmatized tokens: [deal, currency, eur/usd]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Currency Pair = EUR/USD")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string "[Deal ID]") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Currency Pair]") (string " = ") (string ') (string eur/usd) (string '))) (value (string "SELECT [Deal ID] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Currency Pair] = 'eur/usd'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=2 fallOffBeam=0 totalDerivs=81 numOfFeaturizedDerivs=81
+            Cumulative(iter=2.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$813 numCandidates=0$875 parsedNumCandidates=1$077 numCorrect=0 numPartialCorrect=0 numIncorrect=0$875 numTokens=3$375 parseTime=2$313 maxCellSize=1$500 fallOffBeam=0 totalDerivs=81$500 numOfFeaturizedDerivs=81$500
+          }
+          iter=2.train: example 16/21: analyticsBot/interface.examples:3 {
+            Example: client highest volume {
+              Tokens: [client, highest, volume]
+              Lemmatized tokens: [client, highest, volume]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT TOP 10 Client, Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 2 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT TOP 10 ") (string [Volume]) (string " , ") (string [Client]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] "))) (value (string "SELECT TOP 10 [Volume] , [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")) (type fb:type.any)) [score=0, prob=0$500, comp=0]
+              Pred@0001: (derivation (formula (call + (string "SELECT ") (string [Volume]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string highest) (string '))) (value (string "SELECT [Volume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'highest'")) (type fb:type.any)) [score=0, prob=0$500, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=2 parsedNumCandidates=2 numCorrect=0 numPartialCorrect=0 numIncorrect=2 numTokens=3 parseTime=2 maxCellSize=2 fallOffBeam=0 totalDerivs=75 numOfFeaturizedDerivs=75
+            Cumulative(iter=2.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$824 numCandidates=0$941 parsedNumCandidates=1$143 numCorrect=0 numPartialCorrect=0 numIncorrect=0$941 numTokens=3$353 parseTime=2$294 maxCellSize=1$529 fallOffBeam=0 totalDerivs=81$118 numOfFeaturizedDerivs=81$118
+          }
+          iter=2.train: example 17/21: analyticsBot/interface.examples:6 {
+            Example: client x deal id {
+              Tokens: [client, x, deal, id]
+              Lemmatized tokens: [client, x, deal, id]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT * ") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string x) (string ') (string " AND ") (string "[Deal ID]") (string " = ") (string ') (string id) (string '))) (value (string "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'x' AND [Deal ID] = 'id'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=4 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=93 numOfFeaturizedDerivs=93
+            Cumulative(iter=2.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$833 numCandidates=0$944 parsedNumCandidates=1$133 numCorrect=0 numPartialCorrect=0 numIncorrect=0$944 numTokens=3$389 parseTime=2$278 maxCellSize=1$500 fallOffBeam=0 totalDerivs=81$778 numOfFeaturizedDerivs=81$778
+          }
+          iter=2.train: example 18/21: analyticsBot/interface.examples:12 {
+            Example: platform excluding x {
+              Tokens: [platform, excluding, x]
+              Lemmatized tokens: [platform, excluding, x]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform != x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 0 candidates 
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0 numCandidates=0 numCorrect=0 numPartialCorrect=0 numIncorrect=0 numTokens=3 parseTime=1 maxCellSize=1 fallOffBeam=0 totalDerivs=49 numOfFeaturizedDerivs=49
+            Cumulative(iter=2.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$789 numCandidates=0$895 parsedNumCandidates=1$133 numCorrect=0 numPartialCorrect=0 numIncorrect=0$895 numTokens=3$368 parseTime=2$211 maxCellSize=1$474 fallOffBeam=0 totalDerivs=80$053 numOfFeaturizedDerivs=80$053
+          }
+          iter=2.train: example 19/21: analyticsBot/interface.examples:7 {
+            Example: deal x client name {
+              Tokens: [deal, x, client, name]
+              Lemmatized tokens: [deal, x, client, name]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Deal ID = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT * ") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Deal ID]") (string " = ") (string ') (string x) (string ') (string " AND ") (string [Client]) (string " = ") (string ') (string name) (string '))) (value (string "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'x' AND [Client] = 'name'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=4 parseTime=3 maxCellSize=1 fallOffBeam=0 totalDerivs=93 numOfFeaturizedDerivs=93
+            Cumulative(iter=2.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$800 numCandidates=0$900 parsedNumCandidates=1$125 numCorrect=0 numPartialCorrect=0 numIncorrect=0$900 numTokens=3$400 parseTime=2$250 maxCellSize=1$450 fallOffBeam=0 totalDerivs=80$700 numOfFeaturizedDerivs=80$700
+          }
+          iter=2.train: example 20/21: analyticsBot/interface.examples:8 {
+            Example: deal x volume {
+              Tokens: [deal, x, volume]
+              Lemmatized tokens: [deal, x, volume]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Deal ID = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Volume]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Deal ID]") (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Volume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Updating learner weights {
+              L2 norm: 0.0
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=66 numOfFeaturizedDerivs=66
+            Cumulative(iter=2.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$810 numCandidates=0$905 parsedNumCandidates=1$118 numCorrect=0 numPartialCorrect=0 numIncorrect=0$905 numTokens=3$381 parseTime=2$238 maxCellSize=1$429 fallOffBeam=0 totalDerivs=80 numOfFeaturizedDerivs=80
+          }
+        }
+        Stats for iter=2.train: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$810 numCandidates=0$905 parsedNumCandidates=1$118 numCorrect=0 numPartialCorrect=0 numIncorrect=0$905 numTokens=3$381 parseTime=2$238 maxCellSize=1$429 fallOffBeam=0 totalDerivs=80 numOfFeaturizedDerivs=80
+        Evaluation stats for iter=2.train {
+          correct = 0/ << 0 ~ 0 >> /0 (21)
+          oracle = 0/ << 0 ~ 0 >> /0 (21)
+          partCorrect = 0/ << 0 ~ 0 >> /0 (21)
+          partOracle = 0/ << 0 ~ 0 >> /0 (21)
+          parsed = 0/ << 0$810 ~ 0$393 >> /1 (21)
+          numCandidates = 0/ << 0$905 ~ 0$526 >> /2 (21)
+          parsedNumCandidates = 1/ << 1$118 ~ 0$322 >> /2 (17)
+          numCorrect = 0/ << 0 ~ 0 >> /0 (21)
+          numPartialCorrect = 0/ << 0 ~ 0 >> /0 (21)
+          numIncorrect = 0/ << 0$905 ~ 0$526 >> /2 (21)
+          numTokens = 3/ << 3$381 ~ 0$486 >> /4 (21)
+          parseTime = 1/ << 2$238 ~ 0$683 >> /4 (21)
+          maxCellSize = 1@$Attribute:0:1/ << 1$429 ~ 0$495 >> /2@$General:0:2 (21)
+          fallOffBeam = 0/ << 0 ~ 0 >> /0 (21)
+          totalDerivs = 49/ << 80 ~ 20$359 >> /130 (21)
+          numOfFeaturizedDerivs = 49/ << 80 ~ 20$359 >> /130 (21)
+        }
+      }
+      StopWatchSet {
+        FeatureExtractor.extractLocal	0.03s (0.0s x 5040)
+        ConstantFn	0.005s (0.0s x 129)
+        JoinFn	0.018s (0.0s x 3288)
+        IdentityFn	0.006s (0.0s x 249)
+        Executor.execute	0.016s (0.0s x 57)
+        Parser.parse	0.277s (0.004s x 63)
+        Learner.updateWeights	0.014s (0.0s x 63)
+      }
+      StopWatchSet {
+        FeatureExtractor.extractLocal	0.03s (0.0s x 5040)
+        ConstantFn	0.005s (0.0s x 129)
+        JoinFn	0.018s (0.0s x 3288)
+        IdentityFn	0.006s (0.0s x 249)
+        Executor.execute	0.016s (0.0s x 57)
+        Parser.parse	0.277s (0.004s x 63)
+        Learner.updateWeights	0.014s (0.0s x 63)
+      }
+    }
+    Iteration 3/3 {
+      Processing iter=3.train: 21 examples {
+        Examples {
+          iter=3.train: example 0/21: analyticsBot/interface.examples:18 {
+            Example: client far leg {
+              Tokens: [client, far, leg]
+              Lemmatized tokens: [client, far, leg]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Leg = far")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Leg]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string far) (string '))) (value (string "SELECT [Leg] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'far'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=72 numOfFeaturizedDerivs=72
+            Cumulative(iter=3.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=72 numOfFeaturizedDerivs=72
+          }
+          iter=3.train: example 1/21: analyticsBot/interface.examples:9 {
+            Example: client currency eur/usd {
+              Tokens: [client, currency, eur/usd]
+              Lemmatized tokens: [client, currency, eur/usd]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Currency Pair = EUR/USD")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Client]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Currency Pair]") (string " = ") (string ') (string eur/usd) (string '))) (value (string "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Currency Pair] = 'eur/usd'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=2 fallOffBeam=0 totalDerivs=81 numOfFeaturizedDerivs=81
+            Cumulative(iter=3.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=1$500 fallOffBeam=0 totalDerivs=76$500 numOfFeaturizedDerivs=76$500
+          }
+          iter=3.train: example 2/21: analyticsBot/interface.examples:19 {
+            Example: deal client deal sell {
+              Tokens: [deal, client, deal, sell]
+              Lemmatized tokens: [deal, client, deal, sell]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client Deal Side = sell")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT * ") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Deal ID]") (string " = ") (string ') (string client) (string ') (string " AND ") (string "[Deal ID]") (string " = ") (string ') (string sell) (string '))) (value (string "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'client' AND [Deal ID] = 'sell'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=4 parseTime=4 maxCellSize=2 fallOffBeam=0 totalDerivs=130 numOfFeaturizedDerivs=130
+            Cumulative(iter=3.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3$333 parseTime=2$667 maxCellSize=1$667 fallOffBeam=0 totalDerivs=94$333 numOfFeaturizedDerivs=94$333
+          }
+          iter=3.train: example 3/21: analyticsBot/interface.examples:0 {
+            Example: client x volume {
+              Tokens: [client, x, volume]
+              Lemmatized tokens: [client, x, volume]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Volume]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Volume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=1 maxCellSize=1 fallOffBeam=0 totalDerivs=66 numOfFeaturizedDerivs=66
+            Cumulative(iter=3.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3$250 parseTime=2$250 maxCellSize=1$500 fallOffBeam=0 totalDerivs=87$250 numOfFeaturizedDerivs=87$250
+          }
+          iter=3.train: example 4/21: analyticsBot/interface.examples:17 {
+            Example: deal near leg {
+              Tokens: [deal, near, leg]
+              Lemmatized tokens: [deal, near, leg]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Leg = near")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Leg]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Deal ID]") (string " = ") (string ') (string near) (string '))) (value (string "SELECT [Leg] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'near'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=72 numOfFeaturizedDerivs=72
+            Cumulative(iter=3.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3$200 parseTime=2$200 maxCellSize=1$400 fallOffBeam=0 totalDerivs=84$200 numOfFeaturizedDerivs=84$200
+          }
+          iter=3.train: example 5/21: analyticsBot/interface.examples:5 {
+            Example: client x expire {
+              Tokens: [client, x, expire]
+              Lemmatized tokens: [client, x, expire]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Expiry Date FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string "[Expiry Date]") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Expiry Date] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=1 maxCellSize=1 fallOffBeam=0 totalDerivs=72 numOfFeaturizedDerivs=72
+            Cumulative(iter=3.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3$167 parseTime=2 maxCellSize=1$333 fallOffBeam=0 totalDerivs=82$167 numOfFeaturizedDerivs=82$167
+          }
+          iter=3.train: example 6/21: analyticsBot/interface.examples:20 {
+            Example: client client deal buy {
+              Tokens: [client, client, deal, buy]
+              Lemmatized tokens: [client, client, deal, buy]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client Deal Side = buy")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT * ") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string client) (string ') (string " AND ") (string "[Deal ID]") (string " = ") (string ') (string buy) (string '))) (value (string "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'client' AND [Deal ID] = 'buy'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=4 parseTime=2 maxCellSize=2 fallOffBeam=0 totalDerivs=130 numOfFeaturizedDerivs=130
+            Cumulative(iter=3.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3$286 parseTime=2 maxCellSize=1$429 fallOffBeam=0 totalDerivs=89 numOfFeaturizedDerivs=89
+          }
+          iter=3.train: example 7/21: analyticsBot/interface.examples:15 {
+            Example: deal trade status new {
+              Tokens: [deal, trade, status, new]
+              Lemmatized tokens: [deal, trade, statu, new]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE TradeStatus = new")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 0 candidates 
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0 numCandidates=0 numCorrect=0 numPartialCorrect=0 numIncorrect=0 numTokens=4 parseTime=1 maxCellSize=1 fallOffBeam=0 totalDerivs=61 numOfFeaturizedDerivs=61
+            Cumulative(iter=3.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$875 numCandidates=0$875 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=0$875 numTokens=3$375 parseTime=1$875 maxCellSize=1$375 fallOffBeam=0 totalDerivs=85$500 numOfFeaturizedDerivs=85$500
+          }
+          iter=3.train: example 8/21: analyticsBot/interface.examples:4 {
+            Example: deal x expire {
+              Tokens: [deal, x, expire]
+              Lemmatized tokens: [deal, x, expire]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Expiry Date FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Deal = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string "[Expiry Date]") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Deal ID]") (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Expiry Date] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=1 maxCellSize=1 fallOffBeam=0 totalDerivs=72 numOfFeaturizedDerivs=72
+            Cumulative(iter=3.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$889 numCandidates=0$889 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=0$889 numTokens=3$333 parseTime=1$778 maxCellSize=1$333 fallOffBeam=0 totalDerivs=84 numOfFeaturizedDerivs=84
+          }
+          iter=3.train: example 9/21: analyticsBot/interface.examples:13 {
+            Example: client platform x {
+              Tokens: [client, platform, x]
+              Lemmatized tokens: [client, platform, x]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Client]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Platform]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Platform] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=1 maxCellSize=2 fallOffBeam=0 totalDerivs=81 numOfFeaturizedDerivs=81
+            Cumulative(iter=3.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$900 numCandidates=0$900 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=0$900 numTokens=3$300 parseTime=1$700 maxCellSize=1$400 fallOffBeam=0 totalDerivs=83$700 numOfFeaturizedDerivs=83$700
+          }
+          iter=3.train: example 10/21: analyticsBot/interface.examples:16 {
+            Example: client trade status amended {
+              Tokens: [client, trade, status, amended]
+              Lemmatized tokens: [client, trade, statu, amended]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE TradeStatus = amended")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 0 candidates 
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0 numCandidates=0 numCorrect=0 numPartialCorrect=0 numIncorrect=0 numTokens=4 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=61 numOfFeaturizedDerivs=61
+            Cumulative(iter=3.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$818 numCandidates=0$818 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=0$818 numTokens=3$364 parseTime=1$727 maxCellSize=1$364 fallOffBeam=0 totalDerivs=81$636 numOfFeaturizedDerivs=81$636
+          }
+          iter=3.train: example 11/21: analyticsBot/interface.examples:14 {
+            Example: client exclude platform x {
+              Tokens: [client, exclude, platform, x]
+              Lemmatized tokens: [client, exclude, platform, x]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform != x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 2 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Client]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Platform]) (string " != ") (string ') (string x) (string '))) (value (string "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Platform] != 'x'")) (type fb:type.any)) [score=0, prob=0$500, comp=0]
+              Pred@0001: (derivation (formula (call + (string "SELECT * ") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string exclude) (string ') (string " AND ") (string [Platform]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'exclude' AND [Platform] = 'x'")) (type fb:type.any)) [score=0, prob=0$500, comp=0]
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=2 parsedNumCandidates=2 numCorrect=0 numPartialCorrect=0 numIncorrect=2 numTokens=4 parseTime=2 maxCellSize=2 fallOffBeam=0 totalDerivs=107 numOfFeaturizedDerivs=107
+            Cumulative(iter=3.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$833 numCandidates=0$917 parsedNumCandidates=1$100 numCorrect=0 numPartialCorrect=0 numIncorrect=0$917 numTokens=3$417 parseTime=1$750 maxCellSize=1$417 fallOffBeam=0 totalDerivs=83$750 numOfFeaturizedDerivs=83$750
+          }
+          iter=3.train: example 12/21: analyticsBot/interface.examples:1 {
+            Example: client rolloverratio x {
+              Tokens: [client, rolloverratio, x]
+              Lemmatized tokens: [client, rolloverratio, x]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE RolloverRatio = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Client]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [RolloverRatio]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [RolloverRatio] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=1 maxCellSize=2 fallOffBeam=0 totalDerivs=71 numOfFeaturizedDerivs=71
+            Cumulative(iter=3.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$846 numCandidates=0$923 parsedNumCandidates=1$091 numCorrect=0 numPartialCorrect=0 numIncorrect=0$923 numTokens=3$385 parseTime=1$692 maxCellSize=1$462 fallOffBeam=0 totalDerivs=82$769 numOfFeaturizedDerivs=82$769
+          }
+          iter=3.train: example 13/21: analyticsBot/interface.examples:11 {
+            Example: deal platform x {
+              Tokens: [deal, platform, x]
+              Lemmatized tokens: [deal, platform, x]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string "[Deal ID]") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Platform]) (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Deal ID] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Platform] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=1 maxCellSize=2 fallOffBeam=0 totalDerivs=81 numOfFeaturizedDerivs=81
+            Cumulative(iter=3.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$857 numCandidates=0$929 parsedNumCandidates=1$083 numCorrect=0 numPartialCorrect=0 numIncorrect=0$929 numTokens=3$357 parseTime=1$643 maxCellSize=1$500 fallOffBeam=0 totalDerivs=82$643 numOfFeaturizedDerivs=82$643
+          }
+          iter=3.train: example 14/21: analyticsBot/interface.examples:10 {
+            Example: deal highest cc total {
+              Tokens: [deal, highest, cc, total]
+              Lemmatized tokens: [deal, highest, cc, total]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT TOP 10 Deal ID, CC Total FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 0 candidates 
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0 numCandidates=0 numCorrect=0 numPartialCorrect=0 numIncorrect=0 numTokens=4 parseTime=1 maxCellSize=1 fallOffBeam=0 totalDerivs=66 numOfFeaturizedDerivs=66
+            Cumulative(iter=3.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$800 numCandidates=0$867 parsedNumCandidates=1$083 numCorrect=0 numPartialCorrect=0 numIncorrect=0$867 numTokens=3$400 parseTime=1$600 maxCellSize=1$467 fallOffBeam=0 totalDerivs=81$533 numOfFeaturizedDerivs=81$533
+          }
+          iter=3.train: example 15/21: analyticsBot/interface.examples:2 {
+            Example: deal currency eur/usd {
+              Tokens: [deal, currency, eur/usd]
+              Lemmatized tokens: [deal, currency, eur/usd]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Currency Pair = EUR/USD")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string "[Deal ID]") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Currency Pair]") (string " = ") (string ') (string eur/usd) (string '))) (value (string "SELECT [Deal ID] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Currency Pair] = 'eur/usd'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=2 maxCellSize=2 fallOffBeam=0 totalDerivs=81 numOfFeaturizedDerivs=81
+            Cumulative(iter=3.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$813 numCandidates=0$875 parsedNumCandidates=1$077 numCorrect=0 numPartialCorrect=0 numIncorrect=0$875 numTokens=3$375 parseTime=1$625 maxCellSize=1$500 fallOffBeam=0 totalDerivs=81$500 numOfFeaturizedDerivs=81$500
+          }
+          iter=3.train: example 16/21: analyticsBot/interface.examples:3 {
+            Example: client highest volume {
+              Tokens: [client, highest, volume]
+              Lemmatized tokens: [client, highest, volume]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT TOP 10 Client, Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities]")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 2 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT TOP 10 ") (string [Volume]) (string " , ") (string [Client]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] "))) (value (string "SELECT TOP 10 [Volume] , [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ")) (type fb:type.any)) [score=0, prob=0$500, comp=0]
+              Pred@0001: (derivation (formula (call + (string "SELECT ") (string [Volume]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string highest) (string '))) (value (string "SELECT [Volume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'highest'")) (type fb:type.any)) [score=0, prob=0$500, comp=0]
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=2 parsedNumCandidates=2 numCorrect=0 numPartialCorrect=0 numIncorrect=2 numTokens=3 parseTime=2 maxCellSize=2 fallOffBeam=0 totalDerivs=75 numOfFeaturizedDerivs=75
+            Cumulative(iter=3.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$824 numCandidates=0$941 parsedNumCandidates=1$143 numCorrect=0 numPartialCorrect=0 numIncorrect=0$941 numTokens=3$353 parseTime=1$647 maxCellSize=1$529 fallOffBeam=0 totalDerivs=81$118 numOfFeaturizedDerivs=81$118
+          }
+          iter=3.train: example 17/21: analyticsBot/interface.examples:6 {
+            Example: client x deal id {
+              Tokens: [client, x, deal, id]
+              Lemmatized tokens: [client, x, deal, id]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Deal ID FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT * ") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string [Client]) (string " = ") (string ') (string x) (string ') (string " AND ") (string "[Deal ID]") (string " = ") (string ') (string id) (string '))) (value (string "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'x' AND [Deal ID] = 'id'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=4 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=93 numOfFeaturizedDerivs=93
+            Cumulative(iter=3.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$833 numCandidates=0$944 parsedNumCandidates=1$133 numCorrect=0 numPartialCorrect=0 numIncorrect=0$944 numTokens=3$389 parseTime=1$667 maxCellSize=1$500 fallOffBeam=0 totalDerivs=81$778 numOfFeaturizedDerivs=81$778
+          }
+          iter=3.train: example 18/21: analyticsBot/interface.examples:12 {
+            Example: platform excluding x {
+              Tokens: [platform, excluding, x]
+              Lemmatized tokens: [platform, excluding, x]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Platform != x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 0 candidates 
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0 numCandidates=0 numCorrect=0 numPartialCorrect=0 numIncorrect=0 numTokens=3 parseTime=1 maxCellSize=1 fallOffBeam=0 totalDerivs=49 numOfFeaturizedDerivs=49
+            Cumulative(iter=3.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$789 numCandidates=0$895 parsedNumCandidates=1$133 numCorrect=0 numPartialCorrect=0 numIncorrect=0$895 numTokens=3$368 parseTime=1$632 maxCellSize=1$474 fallOffBeam=0 totalDerivs=80$053 numOfFeaturizedDerivs=80$053
+          }
+          iter=3.train: example 19/21: analyticsBot/interface.examples:7 {
+            Example: deal x client name {
+              Tokens: [deal, x, client, name]
+              Lemmatized tokens: [deal, x, client, name]
+              POS tags: [UNK, UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK, UNK]
+              targetValue: (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Deal ID = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT * ") (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Deal ID]") (string " = ") (string ') (string x) (string ') (string " AND ") (string [Client]) (string " = ") (string ') (string name) (string '))) (value (string "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'x' AND [Client] = 'name'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=4 parseTime=2 maxCellSize=1 fallOffBeam=0 totalDerivs=93 numOfFeaturizedDerivs=93
+            Cumulative(iter=3.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$800 numCandidates=0$900 parsedNumCandidates=1$125 numCorrect=0 numPartialCorrect=0 numIncorrect=0$900 numTokens=3$400 parseTime=1$650 maxCellSize=1$450 fallOffBeam=0 totalDerivs=80$700 numOfFeaturizedDerivs=80$700
+          }
+          iter=3.train: example 20/21: analyticsBot/interface.examples:8 {
+            Example: deal x volume {
+              Tokens: [deal, x, volume]
+              Lemmatized tokens: [deal, x, volume]
+              POS tags: [UNK, UNK, UNK]
+              NER tags: [UNK, UNK, UNK]
+              NER values: [UNK, UNK, UNK]
+              targetValue: (string "SELECT Volume FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Deal ID = x")
+              Dependency children: []
+            }
+            Parser.parse: parse {
+              Parser.ensureExecuted 
+            }
+            Parser.setEvaluation: 1 candidates {
+              Pred@0000: (derivation (formula (call + (string "SELECT ") (string [Volume]) (string " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ") (string "WHERE ") (string "[Deal ID]") (string " = ") (string ') (string x) (string '))) (value (string "SELECT [Volume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'x'")) (type fb:type.any)) [score=0, prob=1, comp=0]
+            }
+            Current: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=1 numCandidates=1 parsedNumCandidates=1 numCorrect=0 numPartialCorrect=0 numIncorrect=1 numTokens=3 parseTime=1 maxCellSize=1 fallOffBeam=0 totalDerivs=66 numOfFeaturizedDerivs=66
+            Cumulative(iter=3.train): correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$810 numCandidates=0$905 parsedNumCandidates=1$118 numCorrect=0 numPartialCorrect=0 numIncorrect=0$905 numTokens=3$381 parseTime=1$619 maxCellSize=1$429 fallOffBeam=0 totalDerivs=80 numOfFeaturizedDerivs=80
+          }
+        }
+        Stats for iter=3.train: correct=0 oracle=0 partCorrect=0 partOracle=0 parsed=0$810 numCandidates=0$905 parsedNumCandidates=1$118 numCorrect=0 numPartialCorrect=0 numIncorrect=0$905 numTokens=3$381 parseTime=1$619 maxCellSize=1$429 fallOffBeam=0 totalDerivs=80 numOfFeaturizedDerivs=80
+        Evaluation stats for iter=3.train {
+          correct = 0/ << 0 ~ 0 >> /0 (21)
+          oracle = 0/ << 0 ~ 0 >> /0 (21)
+          partCorrect = 0/ << 0 ~ 0 >> /0 (21)
+          partOracle = 0/ << 0 ~ 0 >> /0 (21)
+          parsed = 0/ << 0$810 ~ 0$393 >> /1 (21)
+          numCandidates = 0/ << 0$905 ~ 0$526 >> /2 (21)
+          parsedNumCandidates = 1/ << 1$118 ~ 0$322 >> /2 (17)
+          numCorrect = 0/ << 0 ~ 0 >> /0 (21)
+          numPartialCorrect = 0/ << 0 ~ 0 >> /0 (21)
+          numIncorrect = 0/ << 0$905 ~ 0$526 >> /2 (21)
+          numTokens = 3/ << 3$381 ~ 0$486 >> /4 (21)
+          parseTime = 1/ << 1$619 ~ 0$722 >> /4 (21)
+          maxCellSize = 1@$Attribute:0:1/ << 1$429 ~ 0$495 >> /2@$General:0:2 (21)
+          fallOffBeam = 0/ << 0 ~ 0 >> /0 (21)
+          totalDerivs = 49/ << 80 ~ 20$359 >> /130 (21)
+          numOfFeaturizedDerivs = 49/ << 80 ~ 20$359 >> /130 (21)
+        }
+      }
+      StopWatchSet {
+        FeatureExtractor.extractLocal	0.032s (0.0s x 6720)
+        ConstantFn	0.005s (0.0s x 172)
+        JoinFn	0.02s (0.0s x 4384)
+        IdentityFn	0.006s (0.0s x 332)
+        Executor.execute	0.018s (0.0s x 76)
+        Parser.parse	0.32s (0.003s x 84)
+        Learner.updateWeights	0.014s (0.0s x 63)
+      }
+      StopWatchSet {
+        FeatureExtractor.extractLocal	0.032s (0.0s x 6720)
+        ConstantFn	0.005s (0.0s x 172)
+        JoinFn	0.02s (0.0s x 4384)
+        IdentityFn	0.006s (0.0s x 332)
+        Executor.execute	0.018s (0.0s x 76)
+        Parser.parse	0.32s (0.003s x 84)
+        Learner.updateWeights	0.014s (0.0s x 63)
+      }
+    }
+  }
+  Server started at http://anisa-SATELLITE-Z30-A:8400/sempre
+  Press Ctrl-D to terminate.
+  Shutting down server...
+  Shutting down executor pool...
+0 errors, 9 warnings
+}
