@@ -2,7 +2,7 @@ import ply.lex as lex
 import ply.yacc as yacc
 
 tokens = (
-    'MEASURE', 'ATTRIBUTE', 'EXCLUDE', 'TOKEN', 'COMPARE', 'DATE')
+    'MEASURE', 'ATTRIBUTE', 'EXCLUDE', 'VALUE', 'COMPARE', 'DATE')
 
 # Tokens
 t_MEASURE = r'volume|totaltrades|stddevrolloverdays|spot\sprice\sstrike|rolloverratio|rank|netvolumeratio|netvolume' \
@@ -13,11 +13,8 @@ t_ATTRIBUTE = r'tradestatus|tenor|product\sgroup|product|platform|newtrade|netcl
               r'|currencypairgroup|currency\spair|crdscode|client\sdeal\sside|client' \
               r'|broker_fxt|ndf|fixing\sdate'
 
-t_TOKEN = r'([a-zA-Z]{3}[/][a-zA-Z]{3})|[a-zA-Z_0-9]+ '
+t_VALUE = r'([a-zA-Z]{3}[/][a-zA-Z]{3})|[a-zA-Z_0-9]+ '
 
-#t_CURRENCY = r'([a-zA-Z]{3}[/][a-zA-Z]{3})'
-
-# t_DATE = r'(next|last)\s([0-9\s]*)(day|week|year|quarter) | ([0-9]{4}) | yesterday | tomorrow | this year '
 t_DATE = r'([0-9]{4}[-][0-9]{2}[-][0-9]{2})|([0-9]{9})'
 
 
@@ -48,11 +45,11 @@ def t_error(t):
 # Build the lexer
 lex.lex()
 
-# dictionary of names (for storing variables)
+# Dictionary of names (for storing variables)
 names = {}
 
 
-def p_statement_time(p):
+def p_statement_date(p):
     '''statement : ATTRIBUTE DATE'''
 
     p[0] = "".join(
@@ -61,7 +58,7 @@ def p_statement_time(p):
         p[2], " ' ",))
 
 
-def p_statement_attribute_time(p):
+def p_statement_attribute_date(p):
     '''statement : ATTRIBUTE ATTRIBUTE DATE
                 | MEASURE ATTRIBUTE DATE'''
 
@@ -70,7 +67,7 @@ def p_statement_attribute_time(p):
          p[2], "]", " = ", " ' ", p[3], " ' "))
 
 
-def p_statement_time_time(p):
+def p_statement_date_date(p):
     '''statement : ATTRIBUTE DATE DATE'''
 
     p[0] = "".join(
@@ -79,7 +76,7 @@ def p_statement_time_time(p):
          "[", p[1], "]", " <= ", " ' ", p[3], " ' "))
 
 
-def p_statement_attribute_time_time(p):
+def p_statement_attribute_date_date(p):
     '''statement : ATTRIBUTE ATTRIBUTE DATE DATE
                 | MEASURE ATTRIBUTE DATE DATE'''
 
@@ -91,73 +88,73 @@ def p_statement_attribute_time_time(p):
 
 
 def p_statement_single(p):
-    ''' statement : MEASURE TOKEN
-                | ATTRIBUTE TOKEN '''
+    ''' statement : MEASURE VALUE
+                | ATTRIBUTE VALUE '''
 
     p[0] = "".join(("SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[", p[1], "]",
                     " = ", " ' ", p[2], " ' "))
 
 
 def p_statement_single_second(p):
-    ''' statement : TOKEN MEASURE
-                | TOKEN ATTRIBUTE '''
+    ''' statement : VALUE MEASURE
+                | VALUE ATTRIBUTE '''
     p[0] = "".join(("SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[", p[2], "]",
                     " = ", " ' ", p[1], " ' "))
 
 
 def p_statement_exclude(p):
-    ''' statement : MEASURE TOKEN EXCLUDE
-                | ATTRIBUTE TOKEN EXCLUDE '''
+    ''' statement : MEASURE VALUE EXCLUDE
+                | ATTRIBUTE VALUE EXCLUDE '''
     p[0] = "".join(("SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[", p[1], "]",
                     " != ", " ' ", p[2], " ' "))
 
 
 def p_statement_exclude_middle(p):
-    ''' statement : MEASURE EXCLUDE TOKEN
-                | ATTRIBUTE EXCLUDE TOKEN '''
+    ''' statement : MEASURE EXCLUDE VALUE
+                | ATTRIBUTE EXCLUDE VALUE '''
     p[0] = "".join(("SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[", p[1], "]",
                     " != ", " ' ", p[3], " ' "))
 
 
 def p_statement_exclude_first(p):
-    ''' statement : EXCLUDE MEASURE TOKEN
-                | EXCLUDE ATTRIBUTE TOKEN '''
+    ''' statement : EXCLUDE MEASURE VALUE
+                | EXCLUDE ATTRIBUTE VALUE '''
     p[0] = "".join(("SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[", p[2], "]",
                     " != ", " ' ", p[3], " ' "))
 
 
 def p_statement_exclude_large(p):
-    ''' statement : MEASURE EXCLUDE ATTRIBUTE TOKEN
-                | ATTRIBUTE EXCLUDE MEASURE TOKEN
-                | ATTRIBUTE EXCLUDE ATTRIBUTE TOKEN
-                | MEASURE EXCLUDE MEASURE TOKEN '''
+    ''' statement : MEASURE EXCLUDE ATTRIBUTE VALUE
+                | ATTRIBUTE EXCLUDE MEASURE VALUE
+                | ATTRIBUTE EXCLUDE ATTRIBUTE VALUE
+                | MEASURE EXCLUDE MEASURE VALUE '''
     p[0] = "".join(
         ("SELECT ", "[", p[1], "]", " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[",
          p[3], "]", " != ", " ' ", p[4], " ' "))
 
 
-def p_statement_multiple_token_second(p):
-    ''' statement : ATTRIBUTE TOKEN MEASURE
-                | MEASURE TOKEN ATTRIBUTE
-                | ATTRIBUTE TOKEN ATTRIBUTE '''
+def p_statement_multiple_VALUE_second(p):
+    ''' statement : ATTRIBUTE VALUE MEASURE
+                | MEASURE VALUE ATTRIBUTE
+                | ATTRIBUTE VALUE ATTRIBUTE '''
     p[0] = "".join(
         ("SELECT ", "[", p[3], "]", " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[",
          p[1], "]", " = ", " ' ", p[2], " ' "))
 
 
-def p_statement_multiple_token_third(p):
-    ''' statement : ATTRIBUTE MEASURE TOKEN
-                | MEASURE ATTRIBUTE TOKEN
-                | ATTRIBUTE ATTRIBUTE TOKEN '''
+def p_statement_multiple_value_third(p):
+    ''' statement : ATTRIBUTE MEASURE VALUE
+                | MEASURE ATTRIBUTE VALUE
+                | ATTRIBUTE ATTRIBUTE VALUE '''
     p[0] = "".join(
         ("SELECT ", "[", p[1], "]", " FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[",
          p[2], "]", " = ", " ' ", p[3], " ' "))
 
 
-def p_statement_multiple_token_four(p):
-    ''' statement : ATTRIBUTE TOKEN MEASURE TOKEN
-                | MEASURE TOKEN ATTRIBUTE TOKEN
-                | ATTRIBUTE TOKEN ATTRIBUTE TOKEN'''
+def p_statement_multiple_value_four(p):
+    ''' statement : ATTRIBUTE VALUE MEASURE VALUE
+                | MEASURE VALUE ATTRIBUTE VALUE
+                | ATTRIBUTE VALUE ATTRIBUTE VALUE'''
     p[0] = "".join(("SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE ", "[", p[1], "]",
                     " = ", " ' ", p[2], " ' ",
                     " AND ", "[", p[3], "]", " = ", " ' ", p[4], " ' "))
@@ -208,5 +205,5 @@ def grammar_function(question):
 # r = yacc.parse(s)
 # print(r)
 
-if __name__ == '__main__':
-    print (grammar_function('client JHKL deal id'))
+#if __name__ == '__main__':
+#    print (grammar_function('client JHKL deal id'))

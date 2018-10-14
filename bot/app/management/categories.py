@@ -1,32 +1,32 @@
 # first, call the database and gather the client names, id's and currencies
 
 other = ['exclude', 'higher']
-tradestatus = ['new', 'ammended']
-tenor = []
+tradestatus = ['new', 'amended']
+tenor = ['yup', 'gnqo', 'ollk', 'zxdv']
 product_group = []
 product = []
-platform = ['x', 'y']
+platform = ['x', 'y', '8i9', 'tex', 'n30o']
 new_trade = []
 net_client_position = []
 near_tenor_days = []
 max_future_date = []
-marketer = []
+marketer = ['opi', 'ghej', '3t7uu', 'thyl']
 local_blotter = []
-legs = ['near leg', 'far leg', 'spot']
+legs = ['near', 'far', 'spot']
 from_days = []
 far_tenor_days = []
 expiration_date = []
-deal_id = ['tyui']
+deal_id = ['tyui', 'bnm', 't67y']
 deal_date = []
 currency_pair_group = []
 currency_pair = ["usd/eur", "eur/usd"]
 crds_code = []
 dealside = ['buy', 'sell']
-client = ['jpmorgan', 'axl', 'x', 'jhkl']
-brooker = []
+client = ['jpmorgan', 'axl', 'x', 'jhkl', '2w3e', 'e5ty', 'thyl', 't5joll', 'jiikk']
+broker = []
 ndf_fixing_date = []
 
-volume = []
+volume = ['4890', '4gtj', '7890', '29099']
 total_trades = []
 std_dev_rollover_days = []
 spot_price = []
@@ -36,8 +36,8 @@ net_volume_ratio = []
 net_volume = []
 near_leg_volume = []
 latest_rollover = []
-ev = []
-cc_total = []
+ev = ['123r']
+cc_total = ['6h7jk']
 cc_nonrisk = []
 cc_atrisk = []
 avg_rollover = []
@@ -48,7 +48,7 @@ entries = ['tradestatus', 'tenor', 'productgroup',
            'marketer', 'localblotter', 'leg',
            'expire', 'deal', 'date',
            'currencypairgroup', 'currency', 'crdscode',
-           'clientdeal', 'client', 'brooker', 'ndfdate',
+           'clientdeal', 'client', 'broker', 'ndfdate',
            'volume', 'totaltrades', 'stddevrollover',
            'spotpricestrike', 'rolloverratio', 'rank',
            'netvolumeratio', 'netvolume', 'neartenordays', 'nearlegvolume',
@@ -59,7 +59,7 @@ entries = ['tradestatus', 'tenor', 'productgroup',
 zero_list = entries + other + tradestatus + tenor + product_group + product + platform + new_trade + \
             net_client_position + near_tenor_days + max_future_date + marketer + local_blotter + legs + from_days + \
             far_tenor_days + expiration_date + deal_id + deal_date + currency_pair_group + crds_code + dealside + \
-            client + brooker + ndf_fixing_date + volume + total_trades + std_dev_rollover_days + spot_price + \
+            client + broker + ndf_fixing_date + volume + total_trades + std_dev_rollover_days + spot_price + \
             rollover_ratio + rank + net_volume_ratio + net_volume + near_leg_volume + latest_rollover + ev + \
             cc_total + cc_nonrisk + cc_atrisk + avg_rollover + max_abs_net_volume
 

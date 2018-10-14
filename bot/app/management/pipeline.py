@@ -57,11 +57,14 @@ def pipeline(question):
 
                             if last_word_sempre == 'expire' or last_word_sempre == 'date' or last_word_sempre == 'ndfdate':
 
-                                value = date[0]
-                                value = value + " " + date[1]
-
-                                create_sempre_rule(date[0])
-                                create_sempre_rule(date[1])
+                                if len(date) == 1:
+                                    value = date[0]
+                                    create_sempre_rule(date[0])
+                                elif len(date) == 2:
+                                    value = date[0]
+                                    value = value + " " + date[1]
+                                    create_sempre_rule(date[0])
+                                    create_sempre_rule(date[1])
 
                                 new_question_sempre = new_question_sempre + " " + str(value)
                                 new_question_grammar = new_question_grammar + " " + str(value)
@@ -142,7 +145,7 @@ def pipeline(question):
 
 
 if __name__ == '__main__':
-    s = pipeline("client JHKL deal id")
+    s = pipeline("deal expires tomorrow")
 
     print(s)
     # print(s)

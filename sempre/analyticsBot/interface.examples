@@ -82,3 +82,15 @@
   (utterance "client client deal buy")
   (targetValue (string "SELECT Client FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client Deal Side = buy" ))
 )
+(example
+  (utterance "totaltrades ghjk tenor")
+  (targetValue (string "SELECT Tenor FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE TotalTrades = ghjk" ))
+)
+(example
+  (utterance "deal uio expire")
+  (targetValue (string "SELECT Expiry Date FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Deal ID = uio" ))
+)
+(example
+  (utterance "rank client joe")
+  (targetValue (string "SELECT Rank FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE Client = joe" ))
+)

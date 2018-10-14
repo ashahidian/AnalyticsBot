@@ -3,10 +3,39 @@
     "SELECT [client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [platform] =  ' x ' ", 
     "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Platform] = 'x'"
   ], 
+  "what are the std dev rollover days of client jhkl": [
+    "SELECT [latestrolloverdays] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [client] =  ' jhkl ' ", 
+    "SELECT [LatestRolloverDays] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'jhkl'"
+  ], 
   "which deals were signed in 2016?": "Error: 'NoneType' object has no attribute 'value'", 
+  "what is the net volume ratio of client jhkl": [
+    "SELECT [volume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [client] =  ' jhkl ' ", 
+    "SELECT [Volume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'jhkl'"
+  ], 
+  "what are clients with tenor yup": [
+    "SELECT [client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [tenor] =  ' yup ' ", 
+    "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Tenor] = 'yup'"
+  ], 
+  "what is ev for tenor gnqo": [
+    "SELECT [ev] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [tenor] =  ' gnqo ' ", 
+    "SELECT [EV] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Tenor] = 'gnqo'"
+  ], 
+  "what is client JHKL expiration": [
+    "SELECT [expiry date] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [client] =  ' jhkl ' ", 
+    "SELECT [Expiry Date] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'jhkl'"
+  ], 
+  "what are the std dev days of client jhkl": "Error: tuple index out of range", 
   "which are the clients that are not in platform x?": [
     "SELECT [client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [platform] !=  ' x ' ", 
     "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Platform] != 'x'"
+  ], 
+  "what is the volume of client jhkl": [
+    "SELECT [volume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [client] =  ' jhkl ' ", 
+    "SELECT [Volume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'jhkl'"
+  ], 
+  "who is marketer of client jhkl": [
+    "SELECT [marketer] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [client] =  ' jhkl ' ", 
+    "SELECT [Marketer] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'jhkl'"
   ], 
   "what are the deals with currency eur/usd?": [
     [
@@ -18,7 +47,20 @@
       "SELECT [Deal ID] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Currency Pair] = 'usd/eur'"
     ]
   ], 
+  "what are deals with client side sell?": [
+    "None", 
+    "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'client' AND [Client Deal Side] = 'sell'"
+  ], 
+  "which are the std days of client jhkl": [
+    "SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [client] =  ' jhkl ' ", 
+    "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'jhkl'"
+  ], 
   "who rollovered in the last 5 months?": "Error: 'NoneType' object has no attribute 'value'", 
+  "what is deal tyui volume?": [
+    "SELECT [volume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [deal id] =  ' tyui ' ", 
+    "SELECT [Volume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'tyui'"
+  ], 
+  "which clients expire tomorrow": "Error: list index out of range", 
   "who are the clients with rollover ratio x?": [
     "SELECT [client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [latestrolloverdays] =  ' x ' ", 
     "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [LatestRolloverDays] = 'x'"
@@ -27,7 +69,10 @@
     "SELECT [client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [deal id] =  ' tyui ' ", 
     "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'tyui'"
   ], 
-  "what are the deals in a near leg?": "Error: 'NoneType' object has no attribute 'value'", 
+  "what are the deals in a near leg?": [
+    "SELECT [leg] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [deal id] =  ' near ' ", 
+    "SELECT [Leg] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'near'"
+  ], 
   "which clients have a client side buy?": [
     "None", 
     "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'client' AND [Client Deal Side] = 'buy'"
@@ -36,46 +81,108 @@
     "SELECT [volume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [client] =  ' jhkl ' ", 
     "SELECT [Volume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'jhkl'"
   ], 
-  "what is client JHKL expiration date?": [
+  "what is netvolume of client jhkl": [
     "None", 
-    "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'jhkl' AND [Expiry Date] = 'date'"
+    "SELECT [NetVolume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'jhkl'"
+  ], 
+  "what is the net client postition for client jhkl": [
+    "SELECT [client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [client] =  ' jhkl ' ", 
+    "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'jhkl'"
+  ], 
+  "what is the rank of client jhkl": [
+    "SELECT [rank] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [client] =  ' jhkl ' ", 
+    "SELECT [Rank] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'jhkl'"
+  ], 
+  "which is product group for tenor gnqo": [
+    "SELECT [product] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [tenor] =  ' gnqo ' ", 
+    "SELECT [Product] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Tenor] = 'gnqo'"
+  ], 
+  "which leg is client jhkl": [
+    "SELECT [leg] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [client] =  ' jhkl ' ", 
+    "SELECT [Leg] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'jhkl'"
   ], 
   "show me the deals of all platforms excluding x": [
     "None", 
     "SELECT * FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] != 'exclude'"
   ], 
-  "what are clients with far leg?": "Error: 'NoneType' object has no attribute 'value'", 
+  "which deals expire tomorrow": "Error: list index out of range", 
+  "what are clients with far leg?": [
+    "SELECT [leg] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [client] =  ' far ' ", 
+    "SELECT [Leg] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'far'"
+  ], 
   "which clients have trade status amended?": [
     "None", 
-    "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [TradeStatus] = 'tradestatus'"
+    "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'tradestatus' AND [TradeStatus] = 'amended'"
   ], 
-  "what is deal tyui volume?": [
-    "SELECT [volume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [deal id] =  ' tyui ' ", 
-    "SELECT [Volume] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'tyui'"
+  "What is the CC for client Axl?": [
+    "SELECT [cc total] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [client] =  ' axl ' ", 
+    "SELECT [CC Total] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'axl'"
   ], 
-  "which is client JHKL's deal id?": [
-    "None", 
-    "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'jhkl' AND [Deal ID] = 'client'"
+  "marketer tenor gnqo": [
+    "SELECT [marketer] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [tenor] =  ' gnqo ' ", 
+    "SELECT [Marketer] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Tenor] = 'gnqo'"
+  ], 
+  "deal side sell": [
+    "SELECT [deal id] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [client deal side] =  ' sell ' ", 
+    "SELECT [Deal ID] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client Deal Side] = 'sell'"
+  ], 
+  "what is deal tyui local blotter": [
+    "SELECT [localblotter] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [deal id] =  ' tyui ' ", 
+    "SELECT [LocalBlotter] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'tyui'"
+  ], 
+  "what is local blotter for deal tyui": [
+    "SELECT [localblotter] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [deal id] =  ' tyui ' ", 
+    "SELECT [LocalBlotter] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'tyui'"
+  ], 
+  "which is client jhkl's deal id?": [
+    "SELECT [deal id] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [client] =  ' jhkl ' ", 
+    "SELECT [Deal ID] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'jhkl'"
   ], 
   "what are deals with trade status new?": [
     "None", 
     "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'tradestatus' AND [TradeStatus] = 'new'"
   ], 
+  "ev tenor gnqo": [
+    "SELECT [ev] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [tenor] =  ' gnqo ' ", 
+    "SELECT [EV] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Tenor] = 'gnqo'"
+  ], 
   "who are the clients with the highest volume?": [
     "SELECT TOP 10 [volume], [client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ", 
     "SELECT TOP 10 [Volume] , [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] "
+  ], 
+  "who is the marketer for deal tyui": [
+    "SELECT [marketer] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [deal id] =  ' tyui ' ", 
+    "SELECT [Marketer] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'tyui'"
   ], 
   "what is deal tyui expiration date?": [
     "None", 
     "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'tyui' AND [Expiry Date] = 'date'"
   ], 
-  "what are deals with client side sell?": [
-    "None", 
-    "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'client' AND [Client Deal Side] = 'sell'"
+  "which leg is deal tyui": [
+    "SELECT [leg] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [deal id] =  ' tyui ' ", 
+    "SELECT [Leg] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Deal ID] = 'tyui'"
+  ], 
+  "which is tenor gnqo deal id": [
+    "SELECT [deal id] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [tenor] =  ' gnqo ' ", 
+    "SELECT [Deal ID] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Tenor] = 'gnqo'"
+  ], 
+  "Clients with currency eur/usd": [
+    [
+      "SELECT [client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [currency pair] =  ' eur/usd ' ", 
+      "SELECT [client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [currency pair] =  ' usd/eur ' "
+    ], 
+    [
+      "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Currency Pair] = 'eur/usd'", 
+      "SELECT [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Currency Pair] = 'usd/eur'"
+    ]
   ], 
   "what is client JHKL deal id?": [
-    "None", 
-    "SELECT *  FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'jhkl' AND [Deal ID] = 'client'"
+    "SELECT [deal id] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [client] =  ' jhkl ' ", 
+    "SELECT [Deal ID] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] WHERE [Client] = 'jhkl'"
+  ], 
+  "Which client has highest EV?": [
+    "SELECT TOP 10 [ev], [client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] ", 
+    "SELECT TOP 10 [EV] , [Client] FROM [CIA].[FileViz].[GCA_FX_Insight_RolloverOpportunities] "
   ], 
   "which are the clients with currency eur/usd?": [
     [

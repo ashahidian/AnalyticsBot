@@ -12,7 +12,7 @@ def tokenizing(question):
 
 def stop_words(question):
     word_tokens = tokenizing(question)
-    stop = ["in", "the", "to", "with", "than", "that", "of", "a", "an", "for",
+    stop = ["in", "the", "to", "with", "than", "that", "of", "a", "an", "for", "by",
             "is", "s", "are",
             "has", "have",
             "does", "do",

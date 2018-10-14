@@ -1,7 +1,7 @@
 
 
 exclude_synonyms = ['exclude', 'excluding', 'remove', 'no', 'not', 'different']
-higher_synonyms = ['more', 'greater', 'higher', 'superior', 'surpassing', 'larger', 'above', 'highest']
+higher_synonyms = ['more', 'greater', 'higher', 'superior', 'surpassing', 'larger', 'above', 'highest', 'top']
 #______________________________________________________________________________________
 
 #TradeStatus
@@ -14,13 +14,13 @@ tenor_synonyms = ['tenor']
 product_group_synonyms = ['product group', 'group product']
 
 #Product
-product_synonyms = ['product']
+product_synonyms = ['product', 'products']
 
 #Platform
-platform_synonyms = ['platform']
+platform_synonyms = ['platform', 'platforms']
 
 #NewTrade
-new_trade_synonyms = ['new trade']
+new_trade_synonyms = ['new trade', 'newtrade']
 
 #NetClientPosition
 net_client_position_synonyms = ['net client', 'net client', 'client position', 'net client position']
@@ -32,7 +32,7 @@ near_tenor_days_synonyms = ['new tenor', 'new tenor days']
 max_future_date_synonyms = ['max future date', 'maximum future date', 'future date']
 
 #Marketer
-marketer_synonyms = ['marketer', 'seller', 'dealer']
+marketer_synonyms = ['marketer', 'seller', 'dealer', 'marketers']
 
 #LocalBlotter
 local_blotter_synonyms = ['blotter', 'local blotter']
@@ -47,7 +47,7 @@ from_days_synonyms = ['from days', 'fromdays']
 far_tenor_days_synonyms = ['far tenor days', 'far days', 'fardays', 'fartenordays']
 
 #Expiry Date
-expire_synonyms = ['expiration', 'expire', 'expires', 'expiry', 'end', 'terminate']
+expire_synonyms = ['expiration', 'expire', 'expires', 'expiry', 'end', 'terminate', 'expiration date']
 
 #Deal ID
 deal_id_synonyms = ['deal', 'deal name', 'deal id', 'deals']
@@ -59,7 +59,7 @@ deal_date_synonyms = ['deal date', 'signed', 'date', 'created']
 currency_pair_group_synonyms = ['currency pair group', 'currency group']
 
 #Currency Pair
-currency_synonyms = ['currency', 'currency pair']
+currency_synonyms = ['currency', 'currency pair', 'currencies']
 
 #CRDSCode
 crdscode_synonyms = ['crds code', 'crdscode']
@@ -71,7 +71,7 @@ client_deal_side_synonyms = ['client deal side', 'client deal', 'client side', '
 client_synonyms = ['clients', 'client', 'client name', 'clients name', 'client id']
 
 #Brooker_FXT
-brooker_fxt_synonyms = ['brooker', 'brooker fxt']
+broker_fxt_synonyms = ['broker', 'broker fxt']
 
 #NDF Fixing Date
 ndf_fixing_date_synonyms = ['ndf', 'ndf fixing date', 'ndf date']
@@ -92,10 +92,10 @@ rollover_ratio_synonyms = ['rollover ratio', 'rolloverratio']
 rank_synonyms = ['rank']
 
 #NetVolumeRatio
-net_volume_ratio_synonyms = ['net volume ratio', 'volume ratio']
+net_volume_ratio_synonyms = ['net volume ratio', 'volume ratio', 'netvolumeratio']
 
 #NetVolume
-net_volume_synonyms = ['net volume', 'volume net']
+net_volume_synonyms = ['net volume', 'volume net', 'netvolume']
 
 #NearLegVolume
 near_leg_volume_synonyms = ['near leg', 'near leg volume']

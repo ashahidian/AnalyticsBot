@@ -14,7 +14,7 @@ def date_synonyms(expression, type):
         r"(january|february|march|april|may|june|july|august|september|october|november|december)\s([0-9]{4})"
         r"|((january|february|march|april|may|june|july|august|september|october|november|december))",
         expression)
-    quick = re.search(r"yesterday|tomorrow|(this year)", expression)
+    quick = re.search(r"yesterday|tomorrow|today|(this year)", expression)
 
     now = datetime.today()
     formatted_now = "{:%Y-%m-%d}".format(now)
@@ -40,6 +40,14 @@ def date_synonyms(expression, type):
             else:
                 difference = tomorrow.date() - now.date()
                 return difference.days
+
+        elif quick.string == 'today':
+
+            if type == 1:
+                return formatted_now
+
+            else:
+                return now.date()
 
         elif quick.string == 'this year':
             first_day = datetime(now.year, 1, 1)
@@ -483,6 +491,6 @@ def remove_date_expressions(question):
 
     return final_clean
 
-#if __name__ == '__main__':
- #  test = date_synonyms("january", 1)
-  # print(test)
+if __name__ == '__main__':
+   test = date_synonyms("tomorrow", 1)
+   print(test)

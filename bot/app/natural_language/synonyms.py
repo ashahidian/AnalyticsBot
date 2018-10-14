@@ -162,11 +162,11 @@ def synonym_check(word, type):
         elif type == 1:
             return 'currency'
 
-    elif word in brooker_fxt_synonyms:
+    elif word in broker_fxt_synonyms:
         if type == 0:
-            return 'brooker_fxt'
+            return 'broker_fxt'
         elif type == 1:
-            return 'brooker'
+            return 'broker'
 
     elif word in ndf_fixing_date_synonyms:
         if type == 0:
