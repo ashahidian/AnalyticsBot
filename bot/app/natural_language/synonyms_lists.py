@@ -1,4 +1,5 @@
-
+# synonym lists created
+# can still be improved
 
 exclude_synonyms = ['exclude', 'excluding', 'remove', 'no', 'not', 'different']
 higher_synonyms = ['more', 'greater', 'higher', 'superior', 'surpassing', 'larger', 'above', 'highest', 'top']

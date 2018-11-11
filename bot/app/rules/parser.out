@@ -9,29 +9,29 @@ Rule 3     statement -> MEASURE ATTRIBUTE DATE
 Rule 4     statement -> ATTRIBUTE DATE DATE
 Rule 5     statement -> ATTRIBUTE ATTRIBUTE DATE DATE
 Rule 6     statement -> MEASURE ATTRIBUTE DATE DATE
-Rule 7     statement -> MEASURE TOKEN
-Rule 8     statement -> ATTRIBUTE TOKEN
-Rule 9     statement -> TOKEN MEASURE
-Rule 10    statement -> TOKEN ATTRIBUTE
-Rule 11    statement -> MEASURE TOKEN EXCLUDE
-Rule 12    statement -> ATTRIBUTE TOKEN EXCLUDE
-Rule 13    statement -> MEASURE EXCLUDE TOKEN
-Rule 14    statement -> ATTRIBUTE EXCLUDE TOKEN
-Rule 15    statement -> EXCLUDE MEASURE TOKEN
-Rule 16    statement -> EXCLUDE ATTRIBUTE TOKEN
-Rule 17    statement -> MEASURE EXCLUDE ATTRIBUTE TOKEN
-Rule 18    statement -> ATTRIBUTE EXCLUDE MEASURE TOKEN
-Rule 19    statement -> ATTRIBUTE EXCLUDE ATTRIBUTE TOKEN
-Rule 20    statement -> MEASURE EXCLUDE MEASURE TOKEN
-Rule 21    statement -> ATTRIBUTE TOKEN MEASURE
-Rule 22    statement -> MEASURE TOKEN ATTRIBUTE
-Rule 23    statement -> ATTRIBUTE TOKEN ATTRIBUTE
-Rule 24    statement -> ATTRIBUTE MEASURE TOKEN
-Rule 25    statement -> MEASURE ATTRIBUTE TOKEN
-Rule 26    statement -> ATTRIBUTE ATTRIBUTE TOKEN
-Rule 27    statement -> ATTRIBUTE TOKEN MEASURE TOKEN
-Rule 28    statement -> MEASURE TOKEN ATTRIBUTE TOKEN
-Rule 29    statement -> ATTRIBUTE TOKEN ATTRIBUTE TOKEN
+Rule 7     statement -> MEASURE VALUE
+Rule 8     statement -> ATTRIBUTE VALUE
+Rule 9     statement -> VALUE MEASURE
+Rule 10    statement -> VALUE ATTRIBUTE
+Rule 11    statement -> MEASURE VALUE EXCLUDE
+Rule 12    statement -> ATTRIBUTE VALUE EXCLUDE
+Rule 13    statement -> MEASURE EXCLUDE VALUE
+Rule 14    statement -> ATTRIBUTE EXCLUDE VALUE
+Rule 15    statement -> EXCLUDE MEASURE VALUE
+Rule 16    statement -> EXCLUDE ATTRIBUTE VALUE
+Rule 17    statement -> MEASURE EXCLUDE ATTRIBUTE VALUE
+Rule 18    statement -> ATTRIBUTE EXCLUDE MEASURE VALUE
+Rule 19    statement -> ATTRIBUTE EXCLUDE ATTRIBUTE VALUE
+Rule 20    statement -> MEASURE EXCLUDE MEASURE VALUE
+Rule 21    statement -> ATTRIBUTE VALUE MEASURE
+Rule 22    statement -> MEASURE VALUE ATTRIBUTE
+Rule 23    statement -> ATTRIBUTE VALUE ATTRIBUTE
+Rule 24    statement -> ATTRIBUTE MEASURE VALUE
+Rule 25    statement -> MEASURE ATTRIBUTE VALUE
+Rule 26    statement -> ATTRIBUTE ATTRIBUTE VALUE
+Rule 27    statement -> ATTRIBUTE VALUE MEASURE VALUE
+Rule 28    statement -> MEASURE VALUE ATTRIBUTE VALUE
+Rule 29    statement -> ATTRIBUTE VALUE ATTRIBUTE VALUE
 Rule 30    statement -> ATTRIBUTE COMPARE MEASURE
 Rule 31    statement -> MEASURE COMPARE ATTRIBUTE
 Rule 32    statement -> ATTRIBUTE COMPARE ATTRIBUTE
@@ -45,7 +45,7 @@ COMPARE              : 30 31 32 33 34
 DATE                 : 1 2 3 4 4 5 5 6 6
 EXCLUDE              : 11 12 13 14 15 16 17 18 19 20
 MEASURE              : 3 6 7 9 11 13 15 17 18 20 20 21 22 24 25 27 28 30 31 33
-TOKEN                : 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 27 28 28 29 29
+VALUE                : 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 27 28 28 29 29
 error                : 
 
 Nonterminals, with rules where they appear
@@ -63,29 +63,29 @@ state 0
     (4) statement -> . ATTRIBUTE DATE DATE
     (5) statement -> . ATTRIBUTE ATTRIBUTE DATE DATE
     (6) statement -> . MEASURE ATTRIBUTE DATE DATE
-    (7) statement -> . MEASURE TOKEN
-    (8) statement -> . ATTRIBUTE TOKEN
-    (9) statement -> . TOKEN MEASURE
-    (10) statement -> . TOKEN ATTRIBUTE
-    (11) statement -> . MEASURE TOKEN EXCLUDE
-    (12) statement -> . ATTRIBUTE TOKEN EXCLUDE
-    (13) statement -> . MEASURE EXCLUDE TOKEN
-    (14) statement -> . ATTRIBUTE EXCLUDE TOKEN
-    (15) statement -> . EXCLUDE MEASURE TOKEN
-    (16) statement -> . EXCLUDE ATTRIBUTE TOKEN
-    (17) statement -> . MEASURE EXCLUDE ATTRIBUTE TOKEN
-    (18) statement -> . ATTRIBUTE EXCLUDE MEASURE TOKEN
-    (19) statement -> . ATTRIBUTE EXCLUDE ATTRIBUTE TOKEN
-    (20) statement -> . MEASURE EXCLUDE MEASURE TOKEN
-    (21) statement -> . ATTRIBUTE TOKEN MEASURE
-    (22) statement -> . MEASURE TOKEN ATTRIBUTE
-    (23) statement -> . ATTRIBUTE TOKEN ATTRIBUTE
-    (24) statement -> . ATTRIBUTE MEASURE TOKEN
-    (25) statement -> . MEASURE ATTRIBUTE TOKEN
-    (26) statement -> . ATTRIBUTE ATTRIBUTE TOKEN
-    (27) statement -> . ATTRIBUTE TOKEN MEASURE TOKEN
-    (28) statement -> . MEASURE TOKEN ATTRIBUTE TOKEN
-    (29) statement -> . ATTRIBUTE TOKEN ATTRIBUTE TOKEN
+    (7) statement -> . MEASURE VALUE
+    (8) statement -> . ATTRIBUTE VALUE
+    (9) statement -> . VALUE MEASURE
+    (10) statement -> . VALUE ATTRIBUTE
+    (11) statement -> . MEASURE VALUE EXCLUDE
+    (12) statement -> . ATTRIBUTE VALUE EXCLUDE
+    (13) statement -> . MEASURE EXCLUDE VALUE
+    (14) statement -> . ATTRIBUTE EXCLUDE VALUE
+    (15) statement -> . EXCLUDE MEASURE VALUE
+    (16) statement -> . EXCLUDE ATTRIBUTE VALUE
+    (17) statement -> . MEASURE EXCLUDE ATTRIBUTE VALUE
+    (18) statement -> . ATTRIBUTE EXCLUDE MEASURE VALUE
+    (19) statement -> . ATTRIBUTE EXCLUDE ATTRIBUTE VALUE
+    (20) statement -> . MEASURE EXCLUDE MEASURE VALUE
+    (21) statement -> . ATTRIBUTE VALUE MEASURE
+    (22) statement -> . MEASURE VALUE ATTRIBUTE
+    (23) statement -> . ATTRIBUTE VALUE ATTRIBUTE
+    (24) statement -> . ATTRIBUTE MEASURE VALUE
+    (25) statement -> . MEASURE ATTRIBUTE VALUE
+    (26) statement -> . ATTRIBUTE ATTRIBUTE VALUE
+    (27) statement -> . ATTRIBUTE VALUE MEASURE VALUE
+    (28) statement -> . MEASURE VALUE ATTRIBUTE VALUE
+    (29) statement -> . ATTRIBUTE VALUE ATTRIBUTE VALUE
     (30) statement -> . ATTRIBUTE COMPARE MEASURE
     (31) statement -> . MEASURE COMPARE ATTRIBUTE
     (32) statement -> . ATTRIBUTE COMPARE ATTRIBUTE
@@ -94,7 +94,7 @@ state 0
 
     ATTRIBUTE       shift and go to state 2
     MEASURE         shift and go to state 5
-    TOKEN           shift and go to state 3
+    VALUE           shift and go to state 3
     EXCLUDE         shift and go to state 6
     COMPARE         shift and go to state 1
 
@@ -115,23 +115,23 @@ state 2
     (2) statement -> ATTRIBUTE . ATTRIBUTE DATE
     (4) statement -> ATTRIBUTE . DATE DATE
     (5) statement -> ATTRIBUTE . ATTRIBUTE DATE DATE
-    (8) statement -> ATTRIBUTE . TOKEN
-    (12) statement -> ATTRIBUTE . TOKEN EXCLUDE
-    (14) statement -> ATTRIBUTE . EXCLUDE TOKEN
-    (18) statement -> ATTRIBUTE . EXCLUDE MEASURE TOKEN
-    (19) statement -> ATTRIBUTE . EXCLUDE ATTRIBUTE TOKEN
-    (21) statement -> ATTRIBUTE . TOKEN MEASURE
-    (23) statement -> ATTRIBUTE . TOKEN ATTRIBUTE
-    (24) statement -> ATTRIBUTE . MEASURE TOKEN
-    (26) statement -> ATTRIBUTE . ATTRIBUTE TOKEN
-    (27) statement -> ATTRIBUTE . TOKEN MEASURE TOKEN
-    (29) statement -> ATTRIBUTE . TOKEN ATTRIBUTE TOKEN
+    (8) statement -> ATTRIBUTE . VALUE
+    (12) statement -> ATTRIBUTE . VALUE EXCLUDE
+    (14) statement -> ATTRIBUTE . EXCLUDE VALUE
+    (18) statement -> ATTRIBUTE . EXCLUDE MEASURE VALUE
+    (19) statement -> ATTRIBUTE . EXCLUDE ATTRIBUTE VALUE
+    (21) statement -> ATTRIBUTE . VALUE MEASURE
+    (23) statement -> ATTRIBUTE . VALUE ATTRIBUTE
+    (24) statement -> ATTRIBUTE . MEASURE VALUE
+    (26) statement -> ATTRIBUTE . ATTRIBUTE VALUE
+    (27) statement -> ATTRIBUTE . VALUE MEASURE VALUE
+    (29) statement -> ATTRIBUTE . VALUE ATTRIBUTE VALUE
     (30) statement -> ATTRIBUTE . COMPARE MEASURE
     (32) statement -> ATTRIBUTE . COMPARE ATTRIBUTE
 
     DATE            shift and go to state 13
     ATTRIBUTE       shift and go to state 10
-    TOKEN           shift and go to state 11
+    VALUE           shift and go to state 11
     EXCLUDE         shift and go to state 14
     MEASURE         shift and go to state 12
     COMPARE         shift and go to state 9
@@ -139,8 +139,8 @@ state 2
 
 state 3
 
-    (9) statement -> TOKEN . MEASURE
-    (10) statement -> TOKEN . ATTRIBUTE
+    (9) statement -> VALUE . MEASURE
+    (10) statement -> VALUE . ATTRIBUTE
 
     MEASURE         shift and go to state 16
     ATTRIBUTE       shift and go to state 15
@@ -156,26 +156,26 @@ state 5
 
     (3) statement -> MEASURE . ATTRIBUTE DATE
     (6) statement -> MEASURE . ATTRIBUTE DATE DATE
-    (7) statement -> MEASURE . TOKEN
-    (11) statement -> MEASURE . TOKEN EXCLUDE
-    (13) statement -> MEASURE . EXCLUDE TOKEN
-    (17) statement -> MEASURE . EXCLUDE ATTRIBUTE TOKEN
-    (20) statement -> MEASURE . EXCLUDE MEASURE TOKEN
-    (22) statement -> MEASURE . TOKEN ATTRIBUTE
-    (25) statement -> MEASURE . ATTRIBUTE TOKEN
-    (28) statement -> MEASURE . TOKEN ATTRIBUTE TOKEN
+    (7) statement -> MEASURE . VALUE
+    (11) statement -> MEASURE . VALUE EXCLUDE
+    (13) statement -> MEASURE . EXCLUDE VALUE
+    (17) statement -> MEASURE . EXCLUDE ATTRIBUTE VALUE
+    (20) statement -> MEASURE . EXCLUDE MEASURE VALUE
+    (22) statement -> MEASURE . VALUE ATTRIBUTE
+    (25) statement -> MEASURE . ATTRIBUTE VALUE
+    (28) statement -> MEASURE . VALUE ATTRIBUTE VALUE
     (31) statement -> MEASURE . COMPARE ATTRIBUTE
 
     ATTRIBUTE       shift and go to state 18
-    TOKEN           shift and go to state 19
+    VALUE           shift and go to state 19
     EXCLUDE         shift and go to state 20
     COMPARE         shift and go to state 17
 
 
 state 6
 
-    (15) statement -> EXCLUDE . MEASURE TOKEN
-    (16) statement -> EXCLUDE . ATTRIBUTE TOKEN
+    (15) statement -> EXCLUDE . MEASURE VALUE
+    (16) statement -> EXCLUDE . ATTRIBUTE VALUE
 
     MEASURE         shift and go to state 22
     ATTRIBUTE       shift and go to state 21
@@ -208,22 +208,22 @@ state 10
 
     (2) statement -> ATTRIBUTE ATTRIBUTE . DATE
     (5) statement -> ATTRIBUTE ATTRIBUTE . DATE DATE
-    (26) statement -> ATTRIBUTE ATTRIBUTE . TOKEN
+    (26) statement -> ATTRIBUTE ATTRIBUTE . VALUE
 
     DATE            shift and go to state 25
-    TOKEN           shift and go to state 26
+    VALUE           shift and go to state 26
 
 
 state 11
 
-    (8) statement -> ATTRIBUTE TOKEN .
-    (12) statement -> ATTRIBUTE TOKEN . EXCLUDE
-    (21) statement -> ATTRIBUTE TOKEN . MEASURE
-    (23) statement -> ATTRIBUTE TOKEN . ATTRIBUTE
-    (27) statement -> ATTRIBUTE TOKEN . MEASURE TOKEN
-    (29) statement -> ATTRIBUTE TOKEN . ATTRIBUTE TOKEN
+    (8) statement -> ATTRIBUTE VALUE .
+    (12) statement -> ATTRIBUTE VALUE . EXCLUDE
+    (21) statement -> ATTRIBUTE VALUE . MEASURE
+    (23) statement -> ATTRIBUTE VALUE . ATTRIBUTE
+    (27) statement -> ATTRIBUTE VALUE . MEASURE VALUE
+    (29) statement -> ATTRIBUTE VALUE . ATTRIBUTE VALUE
 
-    $end            reduce using rule 8 (statement -> ATTRIBUTE TOKEN .)
+    $end            reduce using rule 8 (statement -> ATTRIBUTE VALUE .)
     EXCLUDE         shift and go to state 29
     MEASURE         shift and go to state 28
     ATTRIBUTE       shift and go to state 27
@@ -231,9 +231,9 @@ state 11
 
 state 12
 
-    (24) statement -> ATTRIBUTE MEASURE . TOKEN
+    (24) statement -> ATTRIBUTE MEASURE . VALUE
 
-    TOKEN           shift and go to state 30
+    VALUE           shift and go to state 30
 
 
 state 13
@@ -247,27 +247,27 @@ state 13
 
 state 14
 
-    (14) statement -> ATTRIBUTE EXCLUDE . TOKEN
-    (18) statement -> ATTRIBUTE EXCLUDE . MEASURE TOKEN
-    (19) statement -> ATTRIBUTE EXCLUDE . ATTRIBUTE TOKEN
+    (14) statement -> ATTRIBUTE EXCLUDE . VALUE
+    (18) statement -> ATTRIBUTE EXCLUDE . MEASURE VALUE
+    (19) statement -> ATTRIBUTE EXCLUDE . ATTRIBUTE VALUE
 
-    TOKEN           shift and go to state 33
-    MEASURE         shift and go to state 34
+    VALUE           shift and go to state 34
+    MEASURE         shift and go to state 33
     ATTRIBUTE       shift and go to state 32
 
 
 state 15
 
-    (10) statement -> TOKEN ATTRIBUTE .
+    (10) statement -> VALUE ATTRIBUTE .
 
-    $end            reduce using rule 10 (statement -> TOKEN ATTRIBUTE .)
+    $end            reduce using rule 10 (statement -> VALUE ATTRIBUTE .)
 
 
 state 16
 
-    (9) statement -> TOKEN MEASURE .
+    (9) statement -> VALUE MEASURE .
 
-    $end            reduce using rule 9 (statement -> TOKEN MEASURE .)
+    $end            reduce using rule 9 (statement -> VALUE MEASURE .)
 
 
 state 17
@@ -281,47 +281,47 @@ state 18
 
     (3) statement -> MEASURE ATTRIBUTE . DATE
     (6) statement -> MEASURE ATTRIBUTE . DATE DATE
-    (25) statement -> MEASURE ATTRIBUTE . TOKEN
+    (25) statement -> MEASURE ATTRIBUTE . VALUE
 
     DATE            shift and go to state 36
-    TOKEN           shift and go to state 37
+    VALUE           shift and go to state 37
 
 
 state 19
 
-    (7) statement -> MEASURE TOKEN .
-    (11) statement -> MEASURE TOKEN . EXCLUDE
-    (22) statement -> MEASURE TOKEN . ATTRIBUTE
-    (28) statement -> MEASURE TOKEN . ATTRIBUTE TOKEN
+    (7) statement -> MEASURE VALUE .
+    (11) statement -> MEASURE VALUE . EXCLUDE
+    (22) statement -> MEASURE VALUE . ATTRIBUTE
+    (28) statement -> MEASURE VALUE . ATTRIBUTE VALUE
 
-    $end            reduce using rule 7 (statement -> MEASURE TOKEN .)
+    $end            reduce using rule 7 (statement -> MEASURE VALUE .)
     EXCLUDE         shift and go to state 38
     ATTRIBUTE       shift and go to state 39
 
 
 state 20
 
-    (13) statement -> MEASURE EXCLUDE . TOKEN
-    (17) statement -> MEASURE EXCLUDE . ATTRIBUTE TOKEN
-    (20) statement -> MEASURE EXCLUDE . MEASURE TOKEN
+    (13) statement -> MEASURE EXCLUDE . VALUE
+    (17) statement -> MEASURE EXCLUDE . ATTRIBUTE VALUE
+    (20) statement -> MEASURE EXCLUDE . MEASURE VALUE
 
-    TOKEN           shift and go to state 40
-    ATTRIBUTE       shift and go to state 41
+    VALUE           shift and go to state 41
+    ATTRIBUTE       shift and go to state 40
     MEASURE         shift and go to state 42
 
 
 state 21
 
-    (16) statement -> EXCLUDE ATTRIBUTE . TOKEN
+    (16) statement -> EXCLUDE ATTRIBUTE . VALUE
 
-    TOKEN           shift and go to state 43
+    VALUE           shift and go to state 43
 
 
 state 22
 
-    (15) statement -> EXCLUDE MEASURE . TOKEN
+    (15) statement -> EXCLUDE MEASURE . VALUE
 
-    TOKEN           shift and go to state 44
+    VALUE           shift and go to state 44
 
 
 state 23
@@ -349,41 +349,41 @@ state 25
 
 state 26
 
-    (26) statement -> ATTRIBUTE ATTRIBUTE TOKEN .
+    (26) statement -> ATTRIBUTE ATTRIBUTE VALUE .
 
-    $end            reduce using rule 26 (statement -> ATTRIBUTE ATTRIBUTE TOKEN .)
+    $end            reduce using rule 26 (statement -> ATTRIBUTE ATTRIBUTE VALUE .)
 
 
 state 27
 
-    (23) statement -> ATTRIBUTE TOKEN ATTRIBUTE .
-    (29) statement -> ATTRIBUTE TOKEN ATTRIBUTE . TOKEN
+    (23) statement -> ATTRIBUTE VALUE ATTRIBUTE .
+    (29) statement -> ATTRIBUTE VALUE ATTRIBUTE . VALUE
 
-    $end            reduce using rule 23 (statement -> ATTRIBUTE TOKEN ATTRIBUTE .)
-    TOKEN           shift and go to state 46
+    $end            reduce using rule 23 (statement -> ATTRIBUTE VALUE ATTRIBUTE .)
+    VALUE           shift and go to state 46
 
 
 state 28
 
-    (21) statement -> ATTRIBUTE TOKEN MEASURE .
-    (27) statement -> ATTRIBUTE TOKEN MEASURE . TOKEN
+    (21) statement -> ATTRIBUTE VALUE MEASURE .
+    (27) statement -> ATTRIBUTE VALUE MEASURE . VALUE
 
-    $end            reduce using rule 21 (statement -> ATTRIBUTE TOKEN MEASURE .)
-    TOKEN           shift and go to state 47
+    $end            reduce using rule 21 (statement -> ATTRIBUTE VALUE MEASURE .)
+    VALUE           shift and go to state 47
 
 
 state 29
 
-    (12) statement -> ATTRIBUTE TOKEN EXCLUDE .
+    (12) statement -> ATTRIBUTE VALUE EXCLUDE .
 
-    $end            reduce using rule 12 (statement -> ATTRIBUTE TOKEN EXCLUDE .)
+    $end            reduce using rule 12 (statement -> ATTRIBUTE VALUE EXCLUDE .)
 
 
 state 30
 
-    (24) statement -> ATTRIBUTE MEASURE TOKEN .
+    (24) statement -> ATTRIBUTE MEASURE VALUE .
 
-    $end            reduce using rule 24 (statement -> ATTRIBUTE MEASURE TOKEN .)
+    $end            reduce using rule 24 (statement -> ATTRIBUTE MEASURE VALUE .)
 
 
 state 31
@@ -395,23 +395,23 @@ state 31
 
 state 32
 
-    (19) statement -> ATTRIBUTE EXCLUDE ATTRIBUTE . TOKEN
+    (19) statement -> ATTRIBUTE EXCLUDE ATTRIBUTE . VALUE
 
-    TOKEN           shift and go to state 48
+    VALUE           shift and go to state 48
 
 
 state 33
 
-    (14) statement -> ATTRIBUTE EXCLUDE TOKEN .
+    (18) statement -> ATTRIBUTE EXCLUDE MEASURE . VALUE
 
-    $end            reduce using rule 14 (statement -> ATTRIBUTE EXCLUDE TOKEN .)
+    VALUE           shift and go to state 49
 
 
 state 34
 
-    (18) statement -> ATTRIBUTE EXCLUDE MEASURE . TOKEN
+    (14) statement -> ATTRIBUTE EXCLUDE VALUE .
 
-    TOKEN           shift and go to state 49
+    $end            reduce using rule 14 (statement -> ATTRIBUTE EXCLUDE VALUE .)
 
 
 state 35
@@ -432,60 +432,60 @@ state 36
 
 state 37
 
-    (25) statement -> MEASURE ATTRIBUTE TOKEN .
+    (25) statement -> MEASURE ATTRIBUTE VALUE .
 
-    $end            reduce using rule 25 (statement -> MEASURE ATTRIBUTE TOKEN .)
+    $end            reduce using rule 25 (statement -> MEASURE ATTRIBUTE VALUE .)
 
 
 state 38
 
-    (11) statement -> MEASURE TOKEN EXCLUDE .
+    (11) statement -> MEASURE VALUE EXCLUDE .
 
-    $end            reduce using rule 11 (statement -> MEASURE TOKEN EXCLUDE .)
+    $end            reduce using rule 11 (statement -> MEASURE VALUE EXCLUDE .)
 
 
 state 39
 
-    (22) statement -> MEASURE TOKEN ATTRIBUTE .
-    (28) statement -> MEASURE TOKEN ATTRIBUTE . TOKEN
+    (22) statement -> MEASURE VALUE ATTRIBUTE .
+    (28) statement -> MEASURE VALUE ATTRIBUTE . VALUE
 
-    $end            reduce using rule 22 (statement -> MEASURE TOKEN ATTRIBUTE .)
-    TOKEN           shift and go to state 51
+    $end            reduce using rule 22 (statement -> MEASURE VALUE ATTRIBUTE .)
+    VALUE           shift and go to state 51
 
 
 state 40
 
-    (13) statement -> MEASURE EXCLUDE TOKEN .
+    (17) statement -> MEASURE EXCLUDE ATTRIBUTE . VALUE
 
-    $end            reduce using rule 13 (statement -> MEASURE EXCLUDE TOKEN .)
+    VALUE           shift and go to state 52
 
 
 state 41
 
-    (17) statement -> MEASURE EXCLUDE ATTRIBUTE . TOKEN
+    (13) statement -> MEASURE EXCLUDE VALUE .
 
-    TOKEN           shift and go to state 52
+    $end            reduce using rule 13 (statement -> MEASURE EXCLUDE VALUE .)
 
 
 state 42
 
-    (20) statement -> MEASURE EXCLUDE MEASURE . TOKEN
+    (20) statement -> MEASURE EXCLUDE MEASURE . VALUE
 
-    TOKEN           shift and go to state 53
+    VALUE           shift and go to state 53
 
 
 state 43
 
-    (16) statement -> EXCLUDE ATTRIBUTE TOKEN .
+    (16) statement -> EXCLUDE ATTRIBUTE VALUE .
 
-    $end            reduce using rule 16 (statement -> EXCLUDE ATTRIBUTE TOKEN .)
+    $end            reduce using rule 16 (statement -> EXCLUDE ATTRIBUTE VALUE .)
 
 
 state 44
 
-    (15) statement -> EXCLUDE MEASURE TOKEN .
+    (15) statement -> EXCLUDE MEASURE VALUE .
 
-    $end            reduce using rule 15 (statement -> EXCLUDE MEASURE TOKEN .)
+    $end            reduce using rule 15 (statement -> EXCLUDE MEASURE VALUE .)
 
 
 state 45
@@ -497,30 +497,30 @@ state 45
 
 state 46
 
-    (29) statement -> ATTRIBUTE TOKEN ATTRIBUTE TOKEN .
+    (29) statement -> ATTRIBUTE VALUE ATTRIBUTE VALUE .
 
-    $end            reduce using rule 29 (statement -> ATTRIBUTE TOKEN ATTRIBUTE TOKEN .)
+    $end            reduce using rule 29 (statement -> ATTRIBUTE VALUE ATTRIBUTE VALUE .)
 
 
 state 47
 
-    (27) statement -> ATTRIBUTE TOKEN MEASURE TOKEN .
+    (27) statement -> ATTRIBUTE VALUE MEASURE VALUE .
 
-    $end            reduce using rule 27 (statement -> ATTRIBUTE TOKEN MEASURE TOKEN .)
+    $end            reduce using rule 27 (statement -> ATTRIBUTE VALUE MEASURE VALUE .)
 
 
 state 48
 
-    (19) statement -> ATTRIBUTE EXCLUDE ATTRIBUTE TOKEN .
+    (19) statement -> ATTRIBUTE EXCLUDE ATTRIBUTE VALUE .
 
-    $end            reduce using rule 19 (statement -> ATTRIBUTE EXCLUDE ATTRIBUTE TOKEN .)
+    $end            reduce using rule 19 (statement -> ATTRIBUTE EXCLUDE ATTRIBUTE VALUE .)
 
 
 state 49
 
-    (18) statement -> ATTRIBUTE EXCLUDE MEASURE TOKEN .
+    (18) statement -> ATTRIBUTE EXCLUDE MEASURE VALUE .
 
-    $end            reduce using rule 18 (statement -> ATTRIBUTE EXCLUDE MEASURE TOKEN .)
+    $end            reduce using rule 18 (statement -> ATTRIBUTE EXCLUDE MEASURE VALUE .)
 
 
 state 50
@@ -532,21 +532,21 @@ state 50
 
 state 51
 
-    (28) statement -> MEASURE TOKEN ATTRIBUTE TOKEN .
+    (28) statement -> MEASURE VALUE ATTRIBUTE VALUE .
 
-    $end            reduce using rule 28 (statement -> MEASURE TOKEN ATTRIBUTE TOKEN .)
+    $end            reduce using rule 28 (statement -> MEASURE VALUE ATTRIBUTE VALUE .)
 
 
 state 52
 
-    (17) statement -> MEASURE EXCLUDE ATTRIBUTE TOKEN .
+    (17) statement -> MEASURE EXCLUDE ATTRIBUTE VALUE .
 
-    $end            reduce using rule 17 (statement -> MEASURE EXCLUDE ATTRIBUTE TOKEN .)
+    $end            reduce using rule 17 (statement -> MEASURE EXCLUDE ATTRIBUTE VALUE .)
 
 
 state 53
 
-    (20) statement -> MEASURE EXCLUDE MEASURE TOKEN .
+    (20) statement -> MEASURE EXCLUDE MEASURE VALUE .
 
-    $end            reduce using rule 20 (statement -> MEASURE EXCLUDE MEASURE TOKEN .)
+    $end            reduce using rule 20 (statement -> MEASURE EXCLUDE MEASURE VALUE .)
 

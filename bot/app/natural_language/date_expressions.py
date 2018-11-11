@@ -19,6 +19,7 @@ def date_synonyms(expression, type):
     now = datetime.today()
     formatted_now = "{:%Y-%m-%d}".format(now)
 
+    # quick check for yesterday, tomorrow, today and this year
     if quick:
 
         if quick.string == 'yesterday':
@@ -60,6 +61,8 @@ def date_synonyms(expression, type):
                 difference = last_day.date() - first_day.date()
                 return difference.days
 
+    # to calculate the months
+    # we will be doing both present year and given year
     elif month_year_request:
         month_year = month_year_request.string.split()
 
@@ -290,6 +293,7 @@ def date_synonyms(expression, type):
                 difference = now.date() - first_day.date()
                 return difference.days
 
+    # special case for "next"
     elif matched:
         matched_values = matched.string.split()
 
@@ -371,6 +375,7 @@ def date_synonyms(expression, type):
                 quarter = calculate_next_quarter(type)
                 return quarter
 
+        # special case for "last"
         elif matched_values[0] == 'last':
 
             if matched_values[2] == 'day':
@@ -443,6 +448,7 @@ def date_synonyms(expression, type):
         return ''
 
 
+# function to calculate the last quarter
 def calculate_last_quarter(type):
     now = datetime.now()
     quarter = (now.month - 1) / 3 + 1
@@ -458,6 +464,7 @@ def calculate_last_quarter(type):
         return difference.days
 
 
+#function to calculate the next quarter
 def calculate_next_quarter(type):
     now = datetime.now()
     current_quarter = (now.month - 1) / 3 + 1
@@ -475,6 +482,7 @@ def calculate_next_quarter(type):
         return difference.days
 
 
+# function to be used in pipeline/or elsewhere, to remove the temporal expressions used
 def remove_date_expressions(question):
     word_tokens = tokenizing(question)
     stop = ["next", "last", "day", "week", "year", "quarter",
@@ -490,7 +498,3 @@ def remove_date_expressions(question):
     final_clean = ' '.join([i for i in cleaned_question if not i.isdigit()])
 
     return final_clean
-
-if __name__ == '__main__':
-   test = date_synonyms("tomorrow", 1)
-   print(test)

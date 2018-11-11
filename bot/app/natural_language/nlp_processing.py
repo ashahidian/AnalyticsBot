@@ -1,15 +1,17 @@
 from nltk import *
 
-
+# lowercases the words
 def lowercase_words(question):
     return question.lower()
     # decode('utf-8').lower()
 
-
+# redundant function really, but sure
+# tokenizes the questions
+# uses nltk
 def tokenizing(question):
     return word_tokenize(question)
 
-
+# remove stop words
 def stop_words(question):
     word_tokens = tokenizing(question)
     stop = ["in", "the", "to", "with", "than", "that", "of", "a", "an", "for", "by",
@@ -28,4 +30,3 @@ def stop_words(question):
             cleaned_question.append(str(w))
 
     return cleaned_question
-

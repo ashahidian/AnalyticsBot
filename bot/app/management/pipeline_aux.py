@@ -1,22 +1,24 @@
+# file with aux functions for pipeline
 from app.management.sempre_query import *
 from app.natural_language.date_expressions import *
 from app.natural_language.synonyms import *
 
-
+# function to map sql question
 def to_sempre(question):
     query = SQLQuestionMapper().convert(question)
 
     return query
 
-
+# function to invert the currency pair
 def currency_swap(currency):
     split = currency.split("/")
     new_currency = split[1] + "/" + split[0]
-    # currencies = [currency, new_currency]
 
     return new_currency
 
-
+# function to get the max number of tokens that match the synonym lists
+# will test one token, two, three and four
+# the max match will be returned
 def get_max_match(question_tokens):
     one_grams = ngrams(question_tokens, 1)
     two_grams = ngrams(question_tokens, 2)
@@ -104,6 +106,9 @@ def get_max_match(question_tokens):
         return match, words_grammar, words_sempre
 
 
+# function to get the max number of tokens that match the temporal expressions
+# will test one token, two, three
+# the max match will be returned
 def get_date_match(question_tokens):
     one_grams = ngrams(question_tokens, 1)
     two_grams = ngrams(question_tokens, 2)
@@ -171,6 +176,7 @@ def get_date_match(question_tokens):
         return match, days, date
 
 
+# dates will only be checked if nothing else matches
 def date_question_prep(matched_synonyms, og_question):
     date_ready_q = []
 
@@ -181,4 +187,3 @@ def date_question_prep(matched_synonyms, og_question):
             date_ready_q.append(str(w))
 
     return date_ready_q
-

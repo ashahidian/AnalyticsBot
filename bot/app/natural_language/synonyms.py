@@ -1,6 +1,7 @@
 from synonyms_lists import *
 
-
+# function goes through each synonym list and for the type asked,
+# returns word needed to activate grammar rules
 def synonym_check(word, type):
 
     # type 0 = semantic grammar

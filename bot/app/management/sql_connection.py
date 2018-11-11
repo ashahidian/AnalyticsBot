@@ -17,7 +17,9 @@ import mysql.connector
 
 # needs to receive user, password and database too, as variables
 
-
+# function to get categorie elements
+# not called in project as is.
+# categories have been filled for test purposes
 def sql_call(sql_request):
     connection = mysql.connector.connect(user='root', password='p4ssw0rd', database='simple_test')
     cursor = connection.cursor()

@@ -17,12 +17,12 @@ t_VALUE = r'([a-zA-Z]{3}[/][a-zA-Z]{3})|[a-zA-Z_0-9]+ '
 
 t_DATE = r'([0-9]{4}[-][0-9]{2}[-][0-9]{2})|([0-9]{9})'
 
-
+# for word exclude
 def t_EXCLUDE(t):
     r'exclude'
     return t
 
-
+# for word compare
 def t_COMPARE(t):
     r'highest'
     return t
@@ -48,7 +48,10 @@ lex.lex()
 # Dictionary of names (for storing variables)
 names = {}
 
-
+# rules for grammar
+# statement declares which tokens to be used
+# p[0] is the result
+# other p[] correspond to the token in the position
 def p_statement_date(p):
     '''statement : ATTRIBUTE DATE'''
 
@@ -192,18 +195,3 @@ def grammar_function(question):
         pass
     r = yacc.parse(s)
     return str(r)
-
-
-# TotalTrades
-# TradeStatus
-# Volume
-# Tenor
-# try:
-#    s = 'Volume test'
-# except EOFError:
-#    pass
-# r = yacc.parse(s)
-# print(r)
-
-#if __name__ == '__main__':
-#    print (grammar_function('client JHKL deal id'))

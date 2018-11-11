@@ -1,4 +1,5 @@
-# first, call the database and gather the client names, id's and currencies
+# categories to be filled with the database information
+# right now, they are being filled directly (for testing)
 
 other = ['exclude', 'higher']
 tradestatus = ['new', 'amended']
@@ -56,6 +57,7 @@ entries = ['tradestatus', 'tenor', 'productgroup',
            'cctotal', 'ccnonrisk', 'ccatrisk', 'averagerollover'
                                                'maxabsnetvolume']
 
+# full list to help with going through all values
 zero_list = entries + other + tradestatus + tenor + product_group + product + platform + new_trade + \
             net_client_position + near_tenor_days + max_future_date + marketer + local_blotter + legs + from_days + \
             far_tenor_days + expiration_date + deal_id + deal_date + currency_pair_group + crds_code + dealside + \

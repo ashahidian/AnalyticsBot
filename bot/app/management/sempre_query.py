@@ -1,3 +1,6 @@
+# file to map sempre's answer to json
+# allows sempre integration with the system implemented
+
 import requests
 import json, ast
 
@@ -25,10 +28,7 @@ class SQLQuestionMapper(object):
             print("No candidates")
             return ""
 
-        # the last replace can be a bit dangerous
+        # the last replace can be a bit dangerous, but it works
         variable = candidates[0]['value'].replace('(string "', '').replace('")', '')
 
         return ast.literal_eval(json.dumps(variable))
-
-
-#print(SQLQuestionMapper().convert("client x tenor"))

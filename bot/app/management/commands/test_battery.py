@@ -1,11 +1,11 @@
+# testing SEMPRE rules
+# results will be in evaluation folder
+# files are not in same folder for project running reasons
+
 import json
 import subprocess
 from subprocess import call, check_output
-
-# testing SEMPRE rules
 from time import sleep
-
-# TODO
 import os
 
 from django.core.management import BaseCommand
@@ -101,9 +101,3 @@ class Command(BaseCommand):
             f.write(json.dumps(results, indent=2))
 
         print("Done")
-
-
-
-
-
-
